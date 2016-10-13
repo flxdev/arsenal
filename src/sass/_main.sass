@@ -1,0 +1,66 @@
+// Normally mainpage styles
+
+
+body
+  background-color: #47484b
+  +box
+  +font-smoothing
+  & ::selection
+    background-color: #4564d6
+    color:#fff
+  & ::-moz-selection
+    background-color: #4564d6
+    color:#fff
+body
+  font-family: 'Open Sans'
+  overflow: hidden
+body, .out
+  width: 100%
+  height: 100%
+.out
+  overflow-y: scroll
+  overflow-x: hidden
+// main page layout
+.page
+  &__wrapper
+    background-color: #fff
+    +rem(max-width, 1450px)
+    +clr
+  &__outer
+    width: 100%
+    display: block
+  &__header
+    +rem(height, 84px)
+    +rem(max-width, 1450px)
+    +rem(min-width, 320px)
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    display: block
+    background: red
+    +clr
+  &__wrapper-inner
+    +rem(padding-top, 84px)
+  &__menu
+    position: fixed
+    height: 100%
+    +rem(padding-top, 84px) 
+    +rem(width, 275px) 
+    background: yellow
+    +r(991)
+      display: none
+  &__content
+    +rem(padding-left, 275px) 
+    +r(991)
+      padding-left: 0
+
+    
+
+
+
+
+
+
+
+
