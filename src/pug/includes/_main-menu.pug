@@ -1,0 +1,98 @@
+nav.page__menu--inner
+	.c-menu-block.t-blue.main
+		ul.menu-list
+			//- each val in [
+			//- 	'Кровельные материалы', 
+			//- 	'Водосточные системы', 
+			//- 	'Металлопрокат',
+			//- 	'Забор',
+			//- 	'Доборные элементы',
+			//- 	'Гипсокартоннче профили']
+			//- 	li.menu-item
+			//- 		a(href="#")= val
+			mixin MenuList(value, id)
+				li.menu-item.js-desktop-hover
+					a(href="#" data-elem=id,class={active: value === current}) #{value}
+
+			+MenuList("Кровельные материалы",1)
+			+MenuList("Водосточные системы",2)
+			+MenuList('Металлопрокат',3)
+			+MenuList('Забор',4)
+			+MenuList('Доборные элементы',5)
+			+MenuList('Гипсокартоннче профили',6)
+	.c-menu-block.add
+		.o-menu-search
+			form.search__wrapper
+				input(type="text").search__input
+				button(type='submit').search__btn
+		ul.menu-list
+			//- var current = "Кровельные материалы"
+			mixin MenuAdd(value)
+				li.menu-item
+					a(href="#" class={active: value === current}) #{value}
+			+MenuAdd("Компания")
+			+MenuAdd("Оплата и доставка")
+			+MenuAdd('База знаний')
+			+MenuAdd('Контактная информация')
+	.c-menu-block.footer
+		p.gray 2016 OOO АрсеналМеталл
+		a(href="mailto:#").mailto info@arsenalmetall.by
+.menu-dropdown-wrapper
+	.menu-dropdown-inner
+		.menu-dropdown-cont(data-elem='1')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("Профильная труба")
+				+DrpoMenu("Лист оцинкованный")
+				+DrpoMenu('Лист оцинкованный окрашенный')
+				+DrpoMenu('Уголок')
+		.menu-dropdown-cont(data-elem='2')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("труба")
+				+DrpoMenu("Лист оцинкованный труба")
+				+DrpoMenu('Лист оцинкованный окрашенный труба')
+				+DrpoMenu('Уголок труба')
+		.menu-dropdown-cont(data-elem='3')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("труба2")
+				+DrpoMenu("Лист оцинкованный труб2а")
+				+DrpoMenu('Лист оцинкованный окрашенный труба2')
+				+DrpoMenu('Уголок труб2а')
+		.menu-dropdown-cont(data-elem='4')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("труба4")
+				+DrpoMenu("Лист оцинкованный труб4а")
+				+DrpoMenu('Лист оцинкованный окрашенный труба4')
+				+DrpoMenu('Уголок труб2а4')
+		.menu-dropdown-cont(data-elem='5')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("труба5")
+				+DrpoMenu("Лист оцинкованный труб5а")
+				+DrpoMenu('Лист оцинкованный окрашенный труба5')
+				+DrpoMenu('Уголок труб2а45')
+		.menu-dropdown-cont(data-elem='6')
+			ul.menu-dropdown-list
+				mixin DrpoMenu(value)
+					li.menu-dropdown-item
+						a(href="#") #{value}
+				+DrpoMenu("труба5fffff")
+				+DrpoMenu("Лист оцинкованнffый труб5а")
+				+DrpoMenu('Лист оцинкованный окрашенный труба5')
+				+DrpoMenu('Уголок труб2а45')
+
+
+

@@ -1,10 +1,31 @@
 // Normally mainpage styles
-
-
+$white: #fff
+$main: #0432da
+$graybg : #f4f4f4
+$text: rgb( 46, 46, 46 )
+$formbor: #d9d8dd
+$formbg: #f6f6f6
+$mhover: #052a45
+$tr: cubic-bezier(.8,.23,.29,1.06)
+$shadow-left : 2px 3.464px 38px 0px rgba( 0, 0, 0, .17 );
+a
+  text-decoration: none
+  color: $main
+  /* style */
+  /* style */
+html
+  font-size: 16px
+  +r(1366)
+    font-size: 14px
+  +r(1280)
+    font-size: 13px
+  +r(991)
+    font-size: 16px
 body
   background-color: #47484b
   +box
   +font-smoothing
+  text-rendering: optimizeLegibility
   & ::selection
     background-color: #4564d6
     color:#fff
@@ -13,7 +34,7 @@ body
     color:#fff
 body
   font-family: 'Open Sans'
-  overflow: hidden
+  +rem(font-size,14px)
 body, .out
   width: 100%
   height: 100%
@@ -30,9 +51,10 @@ body, .out
     width: 100%
     display: block
   &__header
-    +rem(height, 84px)
+    +rem(height, 85px)
     +rem(max-width, 1450px)
     +rem(min-width, 320px)
+    +padlr(25px)
     width: 100%
     position: fixed
     top: 0
@@ -45,15 +67,148 @@ body, .out
   &__menu
     position: fixed
     height: 100%
-    +rem(padding-top, 84px) 
+    
+    +rem(padding-bottom,84px)
+    // +rem(padding-top, 84px) 
     +rem(width, 275px) 
-    background: yellow
+    z-index: 3
     +r(991)
       display: none
+    &--inner
+      position: relative
+      height: 100%
+      box-shadow: $shadow-left
+      z-index: 20
   &__content
     +rem(padding-left, 275px) 
     +r(991)
       padding-left: 0
+//component
+.menu-list
+  list-style: none
+  +rem(letter-spacing,0.3px)
+  .menu-item
+    display: block
+    a 
+      width: 100%
+      display: inline-block
+      font-weight: 400;
+      
+.c-menu-block
+  +padlr(25px)
+  &.main
+    +rem(padding-top,25px)
+    +rem(padding-bottom,26px)
+    .menu-item
+      +rem(margin-left,-25px)
+      +rem(margin-right,-25px)
+      +padlr(25px)
+      +tr (background .3s)
+      a 
+        +rem(padding,14px 0 15px)
+        color: $white
+        font-weight: 600
+      &:hover, &.active
+          background: $mhover
+        
+  &.t-blue
+    background-color: $main
+  &.add
+    +rem(padding-top, 33px) 
+    .menu-list
+      +rem(margin-top, 16px) 
+      +rem(font-size, 13px)
+      +rem(max-height, 250px)  
+      overflow-y: auto
+      +rh(800)
+        +rem(max-height, 155px)  
+    .menu-item
+      a 
+        +rem(padding,10px 0 6px)
+        color: $text
+  &.footer
+    width: 100%
+    position: absolute
+    +rem(height,100px)
+    bottom: 0
+    left: 0
+//objects
+.o-menu-search
+  .search__wrapper
+    +rem(height,38px)
+    +rem(border-radius, 19px)
+    border: 1px solid $formbor
+    .search__input
+      +rem(border-radius, 17.25px)
+      display: inline-block
+      width: 100%
+      height: 100%
+      +rem(padding-left,15px)
+      +rem(padding-right,35px)
+      background: $formbg
+.menu-dropdown
+    &-wrapper
+      position: fixed
+      height: 100% 
+      +rem(left,275px)
+      background: $white
+      width: 0    
+      +tr(width .35s $tr)
+      +rem(top,84px)
+      will-change: width
+      z-index: 10
+      box-shadow: 19px 5.464px 38px 0 rgba(0,0,0,.1);
+      overflow: hidden
+      &.is-shown
+          +rem(width,310px)
+          // height: 100%
+    &-cont
+        height: 100%
+        +rem(padding,0px 14px 0 32px)
+        // width: 100% 
+        background: $white
+        overflow: hidden
+        position: absolute  
+        top: 0
+        left: 0
+        z-index: 1
+        opacity: 0
+        transition-duration: .25s
+        // transition-delay: .4s
+        &.is-current
+            z-index: 2
+            opacity: 1
+            transition-delay: .15s
+            // transition-timing-function: $tr
+            // .menu-dropdown-list
+            //     // transform: translateX(0)
+            //     opacity: 1  
+            //     // transition-duration: .4s
+            //     // transition-delay: .4s
+    &-list
+      +rem(width,264px)
+      // opacity: 0
+      // transition: opacity .3s
+      // transform: translateX(-20px)
+      // transition-delay: .3s
+    &-inner
+        height: 100% 
+        position: relative
+          
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    
 
     
 

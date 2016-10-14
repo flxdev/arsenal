@@ -272,6 +272,9 @@
 =fs($sizeValue: 16)
 	font-size: $sizeValue + px
 	font-size: $sizeValue / 10 + rem
+=padlr($val)
+	+rem(padding-left,$val)
+	+rem(padding-right,$val)
 
 =rem($property, $values)
 	$base-font-size: 16px
