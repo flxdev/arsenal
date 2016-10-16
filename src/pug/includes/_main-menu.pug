@@ -34,9 +34,9 @@ nav.page__menu--inner
 			+MenuAdd("Оплата и доставка")
 			+MenuAdd('База знаний')
 			+MenuAdd('Контактная информация')
-	.c-menu-block.footer
-		p.gray 2016 OOO АрсеналМеталл
-		a(href="mailto:#").mailto info@arsenalmetall.by
+	a(href="mailto:#").c-menu-block.footer.u-graytext
+		p 2016 © ООО АрсеналМеталл
+		p.mailto info@arsenalmetall.by
 .menu-dropdown-wrapper
 	.menu-dropdown-inner
 		.menu-dropdown-cont(data-elem='1')
@@ -44,10 +44,11 @@ nav.page__menu--inner
 				mixin DrpoMenu(value)
 					li.menu-dropdown-item
 						a(href="#") #{value}
-				+DrpoMenu("Профильная труба")
-				+DrpoMenu("Лист оцинкованный")
-				+DrpoMenu('Лист оцинкованный окрашенный')
-				+DrpoMenu('Уголок')
+				+DrpoMenu("Металлочерепица")
+				+DrpoMenu("Доборные элементы кровли")
+				+DrpoMenu('Профнастил')
+				+DrpoMenu('Саморезы кровельные')
+				+DrpoMenu('Зонты для дымоходов')
 		.menu-dropdown-cont(data-elem='2')
 			ul.menu-dropdown-list
 				mixin DrpoMenu(value)
@@ -93,6 +94,8 @@ nav.page__menu--inner
 				+DrpoMenu("Лист оцинкованнffый труб5а")
 				+DrpoMenu('Лист оцинкованный окрашенный труба5')
 				+DrpoMenu('Уголок труб2а45')
+		.c-menu-block.footer
+			a(href="#") Калькулятор кровли
 
 
 

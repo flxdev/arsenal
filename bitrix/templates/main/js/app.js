@@ -43,9 +43,12 @@ $(document).ready(function() {
 	});
 	mainCont.add(targetWrap).on('mouseleave',function(){
 		console.log($('.menu-dropdown-wrapper:hover').length)
-		if ($('.menu-dropdown-wrapper:hover').length != 1) {
-		    targetWrap.removeClass(shown);
-		}
+		setTimeout(function(){
+					if ($('.menu-dropdown-wrapper:hover').length != 1 && !$('.c-menu-block.main:hover').length != 0 ) {
+			    targetWrap.removeClass(shown);
+			}
+		},1)
+
 		
 	})
 	
