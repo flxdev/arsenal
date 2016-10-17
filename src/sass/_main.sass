@@ -1,21 +1,20 @@
 // Normally mainpage styles
 $white: #fff
 $main: #0432da
+$maind: #0e2a91
 $graybg : #f4f4f4
 $text: rgb( 46, 46, 46 )
 $graytext: #898d9a
 $black: #000
-
 $formbor: #d9d8dd
 $formbg: #f6f6f6
 $mhover: #052a45
 $tr: cubic-bezier(.8,.23,.29,1.06)
 $shadow-left : 2px 3.464px 38px 0px rgba( 0, 0, 0, .17 );
+$dotted: 1px dotted $black
 a
   text-decoration: none
   color: $main
-  /* style */
-  /* style */
 ul
   li>a 
     display: inline-block
@@ -28,6 +27,8 @@ html
     font-size: 13px
   +r(991)
     font-size: 16px
+  +r(769)
+    font-size: 14px
 body
   background-color: #47484b
   +box
@@ -69,8 +70,10 @@ body, .out
     top: 0
     left: 0
     display: block
-    background: red
     +clr
+    background: $white
+    +r(544)
+      +padlr(20px)
   &__wrapper-inner
     +rem(padding-top, 84px)
   &__menu
@@ -104,7 +107,11 @@ body, .out
   +rem(font-size, 11px) 
   color: $graytext
   line-height: 1.8;
-    
+.t-blue
+  background-color: $main
+  color: $white
+  a 
+    color: $white   
 .mailto
   color: $main
 //component
@@ -135,8 +142,6 @@ body, .out
       &:hover, &.active
           background: $mhover
         
-  &.t-blue
-    background-color: $main
   &.add
     +rem(padding-top, 33px) 
     .menu-list
@@ -171,6 +176,8 @@ body, .out
       +rem(padding-left,15px)
       +rem(padding-right,35px)
       background: $formbg
+// .btn-cart,.btn-account
+//   +clr
 .menu-dropdown
     &-wrapper
       border-top: 2px solid $graybg
@@ -215,12 +222,269 @@ body, .out
       font-weight: 600
       a 
         +rem(padding, 12px 0 11.5px)  
-
-
     //needs to position containers
     &-inner
         height: 100% 
         position: relative
+.header_logo
+  &_wrap,&-inner
+    +rem(width,250px)
+    display: inline-block
+    +r(544)
+      +rem(width,160px)
+      +rem(margin-left,-5px)
+  &_wrap
+    +rem(padding-top,26px)
+    +rem(padding-bottom,26px)
+    font-size: 0
+    float: left
+    +r(544)
+      +rem(padding-top,30px)
+  &-img,&-text
+    vertical-align: top
+  &-img
+    display: inline-block
+    +rem(width,75px)
+    +rem(height,30px)
+    +rem(margin-left,-6px)
+    +rem(margin-top,1px)
+  &-text
+    display: inline-block
+    +rem(font-size,18px)
+    +rem(height,24px)
+    line-height: .9
+    text-transform: uppercase
+    color: $black
+.header_content
+  display: block
+  overflow: hidden
+  +rem(padding,25px 0 20px)
+.pricetel-wrap
+  display: inline-block
+  +rem(padding-left,55px)
+  +r(991)
+    display: none
+.price-btn
+  display: inline-block
+.telephone-block
+  display: inline-block
+  +rem(padding-left,64px)
+  vertical-align: top
+  &.centered
+    +rem(margin-top,-5px)
+  .telephone-main
+    +rem(font-size,18px)
+    +rem(letter-spacing,0.3px)
+    display: inline-block
+    color: $maind
+    line-height: 1.35
+    font-weight: 600
+    border-bottom: $dotted
+.cart_wrap
+  float: right
+  display: table
+  &-cart,&-account
+    display: table-cell
+  &-cart
+    border: 2px solid $main
+    +rem(border-radius,3px)
+    +rem(height,40px)
+    +rem(margin-top,-1px)
+    +nosel
+    +r(991)
+      border-color: transparent
+      +rem(padding-right,30px)
+      .btn-cart
+        position: relative 
+    .cart-counter
+      display: inline-block
+      vertical-align: top
+      border-left: 1px solid $main
+      height: 100%
+      +rem(line-height,34px)
+      text-align: center
+      +r(991)
+        border-left-color: transparent
+        background: $main
+        line-height: 1
+        position: absolute
+        +rem(right,-8px)
+        +rem(top,-12px)
+        +rem(padding,0 4px 0 3px)
+      .count
+        display: inline-block
+        vertical-align: middle
+        color: $text
+        +rem(font-size,12px)
+        +rem(width,30px)
+        +r(991)
+          color: $white
+          width: auto
+          +rem(line-height,20px)
+          +rem(border-radius,3px)
+    .cart-text
+      display: inline-block
+      +rem(padding,0 25px 0 10px)
+      line-height: 1
+      +r(991)
+        padding: 0
+        .u-graytext,.u-text
+          +hidetext
+      .u-text
+        line-height: 1.55
+      .u-graytext
+        vertical-align: top
+        line-height: .9
+        display: inline-block
+    .cart-icon
+      display: inline-block
+      height: 100%
+      vertical-align: top
+      +rem(width,35px)
+      +rem(line-height,34px)
+      +rem(padding-left,10px)
+      text-align: center
+      +r(991)
+          padding-left: 0
+           +rem(width,45px)
+      svg 
+        display: inline-block
+        vertical-align: middle
+        +rem(width,23px)
+        +r(991)
+          +rem(width,40px)
+      .cart-i
+        fill: $main
+        +r(991)
+          fill: $text
+  &-modaltrigger
+    display: none
+    vertical-align: middle
+    .menu-hamburger
+      display: inline-block
+      +rem(width,32px)
+      +rem(height,28px)
+      background: $white
+      position: relative
+      vertical-align: sub
+      &-line
+        position: absolute
+        width: 100%
+        display: inline-block
+        height: 4px
+        background: $text
+        left: 0
+        &:first-child
+          top: 0
+        &:last-child
+          bottom: 0
+        &:nth-child(2)
+          +rem(top,12px)
+          +r(544)
+            +rem(top,11px)
+    +r(991)
+      display: table-cell
+.cart_wrap-account
+  vertical-align: middle
+  .btn-account
+    display: inline-block
+    vertical-align: middle
+    +rem(padding-right,35px)
+    +r(991)
+       +rem(padding-right,26px)
+    .account-icon
+      display: inline-block
+      +rem(width,20px)
+      +rem(margin-top,1px)
+      +r(991)
+        +rem(width,32px)
+        svg
+          vertical-align: middle
+    .u-text
+      +rem(padding-left,14px)
+      display: inline-block
+      vertical-align: super
+      +r(991)
+        +hidetext
+        padding-left: 0
+.header_mobile
+  &-menu
+    +rem(margin-left,-25px)
+    +rem(margin-right,-25px)
+    +rem(letter-spacing,0.3px)
+    line-height: 1
+    font-weight: 600
+    +nosel
+    display: none
+    +r(991)
+      display: block
+    .mobile-title,.mobile_l1-item
+      +padlr(20px)
+      display: block
+    .mobile-title
+      +rem(padding-top,15px)
+      +rem(padding-bottom,15px) 
+      +rem(font-size,24px) 
+      &.active
+        &+.mobile_l1
+          max-height: 500px
+          +rem(padding-bottom,25px)
+    .mobile_l1
+      max-height: 0
+      overflow-x: hidden
+      overflow-y: auto
+      transition: max-height .3s, padding .3s
+    .mobile_l1-item
+      +rem(font-size,20px)
+      +tr(background 0.3s)
+      &> a
+        +rem(padding-top,15px)
+        +rem(padding-bottom,15px)
+      &.active
+        background: $maind
+        .mobile_l2
+          max-height: 500px
+          +rem(padding-bottom,25px)
+    .mobile_l2
+      max-height: 0
+      overflow: hidden
+      transition-property: max-height,padding 
+      transition-duration: .3s,.3s
+      +padlr(30px)
+    .mobile_l2-item
+      +rem(font-size,18px)
+      &>a
+        +rem(padding-top,10px)
+        +rem(padding-bottom,10px)
+    .calc
+      font-weight: 400
+      +rem(font-size,17px)
+      +rem(margin-top,25px)
+      display: inline-block
+      
+    // .mobile-title,.mobile_l1-item> a,.mobile_l2-item>a 
+    //   // +rem(padding-top,30px)
+    //   // +rem(padding-bottom,30px)
+.mobile_l1-item .mobile_l2 .mobile_l2-item:last-of-type
+  +rem(padding-bottom,20px)
+  border-bottom: 1px solid $formbor
+
+
+
+      
+
+      
+
+
+      
+    
+      
+
+
+
+
+  
+    
           
 
 

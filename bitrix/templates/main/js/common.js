@@ -19,7 +19,7 @@ $(document).ready(function() {
 			})
 	});
 	mainCont.add(targetWrap).on('mouseleave',function(){
-		console.log($('.menu-dropdown-wrapper:hover').length)
+		// console.log($('.menu-dropdown-wrapper:hover').length)
 		setTimeout(function(){
 					if ($('.menu-dropdown-wrapper:hover').length != 1 && !$('.c-menu-block.main:hover').length != 0 ) {
 			    targetWrap.removeClass(shown);
@@ -31,5 +31,17 @@ $(document).ready(function() {
 	
 };
 DesktopMenu()
+function MobileMenu(){
+	
+	var maintogle = $('.js-menu-toggle'),
+		subtogle = $('.js-sub-toggle');
 
+		subtogle.on('click',function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+		maintogle.on('click',function(){
+			$(this).toggleClass('active')
+		})
+};
+MobileMenu()
 });
