@@ -13,14 +13,37 @@
 				span.u-text Скачать прайс-лист
 				br
 				span.u-graytext Обновлён: 09.07.16
-		.telephone-block.centered
+		//тут тоже иконка меняет цвет, тысяча извинений)
+		.telephone-block.centered.dropdown-trigger
 			p.u-graytext Пн–Пт, 9:00–20:00
 			a(href="tel:+375296669172")
 				span.telephone-main +375 29 666-91-72
 				i.dots
+			.dropdown-target
+				.dropdown-inner
+					.dropdown-content
+						.col-50
+							.contact-block
+								span.u-graytext Телефоны
+								a.u-text.lt(href="tel:375296669172") +375 29 666-91-72
+								a.u-text.lt(href="tel:375173804867") +375 17 380-48-67 
+								a.u-text.lt(href="tel:375175125004") +375 17 512-50-04
+								a.u-text.lt(href="tel:375171117524") +375 17 111-75-24
+							.contact-block
+								span.u-graytext Viber / Telegram
+								a.u-text.lt(href="tel:375175125004") +375 17 512-50-04  
+						.col-50
+							.contact-block
+								span.u-graytext E-mail
+								a.mailto(href="mailto:arsenalmetall@mail.ru") arsenalmetall@mail.ru
+							.contact-block
+								span.u-graytext Skype
+								a.mailto(href="skype:arsenalmetall?chat") arsenalmetall
+							button.btn.t-blue.btn-standart Обратный звонок
 
 	.cart_wrap
-		.cart_wrap-account
+		//Когда человек вошел, вешаем .dropdown-trigger. Свг меняет цвет, так что сорян, если в корзине тоже свг будет инлайново, напомни мне, поменяю
+		.cart_wrap-account.dropdown-trigger
 			a(href="#").btn-account
 				i.account-icon
 					svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 20.1 20', style='enable-background:new 0 0 20.1 20;', xml:space='preserve')
@@ -34,8 +57,23 @@
 						c-0.2-0.1-0.3-0.4-0.4-0.6c0-0.3,0-0.5,0.2-0.7C6.9,9.7,7,9.7,7,9.6V7.7c0-1.8,1.1-2.9,3.1-2.9c2.1,0,3.1,1,3.1,2.9v1.9\
 						c0,0.1,0,0.2,0.1,0.3c0.2,0.2,0.2,0.5,0.2,0.7c0,0.3-0.2,0.5-0.4,0.6c-0.1,0.1-0.1,0.1-0.2,0.2c-0.2,0.9-0.6,1.6-1.2,2.1\
 						c-0.1,0.1-0.1,0.2-0.1,0.3v0.8c0,0,0,0.1,0,0.1c0.1,0.3,0.3,0.9,3.9,2.5c-1.5,1.2-3.5,1.9-5.6,1.9C8,19.2,6.1,18.5,4.5,17.3z')
-				span.u-text Кабинет
-		.cart_wrap-cart
+				span.u-text Константин
+			.dropdown-target
+				.dropdown-inner
+					.dropdown-content
+						ul.dropdown-list
+							li.dropdown-list-item
+								a(href="#").u-text.lt История заказов
+							li.dropdown-list-item
+								a(href="#").u-text.lt Контактная информация
+							li.dropdown-list-item
+								a(href="#").u-text.lt Персональная скидка
+							li.dropdown-list-item
+								a(href="#").u-text.lt Подписка
+							li.dropdown-list-item
+								a(href="#").u-text.lt Выйти
+
+		.cart_wrap-cart.js-hover
 			a(href="#").btn-cart
 				i.cart-icon
 					svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 23.3 18.1', style='enable-background:new 0 0 23.3 18.1;', xml:space='preserve')
@@ -57,6 +95,16 @@
 				span.cart-counter
 					span.count
 						| 0
+			.dropdown-target
+				.dropdown-inner
+					.dropdown-content
+						p.u-text.lt Ваша корзина пока что пуста. Начните покупки прямо сейчас.
+						a(href="#").btn.t-blue.btn-standart Начать покупки
+			//- .dropdown-target
+			//- 	.dropdown-inner
+			//- 		.dropdown-content.not-empty
+			//- 			cart
+
 		.cart_wrap-modaltrigger
 			button.menu-hamburger
 				span.menu-hamburger-line

@@ -15,6 +15,7 @@ $dotted: 1px dotted $black
 a
   text-decoration: none
   color: $main
+  transition: color .3s
 ul
   li>a 
     display: inline-block
@@ -22,13 +23,17 @@ ul
 html
   font-size: 16px
   +r(1366)
-    font-size: 14px
+    font-size: 15px
   +r(1280)
-    font-size: 13px
+    font-size: 14px
   +r(991)
     font-size: 16px
   +r(769)
+    font-size: 15px
+  +r(544)
     font-size: 14px
+  +r(325)
+    font-size: 13px
 body
   background-color: #47484b
   +box
@@ -64,16 +69,28 @@ body, .out
     +rem(height, 85px)
     +rem(max-width, 1450px)
     +rem(min-width, 320px)
-    +padlr(25px)
+    display: table
+    &.is-hidden
+      +r(991)
+        transform: translateY(-5.425rem)
+      .header_content
+        transform: translateY(-100%)
+        +r(991)
+          transform: translateY(0)
+    +rem(padding-left,25px)
     width: 100%
     position: fixed
     top: 0
     left: 0
     display: block
+    transition: transform .25s
+    transition-duration: $tr
+    will-change: transform 
     +clr
-    background: $white
+    +r(991)
+      background: $white
     +r(544)
-      +padlr(20px)
+      +rem(padding-left,20px)
   &__wrapper-inner
     +rem(padding-top, 84px)
   &__menu
@@ -99,6 +116,8 @@ body, .out
   +rem(font-size, 13px) 
   color: $text
   font-weight: 400
+  &.lt 
+   +rem(letter-spacing, 0.4px)  
 .u-title
   +rem(font-size, 14px) 
   color: $black
@@ -114,6 +133,10 @@ body, .out
     color: $white   
 .mailto
   color: $main
+.col-50
+  display: inline-block
+  width: 50%
+  vertical-align: top
 //component
 .menu-list
   list-style: none
@@ -124,7 +147,14 @@ body, .out
       width: 100%
       display: inline-block
       font-weight: 400;
-      
+
+.contact-block  
+  .u-graytext
+    display: block
+    +rem(margin-bottom,20px)
+  a 
+    display: block
+    +rem(font-size,13px)
 .c-menu-block
   +padlr(25px)
   &.main
@@ -140,8 +170,7 @@ body, .out
         color: $white
         font-weight: 600
       &:hover, &.active
-          background: $mhover
-        
+          background: $mhover 
   &.add
     +rem(padding-top, 33px) 
     .menu-list
@@ -176,56 +205,107 @@ body, .out
       +rem(padding-left,15px)
       +rem(padding-right,35px)
       background: $formbg
-// .btn-cart,.btn-account
-//   +clr
+
+.dropdown-trigger
+  position: relative
+  &:hover
+    .dropdown-target
+      // overflow: visible
+      // +rem(padding-top,10px)
+      transition-delay: 0.15s
+      +rem(max-height,1000px)
+      +rem(padding-bottom,5px)
+.dropdown-target.active
+  // overflow: visible
+  transition-delay: 0.15s
+  +rem(max-height,1000px)
+  +rem(padding-bottom,5px)
+.dropdown-target
+  position: absolute
+  overflow: hidden
+  z-index: 2
+  // width: 100%
+  +padlr(5px)
+  +rem(margin-right,-5px)
+  max-height: 0
+  padding-top: 0
+  transition-property: max-height,padding
+  transition-timing-function: $tr
+  transition-duration: .35s
+  will-change: max-height, padding
+  +gpu
+  +clr
+  .dropdown-inner
+    +rem(margin-top,10px)
+    float: right
+    background: $white
+    box-shadow: 2px 3.464px 18px 0px rgba( 0, 0, 0,0.17 );
+.btn-cart,.btn-account
+  position: relative
+.btn
+  +rem(padding-top,10px)
+  +rem(padding-bottom,10px)
+  line-height: 1
+  +rem(border-radius,3px)
+  text-align: center
+  display: inline-block
+  +rem(min-width, 150px)
+  &.btn-standart
+    +padlr(12px)
+    +rem(font-size, 13px)
+
+
+
 .menu-dropdown
-    &-wrapper
-      border-top: 2px solid $graybg
-      position: fixed
-      height: 100% 
-      +rem(left,275px)
+  &-wrapper
+    border-top: 2px solid $graybg
+    position: fixed
+    height: 100% 
+    +rem(left,275px)
+    background: $white
+    width: 0    
+    +tr(width .35s $tr)
+    +rem(top,84px)
+    will-change: width
+    z-index: 10
+    box-shadow: 19px 5.464px 38px 0 rgba(0,0,0,.1);
+    overflow: hidden
+    +rem(padding-bottom,85px)
+    &.is-shown
+        +rem(width,310px)
+  //for each list his own container
+  &-cont
+      height: 100%
+      +rem(padding, 0 65px 0 37px )
       background: $white
-      width: 0    
-      +tr(width .35s $tr)
-      +rem(top,84px)
-      will-change: width
-      z-index: 10
-      box-shadow: 19px 5.464px 38px 0 rgba(0,0,0,.1);
       overflow: hidden
-      +rem(padding-bottom,85px)
-      &.is-shown
-          +rem(width,310px)
-    //for each list his own container
-    &-cont
-        height: 100%
-        +rem(padding, 0 65px 0 37px )
-        background: $white
-        overflow: hidden
-        position: absolute  
-        top: 0
-        left: 0
-        z-index: 1
-        opacity: 0
-        transition-duration: .25s
-        &.is-current
-            z-index: 2
-            opacity: 1
-            transition-delay: .15s
-    &-list
-      +rem(width,208px)
-      +rem(padding-top,30px)
-      +rem(letter-spacing,0.3px)
-    &-item
-      +rem(font-size,14px)
-      color: $main
-      line-height: 1.429;
-      font-weight: 600
-      a 
-        +rem(padding, 12px 0 11.5px)  
-    //needs to position containers
-    &-inner
-        height: 100% 
-        position: relative
+      position: absolute  
+      top: 0
+      left: 0
+      z-index: 1
+      opacity: 0
+      transition-duration: .25s
+      &.is-current
+          z-index: 2
+          opacity: 1
+          transition-delay: .15s
+  &-list
+    +rem(width,208px)
+    +rem(padding-top,30px)
+    +rem(letter-spacing,0.3px)
+  &-item
+    +rem(font-size,14px)
+    color: $main
+    line-height: 1.429;
+    font-weight: 600
+    a 
+      +rem(padding, 12px 0 11.5px)  
+  //needs to position containers
+  &-inner
+      height: 100% 
+      position: relative
+
+
 .header_logo
   &_wrap,&-inner
     +rem(width,250px)
@@ -236,8 +316,10 @@ body, .out
   &_wrap
     +rem(padding-top,26px)
     +rem(padding-bottom,26px)
+    display: table-cell
+    vertical-align: top
     font-size: 0
-    float: left
+    // float: left
     +r(544)
       +rem(padding-top,30px)
   &-img,&-text
@@ -255,10 +337,19 @@ body, .out
     line-height: .9
     text-transform: uppercase
     color: $black
+
+
 .header_content
-  display: block
-  overflow: hidden
-  +rem(padding,25px 0 20px)
+  display: table-cell
+  vertical-align: top
+  width: 100%
+  +rem(padding,25px 25px 20px)
+  background: $white
+  transition: transform .25s
+  transition-duration: $tr
+  will-change: transform
+  +r(544)
+    +rem(padding,25px 20px 20px)
 .pricetel-wrap
   display: inline-block
   +rem(padding-left,55px)
@@ -276,31 +367,59 @@ body, .out
     +rem(font-size,18px)
     +rem(letter-spacing,0.3px)
     display: inline-block
-    color: $maind
+    color: $text
     line-height: 1.35
     font-weight: 600
     border-bottom: $dotted
+  .dropdown
+    &-target
+       +rem(margin-left,-25px)
+    &-inner
+      +rem(padding, 15px 27px 0)
+    &-content
+      +rem(width,310px)
+      font-size: 0
+   
 .cart_wrap
   float: right
   display: table
   &-cart,&-account
     display: table-cell
+    position: relative
   &-cart
     border: 2px solid $main
+    transition: border-color .3s
     +rem(border-radius,3px)
     +rem(height,40px)
     +rem(margin-top,-1px)
     +nosel
+    &.active
+      border-color: $maind
+      .cart-counter
+        border-left-color: $maind
     +r(991)
-      border-color: transparent
+      border: none
       +rem(padding-right,30px)
       .btn-cart
-        position: relative 
+        position: relative
+
+    .dropdown-target
+      right: 0
+      .dropdown-inner
+        +rem(width,320px)
+        &.not-empty
+          +rem(width,350px)
+        .dropdown-content
+          +rem(padding,26px)
+          .u-text
+            +rem(padding-bottom,20px)
+
     .cart-counter
       display: inline-block
       vertical-align: top
       border-left: 1px solid $main
       height: 100%
+      transition: border-color .3s
       +rem(line-height,34px)
       text-align: center
       +r(991)
@@ -386,6 +505,14 @@ body, .out
       display: table-cell
 .cart_wrap-account
   vertical-align: middle
+  &.dropdown-trigger
+    .account-i
+      fill: $maind
+    a >.u-text
+      color: $maind
+      font-weight: 600
+    .btn-account
+      +rem(padding-right,26px)
   .btn-account
     display: inline-block
     vertical-align: middle
@@ -407,6 +534,26 @@ body, .out
       +r(991)
         +hidetext
         padding-left: 0
+  .dropdown
+    &-target
+      +rem(margin-left,-30px)
+    &-content
+      +rem(width,152px)
+      float:left
+    &-list
+      +padlr(19px)
+      +rem(padding-bottom,10px)
+      +rem(margin-top,5px)
+      &-item
+        &:hover
+          a 
+            color: $maind
+        a 
+          +rem(padding,12px 0 6px)
+
+
+
+
 .header_mobile
   &-menu
     +rem(margin-left,-25px)
@@ -461,10 +608,7 @@ body, .out
       +rem(font-size,17px)
       +rem(margin-top,25px)
       display: inline-block
-      
-    // .mobile-title,.mobile_l1-item> a,.mobile_l2-item>a 
-    //   // +rem(padding-top,30px)
-    //   // +rem(padding-bottom,30px)
+
 .mobile_l1-item .mobile_l2 .mobile_l2-item:last-of-type
   +rem(padding-bottom,20px)
   border-bottom: 1px solid $formbor
