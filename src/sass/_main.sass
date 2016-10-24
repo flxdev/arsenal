@@ -1,21 +1,10 @@
-// Normally mainpage styles
-$white: #fff
-$main: #0432da
-$maind: #0e2a91
-$graybg : #f4f4f4
-$text: rgb( 46, 46, 46 )
-$graytext: #898d9a
-$black: #000
-$formbor: #d9d8dd
-$formbg: #f6f6f6
-$mhover: #052a45
-$tr: cubic-bezier(.8,.23,.29,1.06)
-$shadow-left : 2px 3.464px 38px 0px rgba( 0, 0, 0, .17 );
-$dotted: 1px dotted $black
+
 a
   text-decoration: none
   color: $main
   transition: color .3s
+  &:hover
+    color: $maind
 ul
   li>a 
     display: inline-block
@@ -32,8 +21,7 @@ html
     font-size: 15px
   +r(544)
     font-size: 14px
-  +r(325)
-    font-size: 13px
+
 body
   background-color: #47484b
   +box
@@ -137,6 +125,7 @@ body, .out
   display: inline-block
   width: 50%
   vertical-align: top
+  +clr
 //component
 .menu-list
   list-style: none
@@ -151,10 +140,25 @@ body, .out
 .contact-block  
   .u-graytext
     display: block
-    +rem(margin-bottom,20px)
+    +rem(margin-bottom,16px)
   a 
     display: block
     +rem(font-size,13px)
+    +rem(margin-bottom,13px)
+    &:last-child
+      +rem(margin-bottom,20px)
+  &+ .btn
+    display: inline-block
+    float: left
+    transform: scale(0.85)
+    transform-origin: 50% 180%
+    +rem(letter-spacing, 0.8px)
+    +rem(margin-left,-11px)
+    font-weight: 300
+
+
+
+
 .c-menu-block
   +padlr(25px)
   &.main
@@ -184,7 +188,10 @@ body, .out
       a 
         +rem(padding,10px 0 6px)
         color: $text
-  &.footer
+      &:hover
+        a
+          color: $maind
+  &.menu-footer
     +rem(width, 320px) 
     position: absolute
     +rem(height,80px)
@@ -197,6 +204,12 @@ body, .out
     +rem(height,38px)
     +rem(border-radius, 19px)
     border: 1px solid $formbor
+    position: relative
+    transition: border-color .15s
+    &:hover
+      border-color: $maind
+    &.in-focus
+      border-color: $mhover
     .search__input
       +rem(border-radius, 17.25px)
       display: inline-block
@@ -204,8 +217,36 @@ body, .out
       height: 100%
       +rem(padding-left,15px)
       +rem(padding-right,35px)
+      display: inline-block
       background: $formbg
-
+      +placeholder 
+        +rem(letter-spacing,0.4px)
+    .search__btn
+      display: inline-block
+      position: absolute
+      +rem(height,38px)
+      +rem(width,45px)
+      background: 0 0
+      top: 0
+      right: 0
+      .search-icon
+        display: inline-block
+        height: 100%
+        width: 100%
+        +vertical
+        .search-i
+          transition: fill .3s $tr
+        svg
+          display: inline-block
+          +rem(height,17px)
+          +rem(width,17px)
+          vertical-align: middle
+      &:hover
+        .search-i
+          fill: $mainh
+      &:hover
+        .search-i
+          fill: $mainc
 .dropdown-trigger
   position: relative
   &:hover
@@ -214,7 +255,7 @@ body, .out
       // +rem(padding-top,10px)
       transition-delay: 0.15s
       +rem(max-height,1000px)
-      +rem(padding-bottom,5px)
+      +rem(padding-bottom,7px)
 .dropdown-target.active
   // overflow: visible
   transition-delay: 0.15s
@@ -237,9 +278,10 @@ body, .out
   +clr
   .dropdown-inner
     +rem(margin-top,10px)
+    +rem(margin-bottom,2px)
     float: right
     background: $white
-    box-shadow: 2px 3.464px 18px 0px rgba( 0, 0, 0,0.17 );
+    box-shadow: 2px 3.464px 20px 0px rgba( 0, 0, 0,0.17 );
 .btn-cart,.btn-account
   position: relative
 .btn
@@ -250,10 +292,29 @@ body, .out
   text-align: center
   display: inline-block
   +rem(min-width, 150px)
+  transition: background .2s $tr
   &.btn-standart
     +padlr(12px)
     +rem(font-size, 13px)
-
+  &.btn-small
+    +rem(font-size, 11px)
+    +rem(padding-top,8px)
+    +rem(padding-bottom,8px)
+  &.t-blue,&.t-trans
+    &:hover
+      background: $maind
+      color: $white
+    &:active
+      background: $mhover
+      color: $white
+  &.t-trans
+    color: $btn-t
+    border: 1px solid #000
+    background: $white
+    &:hover
+      border-color: $maind
+    &:active
+      border-color: $mhover
 
 
 .menu-dropdown
@@ -304,8 +365,8 @@ body, .out
   &-inner
       height: 100% 
       position: relative
-
-
+      .c-menu-block.menu-footer
+         +rem(padding-left, 37px) 
 .header_logo
   &_wrap,&-inner
     +rem(width,250px)
@@ -321,23 +382,26 @@ body, .out
     font-size: 0
     // float: left
     +r(544)
-      +rem(padding-top,30px)
+      +rem(padding-top,25px)
   &-img,&-text
     vertical-align: top
   &-img
     display: inline-block
     +rem(width,75px)
-    +rem(height,30px)
-    +rem(margin-left,-6px)
+    +rem(height,31px)
+    +rem(margin-left,-7px)
     +rem(margin-top,1px)
   &-text
     display: inline-block
-    +rem(font-size,18px)
-    +rem(height,24px)
-    line-height: .9
+    +rem(font-size,15px)
+    +rem(height,26px)
+    +rem(margin-bottom,3px)
+    +rem(margin-left,4px)
+    line-height: 1.1
     text-transform: uppercase
     color: $black
-
+    font-family: intro
+    vertical-align: bottom
 
 .header_content
   display: table-cell
@@ -349,36 +413,86 @@ body, .out
   transition-duration: $tr
   will-change: transform
   +r(544)
-    +rem(padding,25px 20px 20px)
+    +rem(padding,25px 20px 20px 0)
 .pricetel-wrap
   display: inline-block
-  +rem(padding-left,55px)
+  +rem(padding-left,32px)
   +r(991)
     display: none
 .price-btn
   display: inline-block
+  &:hover
+    .price-icon
+      .st1,.st2
+        transform: translateY(1px)
+  .price-icon
+    display: inline-block
+    float: left
+    +rem(width,30px)
+    height: 100%
+    +rem(margin-right,10px)
+    +rem(margin-top,6px)
+    .st1,.st2
+      transform: translateY(-1px)
+      transition: transform .3s
+  .price-text
+    display: inline-block
+    float: right
+    +rem(letter-spacing, 0.3px)
 .telephone-block
   display: inline-block
-  +rem(padding-left,64px)
+  +rem(padding-left,62px)
   vertical-align: top
   &.centered
     +rem(margin-top,-5px)
+  &:hover
+    .telephone-main
+      color: $maind
+      border-image: 0
+      border-color: transparent
+      &:before
+        opacity: 0
+      &:after
+        opacity: 1
   .telephone-main
     +rem(font-size,18px)
-    +rem(letter-spacing,0.3px)
+    +rem(letter-spacing,0.4px)
     display: inline-block
     color: $text
     line-height: 1.35
     font-weight: 600
-    border-bottom: $dotted
+    border-bottom: solid
+    border-width: 1px;
+    border-image: url(../img/bdot.svg) 0 0 100 repeat stretch;
+    transition: color .3s
+    position: relative
+    &:before,&:after
+      position: absolute
+      content: ''
+      +rem(width,18px)
+      +rem(height,18px)
+      +rem(right,-28px)
+      top: 50%
+      transform: translateY(-45%)
+      background-position: center !important
+      background-repeat: no-repeat !important
+      tansition: opacity .3s !important
+    &:before
+      background: url(../img/crop.svg)
+      opacity: 1
+    &:after
+      background: url(../img/croph.svg)
+      opacity: 0
+  //dropdown
   .dropdown
     &-target
        +rem(margin-left,-25px)
     &-inner
-      +rem(padding, 15px 27px 0)
+      +rem(padding, 23px 25px 12px)
     &-content
       +rem(width,310px)
       font-size: 0
+
    
 .cart_wrap
   float: right
@@ -402,7 +516,7 @@ body, .out
       +rem(padding-right,30px)
       .btn-cart
         position: relative
-
+    //dropdown
     .dropdown-target
       right: 0
       .dropdown-inner
@@ -506,27 +620,50 @@ body, .out
 .cart_wrap-account
   vertical-align: middle
   &.dropdown-trigger
-    .account-i
-      fill: $maind
+    .btn-account
+      .account-icon:before
+        opacity: 0
+      .account-icon:after
+        opacity: 1
     a >.u-text
       color: $maind
       font-weight: 600
     .btn-account
-      +rem(padding-right,26px)
+      +rem(padding-right,20px)
   .btn-account
     display: inline-block
     vertical-align: middle
     +rem(padding-right,35px)
     +r(991)
-       +rem(padding-right,26px)
+       +rem(padding-right,20px)
     .account-icon
       display: inline-block
-      +rem(width,20px)
+      +rem(width,18px)
+      +rem(height,18px)
       +rem(margin-top,1px)
+      position: relative
+      &:before,&:after
+        position: absolute
+        content: ''
+        +rem(width,18px)
+        +rem(height,18px)
+        left: 0
+        top: 0
+        background-position: center !important
+        background-repeat: no-repeat !important
+      &:before
+        background: url(../img/personal_account.svg)
+        opacity: 1
+      &:after
+        background: url(../img/personal_accounth.svg)
+        opacity: 0
       +r(991)
         +rem(width,32px)
-        svg
-          vertical-align: middle
+        +rem(height,32px)
+        &:before,&:after
+          +rem(width,32px)
+          +rem(height,32px)
+
     .u-text
       +rem(padding-left,14px)
       display: inline-block
@@ -551,9 +688,6 @@ body, .out
         a 
           +rem(padding,12px 0 6px)
 
-
-
-
 .header_mobile
   &-menu
     +rem(margin-left,-25px)
@@ -574,8 +708,10 @@ body, .out
       +rem(font-size,24px) 
       &.active
         &+.mobile_l1
-          max-height: 500px
           +rem(padding-bottom,25px)
+          +rem(max-height,500px)
+          +r(480)
+            +rem(max-height,470px)
     .mobile_l1
       max-height: 0
       overflow-x: hidden
@@ -603,25 +739,276 @@ body, .out
       &>a
         +rem(padding-top,10px)
         +rem(padding-bottom,10px)
-    .calc
-      font-weight: 400
+    .calc 
       +rem(font-size,17px)
       +rem(margin-top,25px)
-      display: inline-block
+
+.calc
+  font-weight: 400
+  +rem(padding-left,25px)
+  display: inline-block
+  background-position: center left
+  background-repeat: no-repeat
+  &.t-w
+    background-image: url(../img/calculatorw.svg) 
+  &.t-b
+    background-image: url(../img/calculator.svg)
 
 .mobile_l1-item .mobile_l2 .mobile_l2-item:last-of-type
   +rem(padding-bottom,20px)
   border-bottom: 1px solid $formbor
 
+.header_mobile
+  &-contacts
+    position: fixed
+    width: 100%
+    height: 100vh
+    +clr
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background: $white
+    opacity: 0
+    overflow: hidden
+    visibility: hidden
+    transform: translateY(-100%)
+    transition: opacity .15s, visibility .2s, transform 0.25s
+    &.is-visible
+      +r(991)
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
+  &-head
+    +rem(padding,10px 25px)
+    i 
+      display: inline-block
+      float: right
+      +rem(width,25px)
+      +rem(margin-top,8px)
+      +rem(height,25px)
+      cursor: pointer
+      position: relative
+      .line 
+        +rem(height,4px)
+        +rem(width,25px)
+        position: absolute
+        top: 50%
+        transform-origin: 50%
+        background: #000
+        &:first-of-type
+          transform: translateY(-50%) rotate(45deg)
+        &:last-of-type
+          transform: translateY(-50%) rotate(-45deg)
+  &-body
+    max-height: 100%
+    text-align: center
+    overflow-y: auto;
+    .search__wrapper
+      +rem(max-width,500px)
+      margin: 0 auto;
+    .c-menu-block.add
+      overflow-y: auto
+      +rem(padding-top,15px)
+      +rem(padding-bottom,25px)
+      +rem(max-height,800px)
+      +r(480)
+        +rem(max-height,570px)
+      +r(380)
+        +rem(max-height,500px)
+      +r(321)
+        +rem(max-height,450px)
+      .menu-list
+        overflow-y: visible
+        max-height: 1000px
+        +rem(margin-bottom,20px)
+      .menu-item
+        +rem(font-size,19px)
+        a
+          font-weight: 600
+      .btn
+        +rem(font-size,17px)
+        +rem(width,190px)
+        +rem(height,40px)
+        &+.contact-block
+          +rem(margin-top,20px)
+      .contact-block
+        .u-graytext
+          +rem(font-size,15px)
+        a
+          +rem(font-size,17px)
+.footer
+  +rem(padding,46px 54px 47px)
+  border-top: 1px solid $border
+  +r(1026)
+    +rem(padding,46px 35px 47px)
+  +r(544)
+    +rem(padding,36px 12px 120px)
+.footer_contacts
+  &-wrap
+    font-size: 0
+    +clr
+  &-block
+    display: inline-block
+    vertical-align: top
+    +rem(padding-right,15px)
+    +r(870)
+      min-width: 50%
+    +r(544)
+      +rem(padding-right,5px)
+    &:first-of-type
+      width: 30.5%
+      +r(870)
+        width: 25%
+    &:nth-of-type(2)
+      width: 22.5%
+    &:nth-of-type(3)
+      width: 25%
+      & >.contact-block
+        .u-text:not(:first-child)
+          +rem(margin-top,12px)
+    .contact-block
+      .mailto
+        +rem(letter-spacing,0.3px)
+      &:not(:first-of-type)
+        +rem(margin-top,18px)
 
+.social-wrap
+  .soc-item
+    +rem(width,23px)
+    +rem(height,23px)
+    display: inline-block
+    +rem(margin-right,23px)
+    +rem(margin-top,5px)
+  &+.btn 
+    +rem(margin-top,32px)
+    +padlr(12px)
+    +rem(letter-spacing,0.8px)
+    min-width: 0
 
-      
-
-      
-
-
-      
-    
+.footer-describe-wrap
+  font-size: 0
+  +rem(margin-top,35px)
+.paynemts-block
+  display: inline-block
+  width: 50%
+  vertical-align: top
+  +r(1250)
+    width: 100%
+    text-align: center
+    +rem(margin-bottom,15px)
+  +r(544)
+    white-space: nowrap
+    overflow-x: scroll
+  .payment-item
+    display: inline-block
+    float: left
+    +r(1250)
+      float: none
+    &:not(:last-child)
+      +rem(margin-right,26px)
+    img
+      +rem(max-width,55px)
+      +rem(height,25px)
+      display: inline-block
+.other-block
+  display: inline-block
+  width: 50%
+  vertical-align: top
+  +r(1250)
+    +rem(margin-top,20px)
+    width: 100%
+    .other-copyright,.other-button,.other-developer
+      display: inline-block
+      width: 33%
+      vertical-align: top
+    .other-button
+      text-align: center
+    .other-developer
+      text-align: right
+      padding-left: 0
+      a 
+        float: right
+  +r(544)
+    position: relative
+    .other-copyright,.other-developer
+      width: 50%
+    .other-button
+      position: absolute
+      width: 100%
+      +rem(bottom,-50px)
+      left: 0
+      right: 0
+  .other-copyright
+    display: none
+  .other-button
+    display: inline-block
+    vertical-align: top
+.btn.totop  
+  display: inline-block
+  +rem(border-radius,3px)  
+  +rem(padding,7px 20px 8px)  
+  background: $white
+  border: 1px solid #e5e5e5
+  min-width: 0
+  transition: color.3s, background .3s
+  +rem(margin-left,25px)  
+  &:hover
+    background: #f2f2f2
+    span 
+      color: $maind
+    .totop-i:before
+      opacity: 0
+    .totop-i:after
+      opacity: 1
+  span
+    color: $main
+    display: inline-block
+    +rem(font-size,12px)
+    +rem(letter-spacing,0.5px)
+    font-weight: 400
+  .totop-i
+    display: inline-block
+    +rem(width,12px)
+    +rem(height,12px)
+    +rem(margin-left,5px)
+    position: relative
+    &:before,&:after
+      position: absolute
+      content: ''
+      +rem(width,12px)
+      +rem(height,12px)
+      left: 0
+      top: 0
+      background-position: bottom !important
+      background-repeat: no-repeat !important
+    &:before
+      background: url(../img/icons/up.svg)
+      opacity: 1
+    &:after
+      background: url(../img/icons/uph.svg)
+      opacity: 0
+.other-developer
+  +rem(font-size,13px)
+  padding-left: 31.5%
+  vertical-align: middle
+  font-weight: 400
+  display: inline-block
+  +rem(margin-top,5px)
+  a 
+    +rem(padding-left,35px)
+    +rem(background-size,23px)
+    position: relative
+    white-space: nowrap
+    &:before
+      position: absolute
+      content: ''
+      display: inline-block
+      background: url(../img/logof.svg) no-repeat left center
+      +rem(height,23px)
+      +rem(width,23px)
+      +rem(top,-2px)
+      left: 0
       
 
 
