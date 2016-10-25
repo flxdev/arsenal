@@ -74,6 +74,7 @@ body, .out
     transition: transform .25s
     transition-duration: $tr
     will-change: transform 
+    z-index: 20
     +clr
     +r(991)
       background: $white
@@ -81,6 +82,8 @@ body, .out
       +rem(padding-left,20px)
   &__wrapper-inner
     +rem(padding-top, 84px)
+    +r(991)
+      +rem(padding-top, 135px)
   &__menu
     position: fixed
     height: 100%
@@ -88,6 +91,7 @@ body, .out
     // +rem(padding-top, 84px) 
     +rem(width, 275px) 
     z-index: 3
+    background: $white
     +r(991)
       display: none
     &--inner
@@ -114,11 +118,49 @@ body, .out
   +rem(font-size, 11px) 
   color: $graytext
   line-height: 1.8;
+  &.tl
+    color: $text
+.u-title-small
+  +rem(font-size,11px)
+  font-weight: 700
+  line-height: 1.6
+  transition: color .3s
+  +rem(letter-spacing, 0.4px) 
+  &.tb 
+    color: #000
+  &.tl
+    color: $text
+.u-intro
+  font-family: intro
+  color: $btn-t
+  line-height: 1.5
+  font-weight: 700
+  +rem(letter-spacing, 0.8px) 
+  &.h1
+    +rem(font-size,20px)
+    text-transform: uppercase
+  &.h2
+    +rem(font-size,16px)
+    text-transform: uppercase
+  &.h3
+    +rem(font-size,14px)
+    text-transform: uppercase
+  &.h4
+    +rem(font-size,14px)
+  &.extrabig
+    text-transform: uppercase
+    +rem(font-size,64px)
+    line-height: 1.1
+    color: $main
+    +rem(letter-spacing, 3px) 
+    +r(544)
+       +rem(font-size,36px)
 .t-blue
   background-color: $main
   color: $white
   a 
     color: $white   
+
 .mailto
   color: $main
 .col-50
@@ -316,6 +358,106 @@ body, .out
     &:active
       border-color: $mhover
 
+//cart-dropdown
+.cart-body
+  &-outer
+    +rem(margin-left,-26px)
+    +rem(margin-right,-26px)
+    +rem(max-height,343px)
+    overflow-y: auto
+  &-total
+    border-top: 1px solid $border
+    border-bottom: 1px solid $border
+    +rem(margin-left,-26px)
+    +rem(margin-right,-26px)
+    +justify
+    +rem(padding,16px 34px 14px 15px)
+    .u-graytext,.u-title-small
+      display: inline-block
+    .u-title-small
+      +rem(font-size,13px)
+  &-btn-wrap
+    text-align: center
+    .btn
+      +rem(margin-top,20px)
+.cart-elem
+  display: inline-block
+  font-size: 0
+  width: 100%
+  +rem(padding,17px 15px 17px 17px)
+  position: relative
+  &:hover
+    .cart-elem-descr > .u-title-small
+      color: $maind
+  &:not(:first-child)
+    border-top: 1px solid $border
+  &-img
+    display: inline-block
+    +rem(height,70px)
+    +rem(width,70px)
+    img
+      display: block
+      max-width: 100%
+      margin: 0 auto
+  &-descr
+    vertical-align: top
+    display: inline-block
+    +rem(padding-left,15px)
+    +rem(margin-top,-4px)
+    width: 86%
+    +rem(max-width,220px)
+    .elem-val
+      display: inline-block
+      +rem(padding-left,4px)
+    &>.u-title-small
+      +rem(padding-bottom,5px)
+
+    .u-graytext
+      +rem(padding-bottom,1px)
+      +rem(letter-spacing,0.4px)
+  &-footer
+    width: 100%
+    +justify
+    +rem(margin-top,5px)
+    .u-title-small,.u-graytext
+      display: inline-block
+      vertical-align: top
+      +rem(letter-spacing,0.4px)
+    .u-title-small
+      display: inline-block
+      +rem(margin-right,-8px)
+  &-del 
+    position: absolute
+    +rem(height,25px)
+    +rem(width,25px)
+    +rem(top,17px)
+    +rem(right,15px)
+    &:hover
+      span:before
+        opacity: 0
+      span:after
+        opacity: 1
+    span
+      display: inline-block
+      position: relative
+      width: 100%
+      height: 100%
+      &:before,&:after
+        position: absolute
+        content: ''
+        +rem(width,10px)
+        +rem(height,10px)
+        right: 0
+        top: 0
+        background-position: center !important
+        background-repeat: no-repeat !important
+      &:before
+        background: url(../img/icons/close_popup.svg)
+        opacity: 1
+      &:after
+        background: url(../img/icons/close_popup_hover.svg)
+        opacity: 0
+    
 
 .menu-dropdown
   &-wrapper
@@ -407,7 +549,7 @@ body, .out
   display: table-cell
   vertical-align: top
   width: 100%
-  +rem(padding,25px 25px 20px)
+  +rem(padding,25px 25px 16px)
   background: $white
   transition: transform .25s
   transition-duration: $tr
@@ -523,6 +665,8 @@ body, .out
         +rem(width,320px)
         &.not-empty
           +rem(width,350px)
+          .dropdown-content
+            +rem(padding-top,10px)
         .dropdown-content
           +rem(padding,26px)
           .u-text
@@ -600,21 +744,11 @@ body, .out
       background: $white
       position: relative
       vertical-align: sub
-      &-line
-        position: absolute
-        width: 100%
+      .hamburger-i
         display: inline-block
-        height: 4px
-        background: $text
-        left: 0
-        &:first-child
-          top: 0
-        &:last-child
-          bottom: 0
-        &:nth-child(2)
-          +rem(top,12px)
-          +r(544)
-            +rem(top,11px)
+        background: url(../img/menu.svg)
+        +rem(width,32px)
+        +rem(height,28px)
     +r(991)
       display: table-cell
 .cart_wrap-account
@@ -699,14 +833,27 @@ body, .out
     display: none
     +r(991)
       display: block
+    .arrow-icon
+      display: inline-block
+      background: url(../img/icons/warrow.svg) no-repeat center
+      transform: rotate(90deg)
     .mobile-title,.mobile_l1-item
       +padlr(20px)
       display: block
     .mobile-title
       +rem(padding-top,15px)
       +rem(padding-bottom,15px) 
-      +rem(font-size,24px) 
+      +rem(font-size,24px)
+      cursor: pointer
+      .arrow-icon
+        display: inline-block
+        float: right
+        +rem(margin-right,37px)
+        +rem(height,25px) 
+        +rem(width,14px)
       &.active
+        .arrow-icon
+          transform: scale(1, -1) rotate(90deg)
         &+.mobile_l1
           +rem(padding-bottom,25px)
           +rem(max-height,500px)
@@ -717,6 +864,12 @@ body, .out
       overflow-x: hidden
       overflow-y: auto
       transition: max-height .3s, padding .3s
+      .arrow-icon
+        display: inline-block
+        +rem(margin-left,15px)
+        +rem(height,19px) 
+        +rem(width,11px)
+        vertical-align: bottom
     .mobile_l1-item
       +rem(font-size,20px)
       +tr(background 0.3s)
@@ -728,6 +881,8 @@ body, .out
         .mobile_l2
           max-height: 500px
           +rem(padding-bottom,25px)
+        .arrow-icon
+          transform: scale(1, -1) rotate(90deg)
     .mobile_l2
       max-height: 0
       overflow: hidden
@@ -1010,10 +1165,118 @@ body, .out
       +rem(top,-2px)
       left: 0
       
+.index-slider
+  &:hover
+    .slick-dots
+      opacity: 1
+  .slick-list
+    height: 27.6rem!important
+  &-elem
+    display: inline-block
+    height: 27.6rem!important
+    background-repeat: no-repeat
+    background-position: center right
+    background-size: auto 100%
+    +rem(line-height, 440px)
+    border: none!important
+    +r(991)
+      +rem(height,380px)
+      +rem(line-height, 380px)
+    +r(1300)
+      background-position: center 
+  &-text
+    +rem(max-width,430px)
+    +rem(margin-left,52px)
+    +rem(margin-bottom,50px)
+    display: inline-block
+    vertical-align: bottom
+    +r(544)
+      +rem(margin-left,20px)
+      +rem(max-width,375px)
+      vertical-align: middle
+    .extrabig
+      +rem(margin-bottom,25px)
+    .h2
+      line-height: 1.8
+.slick-dots
+  display: inline-block
+  +rem(right,20px)
+  +rem(bottom,30px)
+  left: auto
+  opacity: 0
+  transition: opacity .3s
+  +r(544)
+    right: 0
+    left: 0
+    opacity: 1
+  li 
+    +rem(padding,0 5px)
+    border: none
+    button
+      border: none
+      transition: background .3s
+    &:not(.slick-active):hover>button
+      background: $main
+.slick-dots li.slick-active button
+  background: #1785ff
 
+.section-feature
+  position: relative;
+  +padlr(28px)
+  border-bottom: 1px solid $border
+  font-size: 0
+  box-sizing: border-box
+.features__nav
+  position: absolute;
+  top: 42%;
+  @include rem(height, 30px)
+  left: 0
+  right: 0
+  visibility: hidden;
+  z-index: 1;
+  .slick-arrow
+    display: inline-block;
+    @include rem(width, 25px);
+    @include rem(height, 15px);
+    border: none;
+    background: none;
+    outline: 0;
+    cursor: pointer;
+    visibility: visible;
+    transform-origin: 50%;
+  .carousel-next
+    float: right;
+    @include rem(margin-right, 15px);
+    transform: rotate(270deg);
+    +r(544)
+      +rem(margin-right,8px)
+  .carousel-prev
+    float: left;
+    @include rem(margin-left, 15px);
+    transform: rotate(-270deg);
+    +r(544)
+      +rem(margin-left,8px)
+.features_block 
+  display: block
+  +rem(padding,23px 20px 23px 0)
+  border-left: 1px solid $border
+  +r(1112)
+    border-left-color: transparent
+  &:first-child
+    border-left-color: transparent
+  .features--img
+    +rem(width, 35px)
+    +rem(height, 35px)
+    +rem(margin, 0 15px 0 20px)
+    display: inline-block
+    float: left
+  .u-text
+    +r(768)
+      display: block
+      overflow: hidden
+      
 
-
-
+ 
   
     
           

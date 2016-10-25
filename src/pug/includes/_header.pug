@@ -96,16 +96,52 @@
           .dropdown-content
             p.u-text.lt Ваша корзина пока что пуста. Начните покупки прямо сейчас.
             a(href="#").btn.t-blue.btn-standart Начать покупки
-      //- .dropdown-target
-      //-   .dropdown-inner
-      //-     .dropdown-content.not-empty
-      //-       cart
+      .dropdown-target
+        .dropdown-inner.not-empty
+          .dropdown-content
+            .cart-body-outer
+              .cart-body-inner
+                mixin CartElem(img, name, size, price)
+                  a(href="#").cart-elem
+                    .cart-elem-img
+                      img(src=img, alt="")
+                    .cart-elem-descr
+                      .u-title-small.tl #{name}
+                      .u-graytext
+                        span.elem-prop Толщина металла:
+                        span.elem-val 0,5 мм
+                      .u-graytext
+                        span.elem-prop Покрытие:
+                        span.elem-val полиэстр
+                      .u-graytext
+                        span.elem-prop Цвет:
+                        span.elem-val RAL 1014
+                      .cart-elem-footer
+                        .u-graytext.tl #{size}
+                        .u-title-small.tl #{price}
+                    .cart-elem-del
+                      span
+                +CartElem('img/cart/cartl.jpg','Металлочерепица МОНТЕРРЕЙ','107.50р. х 200 м2','21 500.00р.')
+                +CartElem('img/cart/cartl.jpg','Уплотнитель прямоугольный са- моклеющийся','1.60р. х 15 м.п.','24.00р')
+                +CartElem('img/cart/cartl.jpg','Планка конька плоского','9.75р. х 4 шт.','39.00р.')
+            .cart-body-total
+              .u-graytext Итого
+              .u-title-small.tl 21 563.00р.
+            .cart-body-btn-wrap
+              a(href="#").btn.t-blue.btn-small Перейти в корзину
+
+
+
+
+
+
+
+
+
 
     .cart_wrap-modaltrigger
       button.menu-hamburger
-        span.menu-hamburger-line
-        span.menu-hamburger-line
-        span.menu-hamburger-line
+        i.hamburger-i
 
 .header_mobile-menu.t-blue
   span.mobile-title.js-menu-toggle
