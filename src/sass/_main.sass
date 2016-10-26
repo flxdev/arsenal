@@ -120,6 +120,8 @@ body, .out
   line-height: 1.8;
   &.tl
     color: $text
+  &.old
+    text-decoration: line-through
 .u-title-small
   +rem(font-size,11px)
   font-weight: 700
@@ -139,6 +141,7 @@ body, .out
   &.h1
     +rem(font-size,20px)
     text-transform: uppercase
+    +rem(letter-spacing, 1.6px) 
   &.h2
     +rem(font-size,16px)
     text-transform: uppercase
@@ -197,7 +200,6 @@ body, .out
     +rem(letter-spacing, 0.8px)
     +rem(margin-left,-11px)
     font-weight: 300
-
 
 
 
@@ -1226,6 +1228,9 @@ body, .out
   border-bottom: 1px solid $border
   font-size: 0
   box-sizing: border-box
+  +rem(margin-bottom,50px)
+  +r(544)
+    +rem(margin-bottom,20px)
 .features__nav
   position: absolute;
   top: 42%;
@@ -1244,6 +1249,8 @@ body, .out
     cursor: pointer;
     visibility: visible;
     transform-origin: 50%;
+    &.slick-disabled
+      opacity: 0.5
   .carousel-next
     float: right;
     @include rem(margin-right, 15px);
@@ -1258,12 +1265,14 @@ body, .out
       +rem(margin-left,8px)
 .features_block 
   display: block
-  +rem(padding,23px 20px 23px 0)
+  +rem(padding,23px 30px 23px 0)
   border-left: 1px solid $border
   +r(1112)
     border-left-color: transparent
   &:first-child
     border-left-color: transparent
+  +r(480)
+    +rem(padding,23px 10px 23px 0)
   .features--img
     +rem(width, 35px)
     +rem(height, 35px)
@@ -1274,33 +1283,249 @@ body, .out
     +r(768)
       display: block
       overflow: hidden
+
+//разделы каталога
+.categories
+  +rem(padding, 0 20px 0 54px)
+  +rem(margin-bottom, 55px)
+  +r(991)
+    +rem(padding, 0 15px 0 20px)
+  +r(544)
+    +rem(padding, 0 5px 0 10px)
+  &-wrapper
+    +rem(padding, 35px 0 0)
+    font-size: 0
+    +r(544)
+      +rem(padding, 15px 0 0)
+  &-elem
+    +rem(padding, 20px 15px 165px 27px)
+    background: $graybg
+    position: relative
+    display: block
+    transition: background .3s , box-shadow .2s .1s
+    +r(1150)
+      +rem(padding, 15px 15px 145px 15px)
+    +r(544)
+      +rem(padding, 15px 15px 115px 15px)
+    &-outer
+      display: inline-block
+      vertical-align: top
+      width: 25%
+      +rem(padding, 0 5px 5px 0)
+      +r(768)
+        width: 33%
+      +r(544)
+        width: 50%
+      &:hover
+        +rm(991)
+          .categories-elem
+            z-index: 1
+            background: $white
+            box-shadow: 2px 3.464px 38px 0px rgba( 0, 0, 0, 0.17 );
+          .categories-elem-name
+            color: $maind
+    &-img
+      display: block
+      position: absolute
+      +rem(bottom, 10px)
+      left: 0
+      right: 0
+      margin: 0
+    &-img > img
+      +rem(max-width, 205px)
+      display: block
+      margin: 0 auto
+      +rem(max-height, 155px)
+      +r(1150)
+        +padlr(25px)
+        max-width: 100%
+      +r(544)
+        +rem(max-height, 100px)
+    &-name
+      +rem(font-size,14px)
+      +rem(margin-bottom,5px)
+      color: #000
+      transition: color .3s
+      font-weight: 700
+      line-height: 1.43
+      +rem(letter-spacing,0.4px)
+    &-descr
+      +rem(padding-right,55px)
+      +rem(min-height,80px)
+      +rem(margin-bottom,5px)
+      +r(1040)
+        word-break: break-all
+      +r(768)
+        +rem(padding-right,50px)
+      .u-text
+        .price
+          display: inline-block
+          +rem(padding-left,5px)
+//flags elem        
+.flags-wrap
+  position: absolute
+  +rem(right,15px)
+  +rem(top,-5px)
+  +r(1080)
+    +rem(right,9px)
+  .flag-item
+    display: inline-block
+    float: left
+    +rem(width,50px)
+    +rem(height,62px)
+    position: relative
+    +vertical
+    &:not(:first-child)
+      +rem(margin-left,5px)
+    +r(1080)
+      +rem(width,44px)
+      +rem(height,56px)
+      span
+        +rem(font-size,13px)
+        +rem(line-height,58px)
+      &:after
+        +rem(bottom,-10px)
+        +rem(border-width, 10px 44px 10px 0)
+    span
+      +rem(font-size,14px)
+      +rem(line-height,64px)
+      color: $white
+      font-weight: 600
+      display: inline-block
+    &:after
+      content: ''
+      display: inline-block
+      position: absolute
+      +rem(bottom,-10px)
+      right: 0
+      width: 0
+      height: 0
+      border-style: solid 
+      +rem(border-width, 10px 50px 10px 0)
+    &.discount 
+      background: $main
+      &:after
+        border-color: transparent $main transparent transparent
+    &.hit
+      background: $yellow
+      &:after
+        border-color: transparent $yellow transparent transparent
+    &.new
+      background: $green
+      &:after
+        border-color: transparent $green transparent transparent
+
+.brands
+  +rem(padding, 0 20px 0 45px)
+  border-bottom: 1px solid $border
+  +r(991)
+    +rem(padding, 0 30px 0 30px)
+  +r(544)
+    +rem(padding, 0 10px 0 10px)
+  &-inner
+    white-space: nowrap
+  &-outer
+    +rem(margin-bottom, 30px)
+    position: relative
+    .feachres-brand
+      top: 34%
+      .slick-arrow
+        margin: 0
+      .carousel-next
+        +rem(margin-right, -15px);
+        +r(991)
+          +rem(margin-right, -25px);
+        +r(544)
+          +rem(margin-right, -10px);
+      .carousel-prev
+        +rem(margin-left, -20px);
+        +r(991)
+          +rem(margin-left, -25px);
+        +r(544)
+          +rem(margin-left, -10px);
+    // +r(1450)
+    //   overflow-x: scroll
+  &-elem
+    display: inline-block
+    // +rem(max-width, 165px)
+    // +padlr(40px)
+    vertical-align: middle
+    +rem(margin-bottom, 20px)
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+    img
+      +rem(max-height, 40px)
+      display: block
+      max-width: 100%
+      +r(1280)
+        +rem(max-height, 45px)
+
+.b-bottom
+  border-bottom: 1px solid $border   
+.slider-section  
+  +rem(padding, 0 20px 0 52px)
+  +r(991)
+    +rem(padding, 0 30px 0 30px)
+  +r(544)
+    +rem(padding, 0 10px 0 10px)
+  &-inner
+    .slick-list 
+      overflow-x: hidden;
+      overflow-y: visible;
+      +rem(margin-bottom, -80px)
+      +rem(padding-bottom, 80px)
+      +rem(margin-top, -10px)
+      +rem(padding-top, 10px)
+.product-card
+  &-wrapper
+   +rem(padding-right, 5px) 
+   +rem(margin-top, 5px) 
+  &-inner
+    display: block
+    +rem(padding-bottom,60px)
+    +rem(margin-top,5px)
+    .u-text
+      +clr
+      .price
+        display: inline-block
+        +rem(padding-left, 5px) 
+  &-outer
+    position: relative
+    overflow: hidden
+    background: $graybg
+    border-top: 5px solid transparent
+    +rem(height,376px)
+    +rem(padding,15px 15px 20px 16px)
+    &:hover
+      +rem(min-height,456px)
+      overflow: visible
+      .product-card-more 
+        display: block
+  &-img
+    +rem(height,180px) 
+    +rem(margin-bottom,20px) 
+    +vertical  
+    img
+      vertical-align: middle
+      display: inline-block
+      max-width: 100%
+      +rem(max-height,125px) 
+  &-price
+    +rem(font-size,18px)
+    color: $text
+    font-weight: 600
+    position: absolute  
+    +rem(bottom,32px)
+    +rem(left,16px)
+    .u-graytext
+      display: inline-block
+      +rem(padding-left, 7px) 
+  &-more
+    display: none
+    .btn
+        min-width: 0
+        width: 100%  
       
-
- 
-  
-    
-          
-
-
-
-
-        
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
 

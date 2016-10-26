@@ -56,6 +56,7 @@ function MobileAbout(){
 			target.removeClass('is-visible');
 		})
 } MobileAbout();
+
 function FocusInput(){
 	
 	var input = $('.search__input');
@@ -145,4 +146,12 @@ function jshover(){
 		});
 } jshover();
 
+function compareHeight(){
+	$('.categories-elem-outer .categories-elem').matchHeight({
+		 property: 'min-height'
+	});
+	$('.slider-section-inner .product-card-outer').matchHeight({
+		 property: 'min-height'
+	});
+} compareHeight();
 });
