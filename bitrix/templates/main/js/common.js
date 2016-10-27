@@ -150,8 +150,77 @@ function compareHeight(){
 	$('.categories-elem-outer .categories-elem').matchHeight({
 		 property: 'min-height'
 	});
-	$('.slider-section-inner .product-card-outer').matchHeight({
+	$('.slider-section-inner .product-card-inner').matchHeight({
 		 property: 'min-height'
 	});
 } compareHeight();
+
+function Tabs(){
+if($('.js-tabs-wrap').length){
+
+	var parent = $('.js-tabs-wrap'),
+			trigger = parent.find('.js-tab-trigger'),
+			tabbody = parent.find('.tabs-body'),
+			tabcont = tabbody.find('.tabs-cont');
+
+	tabcont.not(":first").hide();
+
+	trigger.on('click',function(){
+
+		var _ = $(this);
+
+		if(!_.hasClass('active')){
+			_.addClass('active').siblings().removeClass('active')
+			tabcont.hide().eq($(".js-tab-trigger.active").index()).fadeIn().find('.slick-slider').slick('setPosition');
+		}
+	}).eq(0).addClass("active")
+}
+} Tabs();
+
+
+
 });
+//end of document ready
+
+function slidesCount(elem){
+	var container = elem.parent().find('.cards-slider-counter'),
+			curSlideCont = container.find('.cards-slider-current'),
+			totatSlideCont= container.find('.cards-slider-total'),
+			btns = elem.parent().find('.cards-slider-nav'),
+			pages;
+
+    elem.on('init reInit breakpoint beforeChange', function (event, slick, currentSlide, nextSlide) {
+    	var slidesShown = parseInt(slick.slickGetOption('slidesToShow')),
+ 					slidesScroll = parseInt(slick.slickGetOption('slidesToScroll')),
+ 					slidesNext = parseInt(nextSlide),
+    			totalSlides = parseInt(slick.slideCount),
+    			totalPages = Math.ceil(totalSlides / slidesShown),
+  				curPage = event.type == 'init'? 0 : parseInt(slidesNext/slidesScroll);
+    			totatSlideCont.text(totalPages)
+ 					curSlideCont.text(curPage + 1)
+ 					console.log(slidesNext)
+    });
+   //  function disable(item){
+   //  	item.addClass('disabled');
+			// setTimeout(function(){
+			// 	item.removeClass('disabled');
+			// },400);
+   //  }
+
+    // btns.on('click', '.slick-arrow',function(event){
+    // 	var count = parseInt(curSlideCont.text()),
+    // 			_ = $(this);
+	   //  			if(_.hasClass('carousel-next') && count < pages && !_.hasClass('disabled')){
+	   //  				count += 1;
+
+	   //  				curSlideCont.text(count)
+	   //  				disable(_)
+	   //  			}
+	   //  			else if(_.hasClass('carousel-prev') && count > 1 && !_.hasClass('disabled')){
+	   //  				count -= 1;
+
+	   //  				curSlideCont.text(count)
+	   //  				disable(_)
+	   //  			}
+    // });
+}

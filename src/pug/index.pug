@@ -156,17 +156,16 @@ block content
     } brands();
   section.slider-section.b-bottom
     h1.u-intro.h1 Хиты продаж
-    .tabs
-      .tabs-head
-        .tabs-item
+    .tabs.js-tabs-wrap
+      .tabs-head.w3.slider-tabs
+        .tabs-item.js-tab-trigger
           span Популярное
-        .tabs-item
+        .tabs-item.js-tab-trigger
           span Новинки
-        .tabs-item
+        .tabs-item.js-tab-trigger
           span Акции
       .tabs-body
         .tabs-cont
-          .cards-slider-nav
           .slider-section-inner
               mixin Productcart(name, img, prop1, prop2, price, type)
                 .product-card-wrapper
@@ -208,33 +207,197 @@ block content
                         .flag-item.new
                           span New
                       else if val == '0'
+                
               +Productcart('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
               +Productcart('Профилированный лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
               +Productcart('Планка торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
               +Productcart('Металлочерепица Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+              +Productcart('Металлочерепицаa  Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
               +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 мм','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+          .cards-slider-nav
+            .cards-slider-counter
+              span.cards-slider-current
+              span.cards-slider-divider /
+              span.cards-slider-total
+        .tabs-cont
+          .slider-section-inner
+              mixin Productcart(name, img, prop1, prop2, price, type)
+                .product-card-wrapper
+                  .product-card-outer
+                    a(href="#").product-card-inner
+                      .product-card-img
+                        img(src=img, alt="")
+                      .categories-elem-name #{name}
+                      .u-text 
+                        span.prop
+                          span Высота:
+                          span.price #{prop1} ,
+                        span.prop
+                          span шаг волны:
+                          span.price #{prop1} 
+                      .product-card-price 
+                        |#{price}
+                        span.u-graytext.old 1000р.
+                    .product-card-more
+                      a(href="#").btn.t-blue Подробнее
+                    .flags-wrap
+                      - var val = type
+                      if val == '1'
+                        .flag-item.discount 
+                          span -15%
+                      else if val == '2'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -25%
+                      else if val == '3'
+                        .flag-item.new
+                          span New
+                      else if val == '4'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -55%
+                        .flag-item.new
+                          span New
+                      else if val == '0'
+              +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+              +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+              +Productcart('Планка3 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+              +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+              +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+              +Productcart('Саморез 3сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 мм','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+          .cards-slider-nav
+            .cards-slider-counter
+              span.cards-slider-current
+              span.cards-slider-divider /
+              span.cards-slider-total
+        .tabs-cont
+          .slider-section-inner#3
+              mixin Productcart(name, img, prop1, prop2, price, type)
+                .product-card-wrapper
+                  .product-card-outer
+                    a(href="#").product-card-inner
+                      .product-card-img
+                        img(src=img, alt="")
+                      .categories-elem-name #{name}
+                      .u-text 
+                        span.prop
+                          span Высота:
+                          span.price #{prop1} ,
+                        span.prop
+                          span шаг волны:
+                          span.price #{prop1} 
+                      .product-card-price 
+                        |#{price}
+                        span.u-graytext.old 1000р.
+                    .product-card-more
+                      a(href="#").btn.t-blue Подробнее
+                    .flags-wrap
+                      - var val = type
+                      if val == '1'
+                        .flag-item.discount 
+                          span -15%
+                      else if val == '2'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -25%
+                      else if val == '3'
+                        .flag-item.new
+                          span New
+                      else if val == '4'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -55%
+                        .flag-item.new
+                          span New
+                      else if val == '0'
+              +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+              +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+              +Productcart('Планка2 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+              +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+              +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+              +Productcart('Саморез 2сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 мм','1 000 шт.','1.40р. / шт','0')
+              +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+          .cards-slider-nav
+            .cards-slider-counter
+              span.cards-slider-current
+              span.cards-slider-divider /
+              span.cards-slider-total
   script.
     function cards(){
-      $('.slider-section-inner').slick({
-        accessibility: true,
-        arrows: true,
-        draggable: false,
-        touchMove: false,
-        infinite: false,
-        slidesToShow: 5,
-        appendArrows: $('.cards-slider-nav'),
-        nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-        prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-        responsive: [
-          {
-            breakpoint: 1280,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 1
+      $( ".slider-section-inner").each( function() {
+        var _this = $(this);
+
+        slidesCount(_this);
+
+        _this.slick({
+          accessibility: true,
+          arrows: true,
+          draggable: true,
+          touchMove: false,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          appendArrows: _this.siblings('.cards-slider-nav'),
+          nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+          prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+          responsive: [
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 800,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
             }
-          }
-          ]
+            ]
+        });
+
+        _this.on('beforeChange', function(event, slick, cur, next) {
+          console.log(slick);
+          console.log(cur);
+          console.log(next);
+        });
+       
       });
+
     } cards();
 
 

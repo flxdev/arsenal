@@ -996,6 +996,7 @@ body, .out
           +rem(font-size,17px)
 .footer
   +rem(padding,46px 54px 47px)
+  +rem(margin-top,57px)
   border-top: 1px solid $border
   +r(1026)
     +rem(padding,46px 35px 47px)
@@ -1465,44 +1466,59 @@ body, .out
 .b-bottom
   border-bottom: 1px solid $border   
 .slider-section  
-  +rem(padding, 0 20px 0 52px)
+  +rem(padding, 0 20px 125px 52px)
+  +rem(margin-top,43px)
   +r(991)
     +rem(padding, 0 30px 0 30px)
   +r(544)
     +rem(padding, 0 10px 0 10px)
   &-inner
     .slick-list 
-      overflow-x: hidden;
-      overflow-y: visible;
-      +rem(margin-bottom, -80px)
-      +rem(padding-bottom, 80px)
-      +rem(margin-top, -10px)
-      +rem(padding-top, 10px)
+      +rem(margin, -35px -2px -80px -2px)
+      +rem(padding, 35px 2px 80px 2px)
+  .tabs-head
+    position: absolute
+    +rem(top,-46px)
+    +rem(right,2px)
+  .u-intro
+    +rem(margin-bottom,20px)
+    +r(544)
+      +rem(margin-bottom,0px)
 .product-card
   &-wrapper
-   +rem(padding-right, 5px) 
-   +rem(margin-top, 5px) 
+    +rem(padding-right, 5px) 
+    +rem(padding-top, 5px) 
   &-inner
     display: block
-    +rem(padding-bottom,60px)
-    +rem(margin-top,5px)
+    +rem(padding,15px 15px 44px 16px)
+    +rem(min-height,330px)
+    position: relative
     .u-text
       +clr
+      +rem(max-height, 76px)
+      overflow: hidden
       .price
         display: inline-block
         +rem(padding-left, 5px) 
   &-outer
-    position: relative
-    overflow: hidden
     background: $graybg
-    border-top: 5px solid transparent
-    +rem(height,376px)
-    +rem(padding,15px 15px 20px 16px)
+    position: relative
+    z-index: 1
+    +rem(padding-bottom,35px)
+    transition: background .3s, box-shadow .3s
     &:hover
-      +rem(min-height,456px)
-      overflow: visible
-      .product-card-more 
-        display: block
+      +rm(991)
+        background: $white
+        position: relative
+        z-index: 2
+        box-shadow: 3px 3.5px 37px 0px rgba(0,0,0,0.17);
+        .categories-elem-name
+          color: $maind
+        .product-card-more 
+          opacity: 1
+          visibility: visible
+          background: $white
+          box-shadow: 0px 10px 30px 0 rgba(0,0,0,.12)
   &-img
     +rem(height,180px) 
     +rem(margin-bottom,20px) 
@@ -1517,15 +1533,128 @@ body, .out
     color: $text
     font-weight: 600
     position: absolute  
-    +rem(bottom,32px)
+    +rem(bottom,0)
     +rem(left,16px)
     .u-graytext
       display: inline-block
       +rem(padding-left, 7px) 
   &-more
-    display: none
+    position: absolute
+    +rem(bottom,-46px) 
+    left: 0
+    right: 0
+    opacity: 0
+    visibility: hidden
+    transition: opacity .15s .1s, visibility .15s .1s, background .3s, box-shadow .3s
+    +rem(padding,20px 20px 28px 20px)
+    background: $graybg
     .btn
         min-width: 0
         width: 100%  
-      
+.tabs
+  position: relative   
+.tabs-head
+  display: inline-block
+  font-size: 0
+  +clr
+  &.slider-tabs
+    +rem(width,290px)
+    +r(544)
+      position: static
+      width: 100%
+  &.w3
+    .tabs-item
+      width: 33%
+  &.w2
+    .tabs-item
+      width: 50%
+  &.w4
+    .tabs-item
+      width: 25%
+  &.w5
+    .tabs-item
+      width: 20%
+  &.t-white
+    .tabs-item
+      border: 1px solid $white
+      color: $white
+  .tabs-item
+    display: inline-block
+    text-align: center
+    cursor: pointer
+    vertical-align: top
+    +rem(padding,5px 0 7px)
+    +rem(font-size,11px)
+    +nosel
+    border: 1px solid #000
+    transition: background .3s, color .3s,border-color .3s
+    &:hover
+      color: $white
+      background: $main
+      border-color: $main
+    &:active
+      color: $white
+      background: $maind
+      border-color: $maind
+    &.active
+      color: $white
+      background: $mainl
+      border-color: $mainl
+    &:not(:first-child)
+      border-left-color: transparent
+    &:first-child
+       border-top-left-radius: 3px
+       border-bottom-left-radius: 3px
+    &:last-child
+       border-top-right-radius: 3px
+       border-bottom-right-radius: 3px
+     
+.cards-slider-nav
+  display: block
+  +rem(max-width,200px)
+  +rem(margin, 40px auto 0)
+  position: relative
+  z-index: 2
+  text-align: center
+  
+  .slick-arrow, .cards-slider-counter
+    display: inline-block
+    vertical-align: middle
+  .cards-slider-counter
+    +padlr(15px)
+    +rem(font-size,16px)
+    font-family: intro
+    font-weight: 700
+    color: $text
+    .cards-slider-divider,.cards-slider-total,.cards-slider-current
+      display: inline-block
+      vertical-align: middle
+    .cards-slider-divider
+      display: inline-block
+      +padlr(8px)
+      +rem(font-size,28px)
+    .cards-slider-total
+      +rem(margin-top,2px)
+      color: #c1c1c1
+  .slick-arrow
+    +rem(width,47px)
+    +rem(height,15px)
+    background: 0 0 
+    &.slick-disabled
+      opacity: .6
+      pointer-events: none
+    .icon
+      .slider-arr
+        transition: fill .3s
+    &:hover
+      .icon
+        .slider-arr
+          fill: $maind
+    &:active
+      .icon
+        .slider-arr
+          fill: $mhover
 
+
+
+    
