@@ -11,6 +11,7 @@
     <meta name="format-detection" content="address=no">
     <link rel="stylesheet" media="all" href="css/screen.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyA5YZJzqmYccat0wSPnagC9TXPP4xTugFM"></script>
     <script src="js/app.js"></script>
   </head>
   <body>
@@ -958,18 +959,75 @@
                           }
                         }
                         ]
-                    });
-                
-                    _this.on('beforeChange', function(event, slick, cur, next) {
-                      console.log(slick);
-                      console.log(cur);
-                      console.log(next);
-                    });
-                   
+                    }); 
                   });
                 
                 } cards();
               </script>
+              <section class="news-section b-bottom">
+                <h1 class="u-intro h1">Новости и акции</h1>
+                <div class="news-container">
+                                    <div class="news-block-outer"><a class="news-block-inner" href="" style="background-image:url(img/news.png)">
+                                        <div class="news-block-content">
+                                          <div class="news-block-content-inner">
+                                            <div class="news-block-name">
+                                              <date class="u-graytext">20 июля, 2016</date>
+                                              <div class="u-intro h2">Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы</div>
+                                            </div>
+                                          </div>
+                                        </div></a></div>
+                                    <div class="news-block-outer"><a class="news-block-inner" href="" style="background-image:url(img/news.png)">
+                                        <div class="news-block-content">
+                                          <div class="news-block-content-inner">
+                                            <div class="news-block-name">
+                                              <date class="u-graytext">20 июля, 2016</date>
+                                              <div class="u-intro h2">Конкурс для архитекторов и проектировщиков «Металл Project» 2016</div>
+                                            </div>
+                                          </div>
+                                        </div></a></div>
+                                    <div class="news-block-outer"><a class="news-block-inner" href="" style="background-image:url(img/news.png)">
+                                        <div class="news-block-content">
+                                          <div class="news-block-content-inner">
+                                            <div class="news-block-name">
+                                              <date class="u-graytext">20 июля, 2016</date>
+                                              <div class="u-intro h2">Конкурс для архитекторов и проектировщиков «Металл Project» 2016</div>
+                                            </div>
+                                          </div>
+                                        </div></a></div>
+                                    <div class="news-block-outer"><a class="news-block-inner" href="" style="background-image:url(img/news.png)">
+                                        <div class="news-block-content">
+                                          <div class="news-block-content-inner">
+                                            <div class="news-block-name">
+                                              <date class="u-graytext">20 июля, 2016</date>
+                                              <div class="u-intro h2">Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016</div>
+                                            </div>
+                                          </div>
+                                        </div></a></div>
+                                    <div class="news-block-outer"><a class="news-block-inner" href="" style="background-image:url(img/news.png)">
+                                        <div class="news-block-content">
+                                          <div class="news-block-content-inner">
+                                            <div class="news-block-name">
+                                              <date class="u-graytext">20 июля, 2016</date>
+                                              <div class="u-intro h2">Конкурс для архитекторов и проектировщиков «Металл Project» 2016</div>
+                                            </div>
+                                          </div>
+                                        </div></a></div>
+                </div>
+              </section>
+              <section class="contact-section">
+                <div class="tabs js-tabs-wrap">
+                  <div class="tabs-head w3 slider-tabs">
+                    <div class="tabs-item js-tab-trigger"><span>Офис</span></div>
+                    <div class="tabs-item js-tab-trigger"><span>Карта</span></div>
+                  </div>
+                  <div class="tabs-body">
+                    <div class="tabs-cont">
+                      <div id="map"></div>
+                    </div>
+                    <div class="tabs-cont"></div>
+                  </div>
+                </div>
+              </section>
               <footer class="footer">
                 <div class="footer_contacts-wrap">
                   <div class="footer_contacts-block">

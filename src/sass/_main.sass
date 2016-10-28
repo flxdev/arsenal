@@ -1466,24 +1466,27 @@ body, .out
 .b-bottom
   border-bottom: 1px solid $border   
 .slider-section  
-  +rem(padding, 0 20px 125px 52px)
+  +rem(padding, 0 20px 50px 52px)
   +rem(margin-top,43px)
   +r(991)
     +rem(padding, 0 30px 0 30px)
   +r(544)
-    +rem(padding, 0 10px 0 10px)
+    +rem(padding, 0 14px 25px 14px)
   &-inner
     .slick-list 
       +rem(margin, -35px -2px -80px -2px)
-      +rem(padding, 35px 2px 80px 2px)
+      +rem(padding, 35px 3px 80px 2px)
   .tabs-head
     position: absolute
-    +rem(top,-46px)
+    +rem(top,-24px)
     +rem(right,2px)
-  .u-intro
-    +rem(margin-bottom,20px)
+    z-index: 5
     +r(544)
-      +rem(margin-bottom,0px)
+      +rem(margin-bottom,28px)
+  // .u-intro
+  //   +rem(margin-bottom,20px)
+  //   +r(544)
+  //     +rem(margin-bottom,0px)
 .product-card
   &-wrapper
     +rem(padding-right, 5px) 
@@ -1493,6 +1496,9 @@ body, .out
     +rem(padding,15px 15px 44px 16px)
     +rem(min-height,330px)
     position: relative
+    +r(544)
+      +rem(min-height,260px)
+      +rem(padding,15px 12px 44px 12px)
     .u-text
       +clr
       +rem(max-height, 76px)
@@ -1506,6 +1512,8 @@ body, .out
     z-index: 1
     +rem(padding-bottom,35px)
     transition: background .3s, box-shadow .3s
+    +r(544)
+      +rem(padding-bottom,15px)
     &:hover
       +rm(991)
         background: $white
@@ -1523,6 +1531,8 @@ body, .out
     +rem(height,180px) 
     +rem(margin-bottom,20px) 
     +vertical  
+    +r(544)
+      +rem(height,120px) 
     img
       vertical-align: middle
       display: inline-block
@@ -1538,6 +1548,8 @@ body, .out
     .u-graytext
       display: inline-block
       +rem(padding-left, 7px) 
+      +r(544)
+        display: block
   &-more
     position: absolute
     +rem(bottom,-46px) 
@@ -1552,7 +1564,11 @@ body, .out
         min-width: 0
         width: 100%  
 .tabs
-  position: relative   
+  position: relative 
+.tabs-cont
+  +rem(padding-top,40px)
+  +r(544)
+    padding-top: 0
 .tabs-head
   display: inline-block
   font-size: 0
@@ -1565,7 +1581,7 @@ body, .out
   &.w3
     .tabs-item
       width: 33%
-  &.w2
+  &.w2,&.w1
     .tabs-item
       width: 50%
   &.w4
@@ -1612,7 +1628,7 @@ body, .out
 .cards-slider-nav
   display: block
   +rem(max-width,200px)
-  +rem(margin, 40px auto 0)
+  +rem(margin, 35px auto 0)
   position: relative
   z-index: 2
   text-align: center
@@ -1654,7 +1670,129 @@ body, .out
       .icon
         .slider-arr
           fill: $mhover
+.news-section
+  +rem(padding, 0 20px 50px 52px)
+  +rem(margin-top,40px)
+  +r(991)
+    +rem(padding, 0 30px 0 30px)
+  +r(544)
+    +rem(padding, 0 14px 25px 14px)
+  .news-container
+    +rem(margin-top,33px)
+  .news-block-outer
+    &:nth-child(n+3)
+      .news-block-inner
+        border-bottom: 1px solid $border
+      .news-block-inner,.news-block-content
+        background: $white !important
+      .news-block-content,.news-block-name
+        position: static
+        line-height: 1
+      .u-graytext
+        +rem(font-size,13px)
+        +rem(margin-bottom,15px)
+        line-height: 0
+        display: inline-block
+      .u-intro
+        text-transform: none
+        font-family: 'Open Sans'
+        line-height: 1.5
+        +rem(font-size,14px)
+    &:nth-child(n+3)
+      .u-intro
+        +rem(height,62px)
+        overflow: hidden
+      .news-block-inner
+        &:hover
+          .u-intro 
+            color: $maind
+    &:nth-child(3)
+      .news-block-inner
+        +rem(padding-bottom,20px)
+    &:nth-child(n+4)
+      .news-block-inner
+        +rem(padding,24px 0 10px)
+        +r(768)
+          +rem(padding,20px 0 24px)
+.news-container
+  +rem(margin-left,-30px)
+  +clr
+  +r(1150)
+    +rem(margin-left,-15px)
+.news-block
+  &-outer
+    display: inline-block
+    float: left
+    width: 33.33%
+    min-height: 1px
+    +rem(padding-left,30px)
+    +r(1150)
+      +rem(padding-left,15px)
+    +r(768)
+      width: 100% 
+      +rem(margin-bottom,10px)
+    &:first-child,&:nth-child(2)
+      +rem(height,346px)
+      .u-intro
+        line-height: 1.75 
+    &:first-child
+      .news-block-name
+        +rem(letter-spacing, 0.8px)
+        +rem(padding,0 32.5px 28px 32.5px)
+      .u-intro
+        color: $white
+      .u-graytext 
+        display: inline-block
+        +rem(margin-bottom,10px)
+        +rem(font-size,13px)
+        color: $white
+    &:nth-child(2)
+      .news-block-name
+        +rem(letter-spacing, 0.8px)
+        +rem(padding,21px 0 37px)
+        background: $white
+      .u-graytext 
+        display: inline-block
+        +rem(margin-bottom,10px)
+        +rem(font-size,13px)
+      .news-block-inner
+        &:hover
+          .news-block-name
+            .u-intro
+              color: $maind
+  &-inner
+    display: block
+    height: 100%
+    position: relative
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    &:hover
+      .news-block-content
+        background-color: rgba(0, 0, 0, 0.65);
+  &-content
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute
+    bottom: 0
+    left: 0
+    top: 0
+    right: 0
+    margin: 0
+    transition: background .3s
+    &-inner
+      position: relative
+      width: 100%
+      height: 100%
+  &-name
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    .u-intro
+      transition: color .3s
+  
 
 
 
-    
+
+

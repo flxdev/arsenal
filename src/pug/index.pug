@@ -388,17 +388,37 @@ block content
               }
             }
             ]
-        });
-
-        _this.on('beforeChange', function(event, slick, cur, next) {
-          console.log(slick);
-          console.log(cur);
-          console.log(next);
-        });
-       
+        }); 
       });
 
     } cards();
+  section.news-section.b-bottom
+    h1.u-intro.h1 Новости и акции
+    .news-container
+      mixin news(img,date,text)
+        .news-block-outer
+          a(href="" style='background-image:url('+ img+ ')').news-block-inner
+            .news-block-content
+              .news-block-content-inner
+                .news-block-name
+                  date.u-graytext #{date}
+                  .u-intro.h2 #{text}
+      +news('img/news.png','20 июля, 2016','Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы')
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016')
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
+  section.contact-section
+    .tabs.js-tabs-wrap
+      .tabs-head.w3.slider-tabs
+        .tabs-item.js-tab-trigger
+          span Офис
+        .tabs-item.js-tab-trigger
+          span Карта
+      .tabs-body
+        .tabs-cont
+          #map
+        .tabs-cont
 
 
 
