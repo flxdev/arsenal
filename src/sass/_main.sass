@@ -1790,9 +1790,24 @@ body, .out
     right: 0
     .u-intro
       transition: color .3s
-  
 
 
-
+.contact-cont
+  +rem(height,538px)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  #map
+    height: 100%
+    &* 
+      overflow: visible
+.contact-section
+  position: relative
+  .tabs-head
+    position: absolute
+    z-index: 5
+    +rem(width,150px)
+    +rem(top,95px)
+    +rem(right,25px)
 
 
