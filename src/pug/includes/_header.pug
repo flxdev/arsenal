@@ -52,11 +52,11 @@
               button.btn.t-blue Обратный звонок
 
   .cart_wrap
-    //Когда человек вошел, вешаем .dropdown-trigger.в корзине тоже свг будет инлайново
-    .cart_wrap-account.dropdown-trigger
-      a(href="#").btn-account
+    //Когда человек вошел, вешаем .dropdown-trigger и убираем .js-modal-trigger
+    .cart_wrap-account
+      a(href="#",data-target='.modal-enter', onclick='modals($(this))').btn-account.js-modal-trigger
         i.account-icon
-        span.u-text Константин
+        span.u-text Кабинет
       .dropdown-target
         .dropdown-inner
           .dropdown-content

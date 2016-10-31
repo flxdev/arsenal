@@ -1,72 +1,18 @@
 extends _layout
 
 block title
-  title Index
+  title Categories
 
 block content
-  .fixed-container.index-slider
-    mixin Indexslides(img, h1,h2)
-      .index-slider-elem(style='background-image:url('+ img+ ')')
-        .index-slider-text
-          h1.u-intro.extrabig #{h1}
-          h2.u-intro.h2 #{h2}
-    +Indexslides('img/arsenal.jpg','Арсенал металл','Производим и продаём металлоизделия И сопутствующие материалы') 
-    +Indexslides('img/arsenal.jpg','Арсенал металлq','Производим и продаём металлоизделия И сопутствующие материалы')
-    +Indexslides('img/arsenal.jpg','Арсенал металлw','Производим и продаём металлоизделия И сопутствующие материалы Оргомный выбор')
-  script.
-    function insexslider(){
-      $('.index-slider').slick({
-        accessibility: true,
-        arrows: false,
-        dots: true,
-        draggable: false,
-        touchMove: false,
-        vertical: true,
-        infinite: true
-      }); 
-    } insexslider();  
-  section.section-feature
-    .features__nav
-    .features
-      mixin Futureslides(img, text)
-        .features_block
-          .features--img
-            img(src=img, alt="")
-          p.u-text #{text}
-      +Futureslides('img/features/icon_1.svg','Лучшие оптовые и розничные цены от производителя, скидки.') 
-      +Futureslides('img/features/icon_2.svg','Оперативная доставка по всей территории Республики Беларусь') 
-      +Futureslides('img/features/icon_3.svg','Покупайте и оплачивайте продукцию онлайн.')  
-  script.
-    function feachures(){
-    $('.features').slick({
-      accessibility: true,
-      arrows: true,
-      draggable: false,
-      touchMove: false,
-      slidesToShow: 3,
-      appendArrows: $('.features__nav'),
-      nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-      prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-      responsive: [
-        {
-          breakpoint: 1112,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 544,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        ]
-    });
-    } feachures();
-  section.categories
-    h1.u-intro.h1 Популярные разделы
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg) ')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Каталог
+      a(href="#").bread-item Очень длинный заголовок про металлочерепицу
+      a(href="#").bread-item Каталог
+    h1.u-intro.h1 Каталог
+  section.categories.b-bottom
     .categories-wrapper
       mixin categor(name, price,img, val)
         .categories-elem-outer
@@ -89,72 +35,7 @@ block content
       +categor('Гипсокартонные профили','70.90р.','img/categories/4.png','-10%')
       +categor('Металлическая черепица','92.00р.','img/categories/2.png','-99%')
       +categor('Металлическая черепица','92.00р.','img/categories/2.png','-99%')
-  section.brands
-    .brands-outer
-      .features__nav.feachres-brand
-      .brands-inner.brands-slider
-        mixin brandelem(img)
-          a(href="#").brands-elem
-            img(src=img, alt="")
-        +brandelem('img/brands/1.png')
-        +brandelem('img/brands/2.png')
-        +brandelem('img/brands/3.png')
-        +brandelem('img/brands/4.png')
-        +brandelem('img/brands/5.png')
-        +brandelem('img/brands/6.png')
-        +brandelem('img/brands/7.png')
-  script.
-    function brands(){
-    $('.brands-slider').slick({
-      accessibility: true,
-      arrows: true,
-      draggable: false,
-      touchMove: false,
-      infinite: false,
-      slidesToShow: 7,
-      appendArrows: $('.feachres-brand'),
-      nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-      prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st-slider{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st-slider" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-      responsive: [
-        {
-          breakpoint: 1450,
-          settings: {
-            slidesToShow: 6,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 1280,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 544,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 380,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        }
-        ]
-    });
-    } brands();
-  section.slider-section.b-bottom
+  section.slider-section
     h1.u-intro.h1 Хиты продаж
     .tabs.js-tabs-wrap
       .tabs-head.w3.slider-tabs
@@ -392,74 +273,6 @@ block content
       });
 
     } cards();
-  section.news-section.b-bottom
-    h1.u-intro.h1 Новости и акции
-    .news-container
-      mixin news(img,date,text)
-        .news-block-outer
-          a(href="" style='background-image:url('+ img+ ')').news-block-inner
-            .news-block-content
-              .news-block-content-inner
-                .news-block-name
-                  date.u-graytext #{date}
-                  .u-intro.h2 #{text}
-      +news('img/news.png','20 июля, 2016','Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
-  section.contact-section
-    .tabs.js-tabs-wrap
-      .tabs-head.w2.t-white
-        .tabs-item.js-tab-trigger
-          span Офис
-        .tabs-item.js-tab-trigger
-          span Карта
-      .tabs-body
-        .tabs-cont
-          .contact-cont   
-            .contact-cont(style='background-image:url(img/office.jpg)')
-          .info-cont
-            .info-title 
-              span.u-intro.h2 торгово-Производственная компания арсенал металл
-            .info-content
-              p.u-text.lt Арсенал Металл — лидер в области строительства коммерческой, индустриальной и жилой недвижимости класса А в России.
-              p.u-text.lt С момента основания каждый год оборот компании стабильно увеличивается в два раза, пропорционально растет численность сотрудников. Сегодня штат RD Construction насчитывает более 4 000 профессионалов. Компания осуществляет свою деятельность на территории России, стран СНГ и Европы.
-            .info-footer
-              a(href="#").link-nav.right Подробнее
-              a(href="#").small-link.blue.marker 
-                span Скачать схему проезда
-        .tabs-cont
-          .contact-cont 
-            #map
-          .info-cont
-            .info-title 
-              span.u-intro.h2 свяжитесь с нашими специалистами или приезжайте к нам в офис 
-            .info-content
-              .categories-elem-name г. Минск, пр. Независимости, 199
-              p.u-text.lt Работаем с понедельника по пятницу 9:00−20:00
-              .col-50
-                .contact-block
-                  span.u-graytext Пн–Пт, 9:00–20:00
-                  a.u-text.lt(href="tel:375296669172") +375 29 666-91-72
-                  a.u-text.lt(href="tel:375173804867") +375 17 380-48-67
-              .col-50
-                .contact-block
-                  span.u-graytext
-                  a.u-text.lt(href="tel:375175125004") +375 17 512-50-04
-                  a.u-text.lt(href="tel:375171117524") +375 17 111-75-24
-              .col-50
-                .contact-block
-                  span.u-graytext E-mail
-                  a.mailto(href="mailto:arsenalmetall@mail.ru") arsenalmetall@mail.ru
-              .col-50
-                .contact-block
-                  span.u-graytext Skype
-                  a.mailto(href="skype:arsenalmetall?chat") arsenalmetall
-            .info-footer
-              a(href="#").link-nav.right Подробнее
-              a(href="#").small-link.blue.marker 
-                span Скачать схему проезда
 
 
 

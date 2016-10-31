@@ -1,0 +1,51 @@
+//бэкграунд модалки. 2 класс определяет размер(блять я надеюсь что тут хотя бы 3 рвзмера модалок а не 7), последний класс определяет что за модалка (.modal-enter для входа в кабинет и тд)
+.modal-layout.modal-big.modal-enter
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Кабинет
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      .col-50
+        .u-intro.h3 Вход
+        form(action="/").form.js-form-validate
+          .input-wrapper
+            label.u-graytext 
+              span.text E-mail
+            input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+          .input-wrapper
+            label.u-graytext 
+              span.text Пароль
+            input.input-main(type='email',name="", placeholder = 'info@mail.com')
+            a(href="#").link-dotted Забыли пароль?
+          button.btn.t-blue.btn-small(type="submit") Войти
+      .col-50
+        .u-intro.h3 Регистрация
+        .u-text Нет аккаунта? Зарегистрируйтесь на нашем сайте и совершать покупки станет намного удобней
+        a(href="#").btn.t-trans.btn-small Зарегистрироваться
+//бэкграунд модалки
+.modal-layout.modal-small.modal-pass-forgot
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Пароль
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="/").form.js-form-validate
+        .input-wrapper
+          label.u-graytext 
+            span.text E-mail
+          input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        button.btn.t-blue.btn-small(type="submit") Восстановить
+.modal-layout.modal-small.modal-pass-forgot-succes
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Пароль
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      .u-text На указанный вами e-mail в течение 5 минут будет выслано письмо с регистрационными данными. 
+      button.btn.t-blue.btn-small.js-modal-closer(type="submit") Закрыть
