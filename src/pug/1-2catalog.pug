@@ -1,7 +1,7 @@
 extends _layout
 
 block title
-  title Categories 1-1
+  title Categories 1-2
 
 block content
   //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
@@ -11,30 +11,114 @@ block content
       a(href="#").bread-item Каталог
       a(href="#").bread-item Очень длинный заголовок про металлочерепицу
       a(href="#").bread-item Каталог
-    h1.u-intro.h1 Кровельные материалы
-  section.categories.b-bottom
-    .categories-wrapper
-      mixin categor(name, price,img, val)
-        .categories-elem-outer
-          a(href="#").categories-elem
-            .categories-elem-descr
-              .categories-elem-name #{name}
-              .u-text
-                span От
-                span.price #{price}
-            .categories-elem-img
-              img(src=img, alt = '')
-            .flags-wrap
-              .flag-item.discount 
-                span #{val}
-      +categor('Фальцевая кровля','70.90р.','img/categories/1.png','-5%')
-      +categor('Металлическая черепица','92.00р.','img/categories/2.png','-5%')
-      +categor('Гипсокартонные профили','70.90р.','img/categories/3.png','-15%')
-      +categor('Гипсокартонные профили','70.90р.','img/categories/4.png','-20%')
-      +categor('Фальцевая кровля','70.90р.','img/categories/1.png','-5%')
-      +categor('Гипсокартонные профили','70.90р.','img/categories/4.png','-10%')
-      +categor('Металлическая черепица','92.00р.','img/categories/2.png','-99%')
-      +categor('Металлическая черепица','92.00р.','img/categories/2.png','-99%')
+    h1.u-intro.h1 Металлочерепица
+  section.filter-section
+    .filter-container
+      form.filter-form
+        .filter-form-inner
+          .filter-form-title
+            span.u-bold
+              |Фильтры:
+          .select-check.js-select-trigger
+            button.selects(data-placeholder = 'Толщина металла, мм',data-valuename = "Толщина", data-value = "мм")
+              span.btn-text Толщина металла, мм
+              i.select-img
+            button.select-clear.js-select-clear
+              span.i-close
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  ul.selected-list
+                  .u-graytext Выберите параметры
+                  ul.select-u-body
+                    mixin selectItem(val)
+                      li.select-u-item
+                        label.input_label
+                          span.input_main
+                            input.input-real(type="checkbox",value = val, data-value= val)
+                            span.input-checked
+                          span.input-text #{val}
+                    +selectItem('550')
+                    +selectItem('500')
+                    +selectItem('400')
+                    +selectItem('100')
+                    +selectItem('200')
+                  .dropdown-footer
+                    button.t-blue.btn.js-filter-submit Применить
+          .select-check.js-select-trigger
+            button.selects(data-placeholder = 'Шаг волны профиля, мм',data-valuename = "Шаг", data-value = "мм")
+              span.btn-text Шаг волны профиля, мм
+              i.select-img
+            button.select-clear.js-select-clear
+              span.i-close
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  ul.selected-list
+                  .u-graytext Выберите параметры
+                  ul.select-u-body
+                    mixin selectItem(val)
+                      li.select-u-item
+                        label.input_label
+                          span.input_main
+                            input.input-real(type="checkbox",value = val, data-value= val)
+                            span.input-checked
+                          span.input-text #{val}
+                    +selectItem('550')
+                    +selectItem('500')
+                    +selectItem('400')
+                    +selectItem('100')
+                    +selectItem('200')
+                    +selectItem('250')
+                    +selectItem('900')
+                  .dropdown-footer
+                    button.t-blue.btn.js-filter-submit Применить
+          .select-check.js-select-trigger
+            button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+              span.btn-text Высота профиля, мм
+              i.select-img
+            button.select-clear.js-select-clear
+              span.i-close
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  ul.selected-list
+                  .u-graytext Выберите параметры
+                  ul.select-u-body
+                    mixin selectItem(val)
+                      li.select-u-item
+                        label.input_label
+                          span.input_main
+                            input.input-real(type="checkbox",value = val, data-value= val)
+                            span.input-checked
+                          span.input-text #{val}
+                    +selectItem('550')
+                    +selectItem('500')
+                    +selectItem('400')
+                    +selectItem('100')
+                    +selectItem('200')
+                  .dropdown-footer
+                    button.t-blue.btn.js-filter-submit Применить
+          .select-check.js-select-trigger
+            button.selects(data-placeholder = 'Цена, б.р.',data-valuename = "Цена", data-value = "б.р.")
+              span.btn-text Высота профиля, мм
+              i.select-img
+            button.select-clear.js-select-clear
+              span.i-close
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  .price-wrapper
+                    span.price-label от
+                    input.price.price-min(type="number",placeholder = '100,00 р.')
+                    span.price-label до
+                    input.price.price-max(type="number",placeholder = '2000,00 р.')
+                  .dropdown-footer
+                    button.t-blue.btn.js-filter-submit Применить
+
+
+
+
   //.products-outer родитель ,в нем row с заголовкам и товарами
   .products-outer
     .products-row

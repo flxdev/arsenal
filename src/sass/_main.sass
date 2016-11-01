@@ -139,7 +139,12 @@ body, .out
   color: $text
   font-weight: 400
   &.lt 
-   +rem(letter-spacing, 0.4px)  
+   +rem(letter-spacing, 0.4px)
+.u-bold
+  +rem(font-size, 11px) 
+  font-weight: 700
+  color: $text 
+  +rem(letter-spacing,0.1px)
 .u-title
   +rem(font-size, 14px) 
   color: $black
@@ -337,6 +342,11 @@ body, .out
   transition-delay: 0.15s
   +rem(max-height,1000px)
   +rem(padding-bottom,5px)
+.js-select-trigger.active
+  .dropdown-target
+    transition-delay: 0.15s
+    +rem(max-height,1000px)
+    +rem(padding-bottom,5px)
 .dropdown-target
   position: absolute
   overflow: hidden
@@ -358,6 +368,17 @@ body, .out
     float: right
     background: $white
     box-shadow: 2px 3.464px 20px 0px rgba( 0, 0, 0,0.17 );
+    .dropdown-footer
+      border-top: 1px solid $border
+      +rem(padding-top,15px)
+      .btn 
+        min-width: 0
+        +rem(padding-left,12px)
+        +rem(padding-right,12px)
+        +rem(font-size,11px)
+        +rem(letter-spacing,1px)
+
+
 .btn-cart,.btn-account
   position: relative
 .btn
@@ -1594,7 +1615,8 @@ body, .out
     background: $graybg
     .btn
         min-width: 0
-        width: 100%  
+        width: 100% 
+        +rem(font-size,13px) 
 .tabs
   position: relative 
 .tabs-cont
@@ -2184,10 +2206,230 @@ body, .out
 .content-head + .categories + .slider-section
   padding-bottom: 0
 
+//1-1 catalog
+.products
+  font-family: 'Open Sans'
+  &-row
+    +rem(padding, 40px 20px 47px 55px)
+    +r(991)
+      +rem(padding,30px 15px 37px 15px)
+    &:not(:last-child)
+      border-bottom: 1px solid $border
+    &:last-child
+      padding-bottom: 0
+  &-inner
+    font-size: 0
+    +rem(padding,36px 0 45px)
+    .product-card-wrapper 
+      width: 219.4px
+      display: inline-block
+      vertical-align: top
+      +r(920)
+        width: 25%
+      +r(800)
+        width: 33.33%
+      +r(544)
+        width: 50%
+      .categories-elem-name
+        +r(544)
+          word-break: break-all
+  &-more
+    +clr
+    +rem(padding-right,5px)
+    .link-nav
+      float: right
+
+//custom checkboxes
+
+.select-u-item
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  +rem(margin-bottom, 10px);
+  &:hover,&.hover
+    .input-text
+      transition: color .3s;
+    .input-checked
+      border-color: $maind;
+      transition: border-color .3s ease;
+  .input_label
+    display: inline-block;
+    +rem(min-width, 15px)
+    cursor: pointer;
+    width: 100%;
+    .input_main
+      float: left;
+      position: relative;
+      display: inline-block;
+  .input-text
+    +rem(font-size, 11px)
+    color: $text;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    +rem(padding-left, 10px)
+    transition: color .3s;
+  .input-real
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:checked +.input-checked:before,&.active +.input-checked:before
+      opacity: 1;
+    &:checked +.input-checked,&.active +.input-checked
+      border: 1px solid $mainl;
+  .input-checked
+    +rem(width, 13px)
+    +rem(height, 13px)
+    display: block;
+    +rem(margin-top,1px);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    position: relative;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+    &:before
+      content: '';
+      +rem(width, 10px)
+      +rem(height, 10px)
+      background: url(../img/icons/checkbox.svg) no-repeat;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      +rem(left, 1px)
+      opacity: 0;
+      -o-transition: all .2s ease;
+      transition: all .2s ease;
 
 
-    
-    
+.select-u-body.select-radio
+  .input-checked
+    border-radius: 50%
+    &:before
+      background-image: none;
+      +rem(width,8px);
+      +rem(height,8px);
+      background: $maind;
+      border-radius: 50%;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+.select-u-body
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  +clr
+  +rem(max-height,205px)
+  overflow-y: auto 
+
+
+//main-buttn
+.selects
+  width: 100%;
+  +rem(padding,7px 10px);
+  background: $white;
+  box-shadow: none;
+  outline: 0;
+  border: 1px solid $border;
+  +rem(border-radius,3px);
+  transition: border .3s;
+  position: relative
+  z-index: 1
+  .btn-text
+    display: inline-block;
+    float: left;
+    color: $text;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 94%
+    text-align: left
+    +rem(font-size,11px)
+  .select-img
+    float: right;
+    display: inline-block
+    +rem(width, 7px)
+    +rem(height, 12px)
+    background: url(../img/icons/select_down.svg) no-repeat center;
+  &:hover
+    border: 1px solid $maind;
+    cursor: pointer;
+    transition: border .3s;
+
+.select-clear
+  position: absolute
+  +rem(right, 0)
+  top: 0
+  +rem(width, 27px)
+  +rem(height, 28px)
+  border-top-right-radius: 3px
+  border-bottom-right-radius: 3px
+  background: $mainl
+  +tr(right .3s)
+  z-index: 0
+  +vertical
+  float: left
+  &:hover
+    .i-close
+      transform: rotate(90deg)
+      transform-origin: 50%
+  .i-close
+    display: inline-block
+    +rem(width, 9px)
+    vertical-align: middle
+    +rem(height, 9px)
+    +tr(transform .3s)
+    background: url(../img/icons/clear-select.svg) no-repeat center
+
+
+
+.select-check 
+  position: relative
+  .dropdown-target,.dropdown-inner  
+    width: 100%
+  .dropdown-inner 
+    +rem(padding, 15px 12px 17px 12px)
+    .u-graytext
+      +rem(margin-bottom,7px)
+  &.active
+    .select-img
+      transform: scale(1,-1)
+    .selects
+      border: 1px solid $maind
+  &.is-checked
+    .selects
+      border: 1px solid $mainl
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+    .select-clear
+      +rem(right, -27px)
+
+.filter
+  &-section
+    +rem(padding,18px 25px 25px 55px)
+  &-container
+    position: relative
+    +rem(padding-left, 81px)
+  &-form
+    &-title
+      position: absolute
+      left: 0
+      +rem(top, 7px)
+    &-inner
+      font-size: 0
+      .select-check 
+        display: inline-block
+        +rem(min-width,190px) 
+        +rem(margin-right,16px) 
+        vertical-align: top
+        +tr(margin .3s)
+        &.is-checked
+          +rem(margin-right,45px)
+      .dropdown-target
+        z-index: 5
 
 
 

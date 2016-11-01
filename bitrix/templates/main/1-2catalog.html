@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Categories 1-1</title>
+    <title>Categories 1-2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -346,82 +346,151 @@
               <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
               <section class="content-head content-image" style="background-image:url(img/content-head.jpg) ">
                 <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Каталог</a><a class="bread-item" href="#">Очень длинный заголовок про металлочерепицу</a><a class="bread-item" href="#">Каталог</a></div>
-                <h1 class="u-intro h1">Кровельные материалы</h1>
+                <h1 class="u-intro h1">Металлочерепица</h1>
               </section>
-              <section class="categories b-bottom">
-                <div class="categories-wrapper">
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Фальцевая кровля</div>
-                                          <div class="u-text"><span>От</span><span class="price">70.90р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/1.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-5%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Металлическая черепица</div>
-                                          <div class="u-text"><span>От</span><span class="price">92.00р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/2.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-5%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Гипсокартонные профили</div>
-                                          <div class="u-text"><span>От</span><span class="price">70.90р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/3.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-15%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Гипсокартонные профили</div>
-                                          <div class="u-text"><span>От</span><span class="price">70.90р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/4.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-20%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Фальцевая кровля</div>
-                                          <div class="u-text"><span>От</span><span class="price">70.90р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/1.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-5%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Гипсокартонные профили</div>
-                                          <div class="u-text"><span>От</span><span class="price">70.90р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/4.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-10%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Металлическая черепица</div>
-                                          <div class="u-text"><span>От</span><span class="price">92.00р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/2.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-99%</span></div>
-                                        </div></a></div>
-                                    <div class="categories-elem-outer"><a class="categories-elem" href="#">
-                                        <div class="categories-elem-descr">
-                                          <div class="categories-elem-name">Металлическая черепица</div>
-                                          <div class="u-text"><span>От</span><span class="price">92.00р.</span></div>
-                                        </div>
-                                        <div class="categories-elem-img"><img src="img/categories/2.png" alt=""></div>
-                                        <div class="flags-wrap">
-                                          <div class="flag-item discount"> <span>-99%</span></div>
-                                        </div></a></div>
+              <section class="filter-section">
+                <div class="filter-container">
+                  <form class="filter-form">
+                    <div class="filter-form-inner">
+                      <div class="filter-form-title"><span class="u-bold">Фильтры:</span></div>
+                      <div class="select-check js-select-trigger">
+                        <button class="selects" data-placeholder="Толщина металла, мм" data-valuename="Толщина" data-value="мм"><span class="btn-text">Толщина металла, мм</span><i class="select-img"></i></button>
+                        <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="dropdown-target">
+                          <div class="dropdown-inner">
+                            <div class="dropdown-content">
+                              <ul class="selected-list"></ul>
+                              <div class="u-graytext">Выберите параметры</div>
+                              <ul class="select-u-body">
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
+                                                                </li>
+                              </ul>
+                              <div class="dropdown-footer">
+                                <button class="t-blue btn js-filter-submit">Применить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-check js-select-trigger">
+                        <button class="selects" data-placeholder="Шаг волны профиля, мм" data-valuename="Шаг" data-value="мм"><span class="btn-text">Шаг волны профиля, мм</span><i class="select-img"></i></button>
+                        <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="dropdown-target">
+                          <div class="dropdown-inner">
+                            <div class="dropdown-content">
+                              <ul class="selected-list"></ul>
+                              <div class="u-graytext">Выберите параметры</div>
+                              <ul class="select-u-body">
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="250" data-value="250"><span class="input-checked"></span></span><span class="input-text">250</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="900" data-value="900"><span class="input-checked"></span></span><span class="input-text">900</span></label>
+                                                                </li>
+                              </ul>
+                              <div class="dropdown-footer">
+                                <button class="t-blue btn js-filter-submit">Применить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-check js-select-trigger">
+                        <button class="selects" data-placeholder="Высота профиля, мм" data-valuename="Высота" data-value="мм"><span class="btn-text">Высота профиля, мм</span><i class="select-img"></i></button>
+                        <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="dropdown-target">
+                          <div class="dropdown-inner">
+                            <div class="dropdown-content">
+                              <ul class="selected-list"></ul>
+                              <div class="u-graytext">Выберите параметры</div>
+                              <ul class="select-u-body">
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
+                                                                </li>
+                                                                <li class="select-u-item">
+                                                                  <label class="input_label"><span class="input_main">
+                                                                      <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
+                                                                </li>
+                              </ul>
+                              <div class="dropdown-footer">
+                                <button class="t-blue btn js-filter-submit">Применить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-check js-select-trigger">
+                        <button class="selects" data-placeholder="Цена, б.р." data-valuename="Цена" data-value="б.р."><span class="btn-text">Высота профиля, мм</span><i class="select-img"></i></button>
+                        <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="dropdown-target">
+                          <div class="dropdown-inner">
+                            <div class="dropdown-content">
+                              <div class="price-wrapper"><span class="price-label">от</span>
+                                <input class="price price-min" type="number" placeholder="100,00 р."><span class="price-label">до</span>
+                                <input class="price price-max" type="number" placeholder="2000,00 р.">
+                              </div>
+                              <div class="dropdown-footer">
+                                <button class="t-blue btn js-filter-submit">Применить</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </section>
               <!--.products-outer родитель ,в нем row с заголовкам и товарами-->
