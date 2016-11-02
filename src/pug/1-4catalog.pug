@@ -1,7 +1,7 @@
 extends _layout
 
 block title
-  title Categories 1-2
+  title Categories 1-4
 
 block content
   //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
@@ -152,7 +152,6 @@ block content
           a(href="#").sort-item.link-dotted   Дорогие
           a(href="#").sort-item.link-dotted   От А до Я
           a(href="#").sort-item.link-dotted   От Я до А
-
       .products-mobile-wrapper
         .sort_wrapper
           .sort-select.js-select-item
@@ -178,7 +177,7 @@ block content
                     a(href="#",data-text="Хиты продаж") Хиты продаж
       .products-wiew
         // .active для текущего вида
-        a(href="#").products-wiew-item.active
+        a(href="#").products-wiew-item
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 15', width="15px", height="15px", style='enable-background:new 0 0 15 15;', xml:space='preserve')
             style(type='text/css').
               .stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
@@ -186,7 +185,7 @@ block content
               g
                 path.stwiew(d='M0,4h4V0H0V4z M5.5,4h4V0h-4V4z M11,0v4h4V0H11z M0,9.5h4v-4H0V9.5z M5.5,9.5h4v-4h-4V9.5z M11,9.5h4v-4h-4\
                 V9.5z M0,15h4v-4H0V15z M5.5,15h4v-4h-4V15z M11,15h4v-4h-4V15z')
-        a(href="#").products-wiew-item
+        a(href="#").products-wiew-item.active
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 15',width="15px", height="15px", style='enable-background:new 0 0 15 15;', xml:space='preserve')
             style(type='text/css').
               .stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
@@ -195,67 +194,79 @@ block content
                 path.stwiew(d='M0,4h4V0H0V4z M5.5,0v4H15V0H5.5z M0,9.5h4v-4H0V9.5z M5.5,9.5H15v-4H5.5V9.5z M0,15h4v-4H0V15z M5.5,15H15\
                 v-4H5.5V15z')
     .products-row
-      .products-inner
-          mixin Productcart(name, img, prop1, prop2, price, type)
-            .product-card-wrapper
-              .product-card-outer
-                a(href="#").product-card-inner
-                  .product-card-img
+      //.product-table-wrapper это варппер каждого элемента, а не всех
+      .products-inner.products-table
+          mixin Productlist(name, img, prop1, prop2, prop3, prop4, price, type)
+            .product-table-wrapper
+                a(href="#").product-table-main
+                  .product-table-img
                     img(src=img, alt="")
-                  .categories-elem-name #{name}
-                  .u-text 
-                    span.prop
-                      span Высота:
-                      span.price #{prop1} ,
-                    span.prop
-                      span шаг волны:
-                      span.price #{prop1} 
+                    .flags-wrap
+                      - var val = type
+                      if val == '1'
+                        .flag-item.discount 
+                          span -15%
+                      else if val == '2'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -25%
+                      else if val == '3'
+                        .flag-item.new
+                          span New
+                      else if val == '4'
+                        .flag-item.hit 
+                          span Hit
+                        .flag-item.discount 
+                          span -55%
+                        .flag-item.new
+                          span New
+                      else if val == '0'
+                  .product-table-content
+                    .categories-elem-name #{name}
+                    .u-text 
+                      span.prop
+                        span Ширина листа полезная: 
+                        span.price #{prop1} ,
+                      span.prop
+                        span Высота:
+                        span.price #{prop2} ,
+                      span.prop
+                        span шаг волны:
+                        span.price #{prop3} 
+                      span.prop
+                        span область применения: :
+                        span.price #{prop4} 
+                      span.prop
+                        span область применения: :
+                        span.price #{prop4} 
+                      span.prop
+                        span область применения: :
+                        span.price #{prop4} 
+                    .u-graytext
+                      .p Срок исполнения заказа до 
+                        span 7 
+                        |дней
+                      .p Доставка по всей Беларуси
+                .product-table-add
                   .product-card-price 
                     |#{price}
                     span.u-graytext.old 1000р.
-                .product-card-more
-                  a(href="#").btn.t-blue Подробнее
-                .flags-wrap
-                  - var val = type
-                  if val == '1'
-                    .flag-item.discount 
-                      span -15%
-                  else if val == '2'
-                    .flag-item.hit 
-                      span Hit
-                    .flag-item.discount 
-                      span -25%
-                  else if val == '3'
-                    .flag-item.new
-                      span New
-                  else if val == '4'
-                    .flag-item.hit 
-                      span Hit
-                    .flag-item.discount 
-                      span -55%
-                    .flag-item.new
-                      span New
-                  else if val == '0'
-          +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
-          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
-          +Productcart('Планка3 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
-          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
-          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
-          +Productcart('Планка2 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
-          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
-          +Productcart('Профилированный лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
-          +Productcart('Планка торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
-          +Productcart('Металлочерепица Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепицаa  Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
-          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
-          +Productcart('Планка2 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
-          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
-          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+                  .product-card-more
+                    a(href="#").btn.t-blue Подробнее
+
+                
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','25 007.50р. / м2','1')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','2')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','3')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','4')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','1')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','2')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','0')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','1')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','350 мм','107.50р. / м2','2')
+          +Productlist('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','329 мм','139 мм','3522220 мм','107.50р. / м2','3')
+    
   .pagination-wrapper
     .pagination-inner
       .cards-slider-nav

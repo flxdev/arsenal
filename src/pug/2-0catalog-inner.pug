@@ -1,0 +1,185 @@
+extends _layout
+
+block title
+  title Карточка товара
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Каталог
+      a(href="#").bread-item Очень длинный заголовок про металлочерепицу
+      a(href="#").bread-item Каталог
+    h1.u-intro.h1 Металлочерепица Монтерей
+  .product-content-wrapper
+              .product-galery-wrap
+                .product-solo-cont
+                  .hits_status
+                    .status_item.item-new
+                      .status__item-bg
+                        span New
+                  img(src="img/promo/product.jpg", alt="velasaped")
+                .product-much-cont.active
+                    .flags-wrap
+                      .flag-item.discount 
+                        span -15%
+                      .flag-item.hit 
+                        span Hit
+                  .product-much-slider
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-slider-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                  .product-add-slider
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+                    .product-add-item
+                      img(src="img/promo/product.jpg", alt="velasaped")
+              .product-status-wrap
+              .product-main-wrap
+                .product-descr.descr-r
+                  .product-describe-buy
+                    form.inner-form(action="").product-select-cont
+                      .select-check.js-select-trigger
+                        button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+                          span.btn-text Высота профиля, мм
+                          i.select-img
+                        button.select-clear.js-select-clear
+                          span.i-close
+                        .dropdown-target
+                          .dropdown-inner
+                            .dropdown-content
+                              ul.selected-list
+                              .u-graytext Выберите параметры
+                              ul.select-u-body
+                                mixin selectItem(val)
+                                  li.select-u-item
+                                    label.input_label
+                                      span.input_main
+                                        input.input-real(type="checkbox",value = val, data-value= val)
+                                        span.input-checked
+                                      span.input-text #{val}
+                                +selectItem('550')
+                                +selectItem('500')
+                                +selectItem('400')
+                                +selectItem('100')
+                                +selectItem('200')
+                      .select-check.js-select-trigger
+                        button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+                          span.btn-text Высота профиля, мм
+                          i.select-img
+                        button.select-clear.js-select-clear
+                          span.i-close
+                        .dropdown-target
+                          .dropdown-inner
+                            .dropdown-content
+                              ul.selected-list
+                              .u-graytext Выберите параметры
+                              ul.select-u-body
+                                mixin selectItem(val)
+                                  li.select-u-item
+                                    label.input_label
+                                      span.input_main
+                                        input.input-real(type="checkbox",value = val, data-value= val)
+                                        span.input-checked
+                                      span.input-text #{val}
+                                +selectItem('550')
+                                +selectItem('500')
+                                +selectItem('400')
+                                +selectItem('100')
+                                +selectItem('200')
+                      .product-button-wrap
+                        .number.js-number(data-max-number='999')
+                          button.number__minus.js-minus-number(type='button', tabindex='0')
+                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
+                              style(type='text/css').
+                                .stpl{fill-rule:evenodd;clip-rule:evenodd;}
+                              path.stpl(d='M0,0h12v2H0V0z')
+                          input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                          button.number__plus.js-plus-number(type='button', tabindex='0')
+                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
+                              style(type='text/css').
+                                .stpl{fill-rule:evenodd;clip-rule:evenodd;}
+                              g
+                                g
+                                  polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
+                        
+                      a(href="#").disabled.product-oneclick.btn-width Купить в 1 клик
+                .product-descr
+                  .hits_raiting
+                    .hits_raiting-star-wrap
+                      i.star-raiting
+                    .hits_raiting-article
+                      span.art Актикул
+                      span.art-num 46146
+                    .hits_raiting-code
+                      span.cod Код
+                      span.art-num 146
+                  h4.product-small-title Краткие характеристики
+                  p.hits_descr
+                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза. У меня сын такой носит, сносу нет. Берите не пожалеете. Ососбенно если у вас ноги короткие.
+                  a(href="#tab_item",data-tab='#characteristics').product-learn-more.js-scroll
+                    |Узнать больше
+                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='18px',height='18px', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                      style(type='text/css').
+                        .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                      g
+                        g
+                          path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                          c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M9,10.7L5.6,7L5,7.6L9,12l4-4.4L12.4,7L9,10.7z')
+                  .product-delivery-wrap
+                    h4.product-small-title Как получить товар
+                    .product-delivery
+                      .product-image
+                        img(src="img/features/shipping.svg", alt="")
+
+                      .product-content
+                        span.name Курьером 
+                        .top-line-region
+                          p
+                            a.js-modal-trigger(href='#',data-target='.regions_hidden') Минск, Минская область
+                        p.product-content-text Стоимость доставки 
+                          spam 12,00 руб. (120 000 руб.) 
+                          |. При заказе от 
+                          span 500,00 руб. (5 000 000 руб.) 
+                          |доставка бесплатна
+                    .product-delivery
+                      .product-image
+                        img(src="img/features/pickup.svg", alt="")
+
+                      .product-content
+                        span.name Самовывоз
+                        p.product-content-text Брестская область, г. Кобрин, ул. Советская 141
+  
+  
+
+
+
+
+
+
+
+
+
+  

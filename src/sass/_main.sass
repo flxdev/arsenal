@@ -1,4 +1,9 @@
-
+input[type='number']
+  -moz-appearance: textfield;
+input::-webkit-clear-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none;
 a
   text-decoration: none
   color: $main
@@ -62,7 +67,8 @@ body, .out
     +rem(min-width, 320px)
     display: table
     &.is-hidden
-      visibility: hidden
+      +rm(991)
+        visibility: hidden
       .header_logo_wrap
         visibility: visible
       +r(991)
@@ -77,7 +83,7 @@ body, .out
     top: 0
     left: 0
     display: block
-    transition: transform .25s
+    transition: transform .25s, visibility .25s .5
     transition-duration: $tr
     will-change: transform 
     z-index: 20
@@ -342,7 +348,7 @@ body, .out
   transition-delay: 0.15s
   +rem(max-height,1000px)
   +rem(padding-bottom,5px)
-.js-select-trigger.active
+.js-select-trigger.active,.js-select-item.active
   .dropdown-target
     transition-delay: 0.15s
     +rem(max-height,1000px)
@@ -377,6 +383,13 @@ body, .out
         +rem(padding-right,12px)
         +rem(font-size,11px)
         +rem(letter-spacing,1px)
+      .small-link
+        vertical-align: sub
+        +rem(margin-left,5px)
+        opacity: 0.6
+
+        
+        
 
 
 .btn-cart,.btn-account
@@ -626,7 +639,7 @@ body, .out
     display: inline-block
     float: left
     +rem(width,30px)
-    height: 100%
+    +rem(height,28px)
     +rem(margin-right,10px)
     +rem(margin-top,6px)
     .st1,.st2
@@ -770,7 +783,7 @@ body, .out
         display: inline-block
     .cart-icon
       display: inline-block
-      height: 100%
+      +rem(height,35px)
       vertical-align: top
       +rem(width,35px)
       +rem(line-height,34px)
@@ -806,6 +819,7 @@ body, .out
         +rem(height,28px)
     +r(991)
       display: table-cell
+
 .cart_wrap-account
   vertical-align: middle
   &.dropdown-trigger
@@ -1432,14 +1446,23 @@ body, .out
     &:not(:first-child)
       +rem(margin-left,5px)
     +r(1080)
-      +rem(width,44px)
-      +rem(height,56px)
+      +rem(width,40px)
+      +rem(height,51px)
       span
         +rem(font-size,13px)
-        +rem(line-height,58px)
+        +rem(line-height,51px)
       &:after
-        +rem(bottom,-10px)
-        +rem(border-width, 10px 44px 10px 0)
+        +rem(bottom,-9px)
+        +rem(border-width, 9px 40px 9px 0)
+    +r(544)
+      +rem(width,35px)
+      +rem(height,46px)
+      span
+        +rem(font-size,11px)
+        +rem(line-height,46px)
+      &:after
+        +rem(bottom,-7px)
+        +rem(border-width, 7px 35px 7px 0)
     span
       +rem(font-size,14px)
       +rem(line-height,64px)
@@ -1540,10 +1563,17 @@ body, .out
   //   +rem(margin-bottom,20px)
   //   +r(544)
   //     +rem(margin-bottom,0px)
+
 .product-card
   &-wrapper
     +rem(padding-right, 5px) 
     +rem(padding-top, 5px) 
+    &:hover
+      +rm(991)
+        & ~ .product-card-wrapper
+          z-index: 0
+          .product-card-inner
+            z-index: 0
   &-inner
     display: block
     +rem(padding,15px 15px 44px 16px)
@@ -1564,20 +1594,23 @@ body, .out
     position: relative
     z-index: 1
     +rem(padding-bottom,35px)
-    transition: background .3s, box-shadow .3s
+    transition: background .3s .1s, box-shadow .3s .1s
     +r(544)
       +rem(padding-bottom,15px)
     &:hover
       +rm(991)
         background: $white
         position: relative
-        z-index: 2
+        z-index: 4
         box-shadow: 3px 3.5px 37px 0px rgba(0,0,0,0.17);
+        & ~ .product-card-outer
+          z-index: 0
         .categories-elem-name
           color: $maind
         .product-card-more 
           opacity: 1
           visibility: visible
+          transition: opacity .15s .1s, visibility .15s .1s
           background: $white
           box-shadow: 0px 10px 30px 0 rgba(0,0,0,.12)
   &-img
@@ -1610,13 +1643,130 @@ body, .out
     right: 0
     opacity: 0
     visibility: hidden
-    transition: opacity .15s .1s, visibility .15s .1s, background .3s, box-shadow .3s
+    transition: opacity .12s , visibility .12s , background .25s, box-shadow .3s
     +rem(padding,20px 20px 28px 20px)
     background: $graybg
     .btn
         min-width: 0
         width: 100% 
         +rem(font-size,13px) 
+
+.product-table
+  &-wrapper
+    background: $graybg
+    display: table
+    width: 100%
+    transition: background 0.25s $tr, box-shadow 0.25s $tr
+    +clr
+    +r(750)
+      display: block
+    &:hover
+      +rm(991)
+        background: $white
+        box-shadow: $shadow-left
+        position: relative
+        z-index: 1
+        transition: background 0.25s .15s $tr, box-shadow 0.25s .15s $tr
+        .categories-elem-name
+          color: $maind
+        .product-card-more
+          background: $white
+    &:not(:last-child)
+      +rem(margin-bottom, 5px)
+  &-main
+    display: table-cell
+    +rem(padding, 24px 0 25px)
+    +r(750)
+      display: block
+      width: 100%
+      +rem(padding, 15px 0 0)
+  &-add
+    display: table-cell
+    vertical-align: top
+    +rem(padding, 20px 32px 25px 0)
+    +rem(width, 205px)
+    +clr
+    +r(750)
+      display: block
+      width: 100%
+      +rem(padding, 10px 10px 25px 0)
+      padding-left: 40%
+      .product-card-price,.product-card-more
+        float: right
+        width: 100%
+      .u-graytext
+        display: inline-block !important
+    .product-card-price
+      text-align: right
+      +rem(letter-spacing, 0.4px)
+      span
+        display: block
+        +rem(font-size, 13px)
+        +rem(letter-spacing, 0.4px)
+        font-weight: 300
+
+    .product-card-more
+      +rem(padding, 10px 0 0 0)
+      .btn
+         +rem(padding, 11px 0)
+         +rem(max-width,320px)
+         float: right
+         
+    .product-card-price,.product-card-more
+      position: static
+      opacity: 1
+      visibility: visible
+  &-content 
+    display: inline-block
+    vertical-align: top
+    +rem(max-width,522px)
+    +rem(padding-right,22px)
+    width: 70%
+    +r(544)
+      width: 60%
+      +rem(padding-right,10px)
+    .categories-elem-name
+      +rem(font-size,18px)
+      line-height: 1
+      +rem(letter-spacing, 0.6px)
+      +rem(margin-bottom, 10px)
+      font-weight: 600
+      +tr(color .3s)
+    .u-text 
+      line-height: 2
+      +rem(margin-bottom, 7px)
+      +r(750)
+        line-height: 1.35
+    .u-graytext
+      +rem(letter-spacing, 0.4px)
+
+        
+        
+  &-img
+    display: inline-block
+    +padlr(20px)
+    +rem(max-width,195px)
+    position: relative
+    height: 100%
+    width: 30%
+    +vertical
+    +r(544)
+      width: 40%
+      +padlr(10px)
+    img
+      display: inline-block
+      max-width: 100%
+      vertical-align: middle
+      +rem(max-height,150px)
+      +r(768)
+        +rem(margin-top,45px)
+    .flags-wrap
+      +rem(top, -29px)
+      +rem(right, 20px)
+      +r(750)
+        +rem(top, -20px)
+        +rem(right, 10px)
+
 .tabs
   position: relative 
 .tabs-cont
@@ -1967,6 +2117,7 @@ body, .out
   +rem(font-size, 11px)
   font-weight: 400
   cursor: pointer
+  background: 0 0
   span
     position: relative
     transition: color .3s
@@ -2003,10 +2154,15 @@ body, .out
         background-image: url(../img/icons/download_maph.svg)
   &.close
     span
+      +rem(padding-left,12px)
+      &:after,&:before
+        +rem(width,10px)
+        +rem(height,12px)
       &:after
         background-image: url(../img/icons/close_popup.svg) 
       &:before
         background-image: url(../img/icons/close_popup_hover.svg)
+
 .link-dotted
   display: inline-block
   border-bottom: solid
@@ -2213,18 +2369,65 @@ body, .out
     +rem(padding, 40px 20px 47px 55px)
     +r(991)
       +rem(padding,30px 15px 37px 15px)
+    +r(544)
+      +rem(padding,25px 10px 35px 10px)
     &:not(:last-child)
       border-bottom: 1px solid $border
     &:last-child
       padding-bottom: 0
+    //контейнер кнопок переключения вида
+  &-wiew
+    display: inline-block
+    float: right
+    +rem(margin-top,-15px)
+    +rem(margin-right,25px)
+    +clr
+    &-item
+      +rem(margin-left,10px)
+      position: relative
+      z-index: 1
+      &.active
+        .stwiew
+          fill: $mainl 
+  &-sort
+    &-wrapper
+      +rem(padding, 25px 20px 0 55px)
+      +r(991)
+        +rem(padding, 25px 20px 0 20px)
+      +r(768)
+        display: none
+      .u-bold
+        +rem(margin-top,3px)
+        display: inline-block
+        +rem(padding-right, 15px)
+        float: left
+    &-outer
+      & + .products-row
+        padding-top: 0
+        +rem(margin-top,-11px)
+    &-inner
+      .sort-item
+        color: $text
+        border-image: url(../img/bdot.svg) 0 1 150 repeat stretch;
+        &:hover
+          color: $maind
+          border-color: transparent
+          border-image: none
+        &.active
+          color: $mainl
+          border-color: transparent
+          border-image: none
+        &:not(:last-child)
+          +rem(margin-right, 17px)
+    //контейнер товаров
   &-inner
     font-size: 0
     +rem(padding,36px 0 45px)
     .product-card-wrapper 
-      width: 219.4px
+      width: 219.8px
       display: inline-block
       vertical-align: top
-      +r(920)
+      +r(925)
         width: 25%
       +r(800)
         width: 33.33%
@@ -2269,6 +2472,8 @@ body, .out
     cursor: pointer;
     +rem(padding-left, 10px)
     transition: color .3s;
+    +r(768)
+      +rem(font-size, 13px)
   .input-real
     position: absolute;
     top: 0;
@@ -2327,6 +2532,7 @@ body, .out
 
 
 //main-buttn
+
 .selects
   width: 100%;
   +rem(padding,7px 10px);
@@ -2348,6 +2554,8 @@ body, .out
     max-width: 94%
     text-align: left
     +rem(font-size,11px)
+    +r(768)
+      +rem(font-size,13px)
   .select-img
     float: right;
     display: inline-block
@@ -2372,6 +2580,10 @@ body, .out
   z-index: 0
   +vertical
   float: left
+  +r(1280)
+    +rem(height, 29px)
+  +r(991)
+    +rem(height, 28px)
   &:hover
     .i-close
       transform: rotate(90deg)
@@ -2394,6 +2606,9 @@ body, .out
     +rem(padding, 15px 12px 17px 12px)
     .u-graytext
       +rem(margin-bottom,7px)
+  .dropdown-footer
+    .small-link
+      display: none
   &.active
     .select-img
       transform: scale(1,-1)
@@ -2406,32 +2621,206 @@ body, .out
       border-bottom-right-radius: 0px
     .select-clear
       +rem(right, -27px)
+    .small-link
+      display: inline-block
+      
 
 .filter
   &-section
-    +rem(padding,18px 25px 25px 55px)
+    +rem(padding,18px 25px 20px 55px)
+    +r(991)
+      +rem(padding,18px 20px 20px 20px)
   &-container
     position: relative
     +rem(padding-left, 81px)
+    +r(768)
+      padding-left: 0
+      .filter-checkbox
+        width: 100%
+  &-checkbox
+    display: inline-block
+    +rem(margin-top, 7px)
+    +rem(padding-right, 14px)
   &-form
+    transition: max-height .3s, overflow .1 .5
+    max-height: 0
+    overflow: hidden
+    +rm(768)
+      max-height: 1000px
+      overflow: visible
     &-title
       position: absolute
       left: 0
       +rem(top, 7px)
+      +r(768)
+        display: none
     &-inner
       font-size: 0
       .select-check 
         display: inline-block
         +rem(min-width,190px) 
         +rem(margin-right,16px) 
+        +rem(margin-bottom,16px) 
         vertical-align: top
         +tr(margin .3s)
+        +r(768)
+          max-width: 100%
+          width: 100%
         &.is-checked
           +rem(margin-right,45px)
       .dropdown-target
         z-index: 5
+        .price
+          width: 50%;
+          display: inline-block;
+          outline: 0;
+          +rem(padding-left, 21px);
+          +rem(height, 27px);
+          +rem(font-size, 12px);
+          +rem(margin-bottom, 12px);
+          position: relative;
+          border: 1px solid;
+          border-color: $border;
+          +rem(border-radius, 4px);
+          +placeholder
+            opacity: .5
+        .price-label
+          position: absolute;
+          +rem(margin-right, -19px);
+          +rem(margin-top, 5.5px);
+          color: #000;
+          +rem(font-size, 11px);
+          z-index: 1;
+          font-weight: 300;
+          +rem(padding-left, 7px);
+          opacity: 0.5
+        .price-min
+          border-right-color: transparent!important;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        .price-max
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
 
+//сортировка товара 1-2catalog
+.sort_wrapper
+  display: none;
+  width: 100%;
+  +rem(margin-left, 20px);
+  +rem(margin-top, 15px); 
+  +clr
+  +r(768)
+    display: inline-block
+  .sort-select,.sort_view_wrap
+    display: inline-block;
+    +rem(max-width, 250px); 
+    vertical-align: top;
+  .sort-select
+    +rem(height, 20px); 
+    +rem(letter-spacing, 0.4px);
+    position: relative
+    .sort-select-title
+      +clr
+      +rem(font-size, 16px); 
+      cursor: pointer;
+      user-select: none;
+      span, i
+        display: inline-block;
+    .bread-arrow
+      display: inline-block
+      vertical-align: middle
+      +rem(height, 10px)
+      +rem(width, 10px)
+      +rem(margin-left, 10px)
+      transform-origin: 50%
+      background: url(../img/icons/select_down.svg) no-repeat center
+    &.active
+      .bread-arrow
+        transform: scale(1,-1)
+      .sort-select-title
+        color: $maind
+    .bread-arrow
+       +rem(margin-top, -1px); 
+    .dropdown-target
+      z-index: 5
+    .dropdown-target,.dropdown-inner
+      width: 100%
+      +rem(min-width, 150px);
+    .dropdown-content
+      +rem(padding, 10px 10px 15px 10px)
+      .sort-select-item
+        +rem(padding, 7px 0);
+        color: $text
+        a
+          transition: color .3s;
+          color: $text;
+          display: inline-block;
+          width: 100%;
+        &.active
+          font-weight: bold;
+          a
+            color: $mainl
+          &:before
+            opacity: 1;
 
+.mobile-dropdowm-trigger
+  display: none
+  +r(768)
+    display: block
+    cursor: pointer
+    +rem(padding,5px 0)
+    +rem(margin-bottom,5px)
+    &.active
+      .u-bold
+        color: $maind
+      & +.filter-form
+        +r(768)
+          max-height: 1000px
+          overflow: visible
+      .arrow-icon
+        transform: scale(1,-1) rotate(90deg)
+    .u-bold 
+      +rem(font-size,13px)
+    .arrow-icon
+      display: inline-block
+      float: right
+      +rem(width,12px)
+      +rem(margin-top,4px)
+      +rem(height,12px)
+      background: url(../img/icons/barrow.svg) no-repeat center
+      transform-origin: 50%
+      transform: rotate(90deg)
 
+//pagination
+.pagination 
+  &-wrapper
+    text-align: center
+  &-inner
+    display: inline-block
+    .cards-slider-nav
+      margin: 0
+      max-width: 600px
+      .pagin-counter
+        display: inline-block
+        vertical-align: middle
+        +padlr(20px)
+        +r(544)
+          +padlr(10px)
+        &-item
+          +rem(width,25px)
+          +rem(height,25px)
+          display: inline-block
+          +rem(line-height,25px)
+          font-family: intro
+          font-weight: 400
+          text-align: center
+          color: $text
+          &.active
+            color: $white
+            background: $mainl
+        .dots
+          display: inline-block
+          +rem(font-size,17px)
+          
 
-
+    

@@ -709,12 +709,12 @@ function filterProducts() {
 
 		});
 
-		submit.on('click', function(){
+		submit.on('click', function(e){
 				var wrapper = $(this).closest('.dropdown-content'),
 						input = wrapper.find('input'),
 						selCont = wrapper.find('.selected-list'),
 						unselCont = wrapper.find('.select-u-body');
-
+						e.preventDefault();
 				$(this).closest(trigger).removeClass('active');
 				_.trigger('reinit');
 				
@@ -736,6 +736,7 @@ function filterProducts() {
 				},500);
 
 				clear.on('click', function(e){
+					e.preventDefault();
 					console.log(input.length)
 					_.removeClass('active , is-checked').find('input').prop('checked', false); 
 					selCont.find('.select-u-item').detach().appendTo(unselCont);
@@ -755,7 +756,7 @@ function filterProducts() {
 					
 					if(inputs.length) {
             tta.addClass('is-checked');
-            textCont.text('' + valuename + ':' + textmoded +' ' + value)
+            textCont.text('' + valuename + ': ' + textmoded +' ' + value)
           }
           else {
             tta.removeClass('is-checked');
@@ -805,7 +806,55 @@ function filterProducts() {
     //     }
     // });
 } filterProducts();
+function mobileFilter(){
+	var trigger = $('.mobile-dropdowm-trigger');
 
+	trigger.on('click', function(){
+		$(this).toggleClass('active').delay(200).addClass('visible');
+	})
+}mobileFilter();
+
+if($('.sort_wrapper').length){
+
+ 	var sortItem = function(){
+ 		var trigger = $('.js-select-item');
+
+ 		trigger.on('click', function(){
+ 			var _ = $(this);
+ 			var textCont = _.find('span');
+ 			var target = _.parent().find('.dropdown-target');
+ 			var item = target.find('.sort-select-item a');
+
+ 			_.toggleClass('active');
+
+ 			item.on('click',function(e){
+
+ 				var _ = $(this),
+ 					altLext = _.data('text');
+
+ 				textCont.text(altLext);
+
+ 				_.parent().addClass('active').siblings().removeClass('active');
+ 				e.preventDefault();
+ 				setTimeout(function(){
+
+ 					target.removeClass('active');
+ 					trigger.removeClass('active');
+
+ 				},300);
+ 			});
+ 				$(document).mouseup(function (e){ 
+					if (!trigger.is(e.target) 
+					    && trigger.has(e.target).length === 0 && !item.is(e.target) ) {
+						target.removeClass('active');
+ 						trigger.removeClass('active');
+					}
+				});
+
+ 		});
+ 	};
+ 	sortItem();
+ } 
 });
 
 //end of document ready
