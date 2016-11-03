@@ -156,6 +156,9 @@ function compareHeight(){
 	$('.products-inner .product-card-inner').matchHeight({
 		 property: 'min-height'
 	});
+	$('.specials-wrapper .specials-item').matchHeight({
+		 property: 'min-height'
+	});
 } compareHeight();
 
 function Tabs(){
@@ -603,7 +606,14 @@ if($('#map').length){
 } initMap();
 
 }
+function Colors(){
+	var trigger = $('.js-colors');
+	var target = $('.colors-wrapper');
 
+	trigger.on('click', function(){
+		target.toggleClass('active');
+	});
+}Colors();
 function initCustomSelectList() {
     var _conf = {
             initClass: 'cs-active',
@@ -771,11 +781,12 @@ function filterProducts() {
     //     }
     // });
 } filterProducts();
+
 function mobileFilter(){
 	var trigger = $('.mobile-dropdowm-trigger');
 
 	trigger.on('click', function(){
-		$(this).toggleClass('active').delay(200).addClass('visible');
+		$(this).toggleClass('active');
 	})
 }mobileFilter();
 

@@ -151,6 +151,12 @@ body, .out
   font-weight: 700
   color: $text 
   +rem(letter-spacing,0.1px)
+.u-black
+  +rem(font-size,14px)
+  color: #000
+  font-weight: 700
+  +rem(letter-spacing, 0.4px)
+  line-height: 1.75
 .u-title
   +rem(font-size, 14px) 
   color: $black
@@ -2168,10 +2174,16 @@ body, .out
   border-bottom: solid
   border-width: 1px;
   +rem(font-size, 12px)
+  background: 0 0
   border-image: url(../img/bdot.svg) 0 0 100 repeat stretch;
   &:hover
     border-image: 0
     border-color: transparent
+  &.bold
+    +rem(font-size,14px)
+    font-weight: 600
+    color: $main
+    line-height: 1.5
 //modal-window
 .modal-layout
   position: fixed
@@ -2821,6 +2833,381 @@ body, .out
         .dots
           display: inline-block
           +rem(font-size,17px)
-          
 
-    
+// 2-0 product-inner         
+.product
+  &-content-wrapper
+    width: 100%
+    +clr
+    +rem(padding, 35px 25px 0 55px)
+    +r(991)
+      +rem(padding, 30px 25px 0 25px)
+  &-much-cont
+    background: $graybg
+    +rem(padding,25px);
+    position: relative
+  &-galery-wrap
+    text-align: center
+    +rem(padding-right,35px);
+    &:hover
+      .cards-slider-nav
+        opacity: 1
+    .cards-slider-nav
+      position: absolute
+      width: 100%
+      max-width: 100%
+      +rem(height,84px)
+      +rem(bottom,25px)
+      opacity: 0
+      +tr(opacity .3s)
+      left: 0
+      right: 0
+      +r(1150)
+        +rem(bottom,15px)
+      .slick-arrow
+        +rem(padding-top,35px)
+        +rem(width,30px)
+      .carousel-prev
+        float: left
+        margin-left: 3%
+      .carousel-next
+        float: right
+        margin-right: 3%
+  &-galery-wrap,&-main-wrap
+    width: 50%;
+    display: inline-block;
+    float: left;
+    +clr
+  &-much-slider
+    cursor: pointer
+    +rem(padding-bottom,50px);
+    +rem(min-height,400px);
+    +vertical
+    & > img
+      display: inline-block
+      max-width: 100% 
+      +rem(max-height, 450px)
+      +rem(margin-top, 25px)
+      vertical-align: middle
+  &-slider-item
+    +rem(padding, 40px 40px 0 40px) 
+    text-align: center
+    +rem(height,400px)
+    +vertical
+    +r(1150)
+      +rem(padding, 15px 15px 0 15px) 
+      +rem(height,300px)
+    img
+      display: inline-block
+      vertical-align: middle
+      max-width: 100%;
+      +rem(max-height,320px);
+      +r(1150)
+        +rem(max-height,280px);
+  &-add-slider
+    +rem(height,84px);
+    +rem(margin-top,-700px);
+    +rem(margin-right,-4px);
+    +rem(width,378px);
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    +r(1150)
+      +rem(width,270px);
+      +rem(height,60px);
+  &-add-img
+    +rem(height,84px)
+    width: 100%
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    border: 2px solid transparent;
+    opacity: 1;
+    transition: opacity .3s , border .3s;
+    +r(1150)
+      +rem(height,60px);
+  &-add-item
+    +rem(padding,0 5px)
+    +rem(margin-right,1px)
+    &:hover
+      .product-add-img
+        cursor: pointer;
+        border-color: $maind
+    &.slick-current
+      .product-add-img
+        border-bottom-color: $mainl;
+        opacity: 0.5;
+        transition: opacity .3s;
+        &:hover
+          border-top-color: transparent
+          border-left-color: transparent
+          border-right-color: transparent
+  &-main
+    &-wrap
+      +rem(padding-left,7px)
+    &-descr
+      .u-intro
+        line-height: 1
+      +rem(padding-bottom,28px)
+      &:not(:first-child)
+        +rem(padding,25px 0)
+        border-top: 1px solid $border
+      .u-text:not(p)
+        +rem(margin,19px 0 11px) 
+        line-height: 1.8
+      .features
+        font-size: 0
+        &_block
+          display: inline-block
+          width: 50%
+          vertical-align: top
+          border-left: none 
+          padding: 0
+          +rem(padding-right, 22px)
+          .u-text
+            display: block
+            overflow: hidden
+            +rem(font-size,11px)
+        &--img
+          +rem(margin,2px 10px 0 0)
+          +rem(width,28px)
+          +rem(height,28px)
+
+        
+    &-form
+      +clr 
+      +rem(margin-top,20px)
+      font-size: 0
+    &-selects,&-calcwrap
+      display: inline-block
+      vertical-align: top
+    &-selects
+      width: 56%
+      .selects
+        +rem(padding, 8px 10px)
+      .select-check
+        font-size: 0
+        &:not(:last-child)
+          +rem(margin-bottom,16.5px)
+      .number-cont, .btn
+        display: inline-block
+        width: 48%
+        vertical-align: top
+      .number-cont
+        padding-right: 2%
+      .btn
+        margin-left: 2%
+        min-width: 0
+        float: right
+        +rem(padding,8px 0)
+    &-calcwrap
+      width: 44%
+      +rem(padding-left,22px)
+  &-tabs-content
+    +rem(padding, 35px 25px 0 55px)
+    +r(991)
+      +rem(padding, 30px 25px 0 25px)
+    .tabs-head
+      width: 100%
+
+.calc
+  &-container
+    background: $yel
+    +rem(padding,25px 15px 0 15px)
+    text-align: center
+    .product-card-price
+      position: static
+      font-weight: 700
+      .u-graytext
+        color: #857e60
+        display: block
+        text-align: center
+        font-weight: 400
+        +rem(letter-spacing,0.4px)
+        +rem(margin-top,2px)
+  &-button
+    +rem(margin,0 -15px)
+    background: $text
+    color: $white
+    +rem(padding,6px 0)
+    .calc 
+      color: $white
+      background-color: transparent
+      +rem(font-size,11px)
+      +rem(letter-spacing, 0.8px)
+      line-height: 1.5
+  &-text
+    +rem(margin,10px 0 22px)
+    color: $text
+      
+.number
+  font-size: 0;
+  position: relative;
+  display: table
+  width: 100%
+  border-collapse: collapse
+  +clr
+  &-wrap
+    border: 1px solid $border;
+    +rem(border-radius,3px)
+    overflow: hidden
+    +tr(border .3s)
+    &:hover
+      border: 1px solid $maind
+  &__minus,&__plus 
+    +rem(max-width,27px);
+    width: 20%
+    background-color: #fff;
+    position: relative;
+    +rem(border-radius,3px);
+    cursor: pointer;
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 10px 10px
+    border-color: $border
+    transition: border-color .3s, background-color .3s
+    &:hover
+      background-color: $graybg
+      border-color: $maind
+    &:active
+      background-color: darken($graybg, 10)
+  &__minus,&__plus,&__input
+    display: table-cell !important
+    vertical-align: top;
+    +rem(font-size,11px)
+    +rem(height,28px)
+  &__input 
+    background-color: #fff;
+    +rem(line-height,28px)
+    max-width: 60%
+    text-align: center;
+    color: #000000;
+    border: 0;
+    -webkit-appearance: textfield !important
+    width: 100%
+    margin: 0
+  &__minus
+    background-image: url(../img/icons/minus.svg)
+    border-right: 1px solid $border
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+  &__plus
+    background-image: url(../img/icons/plus.svg)
+    border-left: 1px solid $border
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+
+.side-wrap
+  font-size: 0
+  +rem(margin-top,-5px)
+  +rem(margin-bottom,25px)
+  .side-title,.side-cont
+    display: inline-block
+    vertical-align: top
+  .side-title
+    +rem(max-width,278px)
+    width: 27%
+    .u-intro
+      line-height: 1.65
+  .side-cont
+    width: 73%
+    +rem(max-width,726px)
+    .u-black
+      +rem(margin-bottom,20px)
+    p
+      +rem(font-size, 13px)
+      color: $text
+      line-height: 1.85
+      +rem(margin-bottom, 9px)
+      +rem(letter-spacing, 0.4px)
+.specials
+  &-wrapper
+    font-size: 0
+    counter-reset: item
+    +rem(margin-top, 30px)
+  &-item
+    display: inline-block
+    vertical-align: top
+    counter-increment: item
+    +rem(margin-bottom,10px)
+    &:nth-of-type(3n+1)
+      +rem(padding-right,13px)
+      width: 36%
+    &:nth-of-type(3n+2)
+      +rem(padding-right,5px)
+      width: 34%
+    &:nth-of-type(3n+3)
+      width: 30%
+  &-name
+    color: $mainl
+    line-height: 1.75
+    &:before
+      content: counter(item,decimal-leading-zero);
+      display: block
+      +rem(margin-right,10px)
+      +rem(margin-bottom,1px)
+      +rem(width,25px)
+      float: left
+  &-text
+    +rem(margin-top,10px)
+.char
+  &-table
+    border: 1px solid $border
+    font-size: 0
+    width: 100%
+    +rem(max-width,775px)
+    +rem(margin-bottom,20px)
+    dl
+      +clr
+      +rem(padding, 14px 0 18px)
+      &:not(:last-child)
+        border-bottom: 1px solid $border
+  &-head
+    background: $border
+    .char-name,.char-descr
+      +rem(font-size,11px)
+      color: #898d9a
+      font-weight: 400
+  &-name,&-descr
+    display: inline-block
+    vertical-align: middle
+    float: left
+    +rem(font-size,13px)
+    color: #2e2e2e
+    +rem(padding-left,30px)
+  &-descr
+    font-weight: 700
+    width: 52%
+  &-name
+    width: 48%
+.yes
+  display: inline-block
+  +rem(width,13px)
+  +rem(height,13px)
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  background-image: url(../img/icons/plus_green.svg)
+.colors
+  &-wrapper
+    +clr 
+    +rem(margin, 0 -20px 0 -8px)
+    +rem(max-height,300px)
+    overflow: hidden
+    will-change: max-height
+    +gpu
+    +tr(max-height .5s $tr)
+    &.active
+      max-height: 3000px
+  &-item
+    display: inline-block
+    vertical-align: top
+    width: 16.66%
+    +rem(padding, 0 8px)
+    +rem(margin-bottom, 15px)
+    .u-graytext
+      +rem(margin-top, 5px)
+  &-color
+    width: 100%
+    +rem(height,38px)
+    +rem(border-radius,3px)

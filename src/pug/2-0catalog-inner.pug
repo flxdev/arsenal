@@ -13,165 +13,448 @@ block content
       a(href="#").bread-item Каталог
     h1.u-intro.h1 Металлочерепица Монтерей
   .product-content-wrapper
-              .product-galery-wrap
-                .product-solo-cont
-                  .hits_status
-                    .status_item.item-new
-                      .status__item-bg
-                        span New
-                  img(src="img/promo/product.jpg", alt="velasaped")
-                .product-much-cont.active
-                    .flags-wrap
-                      .flag-item.discount 
-                        span -15%
-                      .flag-item.hit 
-                        span Hit
-                  .product-much-slider
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-slider-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                  .product-add-slider
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-                    .product-add-item
-                      img(src="img/promo/product.jpg", alt="velasaped")
-              .product-status-wrap
-              .product-main-wrap
-                .product-descr.descr-r
-                  .product-describe-buy
-                    form.inner-form(action="").product-select-cont
-                      .select-check.js-select-trigger
-                        button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
-                          span.btn-text Высота профиля, мм
-                          i.select-img
-                        button.select-clear.js-select-clear
-                          span.i-close
-                        .dropdown-target
-                          .dropdown-inner
-                            .dropdown-content
-                              ul.selected-list
-                              .u-graytext Выберите параметры
-                              ul.select-u-body
-                                mixin selectItem(val)
-                                  li.select-u-item
-                                    label.input_label
-                                      span.input_main
-                                        input.input-real(type="checkbox",value = val, data-value= val)
-                                        span.input-checked
-                                      span.input-text #{val}
-                                +selectItem('550')
-                                +selectItem('500')
-                                +selectItem('400')
-                                +selectItem('100')
-                                +selectItem('200')
-                      .select-check.js-select-trigger
-                        button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
-                          span.btn-text Высота профиля, мм
-                          i.select-img
-                        button.select-clear.js-select-clear
-                          span.i-close
-                        .dropdown-target
-                          .dropdown-inner
-                            .dropdown-content
-                              ul.selected-list
-                              .u-graytext Выберите параметры
-                              ul.select-u-body
-                                mixin selectItem(val)
-                                  li.select-u-item
-                                    label.input_label
-                                      span.input_main
-                                        input.input-real(type="checkbox",value = val, data-value= val)
-                                        span.input-checked
-                                      span.input-text #{val}
-                                +selectItem('550')
-                                +selectItem('500')
-                                +selectItem('400')
-                                +selectItem('100')
-                                +selectItem('200')
-                      .product-button-wrap
-                        .number.js-number(data-max-number='999')
-                          button.number__minus.js-minus-number(type='button', tabindex='0')
-                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
-                              style(type='text/css').
-                                .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                              path.stpl(d='M0,0h12v2H0V0z')
-                          input.number__input.js-price-input(type='text', value='0', tabindex='0')
-                          button.number__plus.js-plus-number(type='button', tabindex='0')
-                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
-                              style(type='text/css').
-                                .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                              g
-                                g
-                                  polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
-                        
-                      a(href="#").disabled.product-oneclick.btn-width Купить в 1 клик
-                .product-descr
-                  .hits_raiting
-                    .hits_raiting-star-wrap
-                      i.star-raiting
-                    .hits_raiting-article
-                      span.art Актикул
-                      span.art-num 46146
-                    .hits_raiting-code
-                      span.cod Код
-                      span.art-num 146
-                  h4.product-small-title Краткие характеристики
-                  p.hits_descr
-                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза. У меня сын такой носит, сносу нет. Берите не пожалеете. Ососбенно если у вас ноги короткие.
-                  a(href="#tab_item",data-tab='#characteristics').product-learn-more.js-scroll
-                    |Узнать больше
-                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='18px',height='18px', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
-                      style(type='text/css').
-                        .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
-                      g
-                        g
-                          path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
-                          c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M9,10.7L5.6,7L5,7.6L9,12l4-4.4L12.4,7L9,10.7z')
-                  .product-delivery-wrap
-                    h4.product-small-title Как получить товар
-                    .product-delivery
-                      .product-image
-                        img(src="img/features/shipping.svg", alt="")
+    .product-galery-wrap
+      .product-much-cont
+        .flags-wrap
+          .flag-item.discount 
+            span -15%
+          .flag-item.hit 
+            span Hit
+        .cards-slider-nav.product-nav
+        //Если картинка одна, просто пихай ее в .product-much-slider 
+        .product-much-slider
+          .product-slider-item
+            img(src="img/cards/1.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/2.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/3.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/4.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/5.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/1.png", alt="velasaped")
+          .product-slider-item
+            img(src="img/cards/2.png", alt="velasaped")
+        .product-add-slider
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/1.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/2.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/3.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/4.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/5.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/1.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/2.png)')
+    script.
+      function ProductSlider(){
+        setTimeout(function(){
+          $('.product-much-slider').slick({
+            arrows: true,
+            slidesToShow: 1,
+            asNavFor: $('.product-add-slider'),
+            infinite: false,
+            focusOnSelect: true,
+            appendArrows: $('.product-nav'),
+            nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+            prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+              responsive: [
+              {
+                breakpoint: 570,
+                settings: {
+                  dots: true,
+                }
+              }
+            ]
+          });
+          $('.product-add-slider').slick({
+            asNavFor: $('.product-much-slider'),
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: false,
+            draggable: false,
+            arrows:false,
+            focusOnSelect: true,
+            responsive: [
+              {
+                breakpoint: 1150,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                }
+              }
+            ]
+          });
+        }, 10);
+      }ProductSlider();
+    .product-main-wrap
+      .product-main-descr
+        h2.u-intro.h1 Металлочерепица Монтерей
+        .u-text.lt Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), 
+          br
+          |шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет
+        button.link-dotted.bold Все характеристики
+      .product-main-descr
+        h3.u-intro.h3 Конфигурация
+        form(action="").product-main-form
+          .product-main-selects
+            .select-check.js-select-trigger
+              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+                span.btn-text Высота профиля, мм
+                i.select-img
+              button.select-clear.js-select-clear
+                span.i-close
+              .dropdown-target
+                .dropdown-inner
+                  .dropdown-content
+                    ul.selected-list
+                    .u-graytext Выберите параметры
+                    ul.select-u-body
+                      mixin selectItem(val)
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox",value = val, data-value= val)
+                              span.input-checked
+                            span.input-text #{val}
+                      +selectItem('550')
+                      +selectItem('500')
+                      +selectItem('400')
+                      +selectItem('100')
+                      +selectItem('200')
+            .select-check.js-select-trigger
+              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+                span.btn-text Высота профиля, мм
+                i.select-img
+              button.select-clear.js-select-clear
+                span.i-close
+              .dropdown-target
+                .dropdown-inner
+                  .dropdown-content
+                    ul.selected-list
+                    .u-graytext Выберите параметры
+                    ul.select-u-body
+                      mixin selectItem(val)
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox",value = val, data-value= val)
+                              span.input-checked
+                            span.input-text #{val}
+                      +selectItem('550')
+                      +selectItem('500')
+                      +selectItem('400')
+                      +selectItem('100')
+                      +selectItem('200')
+            .select-check.js-select-trigger
+              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
+                span.btn-text Высота профиля, мм
+                i.select-img
+              button.select-clear.js-select-clear
+                span.i-close
+              .dropdown-target
+                .dropdown-inner
+                  .dropdown-content
+                    ul.selected-list
+                    .u-graytext Выберите параметры
+                    ul.select-u-body
+                      mixin selectItem(val)
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox",value = val, data-value= val)
+                              span.input-checked
+                            span.input-text #{val}
+                      +selectItem('550')
+                      +selectItem('500')
+                      +selectItem('400')
+                      +selectItem('100')
+                      +selectItem('200')
+            .select-check
+              .number-cont
+                .number-wrap
+                  .number.js-number(data-max-number='999',data-type='м²')
+                    button.number__minus.js-minus-number(type='button', tabindex='0')
+                    input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                    button.number__plus.js-plus-number(type='button', tabindex='0')
+              button.btn.t-blue В корзину
+          .product-main-calcwrap
+            .calc-container
+              .calc-pricewrap
+                .product-card-price 
+                  |107.50 р.                    
+                  span.u-graytext.old 1000р.
+              .calc-text.u-graytext Срок исполнения заказа
+                br
+                span 7 
+                |дней
+              .calc-button 
+                button.calc.t-w Расчёт металлочерепицы
+            
+      .product-main-descr
+        .features
+          mixin Futureslides(img, text)
+            .features_block
+              .features--img
+                img(src=img, alt="")
+              p.u-text #{text}
+          +Futureslides('img/features/icon_1.svg','Доставка на собственном автопарке в любой регион Беларуси или самовывоз со склада.') 
+          +Futureslides('img/features/icon_2.svg','Оперативная доставка по всей территории Республики Беларусь') 
+  .product-tabs-content.b-bottom
+    .tabs.js-tabs-wrap
+      .tabs-head.w4
+        .tabs-item.js-tab-trigger
+          span Описание
+        .tabs-item.js-tab-trigger
+          span Cертификаты
+        .tabs-item.js-tab-trigger
+          span Монтаж
+        .tabs-item.js-tab-trigger
+          span Комплектующие
+      .tabs-body
+        .tabs-cont
+          .side-wrap
+            .side-title
+              .u-intro.h2 Классика среди раз- личных видов металло- черепиц
+            .side-cont
+              .u-black Металлочерепица Монтеррей — листовой материал, имитирующий  черепичное покрытие классического образца, не уступающий натуральной кровле по показателям прочности и надежности в эксплуатации. 
+              p Потребителю предоставляется возможность выбрать подходящий  цвет из более чем 40 различных  оттенков, что обеспечивает реализацию любых дизайнерских решений. Именно поэтому металло- черепицу Монтеррей покупают не только для строительства, но и для реконструкции исторических зданий. Долговечность  материала  определяется высоким качеством стали, используемой для производства листовых  заготовок.
+              p Лист металлочерепицы имеет многослойную структуру, при этом сталь покрыта защитным слоем с двух сторон (верхняя и нижняя часть листа). Цинковый или алюмоцинковый состав предохраняет металл от коррозийных процессов, лак  и полимерная краска — повышают устойчивость материала к погодным факторам, а также  предотвращают выцветание черепицы от ультрафиолетовых лучей.
+              .specials-wrapper
+                mixin specials(name,text)
+                  .specials-item
+                    .specials-name.u-intro.h3
+                      |#{name}
+                    p.specials-text #{text}
+                +specials('Механическая стойкость','Полимерное покрытие гаран- тирует стойкость к механическим повреждениям и большинству атмосферных влияний.')
+                +specials('Стойкость к УФ-излучению','Хорошая сопротивляемость металла и грунтовки солнечным лучам.')
+                +specials('Удельный вес','Профиль металлочерепицы может быть разным по габа- ритам, но средний вес соста- вляет всего 5 кг на 1 м².')
+                +specials('Ассортимент','Предлагаем большой выбор профилей и расцветок, этот универсальный материал поможет воплотить в жизнь любые дизайнерские задумки.')
+                +specials('Экология','Совершенно безопасно как для людей, так и для окружающей среды.')
+          .side-wrap
+            .side-title
+              .u-intro.h2 Технические Характеристики
+            .side-cont
+              .char-table
+                dl.char-head
+                  dt.char-name Свойства
+                  dd.char-descr Параметры
+                dl
+                  dt.char-name Ширина листа габаритная
+                  dd.char-descr 1 180 мм 
+                dl
+                  dt.char-name Ширина листа рабочая
+                  dd.char-descr 1 200 мм
+                dl
+                  dt.char-name Высота профиля
+                  dd.char-descr 39 мм (39=25+14)
+                dl
+                  dt.char-name Высота волны
+                  dd.char-descr 350 мм
+                dl
+                  dt.char-name Шаг волны
+                  dd.char-descr 21 мм 
+                dl
+                  dt.char-name Высота ступеньки
+                  dd.char-descr 21 мм 
+                dl
+                  dt.char-name Толщина металла
+                  dd.char-descr 0,4-0,5 мм
+                dl
+                  dt.char-name Область применения
+                  dd.char-descr кровля
+                dl
+                  dt.char-name Срок службы
+                  dd.char-descr 50 лет 
+                dl
+                  dt.char-name Гарантия
+                  dd.char-descr 20 лет
+                dl
+                  dt.char-name Наличие обратной стороны в цвет лицевого покрытия
+                  dd.char-descr
+                    i.yes 
+          .side-wrap
+            .side-title
+              .u-intro.h2 Цветовая гамма по каталогу RAL
+            .side-cont
+              .colors-wrapper
+                mixin Colors(val,text)
+                  .colors-item
+                    .colors-color(style='background-color: #'+val+'')
+                    .u-graytext  #{text}
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('ffea98','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+              button.link-dotted.bold.js-colors Показать все цвета
+          
+        .tabs-cont
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excedrgfffffffffffffffffffffffffffffffffffffffffffffpteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .tabs-cont
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quiserwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excedrgfffffffffffffffffffffffffffffffffffffffffffffpteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .tabs-cont
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtemewwwwwwwwww333333333333333333333333por incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quiserwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrwrw nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excedrgfffffffffffffffffffffffffffffffffffffffffffffpteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  section.slider-section
+    h2.u-intro.h2 Рекомендуемые товары 
+    .tabs-cont          
+      .slider-section-inner
+        mixin Productcart(name, img, prop1, prop2, price, type)
+          .product-card-wrapper
+            .product-card-outer
+              a(href="#").product-card-inner
+                .product-card-img
+                  img(src=img, alt="")
+                .categories-elem-name #{name}
+                .u-text 
+                  span.prop
+                    span Высота:
+                    span.price #{prop1} ,
+                  span.prop
+                    span шаг волны:
+                    span.price #{prop1} 
+                .product-card-price 
+                  |#{price}
+                  span.u-graytext.old 1000р.
+              .product-card-more
+                a(href="#").btn.t-blue Подробнее
+              .flags-wrap
+                - var val = type
+                if val == '1'
+                  .flag-item.discount 
+                    span -15%
+                else if val == '2'
+                  .flag-item.hit 
+                    span Hit
+                  .flag-item.discount 
+                    span -25%
+                else if val == '3'
+                  .flag-item.new
+                    span New
+                else if val == '4'
+                  .flag-item.hit 
+                    span Hit
+                  .flag-item.discount 
+                    span -55%
+                  .flag-item.new
+                    span New
+                else if val == '0'
+        +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+        +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+        +Productcart('Планка3 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+        +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+        +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+        +Productcart('Саморез 3сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 мм','1 000 шт.','1.40р. / шт','0')
+        +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+      .cards-slider-nav
+        .cards-slider-counter
+          span.cards-slider-current
+          span.cards-slider-divider /
+          span.cards-slider-total
+  script.
+    function cards(){
+      $( ".slider-section-inner").each( function() {
+        var _this = $(this);
 
-                      .product-content
-                        span.name Курьером 
-                        .top-line-region
-                          p
-                            a.js-modal-trigger(href='#',data-target='.regions_hidden') Минск, Минская область
-                        p.product-content-text Стоимость доставки 
-                          spam 12,00 руб. (120 000 руб.) 
-                          |. При заказе от 
-                          span 500,00 руб. (5 000 000 руб.) 
-                          |доставка бесплатна
-                    .product-delivery
-                      .product-image
-                        img(src="img/features/pickup.svg", alt="")
+        slidesCount(_this);
 
-                      .product-content
-                        span.name Самовывоз
-                        p.product-content-text Брестская область, г. Кобрин, ул. Советская 141
-  
+        _this.slick({
+          accessibility: true,
+          arrows: true,
+          draggable: true,
+          touchMove: false,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          appendArrows: _this.siblings('.cards-slider-nav'),
+          nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+          prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+          responsive: [
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 800,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            }
+            ]
+        }); 
+      });
+
+    } cards();
   
 
 
