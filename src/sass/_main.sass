@@ -2436,7 +2436,7 @@ body, .out
     font-size: 0
     +rem(padding,36px 0 45px)
     .product-card-wrapper 
-      width: 219.8px
+      +rem(width, 219.8px)
       display: inline-block
       vertical-align: top
       +r(925)
@@ -2841,14 +2841,25 @@ body, .out
     +clr
     +rem(padding, 35px 25px 0 55px)
     +r(991)
-      +rem(padding, 30px 25px 0 25px)
+      +rem(padding, 25px 20px 0 20px)
+    +r(991)
+      +rem(padding, 15px 11px 0 11px)
   &-much-cont
     background: $graybg
     +rem(padding,25px);
     position: relative
+    +r(800)
+      +rem(padding-bottom,0)
   &-galery-wrap
     text-align: center
     +rem(padding-right,35px);
+    +r(800)
+      padding: 0
+      +rem(margin-bottom,35px);
+    .slick-dots
+      opacity: 1
+      +rem(left,-5px);
+      right: auto
     &:hover
       .cards-slider-nav
         opacity: 1
@@ -2864,6 +2875,9 @@ body, .out
       right: 0
       +r(1150)
         +rem(bottom,15px)
+      +r(800)
+        display: none
+        
       .slick-arrow
         +rem(padding-top,35px)
         +rem(width,30px)
@@ -2878,11 +2892,17 @@ body, .out
     display: inline-block;
     float: left;
     +clr
+    +r(800)
+      width: 100%
+      float: none
   &-much-slider
     cursor: pointer
     +rem(padding-bottom,50px);
     +rem(min-height,400px);
     +vertical
+    +r(991)
+      +rem(min-height,350px);
+      +rem(padding-bottom,80px);
     & > img
       display: inline-block
       max-width: 100% 
@@ -2897,6 +2917,8 @@ body, .out
     +r(1150)
       +rem(padding, 15px 15px 0 15px) 
       +rem(height,300px)
+    +r(375)
+      +rem(padding, 15px 0px 0 0px) 
     img
       display: inline-block
       vertical-align: middle
@@ -2915,6 +2937,8 @@ body, .out
     +r(1150)
       +rem(width,270px);
       +rem(height,60px);
+    +r(800)
+      display: none
   &-add-img
     +rem(height,84px)
     width: 100%
@@ -2945,6 +2969,8 @@ body, .out
   &-main
     &-wrap
       +rem(padding-left,7px)
+      +r(1150)
+        padding-left: 0
     &-descr
       .u-intro
         line-height: 1
@@ -2964,6 +2990,9 @@ body, .out
           border-left: none 
           padding: 0
           +rem(padding-right, 22px)
+          +r(544)
+            width: 100%
+            +rem(padding,2px 0 18px)
           .u-text
             display: block
             overflow: hidden
@@ -2973,22 +3002,34 @@ body, .out
           +rem(width,28px)
           +rem(height,28px)
 
-        
     &-form
       +clr 
       +rem(margin-top,20px)
       font-size: 0
+      +r(544)
+        position: relative
     &-selects,&-calcwrap
       display: inline-block
       vertical-align: top
     &-selects
       width: 56%
+      +r(1150)
+        width: 52%
+      +r(544)
+        width: 100%
+        +rem(padding-bottom, 217px)
       .selects
         +rem(padding, 8px 10px)
       .select-check
         font-size: 0
         &:not(:last-child)
           +rem(margin-bottom,16.5px)
+      .submit-check
+        +r(544)
+          position: absolute
+          +rem(bottom,0)
+          left: 0
+          right: 0
       .number-cont, .btn
         display: inline-block
         width: 48%
@@ -3003,12 +3044,49 @@ body, .out
     &-calcwrap
       width: 44%
       +rem(padding-left,22px)
+      +r(1150)
+        +rem(padding-left,7px)
+        width: 48%
+      +r(544)
+        width: 100%
+        padding: 0
+        position: absolute
+        +rem(bottom,48px)
+        left: 0
   &-tabs-content
-    +rem(padding, 35px 25px 0 55px)
+    +rem(padding, 25px 25px 0 55px)
     +r(991)
       +rem(padding, 30px 25px 0 25px)
+    +r(768)
+      +rem(padding, 0 20px 0 20px)
+    +r(544)
+      +rem(padding, 0 11px 0 11px)
     .tabs-head
       width: 100%
+      +r(544)
+        +rem(margin-bottom,25px)
+    .tabs-body
+      +rem(padding-bottom,20px)
+      .products-inner
+        padding-top: 0
+        +rem(margin-left, -4px)
+        +r(925)
+          margin-left: 0
+        // .product-card-wrapper
+        //   +rem(width,219px)
+        //   +r(925)
+        //     width: 25%
+        //   +r(800)
+        //     width: 33.33%
+        //   +r(544)
+            width: 50%
+        .product-card-inner
+          +rem(min-height,210px)
+          +rem(padding-bottom, 34px)
+          +r(544)
+            +rem(padding-bottom, 44px)
+    &+ .slider-section
+      padding-bottom: 0
 
 .calc
   &-container
@@ -3107,11 +3185,18 @@ body, .out
   .side-title
     +rem(max-width,278px)
     width: 27%
+    +r(800)
+      width: 100%
+      min-width: 100%
+      +rem(margin-bottom,10px)
     .u-intro
       line-height: 1.65
   .side-cont
     width: 73%
     +rem(max-width,726px)
+    +r(800)
+      width: 100%
+      min-width: 100%
     .u-black
       +rem(margin-bottom,20px)
     p
@@ -3130,6 +3215,12 @@ body, .out
     vertical-align: top
     counter-increment: item
     +rem(margin-bottom,10px)
+    +r(768)
+      min-width: 50%
+      +rem(padding-right,13px)
+    +r(544)
+      min-width: 100%
+      +rem(padding-right,0px)
     &:nth-of-type(3n+1)
       +rem(padding-right,13px)
       width: 36%
@@ -3175,6 +3266,8 @@ body, .out
     +rem(font-size,13px)
     color: #2e2e2e
     +rem(padding-left,30px)
+    +r(544)
+      +rem(padding-left,10px)
   &-descr
     font-weight: 700
     width: 52%
@@ -3188,6 +3281,7 @@ body, .out
   background-position: center
   background-repeat: no-repeat
   background-image: url(../img/icons/plus_green.svg)
+
 .colors
   &-wrapper
     +clr 
@@ -3199,15 +3293,94 @@ body, .out
     +tr(max-height .5s $tr)
     &.active
       max-height: 3000px
+    +r(768)
+      +rem(margin, 0 0 0 -8px)
   &-item
     display: inline-block
     vertical-align: top
     width: 16.66%
     +rem(padding, 0 8px)
     +rem(margin-bottom, 15px)
+    +r(768)
+      width: 20%
+    +r(480)
+      width: 25%
+    +r(375)
+      width: 33.33%
     .u-graytext
       +rem(margin-top, 5px)
   &-color
     width: 100%
     +rem(height,38px)
     +rem(border-radius,3px)
+
+.tab-material
+  display: inline-block;
+  vertical-align: top
+  background-repeat: no-repeat;
+  background-position: left top .2rem;
+  background-size: 27px 27px;
+  +rem(padding,0 0 7px 35px )
+  +rem(margin-bottom,13px )
+  transition: color .3s;
+  color: $text;
+  +rem(font-size,11px)
+  line-height: 1.75
+  +rem(letter-spacing,0.4px)
+  +r(768)
+    min-width: 50%
+    +rem(min-height,40px)
+    +rem(padding,0 20px 7px 35px)
+  +r(544)
+    min-width: 100%
+  &:nth-of-type(3n+1)
+    +rem(padding-right,13px)
+    width: 36%
+  &:nth-of-type(3n+2)
+    +rem(padding-right,5px)
+    width: 34%
+  &:nth-of-type(3n+3)
+    width: 30%
+  &:hover
+    color: $maind;
+.sertivicat
+  &-wrap
+    +rem(margin-right,-25px)
+    .sertivicat-item
+      p 
+        color: $main 
+        +rem(font-size,11px)
+        +rem(margin-top,10px)
+        background-image: url(../img/icons/decor.png)
+        background-size: 30px 6px
+  &-item
+    display: inline-block
+    width: 25%
+    vertical-align: top
+    +rem(padding-right,25px)
+    +rem(margin-bottom,16px)
+    cursor: pointer
+    +r(768)
+      width: 33.33%
+    +r(544)
+      width: 50%
+    &:hover
+      p 
+        color: $maind
+
+  &-img
+    img
+      display: inline-block
+      max-width: 100%
+.video
+  position: relative;
+  padding-top: 55.25%;
+  +rem(margin-top,25px)
+  +clr
+  iframe
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+

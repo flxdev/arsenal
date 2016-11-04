@@ -189,9 +189,12 @@ function compareHeight(){
 		 property: 'min-height'
 	});
 	$('.products-inner .product-card-inner').matchHeight({
-		 property: 'min-height'
+		 property: 'height'
 	});
 	$('.specials-wrapper .specials-item').matchHeight({
+		 property: 'min-height'
+	});
+	$('.sertivicat-wrap .sertivicat-item').matchHeight({
 		 property: 'min-height'
 	});
 } compareHeight();
