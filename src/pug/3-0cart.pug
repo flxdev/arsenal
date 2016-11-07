@@ -1,0 +1,70 @@
+extends _layout
+
+block title
+  title Корзина
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Корзина
+    h1.u-intro.h1 Корзина
+  .column-wrap
+    .column-content
+      .table-wrapper
+        .table
+          .table-head
+            .table-item.table-img
+            .table-item.table-name Наименование
+            .table-item.table-price Цена
+            .table-item.table-count Количество
+            .table-item.table-total Сумма
+            .table-item.table-delete
+            mixin cartTable(img,name, price, total)
+              .table-row
+                .table-item.table-img
+                  img(src=img, alt="")
+                .table-item.table-name
+                  .categories-elem-name #{name}
+                  .u-graytext
+                    span.prop
+                      span Высота:
+                      span.price 3.15
+                    span.prop
+                      span шаг волны:
+                      span.price 23
+                    span.prop
+                      span шаг волны:
+                      span.price 23
+                .table-item.table-price
+                  .u-text
+                    | #{price}
+                .table-item.table-count
+                  .number-wrap
+                    .number.js-number(data-max-number='10',data-type='м²', data-step='0.1')
+                      button.number__minus.js-minus-number(type='button', tabindex='0')
+                      input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
+                      button.number__plus.js-plus-number(type='button', tabindex='0')
+                .table-item.table-total
+                  .u-text.bold
+                    |#{total}
+                .table-item.table-delete
+                  i.small-link.close
+                    span
+          +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','107.50р.','21 500.00р.')
+          +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р..')
+          +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р..')
+    .column-aside
+      .card.card-yell.text-center
+        .product-card-price 115450 p.
+        .u-graytext.calc-text Без учета доставки
+        a(href="#").btn.t-blue.btn-standart Оформить заказ
+
+
+
+
+
+
+
+  

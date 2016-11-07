@@ -22,7 +22,7 @@ block content
             span Hit
         .cards-slider-nav.product-nav
         //Если картинка одна, просто пихай ее в .product-much-slider 
-        .product-much-slider
+        .product-much-slider.js-white(data-target='.modal-product')
           .product-slider-item
             img(src="img/cards/1.png", alt="velasaped")
           .product-slider-item
@@ -52,6 +52,7 @@ block content
             .product-add-img(style='background-image:url(../img/cards/1.png)')
           .product-add-item
             .product-add-img(style='background-image:url(../img/cards/2.png)')
+        button.btn.t-blue.js-scroll(data-target='#buy') Купить
     script.
       function ProductSlider(){
         setTimeout(function(){
@@ -99,89 +100,119 @@ block content
         .u-text.lt Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), 
           br
           |шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет
-        button.link-dotted.bold Все характеристики
+        button.link-dotted.bold.js-scroll(data-target='#tabs') Все характеристики
       .product-main-descr
-        h3.u-intro.h3 Конфигурация
+        mixin sopt(group,val1,val2,val3,val4,val5)
+          .select-u-body.select-list
+            label.option
+              input(type="radio",name=group,value =val1) 
+              span #{val1}
+            label.option
+              input(type="radio",name=group,value =val2) 
+              span #{val2}
+            label.option
+              input(type="radio",name=group,value =val3) 
+              span #{val3}
+            label.option
+              input(type="radio",name=group,value =val4) 
+              span #{val4}
+            label.option
+              input(type="radio",name=group,value =val5) 
+              span #{val5}
+        h3.u-intro.h3#buy Конфигурация
         form(action="").product-main-form
           .product-main-selects
-            .select-check.js-select-trigger
-              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
-                span.btn-text Высота профиля, мм
+            .select-check.js-select-custom
+              button.selects(data-placeholder = 'Выберите покрытие',data-valuename = "Покрытие")
+                span.btn-text Выберите покрытие
                 i.select-img
-              button.select-clear.js-select-clear
-                span.i-close
               .dropdown-target
                 .dropdown-inner
                   .dropdown-content
-                    ul.selected-list
                     .u-graytext Выберите параметры
-                    ul.select-u-body
-                      mixin selectItem(val)
-                        li.select-u-item
-                          label.input_label
-                            span.input_main
-                              input.input-real(type="checkbox",value = val, data-value= val)
-                              span.input-checked
-                            span.input-text #{val}
-                      +selectItem('550')
-                      +selectItem('500')
-                      +selectItem('400')
-                      +selectItem('100')
-                      +selectItem('200')
-            .select-check.js-select-trigger
-              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
-                span.btn-text Высота профиля, мм
+                  +sopt('group1','Полиэстр','Матовый полиэстр','Printech (имитация под дерево)','Пурал','Матовый пурал')
+            .select-check.js-select-custom
+              button.selects(data-placeholder = 'Прогиб',data-valuename = "Прогиб")
+                span.btn-text Прогиб
                 i.select-img
-              button.select-clear.js-select-clear
-                span.i-close
               .dropdown-target
                 .dropdown-inner
                   .dropdown-content
-                    ul.selected-list
-                    .u-graytext Выберите параметры
-                    ul.select-u-body
-                      mixin selectItem(val)
-                        li.select-u-item
-                          label.input_label
-                            span.input_main
-                              input.input-real(type="checkbox",value = val, data-value= val)
-                              span.input-checked
-                            span.input-text #{val}
-                      +selectItem('550')
-                      +selectItem('500')
-                      +selectItem('400')
-                      +selectItem('100')
-                      +selectItem('200')
-            .select-check.js-select-trigger
-              button.selects(data-placeholder = 'Высота профиля, мм',data-valuename = "Высота", data-value = "мм")
-                span.btn-text Высота профиля, мм
+                    .u-graytext Выберите прогиб
+                  +sopt('group2','Полиэстр2','Матовый полиэстр2','Printech2','Пурал2','Матовый пурал2')
+            .select-check.js-select-custom
+              button.selects(data-placeholder = 'Цвет',data-valuename = "Цвет")
+                span.btn-text Цвет
                 i.select-img
-              button.select-clear.js-select-clear
-                span.i-close
               .dropdown-target
                 .dropdown-inner
                   .dropdown-content
-                    ul.selected-list
                     .u-graytext Выберите параметры
-                    ul.select-u-body
-                      mixin selectItem(val)
-                        li.select-u-item
-                          label.input_label
-                            span.input_main
-                              input.input-real(type="checkbox",value = val, data-value= val)
-                              span.input-checked
-                            span.input-text #{val}
-                      +selectItem('550')
-                      +selectItem('500')
-                      +selectItem('400')
-                      +selectItem('100')
-                      +selectItem('200')
+                    .select-u-body.select-list.color-select-wrapper
+                      mixin colorpick(color,val)
+                        label.option.color-option
+                          input(type="radio",name='color',value =val) 
+                          span.color-block(style='background-color: #'+color+'')
+                          span.text-block #{val}
+                      +colorpick('fff4ce','RAL 1014')
+                      +colorpick('e5cc77','RAL 1015')
+                      +colorpick('8f7415','RAL 1016')
+                      +colorpick('d06f20','RAL 1017')
+                      +colorpick('c2ea74','RAL 1018')
+                      +colorpick('78ad12','RAL 1019')
+                      +colorpick('24ad12','RAL 1020')
+                      +colorpick('115908','RAL 1021')
+                      +colorpick('cee4ff','RAL 1022')
+                      +colorpick('1f61b2','RAL 1023')
+                      +colorpick('144887','RAL 1024')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+                      +colorpick('731179','RAL 1025')
+
             .select-check.submit-check
               .number-cont
                 .number-wrap
-                  .number.js-number(data-max-number='999',data-type='м²')
+                  .number.js-number(data-max-number='10',data-type='м²', data-step='0.1')
                     button.number__minus.js-minus-number(type='button', tabindex='0')
-                    input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                    input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
                     button.number__plus.js-plus-number(type='button', tabindex='0')
               button.btn.t-blue В корзину
           .product-main-calcwrap
@@ -195,7 +226,7 @@ block content
                 span 7 
                 |дней
               .calc-button 
-                button.calc.t-w Расчёт металлочерепицы
+                button.calc.t-w.js-modal-trigger(onclick="modals($(this))",data-target=".modal-roofs") Расчёт металлочерепицы
             
       .product-main-descr
         .features
@@ -207,7 +238,8 @@ block content
           +Futureslides('img/features/icon_1.svg','Доставка на собственном автопарке в любой регион Беларуси или самовывоз со склада.') 
           +Futureslides('img/features/icon_2.svg','Оперативная доставка по всей территории Республики Беларусь') 
   .product-tabs-content.b-bottom
-    .tabs.js-tabs-wrap
+    // id для  скролла к элементу
+    #tabs.tabs.js-tabs-wrap
       .tabs-head.w4
         .tabs-item.js-tab-trigger
           span Описание
@@ -345,10 +377,10 @@ block content
             .side-title
               .u-intro.h2 Сертификаты
             .side-cont
-              .sertivicat-wrap
+              .sertivicat-wrap.js-white(data-target='.modal-product')
                 mixin Serf(img, name)
                   .sertivicat-item
-                    .sertivicat-img
+                    .sertivicat-img.product-slider-item.product-add-item
                       img(src=img, alt="")
                     p #{name}
                 +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')

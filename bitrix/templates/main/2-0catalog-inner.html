@@ -357,7 +357,7 @@
                     </div>
                     <div class="cards-slider-nav product-nav"></div>
                     <!--Если картинка одна, просто пихай ее в .product-much-slider -->
-                    <div class="product-much-slider">
+                    <div class="product-much-slider js-white" data-target=".modal-product">
                       <div class="product-slider-item"><img src="img/cards/1.png" alt="velasaped"></div>
                       <div class="product-slider-item"><img src="img/cards/2.png" alt="velasaped"></div>
                       <div class="product-slider-item"><img src="img/cards/3.png" alt="velasaped"></div>
@@ -389,6 +389,7 @@
                         <div class="product-add-img" style="background-image:url(../img/cards/2.png)"></div>
                       </div>
                     </div>
+                    <button class="btn t-blue js-scroll" data-target="#buy">Купить</button>
                   </div>
                 </div>
                 <script>
@@ -437,110 +438,230 @@
                   <div class="product-main-descr">
                     <h2 class="u-intro h1">Металлочерепица Монтерей</h2>
                     <div class="u-text lt">Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), <br>шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет</div>
-                    <button class="link-dotted bold">Все характеристики</button>
+                    <button class="link-dotted bold js-scroll" data-target="#tabs">Все характеристики</button>
                   </div>
                   <div class="product-main-descr">
-                    <h3 class="u-intro h3">Конфигурация</h3>
+                    <h3 class="u-intro h3" id="buy">Конфигурация</h3>
                     <form class="product-main-form" action="">
                       <div class="product-main-selects">
-                        <div class="select-check js-select-trigger">
-                          <button class="selects" data-placeholder="Высота профиля, мм" data-valuename="Высота" data-value="мм"><span class="btn-text">Высота профиля, мм</span><i class="select-img"></i></button>
-                          <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="select-check js-select-custom">
+                          <button class="selects" data-placeholder="Выберите покрытие" data-valuename="Покрытие"><span class="btn-text">Выберите покрытие</span><i class="select-img"></i></button>
                           <div class="dropdown-target">
                             <div class="dropdown-inner">
                               <div class="dropdown-content">
-                                <ul class="selected-list"></ul>
                                 <div class="u-graytext">Выберите параметры</div>
-                                <ul class="select-u-body">
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
-                                                                    </li>
-                                </ul>
                               </div>
+                                                  <div class="select-u-body select-list">
+                                                    <label class="option">
+                                                      <input type="radio" name="group1" value="Полиэстр"><span>Полиэстр</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group1" value="Матовый полиэстр"><span>Матовый полиэстр</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group1" value="Printech (имитация под дерево)"><span>Printech (имитация под дерево)</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group1" value="Пурал"><span>Пурал</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group1" value="Матовый пурал"><span>Матовый пурал</span>
+                                                    </label>
+                                                  </div>
                             </div>
                           </div>
                         </div>
-                        <div class="select-check js-select-trigger">
-                          <button class="selects" data-placeholder="Высота профиля, мм" data-valuename="Высота" data-value="мм"><span class="btn-text">Высота профиля, мм</span><i class="select-img"></i></button>
-                          <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="select-check js-select-custom">
+                          <button class="selects" data-placeholder="Прогиб" data-valuename="Прогиб"><span class="btn-text">Прогиб</span><i class="select-img"></i></button>
                           <div class="dropdown-target">
                             <div class="dropdown-inner">
                               <div class="dropdown-content">
-                                <ul class="selected-list"></ul>
-                                <div class="u-graytext">Выберите параметры</div>
-                                <ul class="select-u-body">
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
-                                                                    </li>
-                                </ul>
+                                <div class="u-graytext">Выберите прогиб</div>
                               </div>
+                                                  <div class="select-u-body select-list">
+                                                    <label class="option">
+                                                      <input type="radio" name="group2" value="Полиэстр2"><span>Полиэстр2</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group2" value="Матовый полиэстр2"><span>Матовый полиэстр2</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group2" value="Printech2"><span>Printech2</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group2" value="Пурал2"><span>Пурал2</span>
+                                                    </label>
+                                                    <label class="option">
+                                                      <input type="radio" name="group2" value="Матовый пурал2"><span>Матовый пурал2</span>
+                                                    </label>
+                                                  </div>
                             </div>
                           </div>
                         </div>
-                        <div class="select-check js-select-trigger">
-                          <button class="selects" data-placeholder="Высота профиля, мм" data-valuename="Высота" data-value="мм"><span class="btn-text">Высота профиля, мм</span><i class="select-img"></i></button>
-                          <button class="select-clear js-select-clear"><span class="i-close"></span></button>
+                        <div class="select-check js-select-custom">
+                          <button class="selects" data-placeholder="Цвет" data-valuename="Цвет"><span class="btn-text">Цвет</span><i class="select-img"></i></button>
                           <div class="dropdown-target">
                             <div class="dropdown-inner">
                               <div class="dropdown-content">
-                                <ul class="selected-list"></ul>
                                 <div class="u-graytext">Выберите параметры</div>
-                                <ul class="select-u-body">
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="550" data-value="550"><span class="input-checked"></span></span><span class="input-text">550</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="500" data-value="500"><span class="input-checked"></span></span><span class="input-text">500</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="400" data-value="400"><span class="input-checked"></span></span><span class="input-text">400</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="100" data-value="100"><span class="input-checked"></span></span><span class="input-text">100</span></label>
-                                                                    </li>
-                                                                    <li class="select-u-item">
-                                                                      <label class="input_label"><span class="input_main">
-                                                                          <input class="input-real" type="checkbox" value="200" data-value="200"><span class="input-checked"></span></span><span class="input-text">200</span></label>
-                                                                    </li>
-                                </ul>
+                                <div class="select-u-body select-list color-select-wrapper">
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1014"><span class="color-block" style="background-color: #fff4ce"></span><span class="text-block">RAL 1014</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1015"><span class="color-block" style="background-color: #e5cc77"></span><span class="text-block">RAL 1015</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1016"><span class="color-block" style="background-color: #8f7415"></span><span class="text-block">RAL 1016</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1017"><span class="color-block" style="background-color: #d06f20"></span><span class="text-block">RAL 1017</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1018"><span class="color-block" style="background-color: #c2ea74"></span><span class="text-block">RAL 1018</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1019"><span class="color-block" style="background-color: #78ad12"></span><span class="text-block">RAL 1019</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1020"><span class="color-block" style="background-color: #24ad12"></span><span class="text-block">RAL 1020</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1021"><span class="color-block" style="background-color: #115908"></span><span class="text-block">RAL 1021</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1022"><span class="color-block" style="background-color: #cee4ff"></span><span class="text-block">RAL 1022</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1023"><span class="color-block" style="background-color: #1f61b2"></span><span class="text-block">RAL 1023</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1024"><span class="color-block" style="background-color: #144887"></span><span class="text-block">RAL 1024</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                                                    <label class="option color-option">
+                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                    </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -548,9 +669,9 @@
                         <div class="select-check submit-check">
                           <div class="number-cont">
                             <div class="number-wrap">
-                              <div class="number js-number" data-max-number="999" data-type="м²">
+                              <div class="number js-number" data-max-number="10" data-type="м²" data-step="0.1">
                                 <button class="number__minus js-minus-number" type="button" tabindex="0"></button>
-                                <input class="number__input js-price-input" type="text" value="0" tabindex="0">
+                                <input class="number__input js-price-input" type="text" value="0м²" tabindex="0">
                                 <button class="number__plus js-plus-number" type="button" tabindex="0"></button>
                               </div>
                             </div>
@@ -566,7 +687,7 @@
                           </div>
                           <div class="calc-text u-graytext">Срок исполнения заказа<br><span>7 </span>дней</div>
                           <div class="calc-button"> 
-                            <button class="calc t-w">Расчёт металлочерепицы</button>
+                            <button class="calc t-w js-modal-trigger" onclick="modals($(this))" data-target=".modal-roofs">Расчёт металлочерепицы</button>
                           </div>
                         </div>
                       </div>
@@ -587,7 +708,8 @@
                 </div>
               </div>
               <div class="product-tabs-content b-bottom">
-                <div class="tabs js-tabs-wrap">
+                <!-- id для  скролла к элементу-->
+                <div class="tabs js-tabs-wrap" id="tabs">
                   <div class="tabs-head w4">
                     <div class="tabs-item js-tab-trigger"><span>Описание</span></div>
                     <div class="tabs-item js-tab-trigger"><span>Cертификаты</span></div>
@@ -872,29 +994,29 @@
                           <div class="u-intro h2">Сертификаты</div>
                         </div>
                         <div class="side-cont">
-                          <div class="sertivicat-wrap">
+                          <div class="sertivicat-wrap js-white" data-target=".modal-product">
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия техническим требованиям</p>
                                                         </div>
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия техническим требованиям безопасности</p>
                                                         </div>
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия государственных норма- тивных актов</p>
                                                         </div>
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия техническим требованиям</p>
                                                         </div>
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия техническим требованиям</p>
                                                         </div>
                                                         <div class="sertivicat-item">
-                                                          <div class="sertivicat-img"><img src="img/sertif.jpg" alt=""></div>
+                                                          <div class="sertivicat-img product-slider-item product-add-item"><img src="img/sertif.jpg" alt=""></div>
                                                           <p>Сертификат соответствия техническим требованиям</p>
                                                         </div>
                           </div>
@@ -1333,6 +1455,198 @@
                   <div class="modal-container-content">
                     <div class="u-text">На указанный вами e-mail в течение 5 минут будет выслано письмо с регистрационными данными. </div>
                     <button class="btn t-blue btn-small js-modal-closer" type="submit">Закрыть</button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-medium modal-roofs">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Расчeт металлочерепицы</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="roofs-wrapper">
+                      <div class="u-text bold">1. Выберите вид крыши</div>
+                      <div class="tabs js-tabs-wrap">
+                        <div class="tabs-head w5">
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/1.png)"></span>
+                            <div class="u-graytext">Двухскатная</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/2.png)"></span>
+                            <div class="u-graytext">Вальмовая</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/3.png)"></span>
+                            <div class="u-graytext">Шатровая</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/4.png)"></span>
+                            <div class="u-graytext">Мансардная</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/5.png)"></span>
+                            <div class="u-graytext">Многоскатная</div>
+                          </div>
+                        </div>
+                        <div class="u-text bold">2. Укажите размер крыши</div>
+                        <div class="tabs-body">
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout white modal-product">
+                <div class="modal-container-header">
+                  <div class="u-text bold">Фото</div><i class="small-link close js-modal-closer"><span></span></i>
+                </div>
+                <div class="white-thumbs"></div>
+                <div class="white-content">
+                  <div class="product-modal-slider"></div>
+                  <div class="white-nav">
+                    <div class="cards-slider-nav">
+                      <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                    </div>
                   </div>
                 </div>
               </div>
