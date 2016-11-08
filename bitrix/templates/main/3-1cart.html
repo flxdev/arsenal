@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Корзина </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0432da">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="stylesheet" media="all" href="css/screen.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDanQ-UHb2wM8kRInfW5Dt0cO-3f1a7nH4"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <!--BEGIN out-->
+    <div class="out">
+      <div class="page__outer">
+        <div class="page__wrapper">
+          <header class="page__header cd-auto-hide-header">
+            <div class="header_logo_wrap"><a class="header_logo-inner" href="#"><img class="header_logo-img" src="img/logo.svg" alt="АрсеналМеталл">
+                <spam class="header_logo-text">Арсенал<br>Металл</spam></a></div>
+            <div class="header_content">
+              <div class="pricetel-wrap"><a class="price-btn" href="#"><i class="price-icon">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 27.4 26.1" style="enable-background:new 0 0 27.4 26.1" xml:space="preserve">
+                      <style type="text/css">
+                        .st0{fill:none;stroke:#0432DA;stroke-width:1.2;stroke-linecap:round;stroke-miterlimit:10;}
+                        .st1{fill:#0432DA;}
+                        .st2{fill:none;stroke:#0432DA;stroke-miterlimit:10;}
+                      </style>
+                      <path class="st0" d="M16.2,17.7c0,0,3.1,0,5.7,0s4.8-2.2,4.8-5c0-2.5-1.7-4.5-4-4.9c0-3.9-3.2-7.1-7.2-7.1c-2.7,0-4.9,1.5-6.3,3.6          L9.1,4.5c-0.5-0.2-1-0.3-1.6-0.3c-2.1,0-3.9,1.5-4.3,3.5c0,0.1,0,0.4,0,0.6c-1.4,0.8-2.5,2.5-2.5,4.4c0,2.8,2.2,5,4.8,5s5.7,0,5.7,0          "></path>
+                      <path class="st1" d="M13.2,13.7h1v11h-1V13.7z"></path>
+                      <path class="st2" d="M17.2,21.4l-3.5,3.8l-3.5-3.8"></path>
+                    </svg></i>
+                  <p class="price-text"><span class="u-text">Скачать прайс-лист</span><br><span class="u-graytext">Обновлён: 09.07.16</span></p></a>
+                <!--тут тоже иконка меняет цвет, тысяча извинений)-->
+                <div class="telephone-block centered dropdown-trigger">
+                  <p class="u-graytext">Пн–Пт, 9:00–20:00</p><a href="tel:+375296669172"><span class="telephone-main">+375 29 666-91-72</span><i class="dots"></i></a>
+                  <div class="dropdown-target">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-content">
+                        <div class="col-50">
+                          <div class="contact-block"><span class="u-graytext">Телефоны</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
+                          <div class="contact-block"><span class="u-graytext">Viber / Telegram</span><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04  </a></div>
+                        </div>
+                        <div class="col-50">
+                          <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
+                          <div class="contact-block"><span class="u-graytext">Skype</span><a class="mailto" href="skype:arsenalmetall?chat">arsenalmetall</a></div>
+                          <button class="btn t-blue">Обратный звонок</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart_wrap">
+                <!--Когда человек вошел, вешаем .dropdown-trigger и убираем .js-modal-trigger-->
+                <div class="cart_wrap-account"><a class="btn-account js-modal-trigger" href="#" data-target=".modal-enter" onclick="modals($(this))"><i class="account-icon"></i><span class="u-text">Кабинет</span></a>
+                  <div class="dropdown-target">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-content">
+                        <ul class="dropdown-list">
+                          <li class="dropdown-list-item"><a class="u-text lt" href="#">История заказов</a></li>
+                          <li class="dropdown-list-item"><a class="u-text lt" href="#">Контактная информация</a></li>
+                          <li class="dropdown-list-item"><a class="u-text lt" href="#">Персональная скидка</a></li>
+                          <li class="dropdown-list-item"><a class="u-text lt" href="#">Подписка</a></li>
+                          <li class="dropdown-list-item"><a class="u-text lt" href="#">Выйти</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart_wrap-cart js-hover"><a class="btn-cart" href="#"><i class="cart-icon">
+                      <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 23 18" style="enable-background:new 0 0 23 18" xml:space="preserve">
+                        <style type="text/css">.cart-i{fill:#0432DA;}</style>
+                        <path class="cart-i" d="M19,13.9c-1,0-1.1,0-1.1,0s-4.4,0-5.9,0c-1.4,0-1.9-1.5-2-1.9h10l3-8.5H7.9C7.8,3.1,7.7,2.7,7.6,2.4            C7-0.1,5.4,0,4.7,0S1,0,1,0C0.5,0,0,0.5,0,1.1s0.5,1.1,1,1.1c0.6,0,1-0.5,1-1.1c0,0,3-0.1,3.5,0c0.5,0.2,0.8,1,1.2,2.6l2.1,8.5            c0.4,1.5,1.1,2.1,1.6,2.4C10.2,15,9.9,15.3,9.9,16c0,1.1,0.9,2,2,2s2-0.9,2-2c0-0.4-0.2-0.9-0.4-1.2h3.7c-0.2,0.3-0.4,0.7-0.4,1.2            c0,1.1,0.9,2,2,2s2-0.9,2-2C20.8,15.1,20.1,13.9,19,13.9z M9.7,11C9.4,9.6,8.6,6.7,8.1,4.5h13.4l-2,6.5H9.7z M11.9,17.4            c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3C13.2,16.8,12.6,17.4,11.9,17.4z M18.8,17.4c-0.7,0-1.3-0.6-1.3-1.3            s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3C20.1,16.8,19.5,17.4,18.8,17.4z"></path>
+                      </svg></i>
+                    <p class="cart-text"><span class="u-text">Корзина</span><br><span class="u-graytext">0 р.</span></p><span class="cart-counter"><span class="count">0</span></span></a>
+                  <div class="dropdown-target">
+                    <div class="dropdown-inner">
+                      <div class="dropdown-content">
+                        <p class="u-text lt">Ваша корзина пока что пуста. Начните покупки прямо сейчас.</p><a class="btn t-blue btn-standart" href="#">Начать покупки</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-target">
+                    <div class="dropdown-inner not-empty">
+                      <div class="dropdown-content">
+                        <div class="cart-body-outer">
+                          <div class="cart-body-inner"><a class="cart-elem" href="#">
+                                                          <div class="cart-elem-img"><img src="img/cart/cartl.jpg" alt=""></div>
+                                                          <div class="cart-elem-descr">
+                                                            <div class="u-title-small tl">Металлочерепица МОНТЕРРЕЙ</div>
+                                                            <div class="u-graytext"><span class="elem-prop">Толщина металла:</span><span class="elem-val">0,5 мм</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Покрытие:</span><span class="elem-val">полиэстр</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Цвет:</span><span class="elem-val">RAL 1014</span></div>
+                                                            <div class="cart-elem-footer">
+                                                              <div class="u-graytext tl">107.50р. х 200 м2</div>
+                                                              <div class="u-title-small tl">21 500.00р.</div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="cart-elem-del"><span></span></div></a><a class="cart-elem" href="#">
+                                                          <div class="cart-elem-img"><img src="img/cart/cartl.jpg" alt=""></div>
+                                                          <div class="cart-elem-descr">
+                                                            <div class="u-title-small tl">Уплотнитель прямоугольный са- моклеющийся</div>
+                                                            <div class="u-graytext"><span class="elem-prop">Толщина металла:</span><span class="elem-val">0,5 мм</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Покрытие:</span><span class="elem-val">полиэстр</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Цвет:</span><span class="elem-val">RAL 1014</span></div>
+                                                            <div class="cart-elem-footer">
+                                                              <div class="u-graytext tl">1.60р. х 15 м.п.</div>
+                                                              <div class="u-title-small tl">24.00р</div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="cart-elem-del"><span></span></div></a><a class="cart-elem" href="#">
+                                                          <div class="cart-elem-img"><img src="img/cart/cartl.jpg" alt=""></div>
+                                                          <div class="cart-elem-descr">
+                                                            <div class="u-title-small tl">Планка конька плоского</div>
+                                                            <div class="u-graytext"><span class="elem-prop">Толщина металла:</span><span class="elem-val">0,5 мм</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Покрытие:</span><span class="elem-val">полиэстр</span></div>
+                                                            <div class="u-graytext"><span class="elem-prop">Цвет:</span><span class="elem-val">RAL 1014</span></div>
+                                                            <div class="cart-elem-footer">
+                                                              <div class="u-graytext tl">9.75р. х 4 шт.</div>
+                                                              <div class="u-title-small tl">39.00р.</div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="cart-elem-del"><span></span></div></a>
+                          </div>
+                        </div>
+                        <div class="cart-body-total">
+                          <div class="u-graytext">Итого</div>
+                          <div class="u-title-small tl">21 563.00р.</div>
+                        </div>
+                        <div class="cart-body-btn-wrap"><a class="btn t-blue btn-small" href="#">Перейти в корзину</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart_wrap-modaltrigger">
+                  <button class="menu-hamburger"><i class="hamburger-i"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="header_mobile-menu t-blue"><span class="mobile-title js-menu-toggle">Весь каталог<i class="arrow-icon"></i></span>
+              <ul class="mobile_l1">
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Кровельные материалы</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Водосточные системы</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Металлопрокат</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Забор</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Доборные элементы</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+                                <li class="mobile_l1-item js-sub-toggle"><a href="#"><span>Гипсокартонные профили</span><i class="arrow-icon"></i></a>
+                                  <ul class="mobile_l2">
+                                    <li class="mobile_l2-item"><a href="#">Металлочерепица</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Доборные элементы кровли</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Профнастил</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Саморезы кровельные</a></li>
+                                    <li class="mobile_l2-item"><a href="#">Зонты для дымоходов</a></li><a class="calc t-w" href="#">Калькулятор кровли</a>
+                                  </ul>
+                                </li>
+              </ul>
+            </div>
+            <!-- мобильная модалка, все блоки дублируются из меню и шапки-->
+            <div class="header_mobile-contacts">
+              <div class="header_mobile-inner">
+                <div class="header_mobile-head"><a class="price-btn" href="#"><i class="price-icon">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 27.4 26.1" style="enable-background:new 0 0 27.4 26.1" xml:space="preserve">
+                        <style type="text/css">
+                          .st0{fill:none;stroke:#0432DA;stroke-width:1.2;stroke-linecap:round;stroke-miterlimit:10;}
+                          .st1{fill:#0432DA;}
+                          .st2{fill:none;stroke:#0432DA;stroke-miterlimit:10;}
+                        </style>
+                        <path class="st0" d="M16.2,17.7c0,0,3.1,0,5.7,0s4.8-2.2,4.8-5c0-2.5-1.7-4.5-4-4.9c0-3.9-3.2-7.1-7.2-7.1c-2.7,0-4.9,1.5-6.3,3.6            L9.1,4.5c-0.5-0.2-1-0.3-1.6-0.3c-2.1,0-3.9,1.5-4.3,3.5c0,0.1,0,0.4,0,0.6c-1.4,0.8-2.5,2.5-2.5,4.4c0,2.8,2.2,5,4.8,5s5.7,0,5.7,0            "></path>
+                        <path class="st1" d="M13.2,13.7h1v11h-1V13.7z"></path>
+                        <path class="st2" d="M17.2,21.4l-3.5,3.8l-3.5-3.8"></path>
+                      </svg></i>
+                    <p class="price-text"><span class="u-text">Скачать прайс-лист</span><br><span class="u-graytext">Обновлён: 09.07.16</span></p></a><i class="js-modaltrigger-close"><em class="line"></em><em class="line"></em></i></div>
+                <div class="header_mobile-body">
+                  <div class="c-menu-block add">
+                    <div class="o-menu-search">
+                      <form class="search__wrapper">
+                        <input class="search__input" type="text" placeholder="Поиск">
+                        <button class="search__btn" type="submit"><i class="search-icon">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 17 17" style="enable-background:new 0 0 17 17" xml:space="preserve">
+                              <style type="text/css">.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}</style>
+                              <g>
+                                <g>
+                                  <path class="search-i" d="M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1                      c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8                      S13.1,11.3,10.5,11.3z"></path>
+                                </g>
+                              </g>
+                            </svg></i></button>
+                      </form>
+                    </div>
+                    <ul class="menu-list">
+                                            <li class="menu-item"><a href="#">Компания</a></li>
+                                            <li class="menu-item"><a href="#">Оплата и доставка</a></li>
+                                            <li class="menu-item"><a href="#">База знаний</a></li>
+                                            <li class="menu-item"><a href="#">Контактная информация</a></li>
+                    </ul>
+                    <button class="btn t-blue btn-standart">Обратный звонок</button>
+                    <div class="contact-block"><span class="u-graytext">Пн–Пт, 9:00–20:00</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
+                    <div class="contact-block"><span class="u-graytext">Viber / Telegram</span><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04  </a></div>
+                    <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
+                    <div class="contact-block"><span class="u-graytext">Skype</span><a class="mailto" href="skype:arsenalmetall?chat">arsenalmetall</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!--combine menu and content-->
+          <div class="page__wrapper-inner">
+            <aside class="page__menu">
+              <nav class="page__menu--inner">
+                <div class="c-menu-block t-blue main">
+                  <ul class="menu-list">
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="1">Кровельные материалы</a></li>
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="2">Водосточные системы</a></li>
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="3">Металлопрокат</a></li>
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="4">Забор</a></li>
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="5">Доборные элементы</a></li>
+                                        <li class="menu-item js-desktop-hover"><a href="#" data-elem="6">Гипсокартоннче профили</a></li>
+                  </ul>
+                </div>
+                <div class="c-menu-block add">
+                  <div class="o-menu-search">
+                    <form class="search__wrapper">
+                      <input class="search__input" type="text" placeholder="Поиск">
+                      <button class="search__btn" type="submit"><i class="search-icon">
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 17 17" style="enable-background:new 0 0 17 17" xml:space="preserve">
+                            <style type="text/css">.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}</style>
+                            <g>
+                              <g>
+                                <path class="search-i" d="M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1                  c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8                  S13.1,11.3,10.5,11.3z"></path>
+                              </g>
+                            </g>
+                          </svg></i></button>
+                    </form>
+                  </div>
+                  <ul class="menu-list">
+                                        <li class="menu-item"><a href="#">Компания</a></li>
+                                        <li class="menu-item"><a href="#">Оплата и доставка</a></li>
+                                        <li class="menu-item"><a href="#">База знаний</a></li>
+                                        <li class="menu-item"><a href="#">Контактная информация</a></li>
+                  </ul>
+                </div><a class="c-menu-block menu-footer u-graytext" href="mailto:#">
+                  <p>2016 © ООО АрсеналМеталл</p>
+                  <p class="mailto">info@arsenalmetall.by</p></a>
+              </nav>
+              <div class="menu-dropdown-wrapper">
+                <div class="menu-dropdown-inner">
+                  <div class="menu-dropdown-cont" data-elem="1">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">Металлочерепица</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Доборные элементы кровли</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Профнастил</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Саморезы кровельные</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Зонты для дымоходов</a></li>
+                    </ul>
+                  </div>
+                  <div class="menu-dropdown-cont" data-elem="2">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">труба</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный труба</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный окрашенный труба</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Уголок труба</a></li>
+                    </ul>
+                  </div>
+                  <div class="menu-dropdown-cont" data-elem="3">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">труба2</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный труб2а</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный окрашенный труба2</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Уголок труб2а</a></li>
+                    </ul>
+                  </div>
+                  <div class="menu-dropdown-cont" data-elem="4">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">труба4</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный труб4а</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный окрашенный труба4</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Уголок труб2а4</a></li>
+                    </ul>
+                  </div>
+                  <div class="menu-dropdown-cont" data-elem="5">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">труба5</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный труб5а</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный окрашенный труба5</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Уголок труб2а45</a></li>
+                    </ul>
+                  </div>
+                  <div class="menu-dropdown-cont" data-elem="6">
+                    <ul class="menu-dropdown-list">
+                                            <li class="menu-dropdown-item"><a href="#">труба5fffff</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованнffый труб5а</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Лист оцинкованный окрашенный труба5</a></li>
+                                            <li class="menu-dropdown-item"><a href="#">Уголок труб2а45</a></li>
+                    </ul>
+                  </div>
+                  <div class="c-menu-block menu-footer"><a class="calc t-b" href="#">Калькулятор кровли</a></div>
+                </div>
+              </div>
+            </aside>
+            <section class="page__content">
+              <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" .style="background-image:url(img/accii2.jpg)"></a></div>
+              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+              <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
+                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Корзина</a></div>
+                <h1 class="u-intro h1">Корзина</h1>
+              </section>
+              <div class="error-wrapper">
+                <div class="error-img">
+                  <div class="error-img-inner" style="background-image: url(img/errors/cart_empty.svg)"></div>
+                </div>
+                <div class="error-msg">
+                  <h2 class="u-intro h2">Ваша корзина пуста</h2>
+                  <div class="u-text lt">Ваша корзина к сожалению пуста. Для старта покупок, зайдите в <a href="#">Каталог </a>нашего интернет- магазина.  Ассортимент товаров для кровли и строительства весьма широк, чтобы удовлетворить даже самый взыскательный запрос любого клиента.</div><a class="btn t-blue btn-standart" href="#">Начать покупки</a>
+                </div>
+              </div>
+              <footer class="footer">
+                <div class="footer_contacts-wrap">
+                  <div class="footer_contacts-block">
+                    <div class="contact-block"><span class="u-graytext">Адрес</span>
+                      <div class="u-text lt">г. Минск, пр. Независимости, 199</div>
+                    </div>
+                    <div class="contact-block"><span class="u-graytext">Телефоны</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
+                  </div>
+                  <div class="footer_contacts-block">
+                    <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
+                    <div class="contact-block"><span class="u-graytext">Skype</span><a class="mailto" href="skype:arsenalmetall?chat">arsenalmetall</a></div>
+                  </div>
+                  <div class="footer_contacts-block">
+                    <div class="contact-block"><span class="u-graytext">Прием заявок по телефону</span>
+                      <div class="u-text lt">Пн-Пт, с 9:00 до 20:00</div>
+                      <div class="u-text lt">Сб-Вс, с 10:00 до 17:00</div>
+                    </div>
+                    <div class="contact-block"><span class="u-graytext">Обработка заявок на сайте</span>
+                      <div class="u-text lt">Круглосуточно</div>
+                    </div>
+                  </div>
+                  <div class="footer_contacts-block">
+                    <div class="social-wrap"><a class="soc-item fb" href="#">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 23 23" style="enable-background:new 0 0 23 23" xml:space="preserve">
+                          <style type="text/css">.f-fb{fill-rule:evenodd;clip-rule:evenodd;fill:#3B5999;}</style>
+                          <path class="f-fb" d="M18.8,23h-4.4v-9.3h3.7V11h-3.7v-2c0-0.9,0.6-1.5,1.2-1.5h2.5V4.9h-2.5c-1.9,0-3.6,2-3.6,4.2V11H9.3v2.7H12V23            H4.2C1.9,23,0,21.1,0,18.8V4.2C0,1.9,1.9,0,4.2,0h14.7C21.1,0,23,1.9,23,4.2v14.7C23,21.1,21.1,23,18.8,23z M15.4,22h3.4            c1.7,0,3.2-1.5,3.2-3.2V4.2C22,2.5,20.5,1,18.8,1H4.2C2.5,1,1,2.5,1,4.2v14.7C1,20.5,2.5,22,4.2,22H11v-7.3H8.3V10H11V9.1            c0-2.8,2.1-5.2,4.6-5.2h3.5v4.7h-3.5c0,0-0.2,0.2-0.2,0.5v1h3.7v4.7h-3.7V22z"></path>
+                        </svg></a><a class="soc-item tw" href="#">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 23 23" style="enable-background:new 0 0 23 23" xml:space="preserve">
+                          <style type="text/css">.f-tw{fill-rule:evenodd;clip-rule:evenodd;fill:#43B0FC;}</style>
+                          <g>
+                            <g>
+                              <path class="f-tw" d="M18.8,0H4.2C1.9,0,0,2,0,4.2v14.7C0,21.1,1.9,23,4.2,23h14.7c2.2,0,4.2-1.9,4.2-4.2V4.2C23,2,21.1,0,18.8,0z                M22,18.8c0,1.7-1.5,3.2-3.2,3.2H4.2C2.5,22,1,20.5,1,18.8V4.2C1,2.5,2.5,1,4.2,1h14.7C20.5,1,22,2.5,22,4.2V18.8z M19.8,10.8                c-0.1,0-0.1,0-0.2,0c0.2-0.2,0.4-0.4,0.5-0.7c0.1-0.1,0-0.3-0.1-0.4c-0.1-0.1-0.3-0.1-0.4,0c-0.2,0.1-0.6,0.2-1,0.2                c-0.1,0-0.2,0-0.2,0c0-0.1,0-0.1,0-0.2c-0.3-1.2-1.1-2.1-2.1-2.5c0.1-0.1,0.2-0.1,0.2-0.3c0.1-0.1,0.1-0.3,0-0.4                c0-0.1-0.2-0.3-0.5-0.3c0,0-0.1,0-0.1,0c0-0.1,0-0.1-0.1-0.1C15.6,6,15.5,6,15.4,6c-0.2,0-0.5,0.1-0.7,0.2c0,0,0,0,0,0                c-0.1-0.1-0.3-0.1-0.4,0c-1.1,0.7-1.7,2-2.3,3.3c-0.3-0.3-0.6-0.5-0.8-0.6C10.2,8.3,9,7.7,7.4,7.2c-0.1,0-0.2,0-0.3,0                C7,7.2,7,7.3,7,7.4c0,0.5,0.1,1.1,0.7,1.7c0,0-0.1,0-0.1,0c-0.2,0-0.3,0.2-0.3,0.4c0.1,0.6,0.4,1.1,1,1.4C8.2,11,8.1,11,8.1,11.1                C8,11.2,7.9,11.4,8,11.5c0.1,0.2,0.5,0.8,1.3,1c-0.1,0.2-0.1,0.4-0.1,0.5c0.1,0.3,0.3,0.5,0.6,0.7c-0.6,0.4-1.3,0.6-2,0.6                c-0.9,0-1.8-0.4-2.4-1c-0.1-0.1-0.3-0.1-0.5,0c-0.1,0.1-0.2,0.3,0,0.5c1.5,2,3.7,3.1,6.2,3.1c3.5,0,6.5-2,7.4-4.9                c0.7,0,1.3-0.3,1.8-0.8c0.1-0.1,0.1-0.3,0.1-0.4C20.1,10.8,20,10.7,19.8,10.8z M18.1,11.5L18.1,11.5c-0.2,0-0.3,0.1-0.3,0.2                c-0.6,2.6-3.6,4.6-6.8,4.6c-1.6,0-3-0.5-4.2-1.3c0.3,0.1,0.6,0.1,0.9,0.1c1.2,0,2.3-0.5,3.1-1.3c0.1-0.1,0.1-0.3,0.1-0.4                c-0.1-0.1-0.2-0.2-0.4-0.2c-0.4,0.1-0.6-0.1-0.7-0.3c0-0.1,0.1-0.2,0.4-0.4c0.2-0.1,0.2-0.2,0.2-0.4c0-0.2-0.2-0.3-0.4-0.3                C9.4,12,9,11.7,8.7,11.4c0.1-0.1,0.3-0.1,0.6-0.1c0.2,0,0.3-0.1,0.3-0.3c0-0.2-0.1-0.3-0.3-0.4c-0.8-0.2-1.2-0.5-1.3-0.9                c0.2,0,0.3,0,0.4,0c0.2,0,0.3-0.1,0.4-0.2c0-0.2,0-0.3-0.2-0.4C8.1,8.7,7.8,8.4,7.7,8C9,8.5,10,9,10.9,9.5c0.3,0.1,0.6,0.4,1,0.9                c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.2-0.2c0.4-1.1,0.9-2.2,1.6-3c0.1,0,0.2,0,0.3,0c0,0,0,0,0.1,0c0,0,0,0.1,0,0.2                c0,0.2,0.2,0.3,0.4,0.3c1.2-0.1,2.4,0.9,2.8,2.2c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0.1,0.2,0.2,0.3c0.1,0,0.3,0.1,0.4,0.1                c-0.1,0-0.1,0-0.2,0c-0.2,0-0.3,0.1-0.3,0.3c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.3,0.1,0.5,0.2C18.5,11.5,18.3,11.5,18.1,11.5z"></path>
+                            </g>
+                          </g>
+                        </svg></a><a class="soc-item vk" href="#">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 23 23" style="enable-background:new 0 0 23 23" xml:space="preserve">
+                          <style type="text/css">
+                            .f-vk1{fill:#356397;}
+                            .f-vk2{fill-rule:evenodd;clip-rule:evenodd;fill:#356397;}
+                          </style>
+                          <g>
+                            <path class="f-vk1" d="M10.9,8.5l0.3,0c0.3,0,0.5,0,0.6,0c0,0.2,0,0.4,0,0.6c0,0.3,0,0.7,0,1.1c0,0.1,0,0.2,0,0.3              c0,0.7,0,1.6,0.7,2.2c0.2,0.1,0.4,0.2,0.7,0.2c0.8,0,1.4-0.6,2.3-2.3c0.3-0.6,0.6-1.3,0.8-1.7l1.4,0C17.6,9.1,17.3,9.5,17,10              c-0.2,0.3-0.4,0.5-0.5,0.7c-1.2,1.7-1.4,2.2,0.2,3.8c0.4,0.4,0.7,0.7,1,1.1l-1.3,0l-0.1,0l0,0c0,0-0.1,0-0.3-0.1              c-0.2-0.1-0.5-0.5-0.7-0.7c-0.5-0.6-1-1.2-1.8-1.2c-0.1,0-0.3,0-0.4,0.1c-0.9,0.3-1.2,1.4-1.2,2h-0.4l0,0l0,0c-0.2,0-1.6,0-2.9-1.5              c-1.3-1.4-2.5-3.9-3-5.1l1,0c0.1,0.4,0.4,1,0.8,1.7c0.9,1.6,1.5,2.4,2.3,2.4c0.2,0,0.4-0.1,0.6-0.2c0.3-0.2,1-0.6,0.8-3.2              c0-0.2,0-0.6-0.1-1C10.8,8.5,10.8,8.5,10.9,8.5 M10.9,7.5c-0.7,0-1.2,0-1.6,0.2C9.1,7.8,8.9,8.1,9,8.1c0.1,0,0.5,0.1,0.7,0.4              c0.2,0.3,0.2,1.1,0.2,1.1s0.1,2-0.3,2.3c0,0-0.1,0-0.1,0c-0.3,0-0.7-0.5-1.5-1.9C7.5,9.2,7.2,8.3,7.2,8.3S7.1,8.1,7,8              C6.8,7.9,6.6,7.9,6.6,7.9l-2.1,0c0,0-0.3,0-0.4,0.2C3.9,8.2,4,8.4,4,8.4s1.7,4.2,3.6,6.3c1.6,1.7,3.3,1.8,3.7,1.8c0,0,0.1,0,0.1,0              h0.9c0,0,0.3,0,0.4-0.2c0.1-0.1,0.1-0.4,0.1-0.4s0-1.3,0.5-1.5c0,0,0.1,0,0.1,0c0.5,0,1.2,1.3,1.9,1.8c0.4,0.3,0.7,0.3,0.9,0.3              c0.1,0,0.1,0,0.1,0l2,0c0,0,1-0.1,0.6-1c0-0.1-0.3-0.6-1.5-1.8c-1.3-1.2-1.1-1,0.4-3.2c0.9-1.3,1.3-2.1,1.2-2.4              c-0.1-0.2-0.5-0.3-0.7-0.3c-0.1,0-0.1,0-0.1,0l-2.3,0c0,0,0,0,0,0c-0.1,0-0.2,0-0.3,0.1c-0.1,0.1-0.2,0.3-0.2,0.3s-0.4,1-0.8,1.9              c-0.8,1.5-1.3,1.8-1.5,1.8c0,0-0.1,0-0.1,0c-0.4-0.3-0.3-1-0.3-1.6c0-1.7,0.3-2.5-0.5-2.7c-0.2-0.1-0.4-0.1-1.1-0.1              C11.1,7.5,11,7.5,10.9,7.5L10.9,7.5z"></path>
+                          </g>
+                          <path class="f-vk2" d="M12,23H4.2C1.9,23,0,21.1,0,18.8V4.2C0,1.9,1.9,0,4.2,0h14.7C21.1,0,23,1.9,23,4.2v14.7c0,2.2-1.9,4.2-4.2,4.2            h-4.4 M15.4,22h3.4c1.7,0,3.2-1.5,3.2-3.2V4.2C22,2.5,20.5,1,18.8,1H4.2C2.5,1,1,2.5,1,4.2v14.7C1,20.5,2.5,22,4.2,22H11"></path>
+                        </svg></a></div>
+                    <button class="btn t-trans btn-small">Подписаться на акции</button>
+                  </div>
+                </div>
+                <div class="footer-describe-wrap">
+                  <div class="paynemts-block">
+                    <div class="payment-item"><img src="img/payment/visa.svg" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/master.png" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/maestro.png" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/mts.png" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/ya.png" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/webm.svg" alt=""></div>
+                    <div class="payment-item"><img src="img/payment/qiwi.png" alt=""></div>
+                  </div>
+                  <div class="other-block">
+                    <div class="other-copyright">
+                      <div class="u-graytext">2016 © ООО Арсенал<br>Металл</div>
+                    </div>
+                    <div class="other-button">
+                      <button class="btn totop"><span>Наверх</span><i class="totop-i"></i></button>
+                    </div>
+                    <div class="other-developer"><a href="#">Flex Media</a></div>
+                  </div>
+                </div>
+              </footer>
+              <!--бэкграунд модалки. 2 класс определяет размер(блять я надеюсь что тут хотя бы 3 рвзмера модалок а не 7), последний класс определяет что за модалка (.modal-enter для входа в кабинет и тд)-->
+              <div class="modal-layout modal-big modal-enter">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Кабинет</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="col-50">
+                      <div class="u-intro h3">Вход</div>
+                      <form class="form js-form-validate" action="/">
+                        <div class="input-wrapper">
+                          <label class="u-graytext"> <span class="text">E-mail</span></label>
+                          <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                        </div>
+                        <div class="input-wrapper">
+                          <label class="u-graytext"> <span class="text">Пароль</span></label>
+                          <input class="input-main" type="email" name="" placeholder="info@mail.com"><a class="link-dotted" href="#">Забыли пароль?</a>
+                        </div>
+                        <button class="btn t-blue btn-small" type="submit">Войти</button>
+                      </form>
+                    </div>
+                    <div class="col-50">
+                      <div class="u-intro h3">Регистрация</div>
+                      <div class="u-text">Нет аккаунта? Зарегистрируйтесь на нашем сайте и совершать покупки станет намного удобней</div><a class="btn t-trans btn-small" href="#">Зарегистрироваться</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--бэкграунд модалки-->
+              <div class="modal-layout modal-small modal-pass-forgot">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Пароль</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <form class="form js-form-validate" action="/">
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">E-mail</span></label>
+                        <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                      </div>
+                      <button class="btn t-blue btn-small" type="submit">Восстановить</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-small modal-pass-forgot-succes">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Пароль</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="u-text">На указанный вами e-mail в течение 5 минут будет выслано письмо с регистрационными данными. </div>
+                    <button class="btn t-blue btn-small js-modal-closer" type="submit">Закрыть</button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-medium modal-roofs">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Расчeт металлочерепицы</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="roofs-wrapper">
+                      <div class="u-text bold">1. Выберите вид крыши</div>
+                      <div class="tabs js-tabs-wrap">
+                        <div class="tabs-head w5">
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/1.png)"></span>
+                            <div class="u-graytext">Двухскатная</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/2.png)"></span>
+                            <div class="u-graytext">Вальмовая</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/3.png)"></span>
+                            <div class="u-graytext">Шатровая</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/4.png)"></span>
+                            <div class="u-graytext">Мансардная</div>
+                          </div>
+                          <div class="tabs-item js-tab-trigger"><span class="roof-img" style="background-image: url(img/roof/5.png)"></span>
+                            <div class="u-graytext">Многоскатная</div>
+                          </div>
+                        </div>
+                        <div class="u-text bold">2. Укажите размер крыши</div>
+                        <div class="tabs-body">
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout white modal-product">
+                <div class="modal-container-header">
+                  <div class="u-text bold">Фото</div><i class="small-link close js-modal-closer"><span></span></i>
+                </div>
+                <div class="white-thumbs"></div>
+                <div class="white-content">
+                  <div class="product-modal-slider"></div>
+                  <div class="white-nav">
+                    <div class="cards-slider-nav">
+                      <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END out-->
+  </body>
+</html>

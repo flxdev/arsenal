@@ -1,0 +1,142 @@
+extends _layout
+
+block title
+  title Регистрация физ
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Регистрация
+    h1.u-intro.h1 Регистрация
+  .column-wrap.fl-medium
+    .column-content
+      form(action="")
+        .headcont
+          .headcont-head
+            h3.u-intro.h3 Регистрация пользователя
+          .headcont-body
+            .headcont-wrapp
+              .headcont-title
+                .u-title Тип покупателя
+              .headcont-item.select-radio
+                .select-u-item
+                  label.input_label
+                    span.input_main
+                      input.input-real(type="radio",name='offertype',value = 'fiz')
+                      span.input-checked
+                    span.input-text Физическое лицо
+                .select-u-item
+                  label.input_label
+                    span.input_main
+                      input.input-real(type="radio",name='offertype',value = 'jur')
+                      span.input-checked
+                    span.input-text Юридическое лицо
+            .headcont-wrapp
+              .headcont-title
+                .u-title Контактная информация
+              .headcont-item
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Ваше имя
+                  input.input-main(type='text',name="", placeholder = 'Иванов Иван Иванович')
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Телефон
+                  input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                .input-wrapper
+                  label.u-graytext 
+                    span.text E-mail
+                  input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+            .headcont-wrapp
+              .headcont-title
+                .u-title Адрес
+              .headcont-item
+                mixin sopt(group,val1,val2,val3,val4,val5)
+                  .select-u-body.select-list
+                    label.option
+                      input(type="radio",name=group,value =val1) 
+                      span #{val1}
+                    label.option
+                      input(type="radio",name=group,value =val2) 
+                      span #{val2}
+                    label.option
+                      input(type="radio",name=group,value =val3) 
+                      span #{val3}
+                    label.option
+                      input(type="radio",name=group,value =val4) 
+                      span #{val4}
+                    label.option
+                      input(type="radio",name=group,value =val5) 
+                      span #{val5}
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Область
+                  .select-check.js-select-custom
+                    button.selects(data-placeholder = 'Выберите область',data-valuename = "")
+                      span.btn-text Выберите область
+                      i.select-img
+                    .dropdown-target
+                      .dropdown-inner
+                        .dropdown-content
+                        +sopt('group2','Минск, минская область','Брест, Брестская область','Могилев, Могилевская область','Гродно, Гродненская область','Гомель, Гомельская область')
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Населённый пункт
+                  input.input-main(type='text',name="", placeholder = 'Например "Витебск"')
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Улица
+                  input.input-main(type='text',name="", placeholder = 'Улица')
+                .home-wrap  
+                  .input-wrapper
+                    label.input-label
+                      span.u-graytext Дом
+                    input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                  .input-wrapper
+                    label.input-label
+                      span.u-graytext Корпус
+                    input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                  .input-wrapper
+                    label.input-label
+                      span.u-graytext Квартира
+                    input.input-main.input-from(type='text',name="", placeholder = 'Квартира')
+            .headcont-wrapp
+              .headcont-title
+                .u-title Пароль
+              .headcont-item
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Пароль
+                  input.input-main(type='text',name="")
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Повторите пароль
+                  input.input-main(type='text',name="", placeholder = 'Улица')
+            .headcont-wrapp
+              .headcont-title
+                .u-title Проверочный код
+              .headcont-item
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Введите проверочный код
+                  input.input-main(type='text',name="")
+                .capcha-container
+                  .capcha-item
+                  button.capcha-btn
+                    .btn-inner
+        button(type='submit').btn.t-blue.btn-standart Зарегистрироваться
+    .column-aside
+      .card.card-blue
+        .u-black Уже совершали покупки в нашем интернет-магазине? 
+        .u-text.lt Войдите в личный кабинет для просмотра профильной информации
+        button.btn.t-blue.btn-small.btn-extrasmall.js-modal-trigger(data-target=".modal-login",onclick="modals($(this))") Войти
+
+
+
+
+
+
+
+  

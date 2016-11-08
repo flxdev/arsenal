@@ -644,6 +644,7 @@ if($('#map').length){
 } initMap();
 
 }
+if($('.js-colors').length){
 function Colors(){
 	var trigger = $('.js-colors');
 	var target = $('.colors-wrapper');
@@ -655,7 +656,7 @@ function Colors(){
 		jQuery(".out:not(:animated)").animate({scrollTop: dest - 60}, 500);
 	});
 }Colors();
-
+}
 function initCustomSelectList() {
     var _conf = {
             initClass: 'cs-active',
