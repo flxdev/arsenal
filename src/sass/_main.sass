@@ -10,6 +10,8 @@ a
   transition: color .3s
   &:hover
     color: $maind
+textarea
+  line-height: 1.5
 ul
   li>a 
     display: inline-block
@@ -2138,6 +2140,11 @@ body, .out
     +rem(padding-right,60px)
     &:before,&:after
       right: 0
+  &.left
+    +rem(padding-left,60px)
+    &:before,&:after
+      left: 0
+      transform: scale(-1,1)
 
 //small links
 .small-link
@@ -2146,7 +2153,7 @@ body, .out
   font-weight: 400
   cursor: pointer
   background: 0 0
-  span
+  &>span
     position: relative
     transition: color .3s
     +rem(padding-left,20px)
@@ -2200,7 +2207,16 @@ body, .out
         background-image: url(../img/icons/exit.svg) 
       &:before
         background-image: url(../img/icons/exith.svg)
-
+  &.change
+    &:hover
+      span
+        color: $maind 
+    span
+      color: #939393
+      &:after
+        background-image: url(../img/icons/edit.svg) 
+      &:before
+        background-image: url(../img/icons/edit_hover.svg)
 .link-dotted
   display: inline-block
   border-bottom: solid
@@ -3804,8 +3820,29 @@ body, .out
       +rem(margin-top,-5px)
 .card
   +rem(padding,25px)
+  +clr
   +r(1150)
      +rem(padding,25px 15px)
+  &.notify-card
+    font-size: 0
+    +rem(margin-bottom,10px)
+    .u-text,.button-wrapp
+      display: inline-block
+      vertical-align: top
+      +r(544)
+        min-width: 100%
+    .u-text
+      width: 80%
+      line-height: 1.4
+    .button-wrapp
+      width: 20%
+      vertical-align: middle
+      .btn 
+        float: right
+        
+  .price-wrap
+    float: none
+    min-width: 0
   .product-card-price
     position: static
     font-weight: 700
@@ -3849,10 +3886,36 @@ body, .out
       +rem(height,250px)
       width: 100%
       +r(544)
-       +rem(height,120px) 
+       +rem(height,120px)
+  &-aside
+    display: inline-block
+    vertical-align: top
+    width: 34% 
+    padding-left: 5%  
+    +r(768)
+      width: 41% 
+    +r(544)
+      display: block
+      margin: 0 auto
+      +rem(width,270px)
+    .card
+      +rem(padding,20px)
+      .btn
+        width: 100%
+      .card-img
+        display: inline-block
+        vertical-align: top
+        +rem(width,70px)
+        img
+          display: block
+          margin: 0 auto
+          max-width: 100%
+
   &-msg
     width: 69%
     +rem(margin-top,-5px)
+    &.offer
+      width: 59%
     +r(544)
       +rem(margin-top,5px)
     .u-intro
@@ -3866,6 +3929,7 @@ body, .out
     .btn
       +rem(padding, 12px 0 11px)
       +rem(width, 175px)
+
 .headcont
   border: 1px solid $border2
   +rem(margin-bottom, 25px)
@@ -4003,13 +4067,31 @@ body, .out
     +r(991)
       +rem(padding, 30px 15px 0 15px)
     +r(544)
-      +rem(padding, 20px 10px 0 10px)
+      +rem(padding, 20px 5px 0 5px)
     &>.table
       font-size: 0
       .table-inline
         &.table-head
           +r(768)
             display: none
+        &.table-row
+          display: inline-block
+          +clr
+          width: 100%
+          border: 1px solid transparent
+          border-top-color: $border
+          transition: border .3s , background .3s
+          padding: 0
+          &.active
+            border-color: $maind
+            background: $formbg
+            .select-img
+              transform: scale(1, -1)
+          > .table-item
+            +rem(min-height,67px)
+            border-bottom: none
+            +r(768)
+              +rem(min-height,20px)
         &>.table-date
           width: 13%
           +r(768)
@@ -4059,8 +4141,6 @@ body, .out
             padding: 5px 3%
             float: right
             text-align: right
-            
-
         &>.table-count
           min-width: 0
           +rem(width,90px)
@@ -4073,12 +4153,14 @@ body, .out
         &>.table-status
           width: 15%
           padding-left: 2%
+          +nosel
           +r(768)
             width: 50%
             padding: 5px 3%
             float: left
             text-align-last: left
-            
+          +r(544)
+            padding: 5px 6%
         &>.table-total
           width: 10%
           +r(768)
@@ -4099,29 +4181,57 @@ body, .out
         &>.table-row
           display: inline-block
           width: 100%
+
         .table-status
+          position: relative
+          &.dropdown-trigger
+            cursor: pointer
+            .u-text
+              &>span
+                position: relative
+                +rem(margin-left,-16px)
+                +rem(padding-left, 16px)
+                &:before,&:after
+                  position: absolute
+                  content: ''
+                  left: 0
+                  +rem(bottom, 3px)
+                  +rem(width,12px)
+                  +rem(height,12px)
+                  background-size: contain
+                  background-repeat: no-repeat
+                  background-position: center
+                  +tr(opacity .3s)
+                &:after
+                  background-image: url(../img/icons/questionh.svg)
+                  opacity: 0
+                &:before
+                  background-image: url(../img/icons/question.svg)
+            &:hover
+              .u-text
+                &>span
+                  &:after
+                    opacity: 1
+            .dropdown-target
+              width: 135%
+              white-space: normal
+              margin-left: 0
+            .dropdown-content
+              +rem(padding,20px 17px)
+              .u-text
+                +rem(font-size,11px)
+              .small-link
+                +rem(margin-top,8px)
           .u-text
             span
               display: block
-          &.unpayed
-            .u-text
-              span
-                color: red
-          &.payed
-            .u-text
-              color: $green
-          &.processed
-            .u-text
-              color: $yel
-          &.canceled
-            .u-text
-              color: $graybg
-          &.closed
-            .u-text
-              color: $maind
+
+
   &-content
     font-size: 0
     +rem(padding, 24px 15px)
+    background: $white
+    +clr
     +r(800)
       +rem(padding, 14px 11px)
     .table-wrapper,.cards-wrapper
@@ -4161,20 +4271,10 @@ body, .out
         vertical-align: top
         +r(544)
           min-width: 100%
-          +rem(padding, 5px 15px)
-      .price-wrap
-        float: right
-        +rem(min-width,235px)
-        .u-graytext,.u-text
-          display: inline-block
-        .u-text
-          float: right
-        .price-row 
-          +rem(margin-bottom,15px)
+          +rem(padding, 8px 15px)
       .buttons-wrap
         +r(544)
           text-align: center
-          
         .small-link
           opacity: 0.5
           +rem(margin-right,30px)
@@ -4212,3 +4312,210 @@ body, .out
           
 .jel
   color: #857e60
+.price-wrap
+  float: right
+  +rem(min-width,235px)
+  +clr
+  .divider
+    width: 100%
+    display: block
+    +rem(height, 1px)
+    background: $jel
+    +rem(margin-bottom,15px)
+  .u-graytext,.u-text,.product-card-price
+    display: inline-block
+    margin-bottom: 0
+    +clr
+  .u-graytext
+    +rem(margin-top,2px)
+    col
+  .u-text,.product-card-price
+    +clr
+    vertical-align: top
+  .price-row 
+    +rem(margin-bottom,15px)
+    text-align: justify
+    font-size: 0
+    &:after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 0
+.headcont-item    
+  .col-50 
+    .input-wrapper
+      width: 100%
+      padding: 0 !important
+    &:nth-of-type(2n)
+      +rem(padding-left,15px)
+    &:nth-of-type(2n-1)
+      +rem(padding-right,15px)  
+    +r(480)
+      width: 100%
+      padding: 0 !important 
+.bx-soa
+  counter-reset: number
+  &+.btn
+    float: right
+  &-section
+    counter-increment: number
+    border: 1px solid $border2
+    margin: 0
+    +rem(margin-bottom,15px)
+
+    &.bx-step-completed
+      .bx-soa-section-title-container
+        .u-intro
+          color: $mainl
+          +rem(padding-left,35px)
+          &:after
+            opacity: 1
+        .small-link
+          opacity: 1
+    &.bx-selected
+      border-color: $maind
+      .table-name
+        .u-graytext
+          overflow: visible
+          max-height: 500px
+      .bx-soa-section-title-container
+        background-color: $maind
+        .u-intro
+          color: $white
+    &-title-container
+      +rem(padding,17px)
+      +tr(background-color .3s)
+      background-color: $formbg
+      text-align: justify
+      font-size: 0
+      &:after
+        content: ''
+        display: inline-block
+        width: 100%
+        height: 0
+      .small-link
+        float: right
+        opacity: 0
+      .u-intro
+        display: inline-block
+        +tr(color .3s)
+        position: relative
+        &:after
+          content: ''
+          +rem(width,20px)
+          +rem(height,20px)
+          position: absolute
+          left: 0
+          +rem(bottom,3px)
+          background-position: center
+          background-size: contain
+          background-repeat: no-repeat
+          background-image: url(../img/icons/success_blue.svg)
+          opacity: 0
+        &:before
+          content: counter(number, decimal-leading-zero);
+          display: block
+          +rem(margin-right,10px)
+          +rem(margin-bottom,1px)
+          +rem(width,25px)
+          float: left
+    &-content
+      +rem(padding,0 19px )
+      .block-inputs
+        +rem(padding,22px 0)
+        font-size: 0
+      .table
+        border: none
+        &-head
+          background: $white
+        &-name
+          width: 35%
+          .u-graytext
+            +rem(max-height,35px)
+            overflow: hidden
+        &-img
+          +r(544)
+            width: 30%
+        &-count
+          padding-left: 10%
+          +r(544)
+            margin: 0
+  &-more
+    border-top: 1px solid $border
+    +clr
+    +rem(padding,24px 0 26px)
+    .btn 
+      float: right
+      +rem(min-width,90px)
+    .small-link 
+      float: right
+      +rem(margin-right,20px)
+      +rem(margin-top,3px)
+  &-pp
+    font-size: 0
+    &-item-container 
+      width: 60%
+      +rem(margin-right,-8px)
+    &-desc-container
+      width: 40%
+      +rem(padding-left, 20px)
+    &-item-container,&-desc-container 
+      display: inline-block
+      vertical-align: top
+      +r(544)
+        min-width: 100%
+        +rem(padding, 5px 0)
+    &-company
+      display: inline-block
+      vertical-align: top
+      width: 33%
+      +rem(padding-right,8px)
+      &.bx-selected
+        .bx-soa-pp-company-graf-container
+          border-color: $mainl
+      &-image
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      .u-graytext
+        +rem(margin,5px 0 7px)
+    &-company-graf-container 
+      border: 2px solid transparent
+      +rem(border-radius,3px)
+      position: relative
+      background: $formbg
+      width: auto
+      height: 0
+      padding-top: 50%
+      &> input
+        opacity: 0
+.discount-block
+  color: $text
+  +rem(font-size,13px)
+  font-weight: 700
+  text-transform: uppercase
+  +rem(letter-spacing,3.5px)
+  +rem(margin-bottom,10px)
+  .value
+    display: block
+    +rem(font-size,65px)
+    line-height: 1
+    text-transform: none
+    +rem(letter-spacing,0.4px)
+.prepay
+  &-input
+    background: 0 0
+    display: inline-block
+    width: 100%
+    border: 1px solid $text
+    +rem(padding,5px 9px)
+    font-weight: 700
+    +rem(font-size,11px)
+    +rem(letter-spacing,0.4px)
+    +rem(border-radius,3px)
+    font-family: 'Open Sans'

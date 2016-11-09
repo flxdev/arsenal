@@ -1,0 +1,321 @@
+extends _layout
+
+block title
+  title Оформление заказа
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Корзина
+      a(href="#").bread-item Оформление заказа
+    h1.u-intro.h1 Оформление заказа
+  .column-wrap
+    .column-content
+      form(action='')
+        .bx-soa
+          .card.card-blue.notify-card
+            .u-text Совершали ранее покупки в нашем интернет-магазине? Войдите в личный кабинет, чтобы процедура оформления прошла быстрее.
+            .button-wrapp
+              button.btn.t-blue.btn-extrasmall Войти
+          // ORDER TYPE BLOCK
+          #bx-soa-properties.bx-soa-section
+            .bx-soa-section-title-container
+              h3.u-intro.h3
+                | Покупатель
+              a.small-link.change(href='') 
+                span Изменить
+            .bx-soa-section-content
+              .headcont-body
+                .headcont-wrapp
+                  .headcont-title
+                    .u-title Тип покупателя
+                  .headcont-item.select-radio
+                    .select-u-item
+                      label.input_label
+                        span.input_main
+                          input.input-real(type="radio",name='offertype',value = 'fiz')
+                          span.input-checked
+                        span.input-text Физическое лицо
+                    .select-u-item
+                      label.input_label
+                        span.input_main
+                          input.input-real(type="radio",name='offertype',value = 'jur')
+                          span.input-checked
+                        span.input-text Юридическое лицо
+                .headcont-wrapp
+                  .headcont-title
+                    .u-title Контактная информация
+                  .headcont-item
+                    .col-50
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text Компания
+                        input.input-main(type='text',name="", placeholder = 'Название компании')
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text УНП
+                        input.input-main(type='number',name="", placeholder = '1475854') 
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text Телефон
+                        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text E-mail
+                        input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                    .col-50                                      
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text Контактное лицо
+                        input.input-main(type='text',name="", placeholder = 'Иванов Иван Иванович')
+                      .input-wrapper
+                        label.u-graytext 
+                          span Коментарий к заказу
+                        textarea.input-main(rows='8',type='text',name="", placeholder = 'Иванов Иван Иванович')
+                // для физ лица
+                //.headcont-wrapp
+                  .headcont-title
+                    .u-title Контактная информация
+                  .headcont-item
+                    .col-50
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text Ваше имя
+                        input.input-main(type='text',name="", placeholder = 'Иванов Иван иванович')
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text Телефон
+                        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                      .input-wrapper
+                        label.u-graytext 
+                          span.text E-mail
+                        input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                    .col-50                                      
+                      .input-wrapper
+                        label.u-graytext 
+                          span Коментарий к заказу
+                        textarea.input-main(rows='8',type='text',name="", placeholder = 'Иванов Иван Иванович')
+
+                .headcont-wrapp
+                  .headcont-title
+                    .u-title Адрес доставки
+                  .headcont-item
+                    mixin sopt(group,val1,val2,val3,val4,val5)
+                      .select-u-body.select-list
+                        label.option
+                          input(type="radio",name=group,value =val1) 
+                          span #{val1}
+                        label.option
+                          input(type="radio",name=group,value =val2) 
+                          span #{val2}
+                        label.option
+                          input(type="radio",name=group,value =val3) 
+                          span #{val3}
+                        label.option
+                          input(type="radio",name=group,value =val4) 
+                          span #{val4}
+                        label.option
+                          input(type="radio",name=group,value =val5) 
+                          span #{val5}
+                    .input-wrapper
+                      label.u-graytext 
+                        span.text Область
+                      .select-check.js-select-custom
+                        button.selects(data-placeholder = 'Выберите область',data-valuename = "")
+                          span.btn-text Выберите область
+                          i.select-img
+                        .dropdown-target
+                          .dropdown-inner
+                            .dropdown-content
+                            +sopt('group2','Минск, минская область','Брест, Брестская область','Могилев, Могилевская область','Гродно, Гродненская область','Гомель, Гомельская область')
+                    .input-wrapper
+                      label.u-graytext 
+                        span.text Населённый пункт
+                      input.input-main(type='text',name="", placeholder = 'Например "Витебск"')
+                    .input-wrapper
+                      label.u-graytext 
+                        span.text Улица
+                      input.input-main(type='text',name="", placeholder = 'Улица')
+                    .home-wrap  
+                      .input-wrapper
+                        label.input-label
+                          span.u-graytext Дом
+                        input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                      .input-wrapper
+                        label.input-label
+                          span.u-graytext Корпус
+                        input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                      .input-wrapper
+                        label.input-label
+                          span.u-graytext Квартира
+                        input.input-main.input-from(type='text',name="", placeholder = 'Квартира')
+              .bx-soa-more
+                a(href="#").btn.t-blue.btn-small Далее              
+          // basket BLOCK
+          #bx-soa-basket.bx-soa-section
+            .bx-soa-section-title-container
+              h3.u-intro.h3
+                | Товары в заказе
+              a.small-link.change(href='') 
+                span Изменить
+            .bx-soa-section-content
+              .table-wrapper
+                .table.table-inner
+                  .table-head
+                    .table-item.table-img
+                    .table-item.table-name Наименование
+                    .table-item.table-price Цена
+                    .table-item.table-count Количество
+                    .table-item.table-total Сумма
+                    mixin cartTable(img,name, price, total,val)
+                      .table-row
+                        .table-item.table-img
+                          img(src=img, alt="")
+                        .table-item.table-name
+                          .categories-elem-name #{name}
+                          .u-graytext
+                            span.prop
+                              span Высота:
+                              span.price 3.15
+                        .table-item.table-price
+                          .u-text
+                            | #{price}
+                        .table-item.table-count
+                          .u-text #{val}
+                        .table-item.table-total
+                          .u-text.bold
+                            |#{total}
+                  +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','1027.50р.','212 500.00р.','200м2')
+                  +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+                  +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+              .bx-soa-more
+                a(href="#").btn.t-blue.btn-small Далее
+                a.small-link.change(href='') 
+                  span Редактировать
+          //DELIVRY BLOCK
+          #bx-soa-delivery.bx-soa-section
+            .bx-soa-section-title-container
+              h3.u-intro.h3
+                | Доставка
+              a.small-link.change(href='') 
+                span Изменить
+            .bx-soa-section-content
+              .block-inputs
+                .bx-soa-pp-item-container
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_14.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
+                      .bx-soa-pp-company-image(style='background-image: url(img/cards/3.png);')
+                    .u-graytext Курьер
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/cards/1.png);')
+                    .u-graytext Самовывоз
+                .bx-soa-pp-desc-container
+                  .card.card-blue
+                    .u-black Курьер
+                    .u-text При заказе от 300р. доставка по г. Минск и в другие регионы Респуб- лики Беларусь осущетсвляется бесплатно. 
+              .bx-soa-more
+                a(href="#").btn.t-blue.btn-small Далее
+                a(href="#").link-nav.left Назад
+          //PAYMENT BLOCK
+          #bx-soa-paysystem.bx-soa-section
+            .bx-soa-section-title-container
+              h3.u-intro.h3
+                | Способ оплаты
+              a.small-link.change(href='') 
+                span Изменить
+            .bx-soa-section-content
+              .block-inputs
+                .bx-soa-pp-item-container
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_14.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/visa.svg);')
+                    .u-graytext Visa
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/master.png);')
+                    .u-graytext Master Card
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext Maestro
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext Яндекс.Деньги
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext WebMoney
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext МТС              
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext QIWI Кошелёк
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext American Express
+                  .bx-soa-pp-company
+                    .bx-soa-pp-company-graf-container
+                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
+                    .u-graytext JCB International                                  
+                .bx-soa-pp-desc-container
+                  .card.card-blue
+                    .u-black Наличные
+                    .discount-block
+                      span.value 30%
+                      | предоплата
+                    .u-text Для начала выполнения заказа вам необходимо приехать в наш офис и внести предоплату (минимальный размер составляет 30% от суммы вашего заказа). 
+              .bx-soa-more
+                a(href="#").btn.t-blue.btn-small Далее
+                a(href="#").link-nav.left Назад
+        button(type='submit').btn.t-blue.btn-standart Оформить заказ
+
+    .column-aside
+      .card.card-yell
+        .price-wrap
+          .price-row
+            .u-graytext.jel Товаров на сумму
+            .u-text 211 536.00р.
+          .price-row
+            .u-graytext.jel Доставка
+            .u-text 20р.
+          .divider
+          .price-row
+            .u-graytext.jel Итого
+            .product-card-price 115450 p.
+          .price-row
+            .u-graytext.jel Размер
+              br
+              |предоплаты
+            .u-text.bold.bigger 3 563.00р.
+
+
+
+
+
+
+
+  

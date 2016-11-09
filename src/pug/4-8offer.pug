@@ -1,0 +1,48 @@
+extends _layout
+
+block title
+  title Регистрация успешна
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Корзина
+      a(href="#").bread-item Оформление заказа
+    h1.u-intro.h1 заказ сформирован
+  .error-wrapper
+    .error-msg.offer
+      h2.u-intro.h2.result.succes Ваш заказ успешно сформирован
+      .u-black
+        | Балгодарим вас, что выбрали нашу компанию. Ваш заказ №124 от 12.09.2016 был успешно создан. Номер оплаты: №6/1.
+      .u-text.lt 
+        |За статусом выполнения вашего заказа вы можете следить в личном 
+        a(href="#") Кабинете. 
+        |Чтобы войти в личный кабинет, вам необходимо заполнить e-mail и пароль, котрый вы указали при регистрации.
+    .error-aside
+      .card.card-yell
+        .price-wrap
+          .price-row
+            .u-graytext.jel Способ оплаты
+            .card-img
+              img(src="img/payment/visa.svg", alt="")
+          .price-row
+            .u-graytext.jel Итого
+            .u-text.bigger.bold 115450 p.
+          .divider
+          form(action="")
+            .prepay-wrap
+              .u-graytext.jel Размер предоплаты
+              input.prepay-input(type='number')
+            button.btn.t-blue.btn-standart(type="submit") Оплатить
+
+
+
+
+
+
+
+
+
+  
