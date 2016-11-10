@@ -223,17 +223,18 @@ body, .out
       background-repeat: no-repeat
       background-size: contain
       background-position: bottom  center
-    &.succes
-      color: $green 
-      &:before
-        background-image: url(../img/icons/success_green.svg)
-      
+
+  &.error
+    color: $red
+  &.succes
+    color: $green 
+    &:before
+      background-image: url(../img/icons/success_green.svg)
 .t-blue
   background-color: $main
   color: $white
   a 
     color: $white   
-
 .mailto
   color: $main
 .col-50
@@ -3706,6 +3707,7 @@ body, .out
   &-content,&-aside
     display: table-cell
     vertical-align: top
+    +rem(min-height,1px)
     +r(768)
       display: inline-block
       width: 100%
@@ -3906,10 +3908,12 @@ body, .out
         display: inline-block
         vertical-align: top
         +rem(width,70px)
+        +rem(max-height,40px)
         img
           display: block
           margin: 0 auto
           max-width: 100%
+          +rem(max-height,40px)
 
   &-msg
     width: 69%
@@ -3949,7 +3953,7 @@ body, .out
     &:not(:last-child)
       border-bottom: 1px solid $border2 
     &:not(:first-child)
-      +rem(padding,18px 0)
+      +rem(padding,18px 0 21px)
     &:first-child
       +rem(padding-bottom,21px)
   &-title
@@ -4332,6 +4336,9 @@ body, .out
   .u-text,.product-card-price
     +clr
     vertical-align: top
+  .link-wrap
+    text-align: center
+    +rem(margin,15px 0 10px)
   .price-row 
     +rem(margin-bottom,15px)
     text-align: justify
@@ -4519,3 +4526,109 @@ body, .out
     +rem(letter-spacing,0.4px)
     +rem(border-radius,3px)
     font-family: 'Open Sans'
+    position: relative
+    z-index: 1
+  &-wrap
+    .error-text
+      display: none
+      color: red
+      +rem(font-size, 11px)
+    .input-wrapp
+      position: relative
+      display: inline-block
+      width: 100%
+    .fake
+      &-bg
+        display: inline-block
+        white-space: nowrap
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        &-text,&-currency
+          font-weight: 700
+          +rem(font-size,11px)
+          +rem(letter-spacing,0.4px)
+          display: inline-block
+        &-currency
+          +rem(padding,5px 0)
+        &-text
+          color: transparent
+          +rem(padding,5px 9px)
+    .u-graytext
+      +rem(margin-bottom,5px)
+    &.error
+      .error-text
+        display: block
+      .prepay-input
+        border-color: red
+      .ui-widget.ui-widget-content
+        border: 1px solid red
+      .ui-widget-header
+        background-color: red
+      .ui-slider-handle
+         &:after
+          border-color: red
+          border-top-color: transparent 
+          border-right-color: transparent  
+
+#rangeinput
+  +rem(font-size,9px)
+  +rem(margin,25px 0)
+  cursor: pointer
+.ui-widget-content
+  background: #decd8c
+  +rem(height,6px)
+ 
+.ui-slider
+  border: none
+  .ui-widget-header
+    background-color: $mainl
+  .ui-slider-handle
+    +rem(width,1px)
+    +rem(height,6px)
+    border: none
+    +rem(margin-left,-1px)
+    background: $mainl
+    top: 0
+    cursor: pointer
+    +r(768)
+      +rem(width,8px)
+      +rem(height,6px)
+      background: 0 0
+    &.ui-state-hover
+      background: $main
+      &:after
+        border-color: $main
+        border-top-color: transparent 
+        border-right-color: transparent  
+    &:after
+      +rem(margin-top,-7px)
+      content: ''
+      width: 0
+      height: 0
+      +rem(border-width,4px)
+      border-style: solid
+      border-color: $mainl
+      display: block
+      border-top-color: transparent 
+      border-right-color: transparent
+    &:before
+      content: attr(data-persent) 
+      +rem(font-size,11px) 
+      display: inline-block
+      vertical-align: top
+      +rem(margin-top,-15px)
+      +rem(margin-left,-5px)
+      color: $text
+
+.ui-widget.ui-widget-content
+  border: none
+.form-msg-wrapp
+  .u-intro
+    +rem(margin-bottom,25px)
+.discount-size
+  +rem(font-size,150px)
+  color: #79b9ff
+  font-family: intro

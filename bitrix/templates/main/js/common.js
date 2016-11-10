@@ -219,8 +219,6 @@ if($('.offerlist-section').length){
 	var maintrigger = $('.js-accordion-trigger'),
 		body = $('.js-accordion-body'),
 		truetrigger = maintrigger.children('.table-item').not('.table-status').not('.table-btn');
-	// maintrigger.each(function(){
-	// 	var _ = $(this),
 		maintrigger.not('.active').find(body).hide();
 		truetrigger.on('click',function(event){
 			var parent = $(this).parent(),
@@ -236,25 +234,96 @@ if($('.offerlist-section').length){
 				});
 			}
 		});
-
-		
-// $(".set > .head").on("click", function(){
-	
-// 	// if($(this).hasClass('active')){
-// 	// 	// setTimeout(function(){
-// 	// 		$(this).removeClass("active");
-// 	// 		$(this).siblings('.content').slideUp(200);
-// 	// 	// },300)
-	
-// 	// }else{
-// 	// 		$(".set > .head").removeClass("active");
-// 	// 		$(this).addClass("active");
-// 	// 		$('.content').slideUp(200);
-// 	// 		$(this).siblings('.content').slideDown(200);
-// 	// }
-// });
-}
+	}
 }Accordeon();
+function pricerange(){
+	var amount = $('#amount');
+	var price = parseFloat($('#total-price').data('price'));
+	var defaultPrice =  parseFloat(price / 1000 * 300);
+	var textcont = $('.prepay-wrap').find('.error-text');
+	var errTextMin = textcont.data('text-error-min');
+	var errTextMax = textcont.data('text-error-max');
+	var target = amount.parent().find('.fake-bg-text');
+		$( "#rangeinput" ).slider({
+			range: "min",
+			value: 300,
+			step: 10,
+			min: 0,
+			max: 1000,
+			create: function( event, ui ) {
+				$(this).slider( "option", "value", 300  );
+				amount.val( (price / 1000 * 300).toFixed(2));
+				target.text((price / 1000 * 300).toFixed(2));
+				$(this).find('.ui-slider-handle').attr('data-persent',30  + '%');
+			},
+			slide: function( event, ui ) {
+			amount.val( (price / 1000 * ui.value).toFixed(2));
+			target.text((price / 1000 * ui.value).toFixed(2));
+			handle.attr('data-persent', ui.value / 10  + '%' );
+			 if (ui.value < 300) {
+			 		amount.val((price / 1000 * 300).toFixed(2));
+			 		target.text((price / 1000 * 300).toFixed(2));
+					handle.attr('data-persent', 30 + '%' );
+			        // return false
+			    } else if(ui.value > 300){
+					amount.parent().parent().removeClass('error');
+			    	return true
+			    }
+			},
+			change: function( event, ui ) {
+				if (ui.value < 300) {
+					$("#rangeinput").slider('option','value',300)
+					return false
+				}else if(ui.value > 300){
+			    	return true
+			    	amount.parent().removeClass('error');
+			    }
+			    
+			}
+	    });
+	var handle = $( "#rangeinput" ).find('.ui-slider-handle');
+
+	amount.on('input',function(e){
+		var _ = $(this),
+			value = parseFloat(_.val()),
+			range = parseInt(((100 * value / price)) * 10),
+			min = $( "#rangeinput" ).slider( "option", "min" ),
+			max = $( "#rangeinput" ).slider( "option", "max" );
+
+		if(value < defaultPrice || !value){
+			amount.parent().parent().addClass('error');
+			textcont.text(errTextMin)
+			target.text(value);
+			return false;
+		}
+		if(value > parseFloat(price).toFixed(2)){
+			amount.parent().parent().addClass('error');
+			textcont.text(errTextMax)
+			target.text(value);
+			return false
+		}
+		target.text(value);
+		amount.parent().parent().removeClass('error').find(textcont).empty();
+		compareRange(range, value)
+	});
+
+	amount.keypress(function(event){
+		var key, keyChar;
+		if(!event) var event = window.event;
+		if (event.keyCode) key = event.keyCode;
+		else if(event.which) key = event.which;
+		if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
+		keyChar=String.fromCharCode(key);
+		if(!/\d/.test(keyChar))	return false;
+	
+	});
+    function compareRange(range, value){
+		$("#rangeinput").slider("value", range);
+		handle.attr('data-persent', range/10 + '%');
+		
+	}
+
+}pricerange();
 if($('#map').length){
 	function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {

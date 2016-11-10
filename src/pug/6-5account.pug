@@ -1,0 +1,60 @@
+extends _layout
+
+block title
+  title Изменить пароль
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Кабинет
+      a(href="#").bread-item Изменить пароль
+    h1.u-intro.h1 Изменить пароль
+  section.filter-section.b-bottom
+    .filter-container.acc-filter
+      .mobile-dropdowm-trigger
+        span.u-bold Открыть меню
+        i.arrow-icon
+      .filter-form
+        .filter-form-inner 
+          mixin accmenu(val)
+            - var current = "Изменить пароль"
+            .acc-menu-item(class={active: val === current})
+              a(href="#") #{val}
+          +accmenu('История заказов')
+          +accmenu('Мои данные')
+          +accmenu('Изменить пароль')
+          +accmenu('Персональная скидка')
+          +accmenu('Подписка')
+          a(href="#").small-link.exit 
+            span Выйти
+  .column-wrap
+    .column-content
+      form(action="")
+        .form-msg-wrapp
+          h2.u-intro.h2.result.succes Изменения успешно внесены
+        .headcont
+          .headcont-head
+            h3.u-intro.h3 пароль
+          .headcont-body
+            .headcont-wrapp
+              .headcont-title
+                .u-title Поменять пароль на новый
+              .headcont-item
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Старый пароль
+                  input.input-main(type='password',name="")
+                // чтобы было красиво
+                .input-wrapper
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Новый пароль
+                  input.input-main(type='password',name="")
+                .input-wrapper
+                  label.u-graytext 
+                    span.text Повторите пароль
+                  input.input-main(type='password',name="")
+        button(type='submit').btn.t-blue.btn-standart Сохранить
+    .column-aside

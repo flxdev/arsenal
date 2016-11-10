@@ -26,24 +26,19 @@ block content
           .price-row
             .u-graytext.jel Способ оплаты
             .card-img
-              img(src="img/payment/visa.svg", alt="")
+              img(src="img/payment/nal.png", alt="")
           .price-row
             .u-graytext.jel Итого
-            //id и data-price для ползунка. в data-price цену пихать без пробела
-            #total-price.u-text.bigger(data-price='115450.20').bold 115 450.20 p.
-          .divider
-          form(action="")
-            .prepay-wrap
-              .u-graytext.jel Размер предоплаты
-              .input-wrapp
-                .fake-bg
-                  .fake-bg-text
-                  .fake-bg-currency
-                    | р.
-                input#amount.prepay-input(autocomplete= 'off',type='number')
-              p.u-text.error-text(data-text-error-min = 'Введите сумму больше 30%', data-text-error-max = 'Введите сумму меньше 100%')
-              #rangeinput
-            button.btn.t-blue.btn-standart(type="submit") Оплатить
+            .u-text.bigger 115 450.20 p.
+          .price-row
+            .u-graytext.jel Размер 
+              br 
+              |предоплаты
+            .product-card-price 6 468.90р.
+          a(href="#").btn.t-blue.btn-standart Перейти в контакты
+          .link-wrap
+            a(href="#").small-link.blue.marker 
+              span Скачать схему проезда
 
 
 

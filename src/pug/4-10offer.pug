@@ -1,0 +1,30 @@
+extends _layout
+
+block title
+  title ошибка
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Корзина
+      a(href="#").bread-item Оформление заказа
+    h1.u-intro.h1 ошибка
+  .error-wrapper
+    .error-msg
+      h2.u-intro.h2.error К сожалению заказ не сформирован
+      .u-text.lt 
+        |Ваш заказ не удалось сформировать. Причинами могли стать: перегруженность сервера или сбой в работе интернет-провайдера. Вернитесь пожалуйста, в корзину для оформления заказа.
+      a(href="#").btn.t-blue.btn-standart Вернуться в корзину
+   
+
+
+
+
+
+
+
+
+
+  
