@@ -1,0 +1,98 @@
+extends _layout
+
+block title
+  title Новости и акции
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Новости и акции
+    h1.u-intro.h1 Новости и акции
+  section.filter-section.b-bottom
+    .filter-container.acc-filter
+      .mobile-dropdowm-trigger
+        span.u-bold Открыть меню
+        i.arrow-icon
+      .filter-form
+        .filter-form-inner 
+          mixin compmenu(val)
+            - var current = "Новости и акции"
+            .acc-menu-item(class={active: val === current})
+              a(href="#") #{val}
+          +compmenu('О компании')
+          +compmenu('Новости и акции')
+          +compmenu('Вакансии')
+  section.content-section
+    .news-container.pagenews-container
+      mixin news(img,date,text,val)
+        .news-block-outer(class={big: val === 1},class={half: val === 2},class={small: val === 3})
+          a(href="" style='background-image:url('+ img+ ')').news-block-inner
+            .news-block-content
+              .news-block-content-inner
+                .news-block-name
+                  date.u-graytext #{date}
+                  .u-intro.h2 #{text}
+      +news('img/news.png','20 июля, 2016','Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы',1)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',2)
+      .news-block-outer.card
+        .card-blue
+          .u-intro.h2 Только интересный контент без лишнего спама
+          .u-text.lt Получайте только полезную информа- цию о интересных новостях и неверо- ятных акциях
+          a(href="#").btn.t-blue.btn-standart Подписаться на рассылку
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',2)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',1)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',2)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и прое «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','в «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','«Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов  «Металл Project» 2016',3)
+  .pagination-wrapper
+    .pagination-inner
+      .cards-slider-nav
+        a(href="#").carousel-prev.slick-arrow.arr-l
+          .icon
+            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 45.9 14', style='enable-background:new 0 0 45.9 14;', xml:space='preserve')
+              style(type='text/css').
+                .slider-arr{fill:#353535;}
+              g
+                g
+                  polygon.slider-arr(points='0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8')
+        .pagin-counter
+          a(href="#").pagin-counter-item 1
+          a(href="#").pagin-counter-item 2
+          a(href="#").pagin-counter-item.active 3
+          a(href="#").pagin-counter-item 4
+          a(href="#").pagin-counter-item 5
+          span.dots ...
+          a(href="#").pagin-counter-item 27
+          a(href="#").pagin-counter-item 28
+        a(href="#").carousel-next.slick-arrow.arr-r
+          .icon
+            svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 45.9 14', style='enable-background:new 0 0 45.9 14;', xml:space='preserve')
+              style(type='text/css').
+                .slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
+              g
+                g
+                  polygon.slider-arr(points='45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7')
+
+
+
+
+
+
+
+
+  

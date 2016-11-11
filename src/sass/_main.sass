@@ -1906,50 +1906,9 @@ body, .out
       .icon
         .slider-arr
           fill: $mhover
-.news-section
-  +rem(padding, 0 20px 50px 52px)
-  +rem(margin-top,40px)
-  +r(991)
-    +rem(padding, 0 30px 0 30px)
-  +r(544)
-    +rem(padding, 0 14px 25px 14px)
-  .news-container
-    +rem(margin-top,33px)
-  .news-block-outer
-    &:nth-child(n+3)
-      .news-block-inner
-        border-bottom: 1px solid $border
-      .news-block-inner,.news-block-content
-        background: $white !important
-      .news-block-content,.news-block-name
-        position: static
-        line-height: 1
-      .u-graytext
-        +rem(font-size,13px)
-        +rem(margin-bottom,15px)
-        line-height: 0
-        display: inline-block
-      .u-intro
-        text-transform: none
-        font-family: 'Open Sans'
-        line-height: 1.5
-        +rem(font-size,14px)
-    &:nth-child(n+3)
-      .u-intro
-        +rem(height,62px)
-        overflow: hidden
-      .news-block-inner
-        &:hover
-          .u-intro 
-            color: $maind
-    &:nth-child(3)
-      .news-block-inner
-        +rem(padding-bottom,20px)
-    &:nth-child(n+4)
-      .news-block-inner
-        +rem(padding,24px 0 10px)
-        +r(768)
-          +rem(padding,20px 0 24px)
+
+
+
 .news-container
   +rem(margin-left,-30px)
   +clr
@@ -1967,11 +1926,24 @@ body, .out
     +r(768)
       width: 100% 
       +rem(margin-bottom,10px)
-    &:first-child,&:nth-child(2)
+    &.big,&.half,&.card
       +rem(height,346px)
       .u-intro
         line-height: 1.75 
-    &:first-child
+    &.card
+      +rem(padding, 0 0 0 30px)
+      +r(1150)
+        +rem(padding, 0 0 0 15px)
+      .card-blue
+        height: 100%
+        +rem(padding,45px 30px)
+        .btn 
+          +padlr(25px)
+        .u-intro
+          +rem(margin-bottom,15px)
+        .u-text
+          +rem(margin-bottom,34px)
+    &.big
       .news-block-name
         +rem(letter-spacing, 0.8px)
         +rem(padding,0 32.5px 28px 32.5px)
@@ -1982,7 +1954,7 @@ body, .out
         +rem(margin-bottom,10px)
         +rem(font-size,13px)
         color: $white
-    &:nth-child(2)
+    &.half
       .news-block-name
         +rem(letter-spacing, 0.8px)
         +rem(padding,21px 0 37px)
@@ -1996,6 +1968,32 @@ body, .out
           .news-block-name
             .u-intro
               color: $maind
+    &.small
+      .news-block-inner
+        border-bottom: 1px solid $border
+        +rem(padding,24px 0 10px)
+        +r(768)
+          +rem(padding,20px 0 24px) 
+        &:hover
+          .u-intro 
+            color: $maind
+      .news-block-inner,.news-block-content
+        background: $white !important
+      .news-block-content,.news-block-name
+        position: static
+        line-height: 1
+      .u-graytext
+        +rem(font-size,13px)
+        +rem(margin-bottom,15px)
+        line-height: 0
+        display: inline-block
+      .u-intro
+        text-transform: none
+        font-family: 'Open Sans'
+        line-height: 1.5
+        +rem(font-size,14px)
+
+          
   &-inner
     display: block
     height: 100%
@@ -2027,6 +2025,23 @@ body, .out
     .u-intro
       transition: color .3s
 
+.news-section
+  +rem(padding, 0 20px 50px 52px)
+  +rem(margin-top,40px)
+  +r(991)
+    +rem(padding, 0 30px 0 30px)
+  +r(544)
+    +rem(padding, 0 14px 25px 14px)
+  .news-container
+    +rem(margin-top,33px)
+    .news-block-outer
+      &.small
+        .u-intro
+          +rem(height,62px)
+          overflow: hidden
+      &:nth-of-type(3)
+        .news-block-inner
+          +rem(padding, 0 0 20px)
 //index contact section
 .contact-cont
   +rem(height,538px)
@@ -3336,6 +3351,7 @@ body, .out
   .side-title,.side-cont
     display: inline-block
     vertical-align: top
+    +rem(min-height,1px)
   .side-title
     +rem(max-width,278px)
     width: 27%
@@ -3390,7 +3406,6 @@ body, .out
       content: counter(item,decimal-leading-zero);
       display: block
       +rem(margin-right,10px)
-      +rem(margin-bottom,1px)
       +rem(width,25px)
       float: left
   &-text
@@ -4632,3 +4647,147 @@ body, .out
   +rem(font-size,150px)
   color: #79b9ff
   font-family: intro
+
+.column-content
+  .side-title
+    +rm(768)
+      width: 30%
+      padding-right: 2%
+  .side-cont
+    +rm(768)
+      width: 70%
+      .headcont-wrapp
+        text-align: justify
+        &:after
+          display: inline-block
+          content: ''
+          width: 100%
+      .headcont-title
+        text-align: left
+      .headcont-item
+        text-align: justify
+        width: 61%;
+        &:after
+          display: inline-block
+          content: ''
+          width: 100%
+
+    .select-u-item
+      display: inline-block
+      width: auto
+      +r(768)
+        +rem(padding-right,25px)
+      +r(480)
+        display: block
+  .side-wrap
+    margin: 0
+    +r(991)
+      .side-title,.side-cont
+        min-width: 100%
+      .side-title
+        +rem(margin-bottom,20px)
+.content-section
+  +rem(padding,36px 25px 0 55px)
+  +r(991)
+    +rem(padding,36px 20px 0 20px)
+  .side-title
+    +rem(padding-right,20px)
+    .u-intro.h2
+      line-height: 1.8
+      +rem(letter-spacing,1.2px)
+  .col-50
+    +rem(padding-right,15px)
+    +r(480)
+      width: 100%
+  p:not([class])
+    +r(480)
+      text-align: justify
+
+  .slider-item
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+  .slider-big
+    .slider-container
+      padding-bottom: 7.15%
+  .slider-container
+    position: relative
+    +rem(margin-top,31px)
+  .slider-wrapper
+    margin-left: -37.5%
+    margin-right: -12.5%
+    +r(1450)
+       margin-right: -9.5%
+    +r(1336)
+       margin-right: -4.5%
+    +r(1230)
+      margin-right: 0
+    +r(800)
+      +rem(margin,0 -20px)
+  .cards-slider-nav
+    +rem(margin,20px auto 30px)
+
+  .side-cont
+    .specials-wrapper
+      margin-top: 0
+      .specials-name
+        &:before
+          +r(1150)
+            +rem(margin-right,2px)
+      .specials-item
+        &:nth-of-type(3n-2)
+          .specials-text
+            +rem(padding-right,15px)
+        &:nth-of-type(3n-1)
+          .specials-text
+            +rem(padding-right,20px)
+    li 
+      +rem(padding-left,35px)
+      position: relative
+      +rem(font-size,13px)
+      color: $text
+      line-height: 1.85
+      +rem(letter-spacing,0.5px)
+      +rem(margin-bottom,11px)
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        +rem(top,11px)
+        display: inline-block
+        +rem(width,21px)
+        +rem(height,3px)
+        background: $mainl
+  .pagenews-container
+    +rem(margin-top,-29px)
+    +rem(margin-bottom,45px)
+    .news-block-outer
+      +r(1150)
+        +rem(margin-top,-15px)
+      &.big,&.half,&.card
+        +rem(margin-top,29px)
+        +r(1150)
+          +rem(margin-top,15px)
+      &.small
+        .news-block-inner
+          +rem(padding,25px 0)
+      +r(1170)
+        width: 50%
+      +r(630)
+        width: 100%
+
+blockquote
+  font-family: intro  
+  +rem(font-size,14px)
+  color: $text
+  +rem(padding-left,32px)
+  border-left: 4px solid $mainl
+  line-height: 1.85
+  +rem(letter-spacing,1.1px)
+  +rem(margin,3px 0)

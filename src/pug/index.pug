@@ -395,19 +395,19 @@ block content
   section.news-section.b-bottom
     h1.u-intro.h1 Новости и акции
     .news-container
-      mixin news(img,date,text)
-        .news-block-outer
+      mixin news(img,date,text,val)
+        .news-block-outer(class={big: val === 1},class={half: val === 2},class={small: val === 3})
           a(href="" style='background-image:url('+ img+ ')').news-block-inner
             .news-block-content
               .news-block-content-inner
                 .news-block-name
                   date.u-graytext #{date}
                   .u-intro.h2 #{text}
-      +news('img/news.png','20 июля, 2016','Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016')
-      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016')
+      +news('img/news.png','20 июля, 2016','Наша Компании приняла участие в XV междунаро- дной выставке металлоче- репицы',1)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',2)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',3)
+      +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',3)
   section.contact-section
     .tabs.js-tabs-wrap
       .tabs-head.w2.t-white

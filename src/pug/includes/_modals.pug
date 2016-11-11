@@ -25,6 +25,33 @@
         .u-text Нет аккаунта? Зарегистрируйтесь на нашем сайте и совершать покупки станет намного удобней
         a(href="#").btn.t-trans.btn-small Зарегистрироваться
 //бэкграунд модалки
+.modal-layout.modal-small.modal-subscribe
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Подписка на новости и акции
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="/").form.js-form-validate
+        .u-text.lt Подпишитесь на новости и акции и получайте только самую свежую информацию
+        .input-wrapper
+          label.u-graytext 
+            span.text E-mail
+          input.input-main(type='email',name="", placeholder = 'qwerty@mail.ru')
+        button.btn.t-blue.btn-small(type="submit") Подписаться 
+.modal-layout.modal-small.modal-subscribe-succes
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Спасибо
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      .u-text Мы рады, что вы подписалыси на рассылку новостей и скидках. Настроить подписку вы сможете в личном 
+        a(href="#") Кабинете.
+      button.btn.t-blue.btn-small.js-modal-closer(type="submit") Закрыть              
+//бэкграунд модалки
 .modal-layout.modal-small.modal-pass-forgot
   //контейнер модалки
   .modal-container

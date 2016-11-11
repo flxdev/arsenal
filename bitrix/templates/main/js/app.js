@@ -203,6 +203,9 @@ function compareHeight(){
 	$('.sertivicat-wrap .sertivicat-item').matchHeight({
 		 property: 'min-height'
 	});
+	$('.pagenews-container .news-block-outer.small .news-block-content-inner').matchHeight({
+		 property: 'min-height'
+	});
 } compareHeight();
 
 function Tabs(){
@@ -334,7 +337,13 @@ function pricerange(){
 		if(value < defaultPrice || !value){
 			amount.parent().parent().addClass('error');
 			textcont.text(errTextMin)
-			target.text(value);
+			if(!value){
+				target.text('');
+				
+			}else{
+				target.text(value)
+				
+			}
 			return false;
 		}
 		if(value > parseFloat(price).toFixed(2)){
