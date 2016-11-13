@@ -237,7 +237,7 @@
                                             <li class="menu-item"><a href="#">База знаний</a></li>
                                             <li class="menu-item"><a href="#">Контактная информация</a></li>
                     </ul>
-                    <button class="btn t-blue btn-standart">Обратный звонок</button>
+                    <button class="btn t-blue btn-standart js-modal-trigger" type="button" data-target=".modal-callback" onclick="modals($(this))">Обратный звонок</button>
                     <div class="contact-block"><span class="u-graytext">Пн–Пт, 9:00–20:00</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
                     <div class="contact-block"><span class="u-graytext">Viber / Telegram</span><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04  </a></div>
                     <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
@@ -905,8 +905,53 @@
                         <label class="u-graytext"> <span class="text">E-mail</span></label>
                         <input class="input-main" type="email" name="" placeholder="qwerty@mail.ru">
                       </div>
-                      <button class="btn t-blue btn-small" type="submit">Подписаться </button>
+                      <div class="modal-container-footer">
+                        <button class="btn t-blue btn-small" type="submit">Подписаться </button>
+                      </div>
                     </form>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-small modal-callback">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Обратный звонок</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <form class="form js-form-validate" action="/">
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">Ваше имя</span></label>
+                        <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                      </div>
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">E-mail</span></label>
+                        <input class="input-main" type="email" name="">
+                      </div>
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">Телефон</span></label>
+                        <input class="input-main" type="tel" name="">
+                      </div>
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span>Сообщение</span></label>
+                        <textarea class="input-main" name="" rows="7"></textarea>
+                      </div>
+                      <div class="modal-container-footer">
+                        <button class="btn t-blue btn-small" type="submit">Отправить             </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-small modal-callback-succes">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Спасибо</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="u-text">Мы очень рады, что у вас появились вопросы. Наш менеджер свяжется с вами в течение 15 минут.</div>
+                    <div class="modal-container-footer"><a class="btn t-blue btn-small js-modal-closer" href="#">Закрыть           </a></div>
                   </div>
                 </div>
               </div>
@@ -918,7 +963,48 @@
                   </div>
                   <div class="modal-container-content">
                     <div class="u-text">Мы рады, что вы подписалыси на рассылку новостей и скидках. Настроить подписку вы сможете в личном <a href="#">Кабинете.</a></div>
-                    <button class="btn t-blue btn-small js-modal-closer" type="submit">Закрыть              </button>
+                    <div class="modal-container-footer"><a class="btn t-blue btn-small js-modal-closer" href="#">Закрыть</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-small modal-vacancy-succes">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Спасибо</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="u-text">Мы очень рады, что вы откликнулись на нашу вакансию. После изученися вашего резюме, наш менеджер свяжется с вами для уточнения всех деталей.</div>
+                    <div class="modal-container-footer"><a class="btn t-blue btn-small js-modal-closer" href="#">Закрыть       </a></div>
+                  </div>
+                </div>
+              </div>
+              <!--бэкграунд модалки-->
+              <div class="modal-layout modal-small modal-vacancy">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Отклик на вакансию</div>
+                    <div class="categories-elem-name">Менеджер по продажам</div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <form class="form js-form-validate" action="/">
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">Ваше имя</span></label>
+                        <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                      </div>
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">E-mail</span></label>
+                        <input class="input-main" type="email" name="">
+                      </div>
+                      <div class="input-wrapper">
+                        <label class="u-graytext"> <span class="text">Телефон</span></label>
+                        <input class="input-main" type="tel" name="">
+                      </div>
+                      <div class="modal-container-footer">
+                        <button class="btn t-blue btn-small" type="submit">Отправить      </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -933,9 +1019,11 @@
                     <form class="form js-form-validate" action="/">
                       <div class="input-wrapper">
                         <label class="u-graytext"> <span class="text">E-mail</span></label>
-                        <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                        <input class="input-main" type="email" name="" placeholder="Иванов Степан Иванович">
                       </div>
-                      <button class="btn t-blue btn-small" type="submit">Восстановить</button>
+                      <div class="modal-container-footer">
+                        <button class="btn t-blue btn-small" type="submit">Восстановить</button>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -948,7 +1036,9 @@
                   </div>
                   <div class="modal-container-content">
                     <div class="u-text">На указанный вами e-mail в течение 5 минут будет выслано письмо с регистрационными данными. </div>
-                    <button class="btn t-blue btn-small js-modal-closer" type="submit">Закрыть</button>
+                    <div class="modal-container-footer">
+                      <button class="btn t-blue btn-small js-modal-closer" type="submit">Закрыть</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -986,38 +1076,16 @@
                             <div class="roof-form-wrap">
                               <form class="roof-form" action="">
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
-                                </div>
-                              </form>
-                              <div class="roof-total">
-                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="tabs-cont">
-                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
-                            <div class="roof-form-wrap">
-                              <form class="roof-form" action="">
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
-                                </div>
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
-                                </div>
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
-                                </div>
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                               </form>
                               <div class="roof-total">
@@ -1030,19 +1098,16 @@
                             <div class="roof-form-wrap">
                               <form class="roof-form" action="">
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
-                                </div>
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                               </form>
                               <div class="roof-total">
@@ -1055,22 +1120,19 @@
                             <div class="roof-form-wrap">
                               <form class="roof-form" action="">
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
-                                </div>
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                               </form>
                               <div class="roof-total">
@@ -1083,40 +1145,68 @@
                             <div class="roof-form-wrap">
                               <form class="roof-form" action="">
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">X:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                              </form>
+                              <div class="roof-total">
+                                <div class="roof-total-cont"><span class="u-graytext">Количество металлочерепицы: </span><span class="roof-total-result">7<span>м²</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-cont">
+                            <div class="roof-img-wrap"><img src="img/roof/dom.png" alt=""></div>
+                            <div class="roof-form-wrap">
+                              <form class="roof-form" action="">
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">X:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main" type="text" name="" data-type="м"><span class="input-title">L:</span>
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
+                                </div>
+                                <div class="input-wrapper">
+                                  <input class="input-main" type="number" name="" data-type="м"><span class="input-title">L:</span>
                                 </div>
                               </form>
                               <div class="roof-total">

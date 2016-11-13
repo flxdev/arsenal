@@ -1,0 +1,78 @@
+extends _layout
+
+block title
+  title Вакансии
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Вакансии
+    h1.u-intro.h1 Вакансии
+  section.filter-section.b-bottom
+    .filter-container.acc-filter
+      .mobile-dropdowm-trigger
+        span.u-bold Открыть меню
+        i.arrow-icon
+      .filter-form
+        .filter-form-inner 
+          mixin compmenu(val)
+            - var current = "Вакансии"
+            .acc-menu-item(class={active: val === current})
+              a(href="#") #{val}
+          +compmenu('О компании')
+          +compmenu('Новости и акции')
+          +compmenu('Вакансии')
+  section.content-section
+    .side-wrap
+      .side-title
+        .u-intro.h2 Открытые вакансии в нашей компании
+      .side-cont
+        .u-black Станьте частью первоклассной команды
+        p Если вы амбициозный, целеустремленный и ответственный специалист, то рады будем видеть вас среди нашей профессиональной команды. В нашей компании есть куда расти и развиваться, в чём мы очень заинтересованы и предлагаем отличные уловия профессионального, материального и карьерного роста.
+        .vacancy-wrapper.offerlist-section
+          mixin vacancy(name,date)
+            .vacancy-head.js-accordion-trigger
+              .vacancy-head-inner.table-item
+                .u-intro.h3 #{name}
+                  time.u-graytext #{date}
+                .table-arr  
+                  i.select-img
+              .vacancy-body.js-accordion-body
+                .u-black Должностные обязанности
+                ul
+                  li Работа с рекламными площадками
+                  li Прием звонков и консультирование клиентов
+                  li Прием звонков и консультирование клиентов
+                  li Заключение сделок
+                .u-black От вас мы ждем
+                ul
+                  li Опыт в продажах от 1 года
+                  li Умение вести переговоры с клиентом
+                  li Презентабельный внешний вид
+                  li Умение работать в многозадачности и в команде
+                .u-black Мы готовы вам предложить
+                ul
+                  li Обучение продажам за счет компании.
+                  li Офис находится в центре города (3 минуты от станции метро Академия Наук).
+                  li Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.
+                  li У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
+                   li И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!
+                button.btn.t-blue(data-target='.modal-vacancy', onclick='modals($(this))') Откликнуться на вакансию
+          +vacancy('Менеджер по продажам','18 июля, 2016')
+          +vacancy('Офис-менеджер','18 июля, 2016')
+          +vacancy('Главный бухгалтер','20 июля, 2016')
+          +vacancy('Специалист call-центра','26 июля, 2016')
+        .info-cont
+          p Вы можете задать нам любой вопрос по телефону касательно работы в компании, и мы обещаем, что вы получите на него ответ. Или напишите нам на e-mail — и мы попробуем что-нибудь подыскать.
+          .categories-elem-name Надежда Ермолаева
+          a.u-text.lt(href="tel:375296669172") +375 29 666-91-72
+          a.mailto(href="mailto:arsenalmetall@mail.ru") arsenalmetall@mail.ru
+
+
+
+
+
+
+  

@@ -215,7 +215,7 @@
           +MenuAdd("Оплата и доставка")
           +MenuAdd('База знаний')
           +MenuAdd('Контактная информация')
-        button.btn.t-blue.btn-standart Обратный звонок
+        button.btn.t-blue.btn-standart.js-modal-trigger(type='button',data-target='.modal-callback',onclick='modals($(this))') Обратный звонок
         .contact-block
           span.u-graytext Пн–Пт, 9:00–20:00
           a.u-text.lt(href="tel:375296669172") +375 29 666-91-72

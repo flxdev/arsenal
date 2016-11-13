@@ -1,0 +1,206 @@
+extends _layout
+
+block title
+  title результаты Поиска
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg) ')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Поиск
+    h1.u-intro.h1 результаты Поиска
+  // а вот тут если результата нету, то удаляем .b-bottom и можно выплевывать пустой .products-outer
+  section.filter-section.b-bottom
+    .search-wrapper
+      form(action="")
+        .o-menu-search
+          .search__wrapper
+            input(type="text" placeholder= 'Поиск').search__input
+            button(type='submit').search__btn
+              i.search-icon
+                svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 17 17', style='enable-background:new 0 0 17 17;', xml:space='preserve')
+                  style(type='text/css').
+                    .search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}
+                  g
+                    g
+                      path.search-i(d='M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1\
+                      c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8\
+                      S13.1,11.3,10.5,11.3z')
+        .headcont-item.select-radio
+          .select-u-item
+            label.input_label
+              span.input_main
+                input.input-real(type="radio",name='offertype',value = 'fiz')
+                span.input-checked
+              span.input-text По каталогу
+          .select-u-item
+            label.input_label
+              span.input_main
+                input.input-real(type="radio",name='offertype',value = 'jur')
+                span.input-checked
+              span.input-text По тексту
+      .search-result-text
+        .categories-elem-name
+          |По вашему запросу найдено 
+          span 20 товаров
+        .categories-elem-name
+          |По вашему запросу  
+          span «метабло» 
+          | к сожалению ничего не найдено. 
+  //.products-outer c catalog 1-1
+  .products-outer
+    .products-sort-outer
+      .products-sort-wrapper
+        .u-bold Сортировать по:
+        .products-sort-inner
+          a(href="#").sort-item.link-dotted Сначала популярные
+          a(href="#").sort-item.link-dotted  Новинки
+          a(href="#").sort-item.active.link-dotted   Дешёвые
+          a(href="#").sort-item.link-dotted   Дорогие
+          a(href="#").sort-item.link-dotted   От А до Я
+          a(href="#").sort-item.link-dotted   От Я до А
+
+      .products-mobile-wrapper
+        .sort_wrapper
+          .sort-select.js-select-item
+            .sort-select-title
+              span Сначала популярные
+              i.bread-arrow
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  .sort-select-item
+                    a(href="#",data-text="От А до Я") От А до Я
+                  .sort-select-item
+                    a(href="#",data-text="От Я до А") От Я до А
+                  .sort-select-item
+                    a(href="#",data-text="Популярные") Популярные
+                  .sort-select-item.active
+                    a(href="#",data-text="Дешевые") Дешевые
+                  .sort-select-item
+                    a(href="#",data-text="Дорогие") Дорогие
+                  .sort-select-item
+                    a(href="#",data-text="Новинки") Новинки
+                  .sort-select-item
+                    a(href="#",data-text="Хиты продаж") Хиты продаж
+      .products-wiew
+        // .active для текущего вида
+        a(href="#").products-wiew-item.active
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 15', width="15px", height="15px", style='enable-background:new 0 0 15 15;', xml:space='preserve')
+            style(type='text/css').
+              .stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
+            g
+              g
+                path.stwiew(d='M0,4h4V0H0V4z M5.5,4h4V0h-4V4z M11,0v4h4V0H11z M0,9.5h4v-4H0V9.5z M5.5,9.5h4v-4h-4V9.5z M11,9.5h4v-4h-4\
+                V9.5z M0,15h4v-4H0V15z M5.5,15h4v-4h-4V15z M11,15h4v-4h-4V15z')
+        a(href="#").products-wiew-item
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 15',width="15px", height="15px", style='enable-background:new 0 0 15 15;', xml:space='preserve')
+            style(type='text/css').
+              .stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
+            g
+              g
+                path.stwiew(d='M0,4h4V0H0V4z M5.5,0v4H15V0H5.5z M0,9.5h4v-4H0V9.5z M5.5,9.5H15v-4H5.5V9.5z M0,15h4v-4H0V15z M5.5,15H15\
+                v-4H5.5V15z')
+    .products-row
+      .products-inner
+          mixin Productcart(name, img, prop1, prop2, price, type)
+            .product-card-wrapper
+              .product-card-outer
+                a(href="#").product-card-inner
+                  .product-card-img
+                    img(src=img, alt="")
+                  .categories-elem-name #{name}
+                  .u-text 
+                    span.prop
+                      span Высота:
+                      span.price #{prop1} ,
+                    span.prop
+                      span шаг волны:
+                      span.price #{prop1} 
+                  .product-card-price 
+                    |#{price}
+                    span.u-graytext.old 1000р.
+                .product-card-more
+                  a(href="#").btn.t-blue Подробнее
+                .flags-wrap
+                  - var val = type
+                  if val == '1'
+                    .flag-item.discount 
+                      span -15%
+                  else if val == '2'
+                    .flag-item.hit 
+                      span Hit
+                    .flag-item.discount 
+                      span -25%
+                  else if val == '3'
+                    .flag-item.new
+                      span New
+                  else if val == '4'
+                    .flag-item.hit 
+                      span Hit
+                    .flag-item.discount 
+                      span -55%
+                    .flag-item.new
+                      span New
+                  else if val == '0'
+          +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+          +Productcart('Планка3 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+          +Productcart('Планка2 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+          +Productcart('Профилированный лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+          +Productcart('Планка торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+          +Productcart('Металлочерепица Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепицаa  Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+          +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+          +Productcart('Планка2 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+          +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+          +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+  .pagination-wrapper
+    .pagination-inner
+      .cards-slider-nav
+        a(href="#").carousel-prev.slick-arrow.arr-l
+          .icon
+            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 45.9 14', style='enable-background:new 0 0 45.9 14;', xml:space='preserve')
+              style(type='text/css').
+                .slider-arr{fill:#353535;}
+              g
+                g
+                  polygon.slider-arr(points='0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8')
+        .pagin-counter
+          a(href="#").pagin-counter-item 1
+          a(href="#").pagin-counter-item 2
+          a(href="#").pagin-counter-item.active 3
+          a(href="#").pagin-counter-item 4
+          a(href="#").pagin-counter-item 5
+          span.dots ...
+          a(href="#").pagin-counter-item 27
+          a(href="#").pagin-counter-item 28
+        a(href="#").carousel-next.slick-arrow.arr-r
+          .icon
+            svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 45.9 14', style='enable-background:new 0 0 45.9 14;', xml:space='preserve')
+              style(type='text/css').
+                .slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
+              g
+                g
+                  polygon.slider-arr(points='45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7')
+    
+  
+
+
+
+
+
+
+
+
+
+  

@@ -40,7 +40,7 @@ block content
         .card-blue
           .u-intro.h2 Только интересный контент без лишнего спама
           .u-text.lt Получайте только полезную информа- цию о интересных новостях и неверо- ятных акциях
-          a(href="#").btn.t-blue.btn-standart Подписаться на рассылку
+          button(data-target='.modal-subscribe', onclick='modals($(this))').btn.t-blue.btn-standart Подписаться на рассылку
       +news('img/news.png','20 июля, 2016','Конкурс для архитекторов и проектировщиков «Металл Project» 2016',2)
       +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',1)
       +news('img/news.png','20 июля, 2016','Конкурс для архитекторов dfsdfdsf dsfsdfsdf dsfdsfds и проектировщиков «Металл Project» 2016',2)

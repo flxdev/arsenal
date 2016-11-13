@@ -39,7 +39,46 @@
           label.u-graytext 
             span.text E-mail
           input.input-main(type='email',name="", placeholder = 'qwerty@mail.ru')
-        button.btn.t-blue.btn-small(type="submit") Подписаться 
+        .modal-container-footer
+          button.btn.t-blue.btn-small(type="submit") Подписаться 
+.modal-layout.modal-small.modal-callback
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Обратный звонок
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="/").form.js-form-validate
+        .input-wrapper
+          label.u-graytext 
+            span.text Ваше имя
+          input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        .input-wrapper
+          label.u-graytext 
+            span.text E-mail
+          input.input-main(type='email',name="")
+        .input-wrapper
+          label.u-graytext 
+            span.text Телефон
+          input.input-main(type='tel',name="")
+        .input-wrapper
+          label.u-graytext 
+            span Сообщение
+          textarea.input-main(name="",rows='7')
+        .modal-container-footer
+          button.btn.t-blue.btn-small(type="submit") Отправить             
+.modal-layout.modal-small.modal-callback-succes
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Спасибо
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      .u-text Мы очень рады, что у вас появились вопросы. Наш менеджер свяжется с вами в течение 15 минут.
+      .modal-container-footer
+        a(href="#").btn.t-blue.btn-small.js-modal-closer Закрыть           
 .modal-layout.modal-small.modal-subscribe-succes
   //контейнер модалки
   .modal-container
@@ -50,7 +89,44 @@
     .modal-container-content
       .u-text Мы рады, что вы подписалыси на рассылку новостей и скидках. Настроить подписку вы сможете в личном 
         a(href="#") Кабинете.
-      button.btn.t-blue.btn-small.js-modal-closer(type="submit") Закрыть              
+      .modal-container-footer
+        a(href="#").btn.t-blue.btn-small.js-modal-closer Закрыть
+.modal-layout.modal-small.modal-vacancy-succes
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Спасибо
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      .u-text Мы очень рады, что вы откликнулись на нашу вакансию. После изученися вашего резюме, наш менеджер свяжется с вами для уточнения всех деталей.
+      .modal-container-footer
+        a(href="#").btn.t-blue.btn-small.js-modal-closer Закрыть       
+//бэкграунд модалки
+.modal-layout.modal-small.modal-vacancy
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Отклик на вакансию
+      .categories-elem-name Менеджер по продажам
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="/").form.js-form-validate
+        .input-wrapper
+          label.u-graytext 
+            span.text Ваше имя
+          input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        .input-wrapper
+          label.u-graytext 
+            span.text E-mail
+          input.input-main(type='email',name="")
+        .input-wrapper
+          label.u-graytext 
+            span.text Телефон
+          input.input-main(type='tel',name="")
+        .modal-container-footer
+          button.btn.t-blue.btn-small(type="submit") Отправить      
 //бэкграунд модалки
 .modal-layout.modal-small.modal-pass-forgot
   //контейнер модалки
@@ -64,8 +140,10 @@
         .input-wrapper
           label.u-graytext 
             span.text E-mail
-          input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
-        button.btn.t-blue.btn-small(type="submit") Восстановить
+          input.input-main(type='email',name="", placeholder = 'Иванов Степан Иванович')
+        .modal-container-footer
+          button.btn.t-blue.btn-small(type="submit") Восстановить
+
 .modal-layout.modal-small.modal-pass-forgot-succes
   //контейнер модалки
   .modal-container
@@ -75,7 +153,8 @@
         span
     .modal-container-content
       .u-text На указанный вами e-mail в течение 5 минут будет выслано письмо с регистрационными данными. 
-      button.btn.t-blue.btn-small.js-modal-closer(type="submit") Закрыть
+      .modal-container-footer
+        button.btn.t-blue.btn-small.js-modal-closer(type="submit") Закрыть
 .modal-layout.modal-medium.modal-roofs
   //контейнер модалки
   .modal-container
@@ -111,38 +190,16 @@
               .roof-form-wrap
                 form(action='').roof-form
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-                .roof-total
-                  .roof-total-cont
-                    span.u-graytext Количество металлочерепицы: 
-                    span.roof-total-result 7
-                      span м²
-            .tabs-cont
-              .roof-img-wrap
-                img(src="img/roof/dom.png", alt="")
-              .roof-form-wrap
-                form(action='').roof-form
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title X:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title X:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                 .roof-total
                   .roof-total-cont
@@ -155,19 +212,69 @@
               .roof-form-wrap
                 form(action='').roof-form
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                .roof-total
+                  .roof-total-cont
+                    span.u-graytext Количество металлочерепицы: 
+                    span.roof-total-result 7
+                      span м²
+            .tabs-cont
+              .roof-img-wrap
+                img(src="img/roof/dom.png", alt="")
+              .roof-form-wrap
+                form(action='').roof-form
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title X:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title X:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                .roof-total
+                  .roof-total-cont
+                    span.u-graytext Количество металлочерепицы: 
+                    span.roof-total-result 7
+                      span м²
+            .tabs-cont
+              .roof-img-wrap
+                img(src="img/roof/dom.png", alt="")
+              .roof-form-wrap
+                form(action='').roof-form
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title X:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title X:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
+                    span.input-title L:
+                  .input-wrapper
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
 
                 .roof-total
@@ -181,69 +288,40 @@
               .roof-form-wrap
                 form(action='').roof-form
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title X:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-
-                .roof-total
-                  .roof-total-cont
-                    span.u-graytext Количество металлочерепицы: 
-                    span.roof-total-result 7
-                      span м²
-            .tabs-cont
-              .roof-img-wrap
-                img(src="img/roof/dom.png", alt="")
-              .roof-form-wrap
-                form(action='').roof-form
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title X:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title X:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
                   .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
-                    span.input-title L:
-                  .input-wrapper
-                    input.input-main(type='text',name="", data-type='м')
+                    input.input-main(type='number',name="", data-type='м')
                     span.input-title L:
 
                 .roof-total

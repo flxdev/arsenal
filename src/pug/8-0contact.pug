@@ -1,0 +1,60 @@
+extends _layout
+
+block title
+  title Контактная информация
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Контактная информация
+    h1.u-intro.h1 Контактная информация
+  section.content-section
+    .side-wrap.contacts-wrap
+      .side-title
+        .u-intro.h2 свяжитесь с нами или приезжайте в наш в офис 
+      .side-cont
+        .col-50
+          .categories-elem-name ООО «АрсеналМеталл»
+          .u-text.lt 220056, Республика Беларусь, г. Минск, пр. Независимости, 199
+        .col-50
+          button.btn.t-blue.btn-small.btn-extrasmall.js-modal-trigger(type='button',data-target='.modal-callback',onclick='modals($(this))') Обратный звонок
+        .footer_contacts-wrap
+          .footer_contacts-block
+            .contact-block
+              span.u-graytext Телефоны
+              a.u-text.lt(href="tel:375296669172") +375 29 666-91-72
+              a.u-text.lt(href="tel:375173804867") +375 17 380-48-67 
+              a.u-text.lt(href="tel:375175125004") +375 17 512-50-04
+              a.u-text.lt(href="tel:375171117524") +375 17 111-75-24
+          .footer_contacts-block
+            .contact-block
+              span.u-graytext График работы
+              .u-text.lt Пн-Пт, с 9:00 до 20:00
+          .footer_contacts-block
+            .contact-block
+              span.u-graytext E-mail
+              a.mailto(href="mailto:arsenalmetall@mail.ru") arsenalmetall@mail.ru
+          .footer_contacts-block
+            .contact-block
+              span.u-graytext Skype
+              a.mailto(href="skype:arsenalmetall?chat") arsenalmetall
+  section.contact-section
+    .tabs-cont
+      .contact-cont 
+        #map
+      .info-cont
+        .info-title 
+          span.u-intro.h2 реквизиты компании
+        .info-content
+          .side-wrap
+            .side-cont
+              p ООО «АрсеналМеталл»
+              p Юридический адрес: 220090, г. Минск, Логойский тракт, 22А, пом. 190 
+              p Р/с 3012048490017 в ОАО «Банк Москва-Минск», г. Минск, ул. Коммунистическая, 49, МФО 153001272
+              p УНП 190664004, ОКПО 37678731
+
+
+
+  

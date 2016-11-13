@@ -233,7 +233,8 @@ if($('.offerlist-section').length){
 				parent.siblings().removeClass('active').find(body).slideUp(200);
 				parent.addClass('active').find(body).slideDown(300, function(){
 						var pos = parent.position().top;
-						jQuery(".out:not(:animated)").animate({scrollTop: pos + 200}, 500);
+						parent.hasClass('vacancy-head') ? jQuery(".out:not(:animated)").animate({scrollTop: pos }, 500) : jQuery(".out:not(:animated)").animate({scrollTop: pos + 200}, 500)
+						
 				});
 			}
 		});

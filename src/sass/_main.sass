@@ -10,6 +10,8 @@ a
   transition: color .3s
   &:hover
     color: $maind
+*
+  -webkit-tap-highlight-color: transparent
 textarea
   line-height: 1.5
 ul
@@ -2094,6 +2096,8 @@ body, .out
     overflow: hidden
     font-size: 0
     +clr
+    .side-cont
+      min-width: 100%
     +r(600)
      display: inline-block
     .col-50
@@ -2431,8 +2435,9 @@ body, .out
       width: 100%
 .modal-pass-forgot-succes
   .btn
-    +rem(margin-top,20px)
     +rem(min-width,117px)
+.modal-container-footer
+  +rem(margin-top,20px)
 //inputs
 .input-wrapper
   +rem(margin-bottom,9px)
@@ -2529,6 +2534,8 @@ body, .out
   padding-bottom: 0
 
 //1-1 catalog
+.products-outer
+  +rem(min-height,150px)
 .products
   font-family: 'Open Sans'
   &-row
@@ -2774,6 +2781,10 @@ body, .out
   .dropdown-footer
     .small-link
       display: none
+      &.close
+        span
+          &:before, &:after
+            top: 0
   &.active
     .select-img
       transform: scale(1,-1)
@@ -2795,6 +2806,9 @@ body, .out
     +rem(padding,18px 25px 20px 55px)
     +r(991)
       +rem(padding,18px 20px 20px 20px)
+    &.articles-filter
+      .o-menu-search
+        +rem(margin,17px 0 15px)
   &-container
     position: relative
     +rem(padding-left, 81px)
@@ -3348,6 +3362,9 @@ body, .out
   font-size: 0
   +rem(margin-top,-5px)
   +rem(margin-bottom,25px)
+  &.contacts-wrap
+    .side-cont
+      max-width: 100%
   .side-title,.side-cont
     display: inline-block
     vertical-align: top
@@ -3375,6 +3392,8 @@ body, .out
       line-height: 1.85
       +rem(margin-bottom, 9px)
       +rem(letter-spacing, 0.4px)
+    .u-intro.h1
+      +rem(margin-bottom,25px)
 .specials
   &-wrapper
     font-size: 0
@@ -4716,6 +4735,35 @@ body, .out
   .slider-big
     .slider-container
       padding-bottom: 7.15%
+  .slider-news
+    .slider-container
+      padding-bottom: 8.8%
+    .slider-text
+      text-align: right
+      +rem(width,140px)
+      display: inline-block
+      position: absolute
+      z-index: 1
+      bottom: 0
+      left: -20px
+  .slider-describe
+    +rem(width,170px)
+    display: inline-block
+    position: absolute
+    +rem(left,-180px)
+    +rem(bottom,49px)
+    .slider-text
+      text-align: right
+      display: inline-block
+      vertical-align: bottom
+    .slider-small-item
+      opacity: 0
+      +tr(opacity .3s)
+      +rem(min-height,140px)
+      +rem(line-height,140px)
+      &.slick-current
+        opacity: 1
+        transition-delay: .2s
   .slider-container
     position: relative
     +rem(margin-top,31px)
@@ -4730,10 +4778,28 @@ body, .out
       margin-right: 0
     +r(800)
       +rem(margin,0 -20px)
+    &.slider-news-outer
+      margin-right: 0
+      margin-left: 0
+      position: relative
+      
   .cards-slider-nav
     +rem(margin,20px auto 30px)
 
   .side-cont
+    .info-cont
+      position: static
+      width: 100%
+      margin: 0
+      +rem(padding,35px)
+      +r(544)
+        +rem(margin-top,15px)
+      p 
+        +rem(margin-bottom,20px)
+      .mailto
+        +rem(font-size,13px)
+        display: block
+        +rem(margin-top,5px)
     .specials-wrapper
       margin-top: 0
       .specials-name
@@ -4791,3 +4857,132 @@ blockquote
   line-height: 1.85
   +rem(letter-spacing,1.1px)
   +rem(margin,3px 0)
+.soc
+  &-wrap
+    font-size: 0
+    +rem(margin-left,-16px)
+    width: 123px
+    +rem(margin-top,22px)
+  &-item-news
+    display: inline-block
+    vertical-align: top
+    width: 33%
+    +rem(padding-left,16px)
+.vacancy
+  &-wrapper
+    +rem(padding,20px 0 44px)
+    counter-reset: num
+  &-head
+    cursor: pointer
+    border-bottom: 1px solid $border
+    counter-increment: num
+    &.active
+      .u-intro
+        color: $maind
+        &:before
+          color: #000
+      .select-img
+        transform: scale(1,-1)
+    &-inner
+      display: table
+      width: 100%
+      border-bottom: none
+      .u-intro,.table-arr 
+        display: table-cell
+      .u-intro
+        color: $main
+        +tr(color .3s)
+        &:before
+           content: counter(num, decimal-leading-zero);
+           display: inline-block
+           +rem(padding-right, 17px)
+           +tr(color .3s)
+      .u-graytext
+        font-family: 'Open Sans'
+        text-transform: none
+        font-weight: 400
+        +rem(padding-left,25px)
+        +r(544)
+          display: block
+  &-body
+    +rem(padding, 0 35px 37px 35px)
+    +r(544)
+      +rem(padding, 0 10px 20px 10px)
+    .u-black
+      +rem(margin, 0 0 10px)
+    .btn
+      +padlr(20px)
+      +rem(margin-top,15px)
+
+.content-section
+  .side-wrap
+    .side-cont
+      .vacancy-wrapper
+        .vacancy-body
+          .u-black
+            +rem(margin, 0 0 8px)
+.contacts-wrap
+  +rem(margin-top,-8px)
+  .col-50
+    +rem(margin-top,-5px)
+    .categories-elem-name
+      +rem(margin-bottom,10px)
+  .col-50:nth-of-type(2)
+    text-align: right
+    padding-right: 0
+    +r(480)
+      text-align: center
+      +rem(margin, 10px 0)
+    .btn 
+      +padlr(15px)
+      +rem(letter-spacing,0.4px)
+      +rem(margin-top,5px)
+  .side-cont
+    width: 74.8%
+  .side-title
+    max-width: 100%
+    width: 25.2%
+    .u-intro
+      +rem(max-width,225px)
+      +rem(margin-top,-7px)
+      +r(800)
+        max-width: 100%
+  .footer_contacts-wrap
+    width: 98%
+    +rem(margin-top,25px)
+    +r(1150)
+      width: 100%
+    .footer_contacts-block
+      width: 23.5%
+      +r(1150)
+        width: 25%
+.content-section +  .contact-section
+  .tabs-cont
+    padding-top: 0
+.search
+  &-wrapper
+    +rem(max-width,541px)
+    .headcont-item
+      +rem(margin-top,20px)
+      .select-u-item
+        +rem(max-width,115px)
+  &-result-text
+    +rem(padding-top,2px)
+    .categories-elem-name
+      span
+        color: $maind
+
+// sorting of 10-0 articles
+.article-sort
+  &-wrapper
+    +rem(margin-bottom,22px)
+    .btn 
+      min-width: 0
+      display: inline-block
+      +rem(margin,0 6px 6px 0)
+      +rem(padding,6px 10px)
+      +rem(font-size,11px)
+      &.active
+        border-color: $mainl
+        background-color: $mainl
+        color: $white
