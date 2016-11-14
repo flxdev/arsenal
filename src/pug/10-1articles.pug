@@ -1,7 +1,7 @@
 extends _layout
 
 block title
-  title Новость
+  title Запись базы данных
 
 block content
   //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
@@ -10,20 +10,6 @@ block content
       a(href="#").bread-item Главная
       a(href="#").bread-item Новости и акции
     h1.u-intro.h1 Новости и акции
-  section.filter-section.b-bottom
-    .filter-container.acc-filter
-      .mobile-dropdowm-trigger
-        span.u-bold Открыть меню
-        i.arrow-icon
-      .filter-form
-        .filter-form-inner 
-          mixin compmenu(val)
-            - var current = "Новости и акции"
-            .acc-menu-item(class={active: val === current})
-              a(href="#") #{val}
-          +compmenu('О компании')
-          +compmenu('Новости и акции')
-          +compmenu('Вакансии')
   section.content-section
     .side-wrap
       .side-title
@@ -68,6 +54,10 @@ block content
                 c-0.5-0.3-0.4-1.3-0.4-2c0-2.2,0.3-3.2-0.6-3.4c-0.3-0.1-0.5-0.1-1.3-0.1c-1,0-1.8,0-2.3,0.3c-0.3,0.2-0.6,0.5-0.4,0.6\
                 c0.2,0,0.6,0.1,0.8,0.5c0.3,0.4,0.3,1.4,0.3,1.4s0.2,2.6-0.4,2.9c-0.4,0.2-0.9-0.2-2-2.3c-0.6-1.1-1-2.3-1-2.3s-0.1-0.2-0.2-0.3\
                 C9.5,10,9.2,10,9.2,10l-2.6,0c0,0-0.4,0-0.5,0.2c-0.1,0.2,0,0.5,0,0.5s2.1,5.3,4.4,8C12.6,21.1,15,21,15,21z')
+        .articles-wrapper
+          //наверное тут это должны быть ссылки, но если нет, то иожeшь убрать 'a'
+          a(href="#").btn.t-trans.category Кровля
+          a(href="#").btn.t-trans.category Металлочерепица
       .side-cont
         h1.u-intro.h1 Конкурс для архитекторов и проектировщиков "Металл project" 2016
         .u-black Наши специалисты постараются, как можно наиболее оптимально подобрать нужное количество товара, как для частных лиц, так и для организаций, что при покупке повлечет за собой неизбежное удешевление общей стоимости заказа. 

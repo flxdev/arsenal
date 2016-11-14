@@ -277,6 +277,7 @@
                     </form>
                   </div>
                   <ul class="menu-list">
+                    <!-- .active для текущей страницы, они в конце-->
                                         <li class="menu-item"><a href="#">Компания</a></li>
                                         <li class="menu-item"><a href="#">Оплата и доставка</a></li>
                                         <li class="menu-item"><a href="#">База знаний</a></li>
@@ -342,7 +343,7 @@
               </div>
             </aside>
             <section class="page__content">
-              <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" .style="background-image:url(img/accii2.jpg)"></a></div>
+              <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
               <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
               <section class="content-head content-image" style="background-image:url(img/content-head.jpg) ">
                 <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Каталог</a><a class="bread-item" href="#">Очень длинный заголовок про металлочерепицу</a><a class="bread-item" href="#">Каталог</a></div>
@@ -429,7 +430,7 @@
                 <div class="tabs js-tabs-wrap">
                   <div class="tabs-head w3 slider-tabs">
                     <div class="tabs-item js-tab-trigger"><span>Популярное</span></div>
-                    <div class="tabs-item js-tab-trigger"><span>Новинки</span></div>
+                    <div class="tabs-item js-tab-trigger active"><span>Новинки</span></div>
                     <div class="tabs-item js-tab-trigger"><span>Акции</span></div>
                   </div>
                   <div class="tabs-body">
@@ -912,11 +913,11 @@
                       <form class="form js-form-validate" action="/">
                         <div class="input-wrapper">
                           <label class="u-graytext"> <span class="text">E-mail</span></label>
-                          <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                          <input class="input-main" type="email" name="" placeholder="Иванов Степан Иванович">
                         </div>
                         <div class="input-wrapper">
                           <label class="u-graytext"> <span class="text">Пароль</span></label>
-                          <input class="input-main" type="email" name="" placeholder="info@mail.com"><a class="link-dotted" href="#">Забыли пароль?</a>
+                          <input class="input-main" type="password" name="" placeholder="info@mail.com"><a class="link-dotted js-modal-closer js-modal-trigger" href="#" data-target=".modal-pass-forgot" onclick="modals($(this))">Забыли пароль?</a>
                         </div>
                         <button class="btn t-blue btn-small" type="submit">Войти</button>
                       </form>
@@ -926,6 +927,199 @@
                       <div class="u-text">Нет аккаунта? Зарегистрируйтесь на нашем сайте и совершать покупки станет намного удобней</div><a class="btn t-trans btn-small" href="#">Зарегистрироваться</a>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="modal-layout modal-big modal-incart">
+                <!--контейнер модалки-->
+                <div class="modal-container">
+                  <div class="modal-container-header">
+                    <div class="u-intro h1">Товар добавлен в корзину</div>
+                    <div class="categories-elem-name">В вашей корзине <span class="elemcount">3 товара</span></div><i class="small-link close js-modal-closer"><span></span></i>
+                  </div>
+                  <div class="modal-container-content">
+                    <div class="table-wrapper">
+                      <div class="table table-inner">
+                        <div class="table-head">
+                          <div class="table-item table-img"></div>
+                          <div class="table-item table-name">Наименование</div>
+                          <div class="table-item table-price">Цена</div>
+                          <div class="table-item table-count">Кол-во</div>
+                          <div class="table-item table-total">Сумма</div>
+                        </div>
+                                                  <div class="table-row">
+                                                    <div class="table-item table-img"><img src="img/cards/1.png" alt=""></div>
+                                                    <div class="table-item table-name">
+                                                      <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
+                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span><span class="prop"><span>Жиза:</span><span class="price">3.15</span></span></div>
+                                                    </div>
+                                                    <div class="table-item table-price">
+                                                      <div class="u-text">107.50р.</div>
+                                                    </div>
+                                                    <div class="table-item table-count">
+                                                      <div class="u-text">200м2</div>
+                                                    </div>
+                                                    <div class="table-item table-total">
+                                                      <div class="u-text bold">21 500.00р.</div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="table-row">
+                                                    <div class="table-item table-img"><img src="img/cards/2.png" alt=""></div>
+                                                    <div class="table-item table-name">
+                                                      <div class="categories-elem-name">Уплотнитель прямоугольный самоклеющийся</div>
+                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span><span class="prop"><span>Жиза:</span><span class="price">3.15</span></span></div>
+                                                    </div>
+                                                    <div class="table-item table-price">
+                                                      <div class="u-text">1.60р.</div>
+                                                    </div>
+                                                    <div class="table-item table-count">
+                                                      <div class="u-text">200м2</div>
+                                                    </div>
+                                                    <div class="table-item table-total">
+                                                      <div class="u-text bold">24.00р.</div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="table-row">
+                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                    <div class="table-item table-name">
+                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span><span class="prop"><span>Жиза:</span><span class="price">3.15</span></span></div>
+                                                    </div>
+                                                    <div class="table-item table-price">
+                                                      <div class="u-text">1.60р.</div>
+                                                    </div>
+                                                    <div class="table-item table-count">
+                                                      <div class="u-text">200м2</div>
+                                                    </div>
+                                                    <div class="table-item table-total">
+                                                      <div class="u-text bold">125624.00р.</div>
+                                                    </div>
+                                                  </div>
+                      </div>
+                    </div>
+                    <div class="modal-container-footer b-bottom"><a class="link-nav left js-modal-closer" href="#">Назад</a>
+                      <button class="btn t-blue btn-small" type="submit">Перейти в корзину</button>
+                    </div>
+                    <div class="card-slider-wrap">
+                      <div class="u-intro h3">вам пригодится</div>
+                      <div class="slider-card-inner">
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                      <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
+                                                      <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                      <div class="flag-item discount"> <span>-15%</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                      <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                      <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                      <div class="flag-item hit"> <span>Hit</span></div>
+                                                      <div class="flag-item discount"> <span>-55%</span></div>
+                                                      <div class="flag-item new"><span>New</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                      <div class="categories-elem-name">Планка3 торцовая</div>
+                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                      <div class="flag-item new"><span>New</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                      <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                      <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                      <div class="flag-item hit"> <span>Hit</span></div>
+                                                      <div class="flag-item discount"> <span>-25%</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                      <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                      <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                      <div class="flag-item hit"> <span>Hit</span></div>
+                                                      <div class="flag-item discount"> <span>-25%</span></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
+                                                      <div class="categories-elem-name">Саморез 3сверлоконеч- ный РОКС FBD</div>
+                                                      <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="product-card-wrapper">
+                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                      <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
+                                                      <div class="categories-elem-name">Саморез сверлоконеч- ный РОКС FBD</div>
+                                                      <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
+                                                    <div class="flags-wrap">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                      </div>
+                      <div class="cards-slider-nav">
+                        <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    function incartSlider(){
+                      $( ".slider-card-inner").each( function() {
+                        var _this = $(this);
+                        slidesCount(_this);
+                        setTimeout(function(){
+                          _this.slick({
+                            accessibility: true,
+                            arrows: true,
+                            draggable: true,
+                            touchMove: false,
+                            infinite: false,
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            appendArrows: _this.siblings('.cards-slider-nav'),
+                            nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+                            prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+                            responsive: [
+                             
+                              {
+                                breakpoint: 800,
+                                settings: {
+                                  slidesToShow: 3,
+                                  slidesToScroll: 3
+                                }
+                              },
+                              {
+                                breakpoint: 600,
+                                settings: {
+                                  slidesToShow: 2,
+                                  slidesToScroll: 2
+                                }
+                              }
+                              ]
+                          }); 
+                        });
+                      },10)
+                    
+                    };
+                  </script>
                 </div>
               </div>
               <!--бэкграунд модалки-->

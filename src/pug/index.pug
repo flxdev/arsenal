@@ -157,8 +157,9 @@ block content
   section.slider-section.b-bottom
     h1.u-intro.h1 Хиты продаж
     .tabs.js-tabs-wrap
+      //во всех табах кидаешь класс .active на триггер и нужная вкладка открывается , иначе будет открыта первая вкладка
       .tabs-head.w3.slider-tabs
-        .tabs-item.js-tab-trigger
+        .tabs-item.js-tab-trigger.active
           span Популярное
         .tabs-item.js-tab-trigger
           span Новинки
@@ -411,7 +412,7 @@ block content
   section.contact-section
     .tabs.js-tabs-wrap
       .tabs-head.w2.t-white
-        .tabs-item.js-tab-trigger
+        .tabs-item.js-tab-trigger.active
           span Офис
         .tabs-item.js-tab-trigger
           span Карта

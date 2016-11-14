@@ -1,15 +1,6 @@
 nav.page__menu--inner
   .c-menu-block.t-blue.main
     ul.menu-list
-      //- each val in [
-      //-   'Кровельные материалы', 
-      //-   'Водосточные системы', 
-      //-   'Металлопрокат',
-      //-   'Забор',
-      //-   'Доборные элементы',
-      //-   'Гипсокартоннче профили']
-      //-   li.menu-item
-      //-     a(href="#")= val
       mixin MenuList(value, id)
         li.menu-item.js-desktop-hover
           a(href="#" data-elem=id,class={active: value === current}) #{value}
@@ -36,7 +27,7 @@ nav.page__menu--inner
                   S13.1,11.3,10.5,11.3z')
 
     ul.menu-list
-      //- var current = "Кровельные материалы"
+      // .active для текущей страницы, они в конце
       mixin MenuAdd(value)
         li.menu-item
           a(href="#" class={active: value === current}) #{value}
