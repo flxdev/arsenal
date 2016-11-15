@@ -1,5 +1,28 @@
 $(document).ready(function() {
-
+// document.body.addEventListener('touchmove',function(e){
+//       e.preventDefault();
+//   });
+// $('.out').bind('touchmove', function(e){
+//   e.stopPropagation();
+// });
+// var selScrollable = '.out';
+// // Uses document because document will be topmost level in bubbling
+// $(document).on('touchmove',function(e){
+//   e.preventDefault();
+// });
+// // Uses body because jQuery on events are called off of the element they are
+// // added to, so bubbling would not work if we used document instead.
+// $('html').on('touchstart', selScrollable, function(e) {
+//   if (e.currentTarget.scrollTop === 0) {
+//     e.currentTarget.scrollTop = 1;
+//   } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
+//     e.currentTarget.scrollTop -= 1;
+//   }
+// });
+// Stops preventDefault from being called on document if it sees a scrollable div
+// $('html').on('touchmove', selScrollable, function(e) {
+//   e.stopPropagation();
+// });
 function DesktopMenu(){
 
 	var mainCont = $('.c-menu-block.main'),
@@ -704,9 +727,12 @@ if($('#map').length){
 
 	});
 	var image = {
-		url: 'img/marker.svg',
-		size: new google.maps.Size(41, 45),
-	};
+		url: 'img/marker.png',
+		size: new google.maps.Size(82, 90),
+		scaledSize: new google.maps.Size(41, 45), 
+		origin: new google.maps.Point(0,0),
+		anchor: new google.maps.Point(0, 45)
+	}
 	var beachMarker = new google.maps.Marker({
 		position: {lat: 53.959612, lng: 27.715360},
 		map: map,
@@ -1060,17 +1086,26 @@ $(".js-scroll").on('click', function () {
     var elementClick = $(this).data("target")
     var destination = $(elementClick).position().top;
     console.log(elementClick,destination )
-    $(".out").animate({scrollTop: destination + 30}, 500);
+    $(".out").animate({scrollTop: destination + 30}, 420);
 
      if (elementClick == '#tabs') {
      	$(".tabs-item").first().trigger('click');
+     }
+     else if (elementClick == '#top') {
+     	$(".out").animate({scrollTop: 0}, 420);
      }
 	});
 
 
 function modalOff(){
 	var trigger =$('.js-white');
-				
+	var val = 0;
+	$('.sertivicat-wrap').find('.product-add-item').each(function(){
+		var t = $(this);
+		t.attr('data-slick-index', val)
+		val++;
+	})
+			
 
 	trigger.click(function(e){
 		if($(window).width()> 991){
@@ -1084,10 +1119,12 @@ function modalOff(){
 			var mainSlides = _.parent().find('.product-slider-item');
 			var addSlides = _.parent().find('.product-add-item');
 			var currslide = _.find('.slick-active').data('slick-index');
-
+			console.log(currslide)
 			ftarget.addClass('active')
-			addSlides.clone().appendTo(dopcont).removeAttr('style').removeAttr('tabindex');
+
+			addSlides.clone().appendTo(dopcont).addClass('slick-slide').attr('role',"option").removeAttr('style').removeAttr('tabindex');
 			mainSlides.clone().appendTo(maincont).removeAttr('style').removeAttr('tabindex');
+
 
 			slidesCount(maincont);
 
@@ -1113,10 +1150,37 @@ function modalOff(){
 				focusOnSelect: true,
 			});
 			maincont.slick('slickGoTo', currslide).slick('setPosition');
-			console.log(currslide)
-			dopcont.find(addSlides).eq(currslide).addClass('slick-current');
+			if(currslide === undefined){
+				dopcont.find('.product-add-item').first().addClass('curr');
+			}else{
+				console.log(1)
+				dopcont.find('[data-slick-index = '+ currslide +']').addClass('curr');
+			}
 			
+
+			maincont.on('init reinit beforeChange',function(event, slick, currentSlide, nextSlide){
+				var slidesNext = parseInt(nextSlide);
+				leftblocks.removeClass('curr');
+				dopcont.find('[data-slick-index = '+ slidesNext +']').addClass('curr');
+			});
+			var ing = dopcont.find('.product-add-img');
+			var leftblocks = dopcont.find('.product-add-item');
+				leftblocks.each(function(){
+					var t = $(this);
+						index = t.data('slick-index');
+					t.on('click', function(){
+						console.log(1)
+						leftblocks.removeClass('curr');
+						t.addClass('curr')
+						
+					});
+				});
+
+				if(ing.length == 0){
+					dopcont.find('img').wrap("<div class='product-add-img'></div>" );
+				}
 			closer.on('click', function(){
+				console.log(1)
 				ftarget.removeClass('active').find('.slick-slider').slick('unslick');
 				maincont.empty();
 				dopcont.empty();
@@ -1154,10 +1218,10 @@ function slidesCount(elem){
 
 }
 function modals(val){
+
 	var trigger = $(".js-modal-trigger"),
 			closer = $('.js-modal-closer'),
 			body = $('.out');
-
 		var data = val.data('target');
 		body.addClass('modal-opened').find(data).addClass('active');
 		
@@ -1185,17 +1249,21 @@ function modals(val){
 				},300);
 			}
 		});
+	return false
 }
 function compareHeight(){
-	$('.categories-elem-outer .categories-elem')
-	.add('.products-inner .product-card-wrapper .product-card-inner')
-	.add('.products-inner .product-card-inner')
-	.add('.slider-card-inner .product-card-inner')
-	.add('.specials-wrapper .specials-item')
-	.add('.sertivicat-wrap .sertivicat-item')
-	.add('.pagenews-container .news-block-outer.small .news-block-content-inner').matchHeight({
-		 property: 'min-height'
-	});
+	setTimeout(function(){
+		$('.categories-elem-outer .categories-elem')
+		.add('.slider-section-inner .product-card-inner')
+		.add('.products-inner .product-card-inner')
+		.add('.slider-card-inner .product-card-inner')
+		.add('.specials-wrapper .specials-item')
+		.add('.sertivicat-wrap .sertivicat-item')
+		.add('.pagenews-container .news-block-outer.small .news-block-content-inner').matchHeight({
+			 property: 'min-height'
+		});
+	},300)
+
 	// $('.slider-section-inner .product-card-inner').matchHeight({
 	// 	 property: 'min-height'
 	// });
