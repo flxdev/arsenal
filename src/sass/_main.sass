@@ -344,6 +344,9 @@ body, .out,html
     bottom: 0
     left: 0
     z-index: 20
+    &:hover
+      p:not(.mailto) 
+        color: $text
 //objects
 .o-menu-search
   .search__wrapper
@@ -824,6 +827,7 @@ body, .out,html
         background: $main
         line-height: 1
         position: absolute
+        +rem(height,20px)
         +rem(right,-8px)
         +rem(top,-12px)
         +rem(padding,0 4px 0 3px)
