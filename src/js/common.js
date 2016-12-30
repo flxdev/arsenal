@@ -864,9 +864,6 @@ function number() {
 				$(this).val(val + type);
 			}
 		});
-		input.on("paste", function(event){
-			event.preventDefault();
-		});
 		input[0].onkeypress = function(e) {
 			e = e || event;
 			e.preventDefault();
