@@ -61,8 +61,12 @@ function MobileMenu(){
 	var maintogle = $('.js-menu-toggle'),
 			subtogle = $('.js-sub-toggle');
 
-		subtogle.children('a').on('click',function(){
-			$(this).parent().toggleClass('active').siblings().removeClass('active');
+		subtogle.children('a').on('click',function(e){
+			if($(this).parent().find('ul').length){
+				e.preventDefault();
+				$(this).parent().toggleClass('active').siblings().removeClass('active');
+			}
+
 		});
 		maintogle.on('click',function(){
 			$(this).toggleClass('active');
@@ -1228,6 +1232,21 @@ function modalOff(){
 $(window).resize(function(){
 	modalOff();
 });
+function DropzoneDile(){
+	$(".dz-vacancy-file").dropzone({ 
+		url: "/file/post",
+		previewTemplate: '<div class="dz-preview dz-file-preview"><div class="dz-details"><div class="dz-filename"><span data-dz-name></span></div></div><div class="dz-success-mark"><span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 9.5 13" style="enable-background:new 0 0 9.5 13;" xml:space="preserve"><style type="text/css">.stvac{fill-rule:evenodd;clip-rule:evenodd;fill:#0079FF;}</style><g><g><path class="stvac" d="M7.3,8h5C2.1,8,2,8.1,2,8.2v0.5C2,8.9,2.1,9,2.3,9h5c0.1,0,0.2-0.1,0.2-0.2V8.2C7.5,8.1,7.4,8,7.3,8z M7.3,6 h-2C5.1,6,5,6.1,5,6.2v0.5C5,6.9,5.1,7,5.3,7h2c0.1,0,0.2-0.1,0.2-0.3V6.2C7.5,6.1,7.4,6,7.3,6z M7.3,9.5h-5C2.1,9.5,2,9.6,2,9.7 v0.5c0,0.1,0.1,0.2,0.3,0.2h5c0.1,0,0.2-0.1,0.2-0.2V9.7C7.5,9.6,7.4,9.5,7.3,9.5z M6.9,0H6.3l0,0c0,0,0,0,0,0H0.4 C0.2,0,0,0.2,0,0.4v12.2C0,12.8,0.2,13,0.4,13h8.8c0.2,0,0.4-0.2,0.4-0.4v-10L6.9,0z M8.5,11.7c0,0.2-0.1,0.3-0.3,0.3H1.3 C1.1,12,1,11.8,1,11.7V1.3C1,1.1,1.1,1,1.3,1H6v2c0,0.3,0.2,0.5,0.5,0.5h2V11.7z M5,4.7v0.5c0,0.1,0.1,0.3,0.2,0.3h2 c0.1,0,0.2-0.1,0.2-0.3V4.7c0-0.1-0.1-0.3-0.2-0.3h-2C5.1,4.5,5,4.6,5,4.7z M4,4.5H2V7h2V4.5z"/></g></g></svg></span></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div>',
+		dictDefaultMessage: 'Прикрепить резюме',
+		dictFileTooBig : 'Файл слишком большой',
+		dictResponseError : 'Сервер ответил с ошибкой',
+		dictInvalidFileType: 'Неверный тип файла',
+		maxFilesize: '1',
+		acceptedFiles: ".doc,.docx,.pdf,.txt",
+		autoDiscover:false,
+		addRemoveLinks :true
+	});
+}DropzoneDile();
+
 //end of document ready
 });
 //end of document ready
