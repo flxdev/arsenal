@@ -2106,7 +2106,7 @@ body, .out,html
   background-repeat: no-repeat
   +r(800)
     +rem(height,390px)
-  #map
+  .map
     height: 100%
     &* 
       overflow: visible
@@ -2568,6 +2568,15 @@ body, .out,html
   +rem(margin-bottom,9px)
   position: relative
   +clr
+  &.columns
+    display: inline-block;
+    max-width: 16.5%;
+    +rem(padding,0 0 0 15px)
+    padding-right: 0!important
+    +r(544)
+      max-width: 100%;
+      margin: 0
+    // &:last-child,&:nth-last-child(2)
   .u-graytext 
     display: inline-block 
     width: 100% 
@@ -2858,6 +2867,8 @@ body, .out,html
     border: 1px solid $maind;
     cursor: pointer;
     transition: border .3s;
+  &.error
+    border: 1px solid red;
 .select-img
   float: right;
   display: inline-block
@@ -3787,6 +3798,8 @@ body, .out,html
   cursor: pointer;
   position: relative;
   +rem(padding,8px 0);
+  .help-block
+    display: none
   input
     position: absolute;
     opacity: 0
@@ -4354,11 +4367,12 @@ body, .out,html
             padding: 5px 3%
             float: right
             text-align: right
-            
         &>.table-item
           display: inline-block
           vertical-align: top
           white-space: nowrap
+        &>.table-item:not(.table-status):not(.table-btn)
+          cursor: pointer
         &>.table-number
           +rem(width,110px)
           +rem(max-width,110px)

@@ -741,7 +741,6 @@ if($('#map').length){
 
 		
 } initMap();
-
 }
 if($('.js-colors').length){
 function Colors(){
@@ -771,7 +770,7 @@ function initCustomSelectList() {
 
         _select.on('reinit', function() {
             var _active = _list.find('input:checked');
-
+			CheckForSelect();
             if(_active.length) {
             	_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked')
                 
@@ -807,7 +806,42 @@ function initCustomSelectList() {
 
 
 } initCustomSelectList() ;
+function CheckForSelect(){
+	if($('.select-check').length){
+		var wrap = $('.select-check');
+			wrap.each(function(){
+				var _ = $(this),
+					btn = _.find('.selects'),
+					option = _.find('.option.has-error');
+				if(option.length){
+					btn.addClass('error');
+					return false
+				}else{
+					btn.removeClass('error');
+					return true
+				}
 
+			});
+
+	}
+}
+function validateForms(){
+	var form_form = $('.js-validate');
+	if (form_form.length) {
+		form_form.each(function () {
+			var form_this = $(this);
+			$.validate({
+				form : form_this,
+				borderColorOnError : true,
+				scrollToTopOnError : false,
+				onValidate : function($form) {
+					CheckForSelect();
+
+			    }
+			});
+		});
+	};
+}validateForms();
 function number() {
 	var number = $('.js-number');
 	number.each(function(){
@@ -863,9 +897,6 @@ function number() {
 				val = 0;
 				$(this).val(val + type);
 			}
-		});
-		input.on("paste", function(event){
-			event.preventDefault();
 		});
 		input[0].onkeypress = function(e) {
 			e = e || event;

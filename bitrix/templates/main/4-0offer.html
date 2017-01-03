@@ -357,7 +357,7 @@
               </section>
               <div class="column-wrap">
                 <div class="column-content">
-                  <form action="">
+                  <form class="js-validate" action="">
                     <div class="bx-soa">
                       <div class="card card-blue notify-card">
                         <div class="u-text">Совершали ранее покупки в нашем интернет-магазине? Войдите в личный кабинет, чтобы процедура оформления прошла быстрее.</div>
@@ -395,25 +395,25 @@
                                 <div class="col-50">
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span class="text">Компания</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Название компании">
+                                    <input class="input-main" type="text" name="" placeholder="Название компании" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
                                   </div>
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span class="text">УНП</span></label>
-                                    <input class="input-main" type="number" name="" placeholder="1475854">
+                                    <input class="input-main" type="number" name="" placeholder="1475854" data-validation="number required" data-validation-error-msg="Поле обязательно для заполнения">
                                   </div>
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span class="text">Телефон</span></label>
-                                    <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00">
+                                    <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
                                   </div>
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span class="text">E-mail</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович">
+                                    <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
                                   </div>
                                 </div>
                                 <div class="col-50">                                     
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span class="text">Контактное лицо</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Иван Иванович">
+                                    <input class="input-main" type="text" name="" placeholder="Иванов Иван Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
                                   </div>
                                   <div class="input-wrapper">
                                     <label class="u-graytext"> <span>Коментарий к заказу</span></label>
@@ -423,30 +423,34 @@
                               </div>
                             </div>
                             <!-- для физ лица-->
-                            <!--.headcont-wrapp
-                            .headcont-title
-                              .u-title Контактная информация
-                            .headcont-item
-                              .col-50
-                                .input-wrapper
-                                  label.u-graytext 
-                                    span.text Ваше имя
-                                  input.input-main(type='text',name="", placeholder = 'Иванов Иван иванович')
-                                .input-wrapper
-                                  label.u-graytext 
-                                    span.text Телефон
-                                  input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
-                                .input-wrapper
-                                  label.u-graytext 
-                                    span.text E-mail
-                                  input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
-                              .col-50                                      
-                                .input-wrapper
-                                  label.u-graytext 
-                                    span Коментарий к заказу
-                                  textarea.input-main(rows='8',type='text',name="", placeholder = 'Иванов Иван Иванович')
-                            
-                            -->
+                            <div class="headcont-wrapp" style="display:none">
+                              <div class="headcont-title">
+                                <div class="u-title">Контактная информация</div>
+                              </div>
+                              <div class="headcont-item">
+                                <!--тут черз кол-50 потому что поле сообщения по-другому не встанет как на макете, костылить его тоже не буду-->
+                                <div class="col-50">
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">Ваше имя</span></label>
+                                    <input class="input-main" type="text" name="" placeholder="Иванов Иван иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">Телефон</span></label>
+                                    <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">E-mail</span></label>
+                                    <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                </div>
+                                <div class="col-50">                                     
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span>Коментарий к заказу</span></label>
+                                    <textarea class="input-main" rows="8" type="text" name="" placeholder="Иванов Иван Иванович"></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             <div class="headcont-wrapp">
                               <div class="headcont-title">
                                 <div class="u-title">Адрес доставки</div>
@@ -461,7 +465,7 @@
                                         <div class="dropdown-content"></div>
                                                                         <div class="select-u-body select-list">
                                                                           <label class="option">
-                                                                            <input type="radio" name="group2" value="Минск, минская область"><span>Минск, минская область</span>
+                                                                            <input type="radio" name="group2" value="Минск, минская область" data-validation="required"><span>Минск, минская область</span>
                                                                           </label>
                                                                           <label class="option">
                                                                             <input type="radio" name="group2" value="Брест, Брестская область"><span>Брест, Брестская область</span>
@@ -482,25 +486,23 @@
                                 </div>
                                 <div class="input-wrapper">
                                   <label class="u-graytext"> <span class="text">Населённый пункт</span></label>
-                                  <input class="input-main" type="text" name="" placeholder="Например &quot;Витебск&quot;">
+                                  <input class="input-main" type="text" name="" placeholder="Например &quot;Витебск&quot;" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
                                 </div>
                                 <div class="input-wrapper">
                                   <label class="u-graytext"> <span class="text">Улица</span></label>
-                                  <input class="input-main" type="text" name="" placeholder="Улица">
+                                  <input class="input-main" type="text" name="" placeholder="Улица" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
                                 </div>
-                                <div class="home-wrap"> 
-                                  <div class="input-wrapper">
-                                    <label class="input-label"><span class="u-graytext">Дом</span></label>
-                                    <input class="input-main input-from" type="text" name="" placeholder="Дом">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="input-label"><span class="u-graytext">Корпус</span></label>
-                                    <input class="input-main input-from" type="text" name="" placeholder="Корпус">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="input-label"><span class="u-graytext">Квартира</span></label>
-                                    <input class="input-main input-from" type="text" name="" placeholder="Квартира">
-                                  </div>
+                                <div class="input-wrapper columns">
+                                  <label class="u-graytext"><span class="text">Дом</span></label>
+                                  <input class="input-main input-from" type="text" name="" placeholder="Дом" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                </div>
+                                <div class="input-wrapper columns">
+                                  <label class="u-graytext"><span>Корпус</span></label>
+                                  <input class="input-main input-from" type="text" name="" placeholder="Корпус" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                </div>
+                                <div class="input-wrapper columns">
+                                  <label class="u-graytext"><span>Квартира</span></label>
+                                  <input class="input-main input-from" type="text" name="" placeholder="Квартира" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
                                 </div>
                               </div>
                             </div>
