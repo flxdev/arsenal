@@ -4298,13 +4298,19 @@ body, .out,html
     +rem(padding-right,33px)
     +r(1100)
       +rem(padding-right,20px)
+    +r(768)
+      padding-right: 0
   +r(768)
     display: block
-    +rem(padding, 10px 0)
+    +rem(padding, 15px 0)
   a
     +rem(font-size,14px)
     font-weight: 400
     color: $text
+    +rem(padding,18px 0 20px)
+    +rem(margin,-18px 0 -20px)
+    +r(768)
+      width: 100%
   &.active
     a
       font-weight: 700
@@ -4315,6 +4321,8 @@ body, .out,html
   .small-link
     float: right
     line-height: 1.8
+    +rem(padding,18px 0 20px)
+    +rem(margin,-18px 0 -20px)
     &:hover
       +rm(768)
         span

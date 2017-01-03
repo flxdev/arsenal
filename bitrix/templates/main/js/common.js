@@ -37,9 +37,12 @@ function DesktopMenu(){
 			link = _.find('a'),
 			id = parseInt(link.data('elem'));
 			_.on('mouseenter',function(){
-				_.addClass('active').siblings().removeClass('active');
-				targetWrap.addClass(shown);
-				targetWrap.find("[data-elem="+ id +"]").addClass(current).siblings().removeClass(current);
+				if(targetWrap.find("[data-elem="+ id +"]").length){
+					_.addClass('active').siblings().removeClass('active');
+					targetWrap.addClass(shown);
+					targetWrap.find("[data-elem="+ id +"]").addClass(current).siblings().removeClass(current);
+				}
+				
 			})
 	});
 	mainCont.add(targetWrap).on('mouseleave',function(){

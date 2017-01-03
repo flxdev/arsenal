@@ -31,7 +31,7 @@ block content
             span Выйти
   .column-wrap
     .column-content
-      form(action="")
+      form(action="").js-validate
         .form-msg-wrapp
           h2.u-intro.h2.result.succes Изменения успешно внесены
         .headcont
@@ -45,15 +45,15 @@ block content
                 .input-wrapper
                   label.u-graytext 
                     span.text Ваше имя
-                  input.input-main(type='text',name="", placeholder = 'Иванов Иван')
+                  input.input-main(type='text',name="", placeholder = 'Иванов Иван',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
                 .input-wrapper
                   label.u-graytext 
                     span.text Телефон
-                  input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                  input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom required",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Поле обязательно для заполнения")
                 .input-wrapper
                   label.u-graytext 
                     span.text E-mail
-                  input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                  input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="email required",data-validation-error-msg="Поле обязательно для заполнения")
             .headcont-wrapp
               .headcont-title
                 .u-title Адрес
@@ -61,7 +61,7 @@ block content
                 mixin sopt(group,val1,val2,val3,val4,val5)
                   .select-u-body.select-list
                     label.option
-                      input(type="radio",name=group,value =val1) 
+                      input(type="radio",name=group,value =val1,data-validation="required") 
                       span #{val1}
                     label.option
                       input(type="radio",name=group,value =val2) 
@@ -89,23 +89,22 @@ block content
                 .input-wrapper
                   label.u-graytext 
                     span.text Населённый пункт
-                  input.input-main(type='text',name="", placeholder = 'Например "Витебск"')
+                  input.input-main(type='text',name="", placeholder = 'Например "Витебск"',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
                 .input-wrapper
                   label.u-graytext 
                     span.text Улица
-                  input.input-main(type='text',name="", placeholder = 'Улица')
-                .home-wrap  
-                  .input-wrapper
-                    label.input-label
-                      span.u-graytext Дом
-                    input.input-main.input-from(type='text',name="", placeholder = 'Дом')
-                  .input-wrapper
-                    label.input-label
-                      span.u-graytext Корпус
-                    input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
-                  .input-wrapper
-                    label.input-label
-                      span.u-graytext Квартира
-                    input.input-main.input-from(type='text',name="", placeholder = 'Квартира')
+                  input.input-main(type='text',name="", placeholder = 'Улица',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
+                .input-wrapper.columns
+                  label.u-graytext
+                    span.text Дом
+                  input.input-main.input-from(type='text',name="", placeholder = 'Дом',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
+                .input-wrapper.columns
+                  label.u-graytext
+                    span Корпус
+                  input.input-main.input-from(type='text',name="", placeholder = 'Корпус',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
+                .input-wrapper.columns
+                  label.u-graytext
+                    span Квартира
+                  input.input-main.input-from(type='text',name="", placeholder = 'Квартира',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Поле обязательно для заполнения")
         button(type='submit').btn.t-blue.btn-standart Сохранить
     .column-aside
