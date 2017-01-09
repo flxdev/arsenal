@@ -102,10 +102,10 @@
             .cart-body-outer
               .cart-body-inner
                 mixin CartElem(img, name, size, price)
-                  a(href="#").cart-elem
-                    .cart-elem-img
+                  .cart-elem
+                    a(href="#").cart-elem-img
                       img(src=img, alt="")
-                    .cart-elem-descr
+                    a(href="#").cart-elem-descr
                       .u-title-small.tl #{name}
                       .u-graytext
                         span.elem-prop Толщина металла:

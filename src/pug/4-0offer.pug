@@ -20,7 +20,7 @@ block content
             .button-wrapp
               button.btn.t-blue.btn-extrasmall Войти
           // ORDER TYPE BLOCK
-          #bx-soa-properties.bx-soa-section
+          .bx-soa-section
             .bx-soa-section-title-container
               h3.u-intro.h3
                 | Покупатель
@@ -155,7 +155,7 @@ block content
               .bx-soa-more
                 a(href="#").btn.t-blue.btn-small Далее              
           // basket BLOCK
-          #bx-soa-basket.bx-soa-section
+          .bx-soa-section
             .bx-soa-section-title-container
               h3.u-intro.h3
                 | Товары в заказе
@@ -201,7 +201,7 @@ block content
                 a.small-link.change(href='') 
                   span Редактировать
           //DELIVRY BLOCK
-          #bx-soa-delivery.bx-soa-section
+          .bx-soa-section
             .bx-soa-section-title-container
               h3.u-intro.h3
                 | Доставка
@@ -211,13 +211,14 @@ block content
               .block-inputs
                 .bx-soa-pp-item-container
                   .bx-soa-pp-company
+                    //.bx-selected для активного инпута
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_14.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
                       .bx-soa-pp-company-image(style='background-image: url(img/cards/3.png);')
                     .u-graytext Курьер
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/cards/1.png);')
                     .u-graytext Самовывоз
                 .bx-soa-pp-desc-container
@@ -228,7 +229,7 @@ block content
                 a(href="#").btn.t-blue.btn-small Далее
                 a(href="#").link-nav.left Назад
           //PAYMENT BLOCK
-          #bx-soa-paysystem.bx-soa-section
+          .bx-soa-section
             .bx-soa-section-title-container
               h3.u-intro.h3
                 | Способ оплаты
@@ -239,47 +240,47 @@ block content
                 .bx-soa-pp-item-container
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_14.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='14')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/visa.svg);')
                     .u-graytext Visa
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/master.png);')
                     .u-graytext Master Card
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext Maestro
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext Яндекс.Деньги
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext WebMoney
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext МТС              
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext QIWI Кошелёк
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext American Express
                   .bx-soa-pp-company
                     .bx-soa-pp-company-graf-container
-                      input#ID_DELIVERY_ID_18.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
+                      input.bx-soa-pp-company-checkbox(name='DELIVERY_ID', type='checkbox', value='18')
                       .bx-soa-pp-company-image(style='background-image: url(img/payment/maestro.png);')
                     .u-graytext JCB International                                  
                 .bx-soa-pp-desc-container

@@ -802,7 +802,11 @@ body, .out,html
       +rem(padding-right,30px)
       .btn-cart
         position: relative
+    &:not(.not-empty)
+      .dropdown-target:nth-of-type(2)
+        display: none
     //dropdown
+
     .dropdown-target
       right: 0
       +r(991)
@@ -4648,7 +4652,6 @@ body, .out,html
     border: 1px solid $border2
     margin: 0
     +rem(margin-bottom,15px)
-
     &.bx-step-completed
       .bx-soa-section-title-container
         .u-intro
@@ -4656,6 +4659,7 @@ body, .out,html
           +rem(padding-left,35px)
           &:after
             opacity: 1
+            visibility: visible
         .small-link
           opacity: 1
     &.bx-selected
@@ -4682,6 +4686,7 @@ body, .out,html
       .small-link
         float: right
         opacity: 0
+        visibility: hidden
       .u-intro
         display: inline-block
         +tr(color .3s)
