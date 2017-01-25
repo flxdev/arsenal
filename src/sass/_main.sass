@@ -299,9 +299,7 @@ body, .out,html
     +rem(letter-spacing, 0.8px)
     +rem(margin-left,-11px)
     font-weight: 300
-
-
-
+    +rem(margin-bottom,15px)
 .c-menu-block
   +padlr(25px)
   &.main
@@ -339,6 +337,8 @@ body, .out,html
       &:hover
         a
           color: $maind
+
+
   &.menu-footer
     +rem(width, 320px) 
     position: absolute
@@ -351,6 +351,9 @@ body, .out,html
     &:hover
       p:not(.mailto) 
         color: $text
+    +rh(682)
+      +rem(height,30px)
+      +rem(bottom,15px)
 //objects
 .o-menu-search
   .search__wrapper
@@ -1507,7 +1510,7 @@ body, .out,html
       +rem(min-height,80px)
       +rem(margin-bottom,5px)
       +r(1040)
-        word-break: break-all
+        word-break: break-word
       +r(768)
         +rem(padding-right,50px)
       .u-text
@@ -3343,6 +3346,10 @@ body, .out,html
       font-size: 0
       +r(544)
         position: relative
+      &.error
+        .non-set
+          &> .selects
+            border-color: $red
     &-selects,&-calcwrap
       display: inline-block
       vertical-align: top
@@ -3391,6 +3398,9 @@ body, .out,html
         float: right
         +rem(padding,7px 0)
         +rem(height,28px)
+        &.disabled
+          opacity: .5
+          pointer-events: none
     &-calcwrap
       width: 44%
       +rem(padding-left,22px)
@@ -3530,7 +3540,10 @@ body, .out,html
     +rem(border-radius,3px)
     overflow: hidden
     +tr(border .3s)
-    &:hover
+    &.disabled
+      opacity: .5
+      pointer-events: none
+    &:not(.disabled):hover
       border: 1px solid $maind
   &__minus,&__plus 
     +rem(max-width,27px);
@@ -4331,7 +4344,7 @@ body, .out,html
   .small-link
     float: right
     line-height: 1.8
-    +rem(padding,18px 0 20px)
+    +rem(padding,3px 0 20px)
     +rem(margin,-18px 0 -20px)
     &:hover
       +rm(768)
@@ -4980,7 +4993,18 @@ body, .out,html
   p:not([class])
     +r(480)
       text-align: justify
-
+  .slider-wrapper
+    +rem(margin-top,31px)
+  .slider-inner
+    position: relative
+    &>.slick-list
+      position: absolute
+      left: 0 
+      right: 0
+      bottom: 0
+      top: 0
+      &>.slick-track
+        height: 100%
   .slider-item
     background-position: center
     background-repeat: no-repeat
@@ -4992,11 +5016,9 @@ body, .out,html
     right: 0
     bottom: 0
   .slider-big
-    .slider-container
-      padding-bottom: 7.15%
+    padding-bottom: 47%
   .slider-news
-    .slider-container
-      padding-bottom: 8.8%
+    padding-bottom: 55%
     .slider-text
       text-align: right
       +rem(width,140px)
@@ -5033,7 +5055,7 @@ body, .out,html
         transition-delay: .2s
   .slider-container
     position: relative
-    +rem(margin-top,31px)
+    
   .slider-wrapper
     margin-left: -37.5%
     margin-right: -12.5%

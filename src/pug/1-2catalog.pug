@@ -38,7 +38,7 @@ block content
                       li.select-u-item
                         label.input_label
                           span.input_main
-                            input.input-real(type="checkbox",value = val, data-value= val)
+                            input.input-real(type="checkbox", checked ,value = val, data-value= val)
                             span.input-checked
                           span.input-text #{val}
                     +selectItem('550')
@@ -119,9 +119,9 @@ block content
                 .dropdown-content
                   .price-wrapper
                     span.price-label от
-                    input.price.price-min(type="number",placeholder = '1.40')
+                    input.price.price-min(type="number",placeholder = '1.40', value='23')
                     span.price-label до
-                    input.price.price-max(type="number",placeholder = '400')
+                    input.price.price-max(type="number",placeholder = '400',value="65")
                   .dropdown-footer
                     button.t-blue.btn.js-filter-submit Применить
                     button.small-link.close.js-select-clear

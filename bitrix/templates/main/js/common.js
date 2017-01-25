@@ -1,3 +1,7 @@
+//инит фильрров товаров 1-2 1-4
+$(window).on('load',function(){
+	OnLoadFilterInit();
+})
 $(document).ready(function() {
 function DesktopMenu(){
 	var mainCont = $('.c-menu-block.main'),
@@ -177,26 +181,11 @@ function validateForms(){
 				onValidate : function($form) {
 					CheckForSelect();
 
-			    }
+					}
 			});
 		});
 	};
 }validateForms();
-
-
-function getChar(event) {
-	if (event.which == null) {
-		if (event.keyCode < 32) return null;
-		return String.fromCharCode(event.keyCode) // IE
-	}
-	if (event.which != 0 && event.charCode != 0) {
-		if (event.which < 32) return null;
-		return String.fromCharCode(event.which) 
-	}
-	return null;
-}
-
-
 
 function drag() {
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
@@ -213,16 +202,16 @@ function mobileFilter(){
 
 
 $(".js-scroll").on('click', function () {
-    var elementClick = $(this).data("target")
-    var destination = $(elementClick).position().top;
-    $(".out").animate({scrollTop: destination + 30}, 420);
+		var elementClick = $(this).data("target")
+		var destination = $(elementClick).position().top;
+		$(".out").animate({scrollTop: destination + 30}, 420);
 
-     if (elementClick == '#tabs') {
-     	$(".tabs-item").first().trigger('click');
-     }
-     else if (elementClick == '#top') {
-     	$(".out").animate({scrollTop: 0}, 420);
-     }
+		 if (elementClick == '#tabs') {
+			$(".tabs-item").first().trigger('click');
+		 }
+		 else if (elementClick == '#top') {
+			$(".out").animate({scrollTop: 0}, 420);
+		 }
 	});
 
 
@@ -248,68 +237,71 @@ function modalOff(){
 			var mainSlides = _.parent().find('.product-slider-item');
 			var addSlides = _.parent().find('.product-add-item');
 			var currslide = _.find('.slick-active').data('slick-index');
-			ftarget.addClass('active')
+			if(mainSlides.length > 1){
+				ftarget.addClass('active')
 
-			addSlides.clone().appendTo(dopcont).addClass('slick-slide').attr('role',"option").removeAttr('style').removeAttr('tabindex');
-			mainSlides.clone().appendTo(maincont).removeAttr('style').removeAttr('tabindex');
+				addSlides.clone().appendTo(dopcont).addClass('slick-slide').attr('role',"option").removeAttr('style').removeAttr('tabindex');
+				mainSlides.clone().appendTo(maincont).removeAttr('style').removeAttr('tabindex');
 
 
-			slidesCount(maincont);
+				slidesCount(maincont);
 
-			maincont.slick({
-				arrows: true,
-				slidesToShow: 1,
-				asNavFor: dopcont,
-				infinite: false,
-				appendArrows: arrcont,          
-				nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
-	      prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
-			});
-
-			dopcont.slick({
-				asNavFor: maincont,
-				// slidesToShow: 3,
-				slidesToScroll: 1,
-				infinite: false,
-				rows: 6,
-				slidesPerRow: 3,
-				draggable: false,
-				arrows:false,
-				focusOnSelect: true,
-			});
-			maincont.slick('slickGoTo', currslide).slick('setPosition');
-			if(currslide === undefined){
-				dopcont.find('.product-add-item').first().addClass('curr');
-			}else{
-				dopcont.find('[data-slick-index = '+ currslide +']').addClass('curr');
-			}
-			
-
-			maincont.on('init reinit beforeChange',function(event, slick, currentSlide, nextSlide){
-				var slidesNext = parseInt(nextSlide);
-				leftblocks.removeClass('curr');
-				dopcont.find('[data-slick-index = '+ slidesNext +']').addClass('curr');
-			});
-			var ing = dopcont.find('.product-add-img');
-			var leftblocks = dopcont.find('.product-add-item');
-				leftblocks.each(function(){
-					var t = $(this);
-						index = t.data('slick-index');
-					t.on('click', function(){
-						leftblocks.removeClass('curr');
-						t.addClass('curr')
-						
-					});
+				maincont.slick({
+					arrows: true,
+					slidesToShow: 1,
+					asNavFor: dopcont,
+					infinite: false,
+					appendArrows: arrcont,          
+					nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+					prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
 				});
 
-				if(ing.length == 0){
-					dopcont.find('img').wrap("<div class='product-add-img'></div>" );
+				dopcont.slick({
+					asNavFor: maincont,
+					// slidesToShow: 3,
+					slidesToScroll: 1,
+					infinite: false,
+					rows: 6,
+					slidesPerRow: 3,
+					draggable: false,
+					arrows:false,
+					focusOnSelect: true,
+				});
+				maincont.slick('slickGoTo', currslide).slick('setPosition');
+				if(currslide === undefined){
+					dopcont.find('.product-add-item').first().addClass('curr');
+				}else{
+					dopcont.find('[data-slick-index = '+ currslide +']').addClass('curr');
 				}
-			closer.on('click', function(){
-				ftarget.removeClass('active').find('.slick-slider').slick('unslick');
-				maincont.empty();
-				dopcont.empty();
-			});
+				
+
+				maincont.on('init reinit beforeChange',function(event, slick, currentSlide, nextSlide){
+					var slidesNext = parseInt(nextSlide);
+					leftblocks.removeClass('curr');
+					dopcont.find('[data-slick-index = '+ slidesNext +']').addClass('curr');
+				});
+				var ing = dopcont.find('.product-add-img');
+				var leftblocks = dopcont.find('.product-add-item');
+					leftblocks.each(function(){
+						var t = $(this);
+							index = t.data('slick-index');
+						t.on('click', function(){
+							leftblocks.removeClass('curr');
+							t.addClass('curr')
+							
+						});
+					});
+
+					if(ing.length == 0){
+						dopcont.find('img').wrap("<div class='product-add-img'></div>" );
+					}
+				closer.on('click', function(){
+					ftarget.removeClass('active').find('.slick-slider').slick('unslick');
+					maincont.empty();
+					dopcont.empty();
+				});
+
+			}
 		}else{
 			return false
 		}
@@ -366,7 +358,7 @@ function modals(val){
 		$(document).mouseup(function (e){ 
 				var div = $('.modal-container');
 				if (!div.is(e.target) 
-				    && div.has(e.target).length === 0) {
+						&& div.has(e.target).length === 0) {
 					div.parent().removeClass('active');
 					body.removeClass('modal-opened')
 					var slider =div.parent().find('.slick-slider');
@@ -481,8 +473,8 @@ function initMap() {
 			scaleControl: false,
 			scrollwheel: false,
 			zoomControlOptions: {
-	        position: google.maps.ControlPosition.RIGHT_CENTER
-	    },
+					position: google.maps.ControlPosition.RIGHT_CENTER
+			},
 			styles:[
 			{
 					"featureType": "administrative",
@@ -866,54 +858,54 @@ function initMap() {
 	}		
 } 
 function initCustomSelectList() {
-    var _conf = {
-            initClass: 'cs-active',
-            f: {}
-        },
-        _items = $('.js-select-custom');
+		var _conf = {
+						initClass: 'cs-active',
+						f: {}
+				},
+				_items = $('.js-select-custom');
 
-    $.each(_items, function () {
-        var _select = $(this),
-            _button = _select.find('button'),
-            placeholder = _button.data('placeholder'),
+		$.each(_items, function () {
+				var _select = $(this),
+						_button = _select.find('button'),
+						placeholder = _button.data('placeholder'),
 						valuename = _button.data('valuename'),
-            _list = _select.find('.select-list');
+						_list = _select.find('.select-list');
 
-        _select.on('reinit', function() {
-            var _active = _list.find('input:checked');
+				_select.on('reinit', function() {
+						var _active = _list.find('input:checked');
 			CheckForSelect();
-            if(_active.length) {
-            	_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked')
-                
-            }
-            else {
-                _button.children('.btn-text').text(_button.data('placeholder')).parent().removeClass('is-checked');
-            }
-        });
+						if(_active.length) {
+							_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked')
+								
+						}
+						else {
+								_button.children('.btn-text').text(_button.data('placeholder')).parent().removeClass('is-checked');
+						}
+				});
 
-        _button.on('click', function() {
-           _button.parent().toggleClass('active').siblings().removeClass('active');
-            return(false);
-        });
+				_button.on('click', function() {
+					 _button.parent().toggleClass('active').siblings().removeClass('active');
+						return(false);
+				});
 
-        _select.on('click', 'label', function() {
-           var _label = $(this),
-               _input = _label.find('input');
+				_select.on('click', 'label', function() {
+					 var _label = $(this),
+							 _input = _label.find('input');
 
-            _input.prop('checked', true);
-            _select.trigger('reinit');
-            _button.parent().removeClass('active');
-        });
-        _select.trigger('reinit');
-        _select.addClass(_conf.initClass);
+						_input.prop('checked', true);
+						_select.trigger('reinit');
+						_button.parent().removeClass('active');
+				});
+				_select.trigger('reinit');
+				_select.addClass(_conf.initClass);
 
-	     $(document).on('mouseup', function (e){
+			 $(document).on('mouseup', function (e){
 			if (!_select.is(e.target)
 				&& _select.has(e.target).length === 0) {
 				_select.removeClass('active');
 			}
 		});
-  });
+	});
 } 
 
 function CheckForSelect(){
@@ -949,6 +941,8 @@ function filterProducts() {
 				value = button.data('value'),
 				submit = _.find('.js-filter-submit'),
 				price = _.find('.price'),
+				selCont = _.find('.selected-list'),
+				unselCont = _.find('.select-u-body'),
 				clear = _.find('.js-select-clear');
 
 		_.on('click', '.selects', function(event){
@@ -970,9 +964,7 @@ function filterProducts() {
 		});
 		submit.on('click', function(e){
 			var wrapper = $(this).closest('.dropdown-content'),
-					input = wrapper.find('input'),
-					selCont = wrapper.find('.selected-list'),
-					unselCont = wrapper.find('.select-u-body');
+					input = wrapper.find('input');
 					e.preventDefault();
 			$(this).closest(trigger).removeClass('active');
 			_.trigger('reinit');
@@ -983,7 +975,7 @@ function filterProducts() {
 					parent = _this.closest('.select-u-item');
 
 					if(_this.is(':checked')){
-					 	parent.detach().appendTo(selCont);
+						parent.detach().appendTo(selCont);
 					}
 					else{
 						parent.detach().appendTo(unselCont);
@@ -993,17 +985,15 @@ function filterProducts() {
 					sortArr(unselCont);
 				});
 			},500);
-
-			clear.on('click', function(e){
-				e.preventDefault();
-				_.removeClass('active , is-checked').find('input').prop('checked', false); 
-				selCont.find('.select-u-item').detach().appendTo(unselCont);
-				sortArr(unselCont);
-				textCont.text(placeholder);
-				price.val('');
-			})
 		});
-
+		clear.on('click', function(e){
+			e.preventDefault();
+			_.removeClass('active , is-checked').find('input').prop('checked', false).removeAttr('checked'); 
+			selCont.find('.select-u-item').detach().appendTo(unselCont);
+			sortArr(unselCont);
+			textCont.text(placeholder);
+			price.val('');
+		})
 			//реинит реинит смотри как умею ахуеть да?)
 		_.on('reinit', function(){
 
@@ -1015,20 +1005,25 @@ function filterProducts() {
 				priceMax = tta.find(".price-max").val(),
 				textmoded = '';
 				modText(inputs)
-					
 				if(inputs.length && !price.length) {
-		            tta.addClass('is-checked');
-		            textCont.text('' + valuename + ': ' + textmoded +' ' + value)
-		        }
-		        else if(!inputs.length && price.length){
-					tta.addClass('is-checked');
-		            textCont.text('' + valuename + ': ' + priceMin + '-'+ priceMax +' ' + value)
-		        }
-		        else {
-		            tta.removeClass('is-checked');
-		            textCont.text(placeholder);
-		            
-		        }
+							tta.addClass('is-checked');
+							textCont.text('' + valuename + ': ' + textmoded +' ' + value)
+				}else if(!inputs.length && price.length){
+						tta.addClass('is-checked');
+						if(priceMin.length >= 1 && priceMax.length <= 1){
+							textCont.text('' + valuename + ': '+'от ' + priceMin + ' ' + value)
+						}
+						if(priceMax.length >= 1 && priceMin.length <= 1){
+							textCont.text('' + valuename + ': '+'до ' + priceMax + ' ' + value)
+						}
+						if(priceMax.length >= 1 && priceMin.length >= 1){
+							textCont.text('' + valuename + ': ' + priceMin + '-'+ priceMax +' ' + value)
+						}
+				}
+				else {
+						tta.removeClass('is-checked');
+						textCont.text(placeholder);
+				}
 
 				function modText(inp){
 					inp.each(function(){
@@ -1046,7 +1041,7 @@ function filterProducts() {
 				elems.each(function(index){
 					var data = [];
 						data[0] = $(this).find('input').data("value");
-					  data[1] = $(this).prop("outerHTML");
+						data[1] = $(this).prop("outerHTML");
 						arr[index] = data;
 				});
 				arr.sort();
@@ -1058,59 +1053,67 @@ function filterProducts() {
 			function AppendNewArr(elem,cont){
 				cont.empty();
 				for(var i = 0; i < elem.length; i++) {
-				  var arrs = elem[i];
-				  cont.append(arrs[1])
+					var arrs = elem[i];
+					cont.append(arrs[1])
 				}
 				$('.selected-list input').prop('checked', true);
 			}
 	});
 
-    $(document).on('mouseup', function (e){
-        if (!trigger.is(e.target)
-            && trigger.has(e.target).length === 0) {
-            trigger.removeClass('active');
-        }
-    });
+		$(document).on('mouseup', function (e){
+				if (!trigger.is(e.target)
+						&& trigger.has(e.target).length === 0) {
+						trigger.removeClass('active');
+				}
+		});
+}
+
+function OnLoadFilterInit (){
+	var productFilterTriggers = $('.js-select-trigger');
+	productFilterTriggers.each(function(){
+		var _ = $(this);
+		_.trigger('reinit');
+	});
 }
 //выпаддающие списки
 var sortItem = function(){
- 	if($('.sort_wrapper').length){
- 		var trigger = $('.js-select-item');
+	if($('.sort_wrapper').length){
+		var trigger = $('.js-select-item');
 
- 		trigger.on('click', function(){
- 			var _ = $(this);
- 			var textCont = _.find('span');
- 			var target = _.parent().find('.dropdown-target');
- 			var item = target.find('.sort-select-item a');
+		trigger.on('click', function(){
+			var _ = $(this);
+			var textCont = _.find('span');
+			var target = _.parent().find('.dropdown-target');
+			var item = target.find('.sort-select-item a');
 
- 			_.toggleClass('active');
+			_.toggleClass('active');
 
- 			item.on('click',function(e){
+			item.on('click',function(e){
 
- 				var _ = $(this),
- 					altLext = _.data('text');
+				var _ = $(this),
+					altLext = _.data('text');
 
- 				textCont.text(altLext);
+				textCont.text(altLext);
 
- 				_.parent().addClass('active').siblings().removeClass('active');
- 				e.preventDefault();
- 				setTimeout(function(){
+				_.parent().addClass('active').siblings().removeClass('active');
+				e.preventDefault();
+				setTimeout(function(){
 
- 					target.removeClass('active');
- 					trigger.removeClass('active');
+					target.removeClass('active');
+					trigger.removeClass('active');
 
- 				},300);
- 			});
+				},300);
+			});
 
- 		$(document).on('mouseup', function (e){
+		$(document).on('mouseup', function (e){
 			if (!trigger.is(e.target)
 				&& trigger.has(e.target).length === 0) {
 				trigger.removeClass('active');
 			}
 		});
 
- 		});
- 	}
+		});
+	}
 }
 
 function number() {
@@ -1170,15 +1173,26 @@ function number() {
 		});
 		input[0].onkeypress = function(e) {
 			e = e || event;
-			e.preventDefault();
+			// e.preventDefault();
 			if (e.ctrlKey || e.altKey || e.metaKey) return;
 			var chr = getChar(e);
 			if (chr == null) return;
-			if (chr < '0' || chr > '9') {
+			if (chr < '0' || chr > '9' || chr === '.') {
 				return false;
 			}
 		}
 	});
+}
+function getChar(event) {
+	if (event.which == null) {
+		if (event.keyCode < 32) return null;
+		return String.fromCharCode(event.keyCode) // IE
+	}
+	if (event.which != 0 && event.charCode != 0) {
+		if (event.which < 32) return null;
+		return String.fromCharCode(event.which) 
+	}
+	return null;
 }
 function pricerange(){
 	var amount = $('#amount');
@@ -1205,26 +1219,26 @@ function pricerange(){
 			target.text((price / 1000 * ui.value).toFixed(2));
 			handle.attr('data-persent', ui.value / 10  + '%' );
 			 if (ui.value < 300) {
-			 		amount.val((price / 1000 * 300).toFixed(2));
-			 		target.text((price / 1000 * 300).toFixed(2));
+					amount.val((price / 1000 * 300).toFixed(2));
+					target.text((price / 1000 * 300).toFixed(2));
 					handle.attr('data-persent', 30 + '%' );
-			        // return false
-			    } else if(ui.value > 300){
+							// return false
+					} else if(ui.value > 300){
 					amount.parent().parent().removeClass('error');
-			    	return true
-			    }
+						return true
+					}
 			},
 			change: function( event, ui ) {
 				if (ui.value < 300) {
 					$("#rangeinput").slider('option','value',300)
 					return false
 				}else if(ui.value > 300){
-			    	return true
-			    	amount.parent().removeClass('error');
-			    }
-			    
+						return true
+						amount.parent().removeClass('error');
+					}
+					
 			}
-	    });
+			});
 	var handle = $( "#rangeinput" ).find('.ui-slider-handle');
 
 	amount.on('input',function(e){
@@ -1266,7 +1280,7 @@ function pricerange(){
 		keyChar=String.fromCharCode(key);
 		if(!/\d/.test(keyChar))	return false;
 	});
-    function compareRange(range, value){
+		function compareRange(range, value){
 		$("#rangeinput").slider("value", range);
 		handle.attr('data-persent', range/10 + '%');
 		

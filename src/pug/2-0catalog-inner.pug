@@ -216,7 +216,7 @@ block content
                     input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
                     button.number__plus.js-plus-number(type='button', tabindex='0')
               // тут бывает сбивается инит слайда, сбивается число слайдов, что мы делали. и не выравнивается высота контейнеров слайдер, полный набор крч
-              button.btn.t-blue.js-modal-trigger(onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();",data-target=".modal-incart") В корзину
+              button.btn.t-blue.js-modal-trigger(type = "button", onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();",data-target=".modal-incart") В корзину
           .product-main-calcwrap
             //.load для загрузки
             .calc-container.load
