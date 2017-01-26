@@ -23,9 +23,9 @@ block content
             .table-item.table-delete
             mixin cartTable(img,name, price, total)
               .table-row
-                .table-item.table-img
+                a(href="#").table-item.table-img
                   img(src=img, alt="")
-                .table-item.table-name
+                a(href="#").table-item.table-name
                   .categories-elem-name #{name}
                   .u-graytext
                     span.prop
@@ -37,7 +37,7 @@ block content
                     span.prop
                       span шаг волны:
                       span.price 23
-                .table-item.table-price
+                a(href="#").table-item.table-price
                   .u-text
                     | #{price}
                 .table-item.table-count
@@ -46,7 +46,7 @@ block content
                       button.number__minus.js-minus-number(type='button', tabindex='0')
                       input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
                       button.number__plus.js-plus-number(type='button', tabindex='0')
-                .table-item.table-total
+                a(href="#").table-item.table-total
                   .u-text.bold
                     |#{total}
                 .table-item.table-delete

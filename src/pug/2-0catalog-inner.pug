@@ -23,19 +23,19 @@ block content
         .cards-slider-nav.product-nav
         //Если картинка одна, просто пихай ее в .product-much-slider 
         .product-much-slider.js-white(data-target='.modal-product')
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/1.png")
             img(src="img/cards/1.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/2.png")
             img(src="img/cards/2.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/3.png")
             img(src="img/cards/3.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/4.png")
             img(src="img/cards/4.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/5.png")
             img(src="img/cards/5.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/6.png")
             img(src="img/cards/1.png", alt="velasaped")
-          .product-slider-item
+          .product-slider-item(data-big="img/cards/7.png")
             img(src="img/cards/2.png", alt="velasaped")
         .product-add-slider
           .product-add-item
@@ -216,7 +216,7 @@ block content
                     input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
                     button.number__plus.js-plus-number(type='button', tabindex='0')
               // тут бывает сбивается инит слайда, сбивается число слайдов, что мы делали. и не выравнивается высота контейнеров слайдер, полный набор крч
-              button.btn.t-blue.js-modal-trigger(onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();",data-target=".modal-incart") В корзину
+              button.btn.t-blue.js-modal-trigger(type = "button", onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();",data-target=".modal-incart") В корзину
           .product-main-calcwrap
             //.load для загрузки
             .calc-container.load
@@ -391,7 +391,7 @@ block content
               .sertivicat-wrap.js-white(data-target='.modal-sertificat')
                 mixin Serf(img, name)
                   .sertivicat-item
-                    .sertivicat-img.product-slider-item.product-add-item
+                    .sertivicat-img.product-slider-item.product-add-item(data-big="img/cards/1.png")
                       img(src=img, alt="")
                     p #{name}
                 +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')
