@@ -250,9 +250,12 @@ body, .out,html
       background-repeat: no-repeat
       background-size: contain
       background-position: bottom  center
-
   &.error
     color: $red
+    &:before
+      background-image: url(../img/icons/error.svg)
+      +rem(width,17px)
+      +rem(height,17px)
   &.succes
     color: $green 
     &:before
@@ -4230,9 +4233,6 @@ body, .out,html
     .btn
       +rem(padding, 12px 0 11px)
       +rem(width, 175px)
-.js-order-props
-  .headcont-wrapp
-    +rem(padding,18px 0 21px)
 .headcont
   border: 1px solid $border2
   +rem(margin-bottom, 25px)
@@ -5045,9 +5045,10 @@ body, .out,html
   .col-50
     width: 100%
     column-count: 2;
-    // +rem(padding-right,15px)
-    // +r(480)
-    //   width: 100%
+    +rem(margin,15px 0)
+    display: block
+    +r(544)
+      column-count: 1;
     p 
       display: table
       padding-right: 10px
@@ -5128,13 +5129,13 @@ body, .out,html
     +r(1230)
       margin-right: 0
     +r(800)
-      +rem(margin,0 -20px)
+      +rem(margin,20px -20px)
     &.slider-news-outer
       margin-right: 0
       margin-left: 0
       position: relative
       +r(800)
-        +rem(margin,0 -20px)
+        +rem(margin,20px -20px)
   .cards-slider-nav
     +rem(margin,20px auto 30px)
 
@@ -5339,7 +5340,85 @@ blockquote
     .categories-elem-name
       span
         color: $maind
-
+.modal-vacancy
+  .dz-vacancy-file
+    padding: 0;
+    border: 0;
+    min-height: 0;
+    cursor: pointer
+    .link-dotted
+      color: $mainl
+    .dz-message
+      margin: 0;
+      text-align: left;
+    .dz-image,.dz-error-mark,.dz-size,.dz-progress
+        display: none;
+    .dz-preview
+      +rem(width,100px);
+      +rem(min-height,16px);
+      margin: 0;
+      position: relative
+    .dz-details
+      +rem(padding,0 0 0 20px);
+      opacity: 1;
+    .dz-filename
+      +rem(width,70px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      +rem(font-size,13px)
+      color: #000
+      &:hover
+        span
+          border: 0 !important;
+    .dz-error-message
+      border-radius: 0;
+      top: 20px;
+    .dz-success-mark
+      +rem(width,15px);
+      +rem(height,15px);
+      left: 0;
+      margin: 0;
+      top: 0;
+      +rem(width,15px);
+      +rem(height,15px);
+      display: inline-block
+      position: absolute
+      span
+        svg
+          display: inline-block
+          width: 100%
+        .st0
+          stroke-width: 0;
+    .dz-remove
+      position: absolute;
+      font-size: 0;
+      display: inline-block;
+      +rem(width, 15px);
+      +rem(height, 15px);
+      right: -4px;
+      top: 0;
+      z-index: 125;
+      &:before,&:after
+        content: '';
+        display: inline-block;
+        +rem(width, 14px);
+        height: 1px;
+        background-color: #000; 
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      &:before
+        transform: rotate(45deg);
+      &:after
+        transform: rotate(-45deg);
+.dz-complete
+  .dz-success-mark
+    opacity: 1;
+.dz-started,.dz-complete
+  .link-dotted 
+    display: none 
 // sorting of 10-0 articles
 .article-sort
   &-wrapper
@@ -5356,3 +5435,5 @@ blockquote
         color: $white
 .articles-wrapper
   +rem(padding,25px 30px 0)
+.js-order-props
+  +rem(padding-top,18px)
