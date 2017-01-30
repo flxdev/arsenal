@@ -3584,7 +3584,7 @@ body, .out,html
     +rem(font-size,11px)
     +rem(height,28px)
   &__input 
-    background-color: #fff;
+    background-color: transparent;
     +rem(line-height,28px)
     max-width: 60%
     text-align: center;
@@ -3593,6 +3593,28 @@ body, .out,html
     -webkit-appearance: textfield !important
     width: 100%
     margin: 0
+    position: relative
+    .number__input
+      width: 100%
+    .fake
+      &-bg
+        display: inline-block
+        white-space: nowrap
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        &-text,&-currency
+          // +rem(font-size,11px)
+          // +rem(letter-spacing,0.4px)
+          display: inline-block
+          text-align: center;
+        &-currency
+          +rem(padding-left,10px)
+        &-text
+          color: transparent
+          // +rem(padding,5px 9px)
   &__minus
     background-image: url(../img/icons/minus.svg)
     border-right: 1px solid $border

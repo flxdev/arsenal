@@ -211,9 +211,13 @@ block content
             .select-check.submit-check
               .number-cont
                 .number-wrap
-                  .number.js-number(data-max-number='10',data-type='м²', data-step='0.1')
+                  .number.js-number(data-max-number='10',data-type='м²', data-step='0.5')
                     button.number__minus.js-minus-number(type='button', tabindex='0')
-                    input.number__input.js-price-input(type='text', value='0м²', tabindex='0')
+                    .number__input
+                      .fake-bg
+                        .fake-bg-text 
+                        .fake-bg-currency
+                      input.number__input.js-price-input(type='text', value='1', tabindex='0')
                     button.number__plus.js-plus-number(type='button', tabindex='0')
               // тут бывает сбивается инит слайда, сбивается число слайдов, что мы делали. и не выравнивается высота контейнеров слайдер, полный набор крч
               button.btn.t-blue.js-modal-trigger(type = "button", onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();",data-target=".modal-incart") В корзину

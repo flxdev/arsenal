@@ -363,8 +363,9 @@ function slidesCount(elem){
 		});
 
 }
-function modals(val){
 
+function modals(val){
+	
 	var trigger = $(".js-modal-trigger"),
 			closer = $('.js-modal-closer'),
 			body = $('.out');
@@ -377,7 +378,7 @@ function modals(val){
 						&& div.has(e.target).length === 0) {
 					div.parent().removeClass('active');
 					body.removeClass('modal-opened')
-					var slider =div.parent().find('.slick-slider');
+					var slider = div.parent().find('.slick-slider');
 					setTimeout(function(){
 						slider.slick('unslick');
 					},300);
@@ -396,6 +397,11 @@ function modals(val){
 				},300);
 			}
 		});
+	
+	// function ModalReinit(){
+	// 	var modal = body.find('.modal-opened'),
+	// 		closer = modal.find('.js-modal-closer');
+	// };
 	return false
 }
 function jshover(){
@@ -1147,6 +1153,11 @@ function number() {
 		var plus = $(this).find(".js-plus-number");
 		var minus = $(this).find(".js-minus-number");
 		var add = $(this).parent().find('.js-add');
+		var faketext = $(this).find('.fake-bg-text');
+		var fakeval = $(this).find('.fake-bg-currency');
+
+		fakeval.text(type);
+
 		plus.on("click", function(){
 			var val = parseFloat(input.val());
 			if (val >= max_number) {
@@ -1154,54 +1165,84 @@ function number() {
 			}
 			else {
 				val += step;
-				if(input.val().length >4){
-					input.val(''+ val.toFixed(1)+ '' + type+ '');
+				if(checkStep()){
+					input.val(''+ val.toFixed(1)+ '');
 				}
 				else{
-					input.val(''+ val+ '' + type+ '');
+					input.val(''+ val+ '');
 				}
 			};				
 			input.trigger('change');
 		});
+
 		minus.on("click", function(){
 			var val = parseFloat(input.val());
 			if (val > step) {
 				val -= step;
-				if(input.val().length> 4){
-					input.val(''+ val.toFixed(1)+ '' + type+ '');
+				if(checkStep()){
+					input.val(''+ val.toFixed(1)+ '');
 				}
 				else{
-					input.val(''+ val+ '' + type+ '');
+					input.val(''+ val+ '');
 				}
 			}
 			else{
-					input.val(''+ 0 + '' + type+ '');
-				}
+				input.val(''+ 0 + '');
+			}
 				// input.val(''+ val.toFixed(1)+ '' + type+ '');
 			input.trigger('change');
 			return false;
 		});
+
 		input.on("change", function(){
 			var val = +$(this).val();
-			// if (val > max_number) {
-			// 	val = max_number;
-			// 	$(this).val(val);
-			// }
+				console.log(val);
+			if (val > max_number) {
+				console.log(val,'trig');
+				val = max_number;
+				$(this).val(val);
+				faketext.text(val);
+			}
+			faketext.text(val);
 			if (val == '' || val < 0 || !val > max_number) {
 				val = 0;
-				$(this).val(val + type);
+				$(this).val(val);
+				faketext.text(val);
 			}
 		});
+		input.on('input', function(){
+			var t = $(this),
+				value = t.val();
+				console.log(value)
+			if(!value){
+				faketext.text('');
+			}else{
+				faketext.text(value);
+				console.log(value)
+			}
+			return false;
+		});
+
 		input[0].onkeypress = function(e) {
 			e = e || event;
 			// e.preventDefault();
 			if (e.ctrlKey || e.altKey || e.metaKey) return;
 			var chr = getChar(e);
 			if (chr == null) return;
+			faketext.text(chr);
+			//точка не работает
 			if (chr < '0' || chr > '9' || chr === '.') {
 				return false;
 			}
+			// input.trigger('change');
 		}
+		input.trigger('change');
+
+		//проверяю, является ли шаг увеличения целым числом. не целое число округлится до 0
+		function checkStep(){
+			parseInt(step) === 0 ? true : false;
+		}
+		
 	});
 }
 function getChar(event) {
@@ -1259,7 +1300,7 @@ function pricerange(){
 					}
 					
 			}
-			});
+		});
 	var handle = $( "#rangeinput" ).find('.ui-slider-handle');
 
 	amount.on('input',function(e){
@@ -1277,7 +1318,6 @@ function pricerange(){
 				
 			}else{
 				target.text(value)
-				
 			}
 			return false;
 		}
