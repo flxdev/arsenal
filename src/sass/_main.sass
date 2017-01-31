@@ -5459,3 +5459,54 @@ blockquote
   +rem(padding,25px 30px 0)
 .js-order-props
   +rem(padding-top,18px)
+.products-row.news
+  +rem(padding, 29px 20px 0 55px)
+  +r(600)
+     +rem(padding, 20px 10px 0 10px)
+  .products-inner
+    padding-top: 0
+    +r(600)
+      +rem(padding-bottom,25px)
+.news-article
+  width: 100%
+  +rem(max-width,815px)
+  display: inline-block
+  font-size: 0
+  &:not(:first-child)
+    +rem(padding,27px 0 0)
+  &-num,&-main 
+    display: inline-block
+    vertical-align: top
+    min-height: 1px
+    +rem(min-height,40px)
+  &-main
+    width: 92%
+    +rem(max-width,754px)
+    +rem(padding-left,13px)
+    +rem(padding-bottom,28px)
+    border-bottom: 1px solid $border
+    +r(350)
+      width: 88%
+    .u-text
+      +rem(margin,12px 0)
+      line-height: 1.846
+      span 
+        color: $main
+  &-num
+    +rem(min-width,20px)
+    +rem(max-width,40px)
+  &-name
+    &.u-intro
+      letter-spacing: 0.045rem
+      color: $main
+  &-info
+    .u-graytext
+      display: inline-block
+      vertical-align: top
+      +rem(font-size,13px)
+      &:first-child
+        +rem(margin-right,12px)
+      &:not(:first-child)
+        +rem(margin, 0 12px)
+
+
