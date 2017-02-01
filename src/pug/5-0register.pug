@@ -139,6 +139,14 @@ block content
         .u-black Уже совершали покупки в нашем интернет-магазине? 
         .u-text.lt Войдите в личный кабинет для просмотра профильной информации
         button.btn.t-blue.btn-small.btn-extrasmall.js-modal-trigger(data-target=".modal-login",onclick="modals($(this))") Войти
+      .select-check.js-select-custom
+        button.selects(data-placeholder = 'Выберите область',data-valuename = "")
+          span.btn-text Выберите область
+          i.select-img
+        .dropdown-target
+          .dropdown-inner
+            .dropdown-content
+            +sopt('group2','Минск, минская область','Брест, Брестская область','Могилев, Могилевская область','Гродно, Гродненская область','Гомель, Гомельская область')
 
 
 

@@ -236,7 +236,7 @@ function validateForms(){
 				borderColorOnError : true,
 				scrollToTopOnError : false,
 				onValidate : function($form) {
-					CheckForSelect();
+					CheckForSelect(form_this);
 
 					}
 			});
@@ -947,7 +947,7 @@ function initCustomSelectList() {
 
 			_select.on('reinit', function() {
 				var _active = _list.find('input:checked');
-				CheckForSelect();
+				CheckForSelect($(this).parents('form'));
 					if(_active.length) {
 						_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked');	
 					}
@@ -981,8 +981,8 @@ function initCustomSelectList() {
 	});
 } 
 
-function CheckForSelect(){
-	if($('.select-check').length){
+function CheckForSelect(form){
+	if(form.find('.select-check').length){
 		var wrap = $('.select-check');
 			wrap.each(function(){
 				var _ = $(this),
