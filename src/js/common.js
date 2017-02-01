@@ -185,7 +185,6 @@ function validateForms(){
 				scrollToTopOnError : false,
 				onValidate : function($form) {
 					CheckForSelect(form_this);
-
 					}
 			});
 		});
@@ -353,13 +352,13 @@ function slidesCount(elem){
 
 		elem.on('init reInit breakpoint beforeChange', function (event, slick, currentSlide, nextSlide) {
 			var slidesShown = parseInt(slick.slickGetOption('slidesToShow')),
-					slidesScroll = parseInt(slick.slickGetOption('slidesToScroll')),
-					slidesNext = parseInt(nextSlide),
-					totalSlides = parseInt(slick.slideCount),
-					totalPages = Math.ceil(totalSlides / slidesShown),
-					curPage = event.type == 'init' || event.type == 'reInit' || event.type == 'breakpoint'? 0 : parseInt(slidesNext/slidesScroll);
-					totatSlideCont.text(totalPages)
-					curSlideCont.text(curPage + 1)
+				slidesScroll = parseInt(slick.slickGetOption('slidesToScroll')),
+				slidesNext = parseInt(nextSlide),
+				totalSlides = parseInt(slick.slideCount),
+				totalPages = Math.ceil(totalSlides / slidesShown),
+				curPage = event.type == 'init' || event.type == 'reInit' || event.type == 'breakpoint'? 0 : parseInt(slidesNext/slidesScroll);
+				totatSlideCont.text(totalPages)
+				curSlideCont.text(curPage + 1)
 		});
 
 }
@@ -1213,7 +1212,6 @@ function number() {
 		input.on('input', function(){
 			var t = $(this),
 				value = t.val();
-				console.log(value)
 			if(!value){
 				faketext.text('');
 			}else{

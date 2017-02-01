@@ -3361,7 +3361,7 @@ body, .out,html
         position: relative
       &.error
         .non-set
-          &> .selects
+          .selects
             border-color: $red
     &-selects,&-calcwrap
       display: inline-block
@@ -3548,16 +3548,25 @@ body, .out,html
   width: 100%
   border-collapse: collapse
   +clr
+  &.disabled
+    position: relative
+    &:before
+      content: ''
+      +coverdiv
+      background-color: #FFF
+      opacity: .5
+      z-index: 50
+    // opacity: .5
+    // pointer-events: none
+    // &:not(.disabled)
+    //   .number-wrap:hover
+    //     border: 1px solid $maind
   &-wrap
     border: 1px solid $border;
     +rem(border-radius,3px)
     overflow: hidden
     +tr(border .3s)
-    &.disabled
-      opacity: .5
-      pointer-events: none
-    &:not(.disabled):hover
-      border: 1px solid $maind
+      
   &__minus,&__plus 
     +rem(max-width,27px);
     width: 20%
