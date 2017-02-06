@@ -386,7 +386,9 @@
                               <div class="headcont-title">
                                 <div class="u-title">Настройка подписки</div>
                               </div>
-                              <div class="headcont-item">
+                              <!--вешаем класс сюда-->
+                              <div class="headcont-item js-subscribe-container">
+                                <!--value инпута должно совпадать с data-type -->
                                 <div class="select-u-item">
                                   <label class="input_label"><span class="input_main">
                                       <input class="input-real" type="checkbox" value="Email"><span class="input-checked"></span></span><span class="input-text">Отправляйте на e-mail</span></label>
@@ -394,6 +396,11 @@
                                 <div class="select-u-item">
                                   <label class="input_label"><span class="input_main">
                                       <input class="input-real" type="checkbox" value="sms"><span class="input-checked"></span></span><span class="input-text">Отправляйте по SMS</span></label>
+                                </div>
+                                <!--класс нужен, чтобы ничего не разлеталось-->
+                                <div class="input-wrapper subscribe-wrapper" data-type="Email">
+                                  <label class="u-graytext"> <span class="text">E-mail</span></label>
+                                  <input class="input-main" type="text" name="" placeholder="example@mail.com" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
                                 </div>
                               </div>
                             </div>

@@ -45,19 +45,26 @@ block content
                 .headcont-wrapp
                   .headcont-title
                     .u-title Настройка подписки
-                  .headcont-item
+                  //вешаем класс сюда
+                  .headcont-item.js-subscribe-container
+                    //value инпута должно совпадать с data-type 
                     .select-u-item
                       label.input_label
                         span.input_main
-                          input.input-real(type="checkbox",value ='Email',)
+                          input.input-real(type="checkbox",value ='Email')
                           span.input-checked
                         span.input-text Отправляйте на e-mail
                     .select-u-item
                       label.input_label
                         span.input_main
-                          input.input-real(type="checkbox",value ='sms',)
+                          input.input-real(type="checkbox",value ='sms')
                           span.input-checked
                         span.input-text Отправляйте по SMS
+                    //класс нужен, чтобы ничего не разлеталось
+                    .input-wrapper.subscribe-wrapper(data-type="Email")
+                      label.u-graytext 
+                        span.text E-mail
+                      input.input-main(type='text',name="", placeholder = 'example@mail.com',data-validation="email required",data-validation-error-msg="Поле обязательно для заполнения")
                 .headcont-wrapp
                   .headcont-title
                     .u-title Мне интересны рубрики

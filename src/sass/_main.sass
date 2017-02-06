@@ -580,6 +580,7 @@ body, .out,html
     +rem(width,25px)
     +rem(top,17px)
     +rem(right,15px)
+    cursor: pointer
     &:hover
       span:before
         opacity: 0
@@ -920,8 +921,8 @@ body, .out,html
     a >.u-text
       color: $maind
       font-weight: 600
-    .btn-account
-      +rem(padding-right,20px)
+    // .btn-account
+    //   +rem(padding-right,20px)
   .btn-account
     display: inline-block
     vertical-align: middle
@@ -2732,6 +2733,7 @@ body, .out,html
         padding-top: 0
         +rem(margin-top,-11px)
     &-inner
+      // min-height: 23vh
       .sort-item
         color: $text
         border-image: url(../img/bdot.svg) 0 1 150 repeat stretch;
@@ -2950,6 +2952,9 @@ body, .out,html
       transform: scale(1,-1)
     .selects
       border: 1px solid $maind
+  &.error
+  	.selects
+      border: 1px solid $red
   &.is-checked
     .selects
       border: 1px solid $mainl
@@ -3360,7 +3365,7 @@ body, .out,html
       +r(544)
         position: relative
       &.error
-        .non-set
+        .not-set
           .selects
             border-color: $red
     &-selects,&-calcwrap
@@ -3555,18 +3560,15 @@ body, .out,html
       +coverdiv
       background-color: #FFF
       opacity: .5
-      z-index: 50
-    // opacity: .5
-    // pointer-events: none
-    // &:not(.disabled)
-    //   .number-wrap:hover
-    //     border: 1px solid $maind
+      z-index: 1
+
   &-wrap
     border: 1px solid $border;
     +rem(border-radius,3px)
     overflow: hidden
     +tr(border .3s)
-      
+    &:hover
+      border: 1px solid $maind
   &__minus,&__plus 
     +rem(max-width,27px);
     width: 20%
@@ -3784,7 +3786,7 @@ body, .out,html
   vertical-align: top
   background-repeat: no-repeat;
   background-position: left top .2rem;
-  background-size: 27px 27px;
+  background-size: 27px 23px;
   +rem(padding,0 0 7px 35px )
   +rem(margin-bottom,13px )
   transition: color .3s;
@@ -4298,7 +4300,7 @@ body, .out,html
         display: inline-block
         +rem(max-width,150px)
         +rem(margin-top,3px)
-    .input-wrapper 
+    .input-wrapper:not(.subscribe-wrapper)
       width: 50%  
       vertical-align: top
       display: inline-block
@@ -4717,7 +4719,7 @@ body, .out,html
             opacity: 1
             visibility: visible
         .small-link
-          opacity: 1
+          display: inline-block
     &.bx-selected
       border-color: $maind
       .table-name
@@ -4741,8 +4743,7 @@ body, .out,html
         height: 0
       .small-link
         float: right
-        opacity: 0
-        visibility: hidden
+        display: none
       .u-intro
         display: inline-block
         +tr(color .3s)
@@ -5027,10 +5028,13 @@ body, .out,html
           display: inline-block
           content: ''
           width: 100%
+        .select-u-item
+        	+rem(min-width,100px)
       .headcont-title
         text-align: left
       .headcont-item
         width: 61%;
+        text-align: left
         .select-u-item
           margin: 0
           vertical-align: top
@@ -5042,7 +5046,6 @@ body, .out,html
           display: inline-block
           content: ''
           width: 100%
-
     .select-u-item
       display: inline-block
       width: auto
@@ -5061,6 +5064,9 @@ body, .out,html
   +rem(padding,36px 25px 0 55px)
   +r(991)
     +rem(padding,36px 20px 0 20px)
+  .side-cont
+    +rem(font-size, 13px)
+    color: $text
   .side-title
     +rem(padding-right,20px)
     +r(544)
@@ -5466,7 +5472,7 @@ blockquote
         color: $white
 .articles-wrapper
   +rem(padding,25px 30px 0)
-.js-order-props
+#js-order-props
   +rem(padding-top,18px)
 .products-row.news
   +rem(padding, 29px 20px 0 55px)
@@ -5517,5 +5523,15 @@ blockquote
         +rem(margin-right,12px)
       &:not(:first-child)
         +rem(margin, 0 12px)
-
+#js-main_catalog-container
+  min-height: 26vh
+.js-subscribe-container
+	font-size: 0
+	text-align: left
+	.subscribe-wrapper
+		display: block
+		width: 100%
+		padding-right: 0
+		+rem(max-width,290px)
+		
 

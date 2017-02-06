@@ -1,7 +1,3 @@
-//инит фильрров товаров 1-2 1-4
-$(window).on('load',function(){
-	OnLoadFilterInit();
-})
 $(document).ready(function() {
 function DesktopMenu(){
 	var mainCont = $('.c-menu-block.main'),
@@ -171,26 +167,6 @@ function Colors(){
 }Colors();
 }
 
-
-function validateForms(){
-	var form_form = $('.js-validate');
-	if (form_form.length) {
-		form_form.each(function () {
-			var form_this = $(this);
-			$.validate({
-				validateHiddenInputs: true,
-				ignore: false,
-				form : form_this,
-				borderColorOnError : true,
-				scrollToTopOnError : false,
-				onValidate : function($form) {
-					CheckForSelect(form_this);
-					}
-			});
-		});
-	};
-}validateForms();
-
 function drag() {
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 } drag();
@@ -224,9 +200,9 @@ function modalOff(){
 	var val = 0;
 	$('.sertivicat-wrap').find('.product-add-item').each(function(){
 		var t = $(this);
-		t.attr('data-slick-index', val)
+		t.attr('data-slick-index', val);
 		val++;
-	})
+	});
 			
 
 	trigger.click(function(e){
@@ -323,12 +299,37 @@ function modalOff(){
 
 }modalOff();
 
+function subscribe(){
+	if($('.js-subscribe-container').length){
+		var parent = $('.js-subscribe-container'),
+			trigger = parent.find('.select-u-item'),
+			target = parent.find('.input-wrapper'),
+			targetType = target.data('type');
 
+		trigger.each(function(){
+			var _ = $(this);
+			_.on('click', function(){
+				parent.trigger('reinit');
+			})
+		})
+		parent.on('reinit', function(){
+			target.hide();
+			var checked = trigger.find('input:checked');
+				checked.each(function(){
+					var _ = $(this),
+						type = _.val();
+					parent.find('[data-type='+ type +']').show();
+				})
+		});
+		parent.trigger('reinit');
+	}
+}subscribe();
 
 $(window).resize(function(){
 	modalOff();
 });
 
+validateForms();
 sortItem();
 filterProducts();
 pricerange();
@@ -352,13 +353,13 @@ function slidesCount(elem){
 
 		elem.on('init reInit breakpoint beforeChange', function (event, slick, currentSlide, nextSlide) {
 			var slidesShown = parseInt(slick.slickGetOption('slidesToShow')),
-				slidesScroll = parseInt(slick.slickGetOption('slidesToScroll')),
-				slidesNext = parseInt(nextSlide),
-				totalSlides = parseInt(slick.slideCount),
-				totalPages = Math.ceil(totalSlides / slidesShown),
-				curPage = event.type == 'init' || event.type == 'reInit' || event.type == 'breakpoint'? 0 : parseInt(slidesNext/slidesScroll);
-				totatSlideCont.text(totalPages)
-				curSlideCont.text(curPage + 1)
+					slidesScroll = parseInt(slick.slickGetOption('slidesToScroll')),
+					slidesNext = parseInt(nextSlide),
+					totalSlides = parseInt(slick.slideCount),
+					totalPages = Math.ceil(totalSlides / slidesShown),
+					curPage = event.type == 'init' || event.type == 'reInit' || event.type == 'breakpoint'? 0 : parseInt(slidesNext/slidesScroll);
+					totatSlideCont.text(totalPages)
+					curSlideCont.text(curPage + 1)
 		});
 
 }
@@ -370,8 +371,9 @@ function modals(val){
 			body = $('.out');
 		var data = val.data('target');
 		body.addClass('modal-opened').find(data).addClass('active');
-		
-		$(document).mouseup(function (e){ 
+		$.fn.matchHeight._update();
+		compareHeight();
+		$(document).mousedown(function (e){
 				var div = $('.modal-container');
 				if (!div.is(e.target) 
 						&& div.has(e.target).length === 0) {
@@ -385,7 +387,7 @@ function modals(val){
 				}
 			});
 
-	closer.click(function(){
+	closer.off('click').on('click',function(){
 			var target = $(this).parents('.modal-layout').removeClass('active');
 			var slider =$(this).parent().find('.slick-slider');
 			body.removeClass('modal-opened');
@@ -927,24 +929,39 @@ function initCustomSelectList() {
 		});
 	});
 } 
-
+function validateForms(){
+	var form_form = $('.js-validate');
+	if (form_form.length) {
+		form_form.each(function () {
+			var form_this = $(this);
+			$.validate({
+				validateHiddenInputs: true,
+				ignore: false,
+				form : form_this,
+				borderColorOnError : true,
+				scrollToTopOnError : false,
+				onValidate : function($form) {
+					CheckForSelect($form);
+					}
+			});
+		});
+	};
+}
 function CheckForSelect(form){
 	if(form.find('.select-check').length){
-		var wrap = $('.select-check');
-			wrap.each(function(){
-				var _ = $(this),
-					btn = _.find('.selects'),
-					option = _.find('.option.has-error');
-				if(option.length){
-					btn.addClass('error');
-					return false
-				}else{
-					btn.removeClass('error');
-					return true
-				}
-
-			});
-
+		var wrap = form.find('.select-check');
+		wrap.each(function(){
+			var _ = $(this),
+				btn = _.find('.selects'),
+				option = _.find('.option.has-error');
+			if(option.length){
+				_.addClass('error');
+				
+			}else{
+				_.removeClass('error');
+			}
+		});
+		wrap.hasClass('error') ? false : true
 	}
 }
 
@@ -961,6 +978,8 @@ function filterProducts() {
 				value = button.data('value'),
 				submit = _.find('.js-filter-submit'),
 				price = _.find('.price'),
+				selCont = _.find('.selected-list'),
+				unselCont = _.find('.select-u-body'),
 				clear = _.find('.js-select-clear');
 
 		_.on('click', '.selects', function(event){
@@ -982,9 +1001,7 @@ function filterProducts() {
 		});
 		submit.on('click', function(e){
 			var wrapper = $(this).closest('.dropdown-content'),
-					input = wrapper.find('input'),
-					selCont = _.find('.selected-list'),
-					unselCont = _.find('.select-u-body');
+					input = wrapper.find('input');
 					e.preventDefault();
 			$(this).closest(trigger).removeClass('active');
 			_.trigger('reinit');
@@ -1096,10 +1113,12 @@ function filterProducts() {
 
 function OnLoadFilterInit (){
 	var productFilterTriggers = $('.js-select-trigger');
-	productFilterTriggers.each(function(){
-		var _ = $(this);
-		_.trigger('reinit');
-	});
+	setTimeout(function(){
+		productFilterTriggers.each(function(){
+			var _ = $(this);
+			_.trigger('reinit');
+		});		
+	},100)
 }
 //выпаддающие списки
 var sortItem = function(){
@@ -1212,6 +1231,7 @@ function number() {
 		input.on('input', function(){
 			var t = $(this),
 				value = t.val();
+				console.log(value)
 			if(!value){
 				faketext.text('');
 			}else{
@@ -1390,3 +1410,8 @@ function compareHeight(){
 	// 	 property: 'min-height'
 	// });
 }
+
+//инит фильрров товаров 1-2 1-4
+$(window).on('load',function(){
+	setTimeout(OnLoadFilterInit, 501);
+});
