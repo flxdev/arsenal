@@ -16,6 +16,9 @@ function DesktopMenu(){
 					_.addClass('active').siblings().removeClass('active');
 					targetWrap.addClass(shown);
 					targetWrap.find("[data-elem="+ id +"]").addClass(current).siblings().removeClass(current);
+				}else{
+					targetWrap.removeClass(shown);
+					items.removeClass('active')
 				}
 				
 			})

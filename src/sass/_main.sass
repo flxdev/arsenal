@@ -18,15 +18,7 @@ a
     font-family: 'Open Sans'
     +rem(letter-spacing, 0.2px)
     font-size: 11px
-  +rm(768)
-    +scrollbar
-      +rem(width,4px)
-      background: $graybg
-    ::-webkit-scrollbar-thumb 
-      +rem(width,6px)
-      +rem(border-radius,3px)
-      background: #888888
-      cursor: pointer
+ 
 textarea
   line-height: 1.5
 ul
@@ -35,6 +27,7 @@ ul
     width: 100%
 html
   font-size: 16px
+  overflow-x: hidden
   +r(1366)
     font-size: 15px
   +r(1280)
@@ -44,8 +37,8 @@ html
     font-size: 16px
   +r(769)
     font-size: 15px
-  +r(544)
-    font-size: 14px
+  // +r(544)
+  //   font-size: 14px
 
 body
   background-color: #47484b
@@ -62,6 +55,7 @@ body
 body
   font-family: 'Open Sans'
   overflow: hidden
+  // overflow-y: auto
   position: relative
 body, .out,html
   width: 100%
@@ -69,30 +63,43 @@ body, .out,html
   &.modal-opened
     overflow: hidden
 .out
-  overflow-y: scroll
+  overflow-y: auto
   overflow-x: hidden
   position: relative
   // -webkit-overflow-scrolling: touch;
   // div
   //   -webkit-transform: translate3d(0,0,0);
-  +rm(768)
-    +scrollbar
-      +rem(width,10px)
-      background: $graybg
-    ::-webkit-scrollbar-thumb 
-      +rem(width,10px)
-      border-radius: 10px !important
-      cursor: pointer
+  // +rm(768)
+  //   +scrollbar
+  //     +rem(width,10px)
+  //     background: $graybg
+  //   ::-webkit-scrollbar-thumb 
+  //     +rem(width,10px)
+  //     border-radius: 10px !important
+  //     cursor: pointer
 
 // main page layout
 .page
   &__wrapper
     background-color: #fff
     +rem(max-width, 1450px)
+    width: 100%
     +clr
+    +rm(768)
+      *
+        +scrollbar
+          +rem(width,4px)
+          background: $graybg
+        ::-webkit-scrollbar-thumb 
+          +rem(width,6px)
+          +rem(border-radius,3px)
+          background: #888888
+          cursor: pointer
   &__outer
     width: 100%
     display: block
+    //убрать при проблемах
+    overflow: hidden
   &__header
     +rem(height, 85px)
     +rem(max-width, 1450px)
@@ -145,6 +152,8 @@ body, .out,html
     position: relative 
     +r(991)
       padding-left: 0
+    &-mainwrap
+      min-height: 44vh
   &__accii
     position: absolute
     +rem(top,-84px)
@@ -216,7 +225,7 @@ body, .out,html
   font-family: intro
   color: $btn-t
   line-height: 1.5
-  font-weight: 700
+  font-weight: 400
   +rem(letter-spacing, 0.8px) 
   &.h1
     +rem(font-size,20px)
@@ -410,33 +419,33 @@ body, .out,html
   position: relative
   &:hover
     .dropdown-target
-      // overflow: visible
+      // overflow: visibles
       // +rem(padding-top,10px)
-      transition-delay: 0.15s
+      transition-delay: 0.1s
       +rem(max-height,1000px)
-      +rem(padding-bottom,7px)
+      +rem(padding-bottom,9px)
 .dropdown-target.active
   // overflow: visible
-  transition-delay: 0.15s
+  transition-delay: 0.1s
   +rem(max-height,1000px)
-  +rem(padding-bottom,5px)
+  +rem(padding-bottom,9px)
 .js-select-trigger.active,.js-select-item.active,.js-select-custom.active
   .dropdown-target
-    transition-delay: 0.15s
+    transition-delay: 0.1s
     +rem(max-height,1000px)
-    +rem(padding-bottom,5px)
+    +rem(padding-bottom,9px)
 .dropdown-target
   position: absolute
   overflow: hidden
   z-index: 2
   // width: 100%
-  +padlr(5px)
-  +rem(margin-right,-5px)
+  +padlr(9px)
+  +rem(margin-right,-9px)
   max-height: 0
   padding-top: 0
   transition-property: max-height,padding
   transition-timing-function: $tr
-  transition-duration: .35s
+  transition-duration: .28s
   will-change: max-height, padding
   +gpu
   +clr
@@ -445,7 +454,7 @@ body, .out,html
     +rem(margin-bottom,2px)
     float: right
     background: $white
-    box-shadow: 2px 3.464px 18px 0px rgba( 0, 0, 0,0.17 );
+    box-shadow: 2px 3.464px 18px 0px rgba( 0, 0, 0 ,.17)
     .dropdown-footer
       border-top: 1px solid $border
       +rem(padding-top,15px)
@@ -479,6 +488,9 @@ body, .out,html
     +rem(font-size, 11px)
     +rem(padding-top,8px)
     +rem(padding-bottom,8px)
+  &.t-blue
+    font-weight: 300
+    +rem(letter-spacing,0.8px)
   &.t-blue,&.t-trans
     &:hover
       background: $maind
@@ -706,6 +718,8 @@ body, .out,html
   will-change: transform
   +r(544)
     +rem(padding,25px 20px 20px 0)
+  +r(340)
+    +rem(padding,25px 15px 20px 0)    
 .pricetel-wrap
   display: inline-block
   +rem(padding-left,32px)
@@ -736,6 +750,7 @@ body, .out,html
   display: inline-block
   +rem(padding-left,62px)
   vertical-align: top
+  cursor: pointer
   &.centered
     +rem(margin-top,-5px)
   &:hover
@@ -779,7 +794,7 @@ body, .out,html
   //dropdown
   .dropdown
     &-target
-       +rem(margin-left,-25px)
+       +rem(margin-left,-37px)
     &-inner
       +rem(padding, 23px 25px 12px)
     &-content
@@ -809,6 +824,8 @@ body, .out,html
       +rem(padding-right,30px)
       .btn-cart
         position: relative
+    +r(340)
+      +rem(padding-right,25px)   
     &:not(.not-empty)
       .dropdown-target:nth-of-type(2)
         display: none
@@ -818,6 +835,8 @@ body, .out,html
       right: 0
       +r(991)
         display: none
+      .btn-standart
+        +padlr(30px)
       .dropdown-inner
         +rem(width,320px)
         &.not-empty
@@ -844,7 +863,7 @@ body, .out,html
         position: absolute
         +rem(height,20px)
         +rem(right,-8px)
-        +rem(top,-12px)
+        +rem(top,-8px)
         +rem(padding,0 4px 0 3px)
       .count
         display: inline-block
@@ -929,6 +948,8 @@ body, .out,html
     +rem(padding-right,35px)
     +r(991)
        +rem(padding-right,20px)
+    +r(340)
+      +rem(padding-right,15px)
     .account-icon
       display: inline-block
       +rem(width,18px)
@@ -940,6 +961,7 @@ body, .out,html
         content: ''
         +rem(width,18px)
         +rem(height,18px)
+        +rem(background-size,18px 18px)
         left: 0
         top: 0
         background-position: center !important
@@ -954,6 +976,7 @@ body, .out,html
         +rem(width,32px)
         +rem(height,32px)
         &:before,&:after
+          background-size: contain
           +rem(width,32px)
           +rem(height,32px)
 
@@ -1330,6 +1353,7 @@ body, .out,html
 .index-slider
   white-space: nowrap
   overflow: hidden
+
   &:hover
     .slick-dots
       opacity: 1
@@ -1344,6 +1368,7 @@ body, .out,html
     white-space: normal
     +rem(line-height, 440px)
     border: none!important
+    width: 100%
     +r(991)
       +rem(height,380px)
       +rem(line-height, 380px)
@@ -1363,6 +1388,8 @@ body, .out,html
       +rem(margin-bottom,25px)
     .h2
       line-height: 1.8
+    .u-intro
+      font-weight: 400
 .slick-dots
   display: inline-block
   +rem(right,20px)
@@ -1494,6 +1521,8 @@ body, .out,html
       left: 0
       right: 0
       margin: 0
+      +rm(544)
+        +rem(padding,5px 10px)
     &-img > img
       +rem(max-width, 205px)
       display: block
@@ -1644,6 +1673,7 @@ body, .out,html
   +r(544)
     +rem(padding, 0 14px 25px 14px)
   &-inner
+    z-index: 3
     .slick-list 
       +rem(margin, -35px -2px -80px -2px)
       +rem(padding, 35px 3px 80px 2px)
@@ -1664,11 +1694,11 @@ body, .out,html
     +rem(padding-right, 5px) 
     +rem(padding-top, 5px) 
     &:hover
-      +rm(991)
-        & ~ .product-card-wrapper
-          z-index: 0
-          .product-card-inner
-            z-index: 0
+      // +rm(991)
+      //   & ~ .product-card-wrapper
+      //     z-index: 0
+      //     .product-card-inner
+      //       z-index: 0
   &-inner
     display: block
     +rem(padding,15px 15px 44px 16px)
@@ -1687,7 +1717,6 @@ body, .out,html
   &-outer
     background: $graybg
     position: relative
-    z-index: 1
     +rem(padding-bottom,35px)
     transition: background .3s .1s, box-shadow .3s .1s
     +r(544)
@@ -1695,9 +1724,9 @@ body, .out,html
     &:hover
       +rm(991)
         background: $white
-        position: relative
-        z-index: 4
-        box-shadow: 3px 3.5px 19px 0px rgba(0,0,0,0.17);
+        // position: relative
+        // z-index: 4
+        box-shadow: 3px 3px 19px 0px rgba(0,0,0,0.17);
         & ~ .product-card-outer
           z-index: 0
         .categories-elem-name
@@ -1707,7 +1736,7 @@ body, .out,html
           visibility: visible
           transition: opacity .15s .1s, visibility .15s .1s
           background: $white
-          box-shadow: 0px 10px 12px 0 rgba(0,0,0,.12)
+          box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.1);
   &-img
     +rem(height,180px) 
     +rem(margin-bottom,20px) 
@@ -1737,6 +1766,7 @@ body, .out,html
     left: 0
     right: 0
     opacity: 0
+    z-index: 4
     visibility: hidden
     transition: opacity .12s , visibility .12s , background .25s, box-shadow .3s
     +rem(padding,20px 20px 28px 20px)
@@ -1932,37 +1962,42 @@ body, .out,html
   display: block
   +rem(max-width,200px)
   +rem(margin, 35px auto 0)
-  position: relative
-  z-index: 2
   text-align: center
   +nosel
   .slick-arrow, .cards-slider-counter
     display: inline-block
     vertical-align: middle
   .cards-slider-counter
-    +padlr(15px)
+    +padlr(12px)
     +rem(font-size,16px)
     font-family: intro
     font-weight: 700
     color: $text
+    +rem(margin-top,-1px)
     .cards-slider-divider,.cards-slider-total,.cards-slider-current
       display: inline-block
       vertical-align: middle
     .cards-slider-divider
       display: inline-block
-      +padlr(8px)
-      +rem(font-size,28px)
+      +rem(padding-right,8px)
+      +rem(padding-left,10px)
+      +rem(font-size,35px)
+      font-weight: 300
+      transform: rotate(-4deg)
+      // font-family: 'Open Sans'
     .cards-slider-total
       +rem(margin-top,2px)
       color: #c1c1c1
   .slick-arrow
-    +rem(width,47px)
+    +rem(width,44px)
     +rem(height,15px)
     background: 0 0 
+    position: relative
+    z-index: 3
     svg
       display: inline-block
       +rem(height,15px)
-      
+      width: 100%
     &.slick-disabled
       opacity: .6
       pointer-events: none
@@ -2063,6 +2098,7 @@ body, .out,html
         font-family: 'Open Sans'
         line-height: 1.5
         +rem(font-size,14px)
+        font-weight: 700
 
           
   &-inner
@@ -2095,6 +2131,7 @@ body, .out,html
     right: 0
     .u-intro
       transition: color .3s
+      font-weight: 400
 
 .news-section
   +rem(padding, 0 20px 50px 52px)
@@ -2160,6 +2197,7 @@ body, .out,html
     +rem(padding-right, 35px)
     .u-intro
       line-height: 1.75;
+      font-weight: 400
     +r(600)
       width: 100%
 
@@ -2916,6 +2954,8 @@ body, .out,html
     +rem(height, 29px)
   +r(991)
     +rem(height, 28px)
+  +r(768)
+    +rem(height, 31px)
   &:hover
     .i-close
       transform: rotate(90deg)
@@ -2932,8 +2972,11 @@ body, .out,html
 
 .select-check 
   position: relative
+  .dropdown-target
+    +rem(margin-left,-8px)
+    +rem(margin-right,-8px)
   .dropdown-target,.dropdown-inner  
-    width: 100%
+    min-width: 100%
   .dropdown-inner 
     +rem(padding, 15px 12px 17px 12px)
     .u-graytext
@@ -3008,8 +3051,8 @@ body, .out,html
         vertical-align: top
         +tr(margin .3s)
         +r(768)
-          max-width: 100%
-          width: 100%
+          max-width: 95%
+          width: 95%
         &.is-checked
           +rem(margin-right,45px)
       .dropdown-target
@@ -3309,8 +3352,9 @@ body, .out,html
     +rem(padding,0 5px)
     +rem(margin-right,1px)
     display: inline-block
-    
-    &:hover
+    &:only-child
+      display: none
+    &:hover:not(.slick-current)
       .product-add-img
         cursor: pointer;
         border-color: $maind
@@ -3398,16 +3442,19 @@ body, .out,html
         width: 48%
         vertical-align: top
       .number__input
+        // +r(800)
+        //   max-width: 69%
+        // +r(730)
+        //   max-width: 64%
+        // +r(655)
+        //   max-width: 60%
+        // +r(544)
+        //   max-width: 69%
+        // +r(375)
+        //   max-width: 60%
+      .number__minus, .number__plus
         +r(800)
-          max-width: 69%
-        +r(730)
-          max-width: 64%
-        +r(655)
-          max-width: 60%
-        +r(544)
-          max-width: 69%
-        +r(375)
-          max-width: 60%
+          max-width: 20%
       .number-cont
         padding-right: 2%
       .btn
@@ -3644,6 +3691,13 @@ body, .out,html
   &.contacts-wrap
     .side-cont
       max-width: 100%
+      font-size: 0
+    .col-50
+      width: 50%
+      column-count: 1
+      display: inline-block
+      vertical-align: top
+      
   .side-title,.side-cont
     display: inline-block
     vertical-align: top
@@ -3787,7 +3841,7 @@ body, .out,html
   background-repeat: no-repeat;
   background-position: left top .2rem;
   background-size: 27px 23px;
-  +rem(padding,0 0 7px 35px )
+  +rem(padding,5px 0 7px 35px )
   +rem(margin-bottom,13px )
   transition: color .3s;
   color: $text;
@@ -4045,6 +4099,7 @@ body, .out,html
       +rem(padding-left,20px)
   &-content
     +rem(max-width,816px)
+    width: 100%
 .table
   display: table
   width: 100%
@@ -4131,6 +4186,8 @@ body, .out,html
     padding-left: 3%
     padding-right: 3%
     +rem(min-width,150px)
+    .number-wrap
+      +rem(max-width, 142px)
     +r(1150)
       +padlr(10px)
     +r(1040)
@@ -4526,7 +4583,6 @@ body, .out,html
         &>.table-row
           display: inline-block
           width: 100%
-
         .table-status
           position: relative
           &.dropdown-trigger
@@ -4560,7 +4616,7 @@ body, .out,html
             .dropdown-target
               width: 135%
               white-space: normal
-              margin-left: 0
+              +rem(margin-left,-24px)
             .dropdown-content
               +rem(padding,20px 17px)
               .u-text
@@ -4623,6 +4679,14 @@ body, .out,html
         .small-link
           opacity: 0.5
           +rem(margin-right,30px)
+          &:hover
+            span
+              color: $main          
+          span
+            color: $text
+            &:before,&:after
+              +rem(top,1.5px)
+
         
     .cards-wrapper
       width: 30%
@@ -4858,6 +4922,7 @@ body, .out,html
       vertical-align: top
       width: 33%
       +rem(padding-right,8px)
+      cursor: pointer
       &.bx-selected
         .bx-soa-pp-company-graf-container
           border-color: $mainl
@@ -5016,6 +5081,8 @@ body, .out,html
 
 .column-content
   .side-title
+    .u-intro
+      font-weight: 400
     +rm(768)
       width: 30%
       padding-right: 2%

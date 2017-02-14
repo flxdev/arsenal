@@ -347,63 +347,65 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Контактная информация</a></div>
-                <h1 class="u-intro h1">Контактная информация</h1>
-              </section>
-              <section class="content-section">
-                <div class="side-wrap contacts-wrap">
-                  <div class="side-title">
-                    <div class="u-intro h2">свяжитесь с нами или приезжайте в наш в офис </div>
-                  </div>
-                  <div class="side-cont">
-                    <div class="col-50">
-                      <div class="categories-elem-name">ООО «АрсеналМеталл»</div>
-                      <div class="u-text lt">220056, Республика Беларусь, г. Минск, пр. Независимости, 199</div>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Контактная информация</a></div>
+                  <h1 class="u-intro h1">Контактная информация</h1>
+                </section>
+                <section class="content-section">
+                  <div class="side-wrap contacts-wrap">
+                    <div class="side-title">
+                      <div class="u-intro h2">свяжитесь с нами или приезжайте в наш в офис </div>
                     </div>
-                    <div class="col-50">
-                      <button class="btn t-blue btn-small btn-extrasmall js-modal-trigger" type="button" data-target=".modal-callback" onclick="modals($(this))">Обратный звонок</button>
-                    </div>
-                    <div class="footer_contacts-wrap">
-                      <div class="footer_contacts-block">
-                        <div class="contact-block"><span class="u-graytext">Телефоны</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
+                    <div class="side-cont">
+                      <div class="col-50">
+                        <div class="categories-elem-name">ООО «АрсеналМеталл»</div>
+                        <div class="u-text lt">220056, Республика Беларусь, г. Минск, пр. Независимости, 199</div>
                       </div>
-                      <div class="footer_contacts-block">
-                        <div class="contact-block"><span class="u-graytext">График работы</span>
-                          <div class="u-text lt">Пн-Пт, с 9:00 до 20:00</div>
+                      <div class="col-50">
+                        <button class="btn t-blue btn-small btn-extrasmall js-modal-trigger" type="button" data-target=".modal-callback" onclick="modals($(this))">Обратный звонок</button>
+                      </div>
+                      <div class="footer_contacts-wrap">
+                        <div class="footer_contacts-block">
+                          <div class="contact-block"><span class="u-graytext">Телефоны</span><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="u-text lt" href="tel:375173804867">+375 17 380-48-67 </a><a class="u-text lt" href="tel:375175125004">+375 17 512-50-04</a><a class="u-text lt" href="tel:375171117524">+375 17 111-75-24</a></div>
                         </div>
-                      </div>
-                      <div class="footer_contacts-block">
-                        <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
-                      </div>
-                      <div class="footer_contacts-block">
-                        <div class="contact-block"><span class="u-graytext">Skype</span><a class="mailto" href="skype:arsenalmetall?chat">arsenalmetall</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="contact-section">
-                <div class="tabs-cont">
-                  <div class="contact-cont"> 
-                    <div id="map"></div>
-                  </div>
-                  <div class="info-cont">
-                    <div class="info-title"> <span class="u-intro h2">реквизиты компании</span></div>
-                    <div class="info-content">
-                      <div class="side-wrap">
-                        <div class="side-cont">
-                          <p>ООО «АрсеналМеталл»</p>
-                          <p>Юридический адрес: 220090, г. Минск, Логойский тракт, 22А, пом. 190 </p>
-                          <p>Р/с 3012048490017 в ОАО «Банк Москва-Минск», г. Минск, ул. Коммунистическая, 49, МФО 153001272</p>
-                          <p>УНП 190664004, ОКПО 37678731</p>
+                        <div class="footer_contacts-block">
+                          <div class="contact-block"><span class="u-graytext">График работы</span>
+                            <div class="u-text lt">Пн-Пт, с 9:00 до 20:00</div>
+                          </div>
+                        </div>
+                        <div class="footer_contacts-block">
+                          <div class="contact-block"><span class="u-graytext">E-mail</span><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a></div>
+                        </div>
+                        <div class="footer_contacts-block">
+                          <div class="contact-block"><span class="u-graytext">Skype</span><a class="mailto" href="skype:arsenalmetall?chat">arsenalmetall</a></div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+                <section class="contact-section">
+                  <div class="tabs-cont">
+                    <div class="contact-cont"> 
+                      <div id="map"></div>
+                    </div>
+                    <div class="info-cont">
+                      <div class="info-title"> <span class="u-intro h2">реквизиты компании</span></div>
+                      <div class="info-content">
+                        <div class="side-wrap">
+                          <div class="side-cont">
+                            <p>ООО «АрсеналМеталл»</p>
+                            <p>Юридический адрес: 220090, г. Минск, Логойский тракт, 22А, пом. 190 </p>
+                            <p>Р/с 3012048490017 в ОАО «Банк Москва-Минск», г. Минск, ул. Коммунистическая, 49, МФО 153001272</p>
+                            <p>УНП 190664004, ОКПО 37678731</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
               <footer class="footer">
                 <div class="footer_contacts-wrap">
                   <div class="footer_contacts-block">

@@ -347,1010 +347,1012 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Каталог</a><a class="bread-item" href="#">Очень длинный заголовок про металлочерепицу</a><a class="bread-item" href="#">Каталог</a></div>
-                <h1 class="u-intro h1">Металлочерепица Монтерей</h1>
-              </section>
-              <div class="product-content-wrapper">
-                <div class="product-galery-wrap">
-                  <div class="product-much-cont">
-                    <div class="flags-wrap">
-                      <div class="flag-item discount"> <span>-15%</span></div>
-                      <div class="flag-item hit"> <span>Hit</span></div>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Каталог</a><a class="bread-item" href="#">Очень длинный заголовок про металлочерепицу</a><a class="bread-item" href="#">Каталог</a></div>
+                  <h1 class="u-intro h1">Металлочерепица Монтерей</h1>
+                </section>
+                <div class="product-content-wrapper">
+                  <div class="product-galery-wrap">
+                    <div class="product-much-cont">
+                      <div class="flags-wrap">
+                        <div class="flag-item discount"> <span>-15%</span></div>
+                        <div class="flag-item hit"> <span>Hit</span></div>
+                      </div>
+                      <div class="cards-slider-nav product-nav"></div>
+                      <!--Если картинка одна, просто пихай ее в .product-much-slider -->
+                      <div class="product-much-slider js-white" data-target=".modal-product">
+                        <div class="product-slider-item" data-big="img/cards/1.png"><img src="img/cards/1.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/2.png"><img src="img/cards/2.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/3.png"><img src="img/cards/3.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/4.png"><img src="img/cards/4.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/5.png"><img src="img/cards/5.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/6.png"><img src="img/cards/1.png" alt="velasaped"></div>
+                        <div class="product-slider-item" data-big="img/cards/7.png"><img src="img/cards/2.png" alt="velasaped"></div>
+                      </div>
+                      <div class="product-add-slider">
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/1.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/2.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/3.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/4.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/5.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/1.png)"></div>
+                        </div>
+                        <div class="product-add-item">
+                          <div class="product-add-img" style="background-image:url(../img/cards/2.png)"></div>
+                        </div>
+                      </div>
+                      <button class="btn t-blue js-scroll" data-target="#buy">Купить</button>
                     </div>
-                    <div class="cards-slider-nav product-nav"></div>
-                    <!--Если картинка одна, просто пихай ее в .product-much-slider -->
-                    <div class="product-much-slider js-white" data-target=".modal-product">
-                      <div class="product-slider-item" data-big="img/cards/1.png"><img src="img/cards/1.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/2.png"><img src="img/cards/2.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/3.png"><img src="img/cards/3.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/4.png"><img src="img/cards/4.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/5.png"><img src="img/cards/5.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/6.png"><img src="img/cards/1.png" alt="velasaped"></div>
-                      <div class="product-slider-item" data-big="img/cards/7.png"><img src="img/cards/2.png" alt="velasaped"></div>
+                  </div>
+                  <script>
+                    function ProductSlider(){
+                      setTimeout(function(){
+                        $('.product-much-slider').slick({
+                          arrows: true,
+                          slidesToShow: 1,
+                          asNavFor: $('.product-add-slider'),
+                          infinite: false,
+                          focusOnSelect: true,
+                          appendArrows: $('.product-nav'),
+                          nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+                          prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+                            responsive: [
+                            {
+                              breakpoint: 800,
+                              settings: {
+                                dots: true,
+                              }
+                            }
+                          ]
+                        });
+                        $('.product-add-slider').slick({
+                          asNavFor: $('.product-much-slider'),
+                          slidesToShow: 4,
+                          slidesToScroll: 1,
+                          infinite: false,
+                          draggable: false,
+                          arrows:false,
+                          focusOnSelect: true,
+                          responsive: [
+                            {
+                              breakpoint: 1150,
+                              settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 1,
+                              }
+                            }
+                          ]
+                        });
+                      }, 10);
+                    }ProductSlider();
+                  </script>
+                  <div class="product-main-wrap">
+                    <div class="product-main-descr">
+                      <h2 class="u-intro h1">Металлочерепица Монтерей</h2>
+                      <div class="u-text lt">Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), <br>шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет</div>
+                      <button class="link-dotted bold js-scroll" data-target="#tabs">Все характеристики</button>
                     </div>
-                    <div class="product-add-slider">
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/1.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/2.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/3.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/4.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/5.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/1.png)"></div>
-                      </div>
-                      <div class="product-add-item">
-                        <div class="product-add-img" style="background-image:url(../img/cards/2.png)"></div>
+                    <div class="product-main-descr">
+                      <h3 class="u-intro h3" id="buy">Конфигурация</h3>
+                      <form class="product-main-form" action="">
+                        <div class="product-main-selects">
+                          <!--.disabled для выключенных-->
+                          <div class="select-check js-select-custom">
+                            <button class="selects" data-placeholder="Выберите покрытие" data-valuename="Покрытие"><span class="btn-text">Выберите покрытие</span><i class="select-img"></i></button>
+                            <div class="dropdown-target">
+                              <div class="dropdown-inner">
+                                <div class="dropdown-content">
+                                  <div class="u-graytext">Выберите параметры</div>
+                                </div>
+                                                      <div class="select-u-body select-list">
+                                                        <label class="option">
+                                                          <input type="radio" name="group1" value="Полиэстр"><span>Полиэстр</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group1" value="Матовый полиэстр"><span>Матовый полиэстр</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group1" value="Printech (имитация под дерево)"><span>Printech (имитация под дерево)</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group1" value="Пурал"><span>Пурал</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group1" value="Матовый пурал"><span>Матовый пурал</span>
+                                                        </label>
+                                                      </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="select-check js-select-custom">
+                            <button class="selects" data-placeholder="Прогиб" data-valuename="Прогиб"><span class="btn-text">Прогиб</span><i class="select-img"></i></button>
+                            <div class="dropdown-target">
+                              <div class="dropdown-inner">
+                                <div class="dropdown-content">
+                                  <div class="u-graytext">Выберите прогиб</div>
+                                </div>
+                                                      <div class="select-u-body select-list">
+                                                        <label class="option">
+                                                          <input type="radio" name="group2" value="Полиэстр2"><span>Полиэстр2</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group2" value="Матовый полиэстр2"><span>Матовый полиэстр2</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group2" value="Printech2"><span>Printech2</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group2" value="Пурал2"><span>Пурал2</span>
+                                                        </label>
+                                                        <label class="option">
+                                                          <input type="radio" name="group2" value="Матовый пурал2"><span>Матовый пурал2</span>
+                                                        </label>
+                                                      </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="select-check js-select-custom">
+                            <button class="selects" data-placeholder="Цвет" data-valuename="Цвет"><span class="btn-text">Цвет</span><i class="select-img"></i></button>
+                            <div class="dropdown-target">
+                              <div class="dropdown-inner">
+                                <div class="dropdown-content">
+                                  <div class="u-graytext">Выберите параметры</div>
+                                  <div class="select-u-body select-list color-select-wrapper">
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1014"><span class="color-block" style="background-color: #fff4ce"></span><span class="text-block">RAL 1014</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1015"><span class="color-block" style="background-color: #e5cc77"></span><span class="text-block">RAL 1015</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1016"><span class="color-block" style="background-color: #8f7415"></span><span class="text-block">RAL 1016</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1017"><span class="color-block" style="background-color: #d06f20"></span><span class="text-block">RAL 1017</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1018"><span class="color-block" style="background-color: #c2ea74"></span><span class="text-block">RAL 1018</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1019"><span class="color-block" style="background-color: #78ad12"></span><span class="text-block">RAL 1019</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1020"><span class="color-block" style="background-color: #24ad12"></span><span class="text-block">RAL 1020</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1021"><span class="color-block" style="background-color: #115908"></span><span class="text-block">RAL 1021</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1022"><span class="color-block" style="background-color: #cee4ff"></span><span class="text-block">RAL 1022</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1023"><span class="color-block" style="background-color: #1f61b2"></span><span class="text-block">RAL 1023</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1024"><span class="color-block" style="background-color: #144887"></span><span class="text-block">RAL 1024</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                                                        <label class="option color-option">
+                                                                          <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
+                                                                        </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="select-check submit-check">
+                            <div class="number-cont">
+                              <div class="number-wrap">
+                                <div class="number js-number" data-max-number="10" data-type="м²" data-step="0.5">
+                                  <button class="number__minus js-minus-number" type="button" tabindex="0"></button>
+                                  <div class="number__input">
+                                    <div class="fake-bg">
+                                      <div class="fake-bg-text"> </div>
+                                      <div class="fake-bg-currency"></div>
+                                    </div>
+                                    <input class="number__input js-price-input" type="text" value="1" tabindex="0">
+                                  </div>
+                                  <button class="number__plus js-plus-number" type="button" tabindex="0"></button>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- тут бывает сбивается инит слайда, сбивается число слайдов, что мы делали. и не выравнивается высота контейнеров слайдер, полный набор крч-->
+                            <button class="btn t-blue js-modal-trigger" type="button" onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();" data-target=".modal-incart">В корзину</button>
+                          </div>
+                        </div>
+                        <div class="product-main-calcwrap">
+                          <!--.load для загрузки-->
+                          <div class="calc-container load">
+                            <div class="calc-load">
+                              <svg class="uil-ring-alt" width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="xMidYMid">
+                                <rect class="bk" x="0" y="0" width="100" height="100" fill="none"></rect>
+                                <circle cx="50" cy="50" r="40" stroke="#ffffff" fill="none" stroke-width="6" stroke-linecap="round"></circle>
+                                <circle class="load-stroke" cx="50" cy="50" r="40" stroke="#999999" fill="none" stroke-width="10" stroke-linecap="round"></circle>
+                              </svg>
+                            </div>
+                            <div class="calc-pricewrap">
+                              <div class="product-card-price">
+                                 107.50 р.                    <span class="u-graytext old">1000р.</span></div>
+                            </div>
+                            <div class="calc-text u-graytext">Срок исполнения заказа<br><span>7 </span>дней</div>
+                            <div class="calc-button"> 
+                              <button class="calc t-w js-modal-trigger" onclick="modals($(this))" data-target=".modal-roofs">Расчёт металлочерепицы</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="product-main-descr">
+                      <div class="features">
+                                                <div class="features_block">
+                                                  <div class="features--img"><img src="img/features/icon_1.svg" alt=""></div>
+                                                  <p class="u-text">Доставка на собственном автопарке в любой регион Беларуси или самовывоз со склада.</p>
+                                                </div>
+                                                <div class="features_block">
+                                                  <div class="features--img"><img src="img/features/icon_2.svg" alt=""></div>
+                                                  <p class="u-text">Оперативная доставка по всей территории Республики Беларусь</p>
+                                                </div>
                       </div>
                     </div>
-                    <button class="btn t-blue js-scroll" data-target="#buy">Купить</button>
                   </div>
                 </div>
+                <div class="product-tabs-content b-bottom">
+                  <!-- id для  скролла к элементу-->
+                  <div class="tabs js-tabs-wrap" id="tabs">
+                    <div class="tabs-head w4">
+                      <div class="tabs-item js-tab-trigger"><span>Описание</span></div>
+                      <div class="tabs-item js-tab-trigger"><span>Cертификаты</span></div>
+                      <div class="tabs-item js-tab-trigger"><span>Монтаж</span></div>
+                      <!-- для одинаковой высоты карточек-->
+                      <div class="tabs-item js-tab-trigger" onclick="$(&quot;.tabs-cont&quot;).find(&quot;.product-card-inner&quot;).matchHeight();"><span>Комплектующие</span></div>
+                    </div>
+                    <div class="tabs-body">
+                      <div class="tabs-cont">
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Классика среди раз- личных видов металло- черепиц</div>
+                          </div>
+                          <div class="side-cont">
+                            <div class="u-black">Металлочерепица Монтеррей — листовой материал, имитирующий  черепичное покрытие классического образца, не уступающий натуральной кровле по показателям прочности и надежности в эксплуатации. </div>
+                            <p>Потребителю предоставляется возможность выбрать подходящий  цвет из более чем 40 различных  оттенков, что обеспечивает реализацию любых дизайнерских решений. Именно поэтому металло- черепицу Монтеррей покупают не только для строительства, но и для реконструкции исторических зданий. Долговечность  материала  определяется высоким качеством стали, используемой для производства листовых  заготовок.</p>
+                            <p>Лист металлочерепицы имеет многослойную структуру, при этом сталь покрыта защитным слоем с двух сторон (верхняя и нижняя часть листа). Цинковый или алюмоцинковый состав предохраняет металл от коррозийных процессов, лак  и полимерная краска — повышают устойчивость материала к погодным факторам, а также  предотвращают выцветание черепицы от ультрафиолетовых лучей.</p>
+                            <div class="specials-wrapper">
+                                                            <div class="specials-item">
+                                                              <div class="specials-name u-intro h3">Механическая стойкость</div>
+                                                              <p class="specials-text">Полимерное покрытие гаран- тирует стойкость к механическим повреждениям и большинству атмосферных влияний.</p>
+                                                            </div>
+                                                            <div class="specials-item">
+                                                              <div class="specials-name u-intro h3">Стойкость к УФ-излучению</div>
+                                                              <p class="specials-text">Хорошая сопротивляемость металла и грунтовки солнечным лучам.</p>
+                                                            </div>
+                                                            <div class="specials-item">
+                                                              <div class="specials-name u-intro h3">Удельный вес</div>
+                                                              <p class="specials-text">Профиль металлочерепицы может быть разным по габа- ритам, но средний вес соста- вляет всего 5 кг на 1 м².</p>
+                                                            </div>
+                                                            <div class="specials-item">
+                                                              <div class="specials-name u-intro h3">Ассортимент</div>
+                                                              <p class="specials-text">Предлагаем большой выбор профилей и расцветок, этот универсальный материал поможет воплотить в жизнь любые дизайнерские задумки.</p>
+                                                            </div>
+                                                            <div class="specials-item">
+                                                              <div class="specials-name u-intro h3">Экология</div>
+                                                              <p class="specials-text">Совершенно безопасно как для людей, так и для окружающей среды.</p>
+                                                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Технические Характеристики</div>
+                          </div>
+                          <div class="side-cont">
+                            <div class="char-table">
+                              <dl class="char-head">
+                                <dt class="char-name">Свойства</dt>
+                                <dd class="char-descr">Параметры</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Ширина листа габаритная</dt>
+                                <dd class="char-descr">1 180 мм </dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Ширина листа рабочая</dt>
+                                <dd class="char-descr">1 200 мм</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Высота профиля</dt>
+                                <dd class="char-descr">39 мм (39=25+14)</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Высота волны</dt>
+                                <dd class="char-descr">350 мм</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Шаг волны</dt>
+                                <dd class="char-descr">21 мм </dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Высота ступеньки</dt>
+                                <dd class="char-descr">21 мм </dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Толщина металла</dt>
+                                <dd class="char-descr">0,4-0,5 мм</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Область применения</dt>
+                                <dd class="char-descr">кровля</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Срок службы</dt>
+                                <dd class="char-descr">50 лет </dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Гарантия</dt>
+                                <dd class="char-descr">20 лет</dd>
+                              </dl>
+                              <dl>
+                                <dt class="char-name">Наличие обратной стороны в цвет лицевого покрытия</dt>
+                                <dd class="char-descr"><i class="yes"> </i></dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Цветовая гамма по каталогу RAL</div>
+                          </div>
+                          <div class="side-cont">
+                            <div class="colors-wrapper">
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #ffea98"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                                                            <div class="colors-item">
+                                                              <div class="colors-color" style="background-color: #25458d"></div>
+                                                              <div class="u-graytext"> 3005</div>
+                                                            </div>
+                            </div>
+                            <button class="link-dotted bold js-colors">Показать все цвета</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabs-cont">
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Документация </div>
+                          </div>
+                          <div class="side-cont"><a class="tab-material" href="#" style="background-image:url(img/doc/zip.svg)">Сертификат о партнерстве металлопроизводства</a><a class="tab-material" href="#" style="background-image:url(img/doc/word.svg)">Сертификат о партнерстве металлопроизводства и металлопроката</a><a class="tab-material" href="#" style="background-image:url(img/doc/pdf.svg)">Сертификат о партнерстве металлопроизводства</a></div>
+                        </div>
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Сертификаты</div>
+                          </div>
+                          <div class="side-cont">
+                            <div class="sertivicat-wrap js-white" data-target=".modal-sertificat">
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия техническим требованиям</p>
+                                                            </div>
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия техническим требованиям безопасности</p>
+                                                            </div>
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия государственных норма- тивных актов</p>
+                                                            </div>
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия техническим требованиям</p>
+                                                            </div>
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия техническим требованиям</p>
+                                                            </div>
+                                                            <div class="sertivicat-item">
+                                                              <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
+                                                              <p>Сертификат соответствия техническим требованиям</p>
+                                                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabs-cont">
+                        <div class="side-wrap">
+                          <div class="side-title">
+                            <div class="u-intro h2">Монтаж металлоче- репицы</div>
+                          </div>
+                          <div class="side-cont">
+                            <div class="u-black">Укладывать  листы металлочерепицы можно и слева направо, и в обратном направлении. Вначале закрепляется первый лист, причем расстояние от выступа до карниза крыши должно составлять 50-55 мм (фиксация листа осуществляется в верхней части, при помощи одного самореза).</div>
+                            <p>Следующие листы соединяются между собой винтами (величина нахлеста — 150 мм).Сформированный из двух-трех листов блок, выравнивается по карнизу и уровню  торцевых досок, после чего осуществля- ется его прочное закрепление  на обрешетке, которое обеспечивается шурупами, оснащенными резиновыми уплотнительными шайбами.</p>
+                            <p>Саморезы ввинчиваются в  участки максимального прогиба гребня  (на 1 квадратный метр приходится  до 8 винтов). При укладке металлочерепицы Монтеррей необходимо освобождать листы от  защитной пленки. Обрезка листов осуществляется при помощи  ножовки. Участки срезов покрываются защитной краской.</p>
+                            <div class="video">
+                              <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/jZ46cL4_QeQ" frameborder="0" allowfullscreen=""></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tabs-cont">
+                        <div class="products-inner">
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item discount"> <span>-15%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                          <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-55%</span></div>
+                                                          <div class="flag-item new"><span>New</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                          <div class="categories-elem-name">Планка3 торцовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item new"><span>New</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-25%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-25%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item discount"> <span>-15%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                          <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-55%</span></div>
+                                                          <div class="flag-item new"><span>New</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                          <div class="categories-elem-name">Планка2 торцовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item new"><span>New</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-25%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item hit"> <span>Hit</span></div>
+                                                          <div class="flag-item discount"> <span>-25%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="product-card-wrapper">
+                                                      <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                          <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                          <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
+                                                          <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                        <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                        <div class="flags-wrap">
+                                                          <div class="flag-item discount"> <span>-15%</span></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <section class="slider-section">
+                  <h2 class="u-intro h2">Рекомендуемые товары </h2>
+                  <div class="tabs-cont">         
+                    <div class="slider-section-inner">
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item discount"> <span>-15%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                  <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
+                                                  <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-55%</span></div>
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                  <div class="categories-elem-name">Планка3 торцовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
+                                                  <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
+                                                  <div class="categories-elem-name">Саморез 3сверлоконеч- ный РОКС FBD</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">4,8х60 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">4,8х60 мм </span></span></div>
+                                                  <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
+                                                  <div class="categories-elem-name">Саморез сверлоконеч- ный РОКС FBD</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">4,8х60  ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">4,8х60  </span></span></div>
+                                                  <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                    <div class="cards-slider-nav">
+                      <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                    </div>
+                  </div>
+                </section>
                 <script>
-                  function ProductSlider(){
-                    setTimeout(function(){
-                      $('.product-much-slider').slick({
+                  function cards(){
+                    $( ".slider-section-inner").each( function() {
+                      var _this = $(this);
+                  
+                      slidesCount(_this);
+                  
+                      _this.slick({
+                        accessibility: true,
                         arrows: true,
-                        slidesToShow: 1,
-                        asNavFor: $('.product-add-slider'),
+                        draggable: true,
+                        touchMove: false,
                         infinite: false,
-                        focusOnSelect: true,
-                        appendArrows: $('.product-nav'),
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        appendArrows: _this.siblings('.cards-slider-nav'),
                         nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
                         prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
-                          responsive: [
+                        responsive: [
+                          {
+                            breakpoint: 1280,
+                            settings: {
+                              slidesToShow: 4,
+                              slidesToScroll: 4
+                            }
+                          },
+                          {
+                            breakpoint: 1100,
+                            settings: {
+                              slidesToShow: 3,
+                              slidesToScroll: 3
+                            }
+                          },
+                          {
+                            breakpoint: 991,
+                            settings: {
+                              slidesToShow: 4,
+                              slidesToScroll: 4
+                            }
+                          },
                           {
                             breakpoint: 800,
                             settings: {
-                              dots: true,
-                            }
-                          }
-                        ]
-                      });
-                      $('.product-add-slider').slick({
-                        asNavFor: $('.product-much-slider'),
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        infinite: false,
-                        draggable: false,
-                        arrows:false,
-                        focusOnSelect: true,
-                        responsive: [
-                          {
-                            breakpoint: 1150,
-                            settings: {
                               slidesToShow: 3,
-                              slidesToScroll: 1,
+                              slidesToScroll: 3
+                            }
+                          },
+                          {
+                            breakpoint: 600,
+                            settings: {
+                              slidesToShow: 2,
+                              slidesToScroll: 2
                             }
                           }
-                        ]
-                      });
-                    }, 10);
-                  }ProductSlider();
+                          ]
+                      }); 
+                    });
+                  
+                  } cards();
                 </script>
-                <div class="product-main-wrap">
-                  <div class="product-main-descr">
-                    <h2 class="u-intro h1">Металлочерепица Монтерей</h2>
-                    <div class="u-text lt">Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), <br>шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет</div>
-                    <button class="link-dotted bold js-scroll" data-target="#tabs">Все характеристики</button>
-                  </div>
-                  <div class="product-main-descr">
-                    <h3 class="u-intro h3" id="buy">Конфигурация</h3>
-                    <form class="product-main-form" action="">
-                      <div class="product-main-selects">
-                        <!--.disabled для выключенных-->
-                        <div class="select-check js-select-custom">
-                          <button class="selects" data-placeholder="Выберите покрытие" data-valuename="Покрытие"><span class="btn-text">Выберите покрытие</span><i class="select-img"></i></button>
-                          <div class="dropdown-target">
-                            <div class="dropdown-inner">
-                              <div class="dropdown-content">
-                                <div class="u-graytext">Выберите параметры</div>
-                              </div>
-                                                  <div class="select-u-body select-list">
-                                                    <label class="option">
-                                                      <input type="radio" name="group1" value="Полиэстр"><span>Полиэстр</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group1" value="Матовый полиэстр"><span>Матовый полиэстр</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group1" value="Printech (имитация под дерево)"><span>Printech (имитация под дерево)</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group1" value="Пурал"><span>Пурал</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group1" value="Матовый пурал"><span>Матовый пурал</span>
-                                                    </label>
-                                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="select-check js-select-custom">
-                          <button class="selects" data-placeholder="Прогиб" data-valuename="Прогиб"><span class="btn-text">Прогиб</span><i class="select-img"></i></button>
-                          <div class="dropdown-target">
-                            <div class="dropdown-inner">
-                              <div class="dropdown-content">
-                                <div class="u-graytext">Выберите прогиб</div>
-                              </div>
-                                                  <div class="select-u-body select-list">
-                                                    <label class="option">
-                                                      <input type="radio" name="group2" value="Полиэстр2"><span>Полиэстр2</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group2" value="Матовый полиэстр2"><span>Матовый полиэстр2</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group2" value="Printech2"><span>Printech2</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group2" value="Пурал2"><span>Пурал2</span>
-                                                    </label>
-                                                    <label class="option">
-                                                      <input type="radio" name="group2" value="Матовый пурал2"><span>Матовый пурал2</span>
-                                                    </label>
-                                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="select-check js-select-custom">
-                          <button class="selects" data-placeholder="Цвет" data-valuename="Цвет"><span class="btn-text">Цвет</span><i class="select-img"></i></button>
-                          <div class="dropdown-target">
-                            <div class="dropdown-inner">
-                              <div class="dropdown-content">
-                                <div class="u-graytext">Выберите параметры</div>
-                                <div class="select-u-body select-list color-select-wrapper">
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1014"><span class="color-block" style="background-color: #fff4ce"></span><span class="text-block">RAL 1014</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1015"><span class="color-block" style="background-color: #e5cc77"></span><span class="text-block">RAL 1015</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1016"><span class="color-block" style="background-color: #8f7415"></span><span class="text-block">RAL 1016</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1017"><span class="color-block" style="background-color: #d06f20"></span><span class="text-block">RAL 1017</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1018"><span class="color-block" style="background-color: #c2ea74"></span><span class="text-block">RAL 1018</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1019"><span class="color-block" style="background-color: #78ad12"></span><span class="text-block">RAL 1019</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1020"><span class="color-block" style="background-color: #24ad12"></span><span class="text-block">RAL 1020</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1021"><span class="color-block" style="background-color: #115908"></span><span class="text-block">RAL 1021</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1022"><span class="color-block" style="background-color: #cee4ff"></span><span class="text-block">RAL 1022</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1023"><span class="color-block" style="background-color: #1f61b2"></span><span class="text-block">RAL 1023</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1024"><span class="color-block" style="background-color: #144887"></span><span class="text-block">RAL 1024</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                                                    <label class="option color-option">
-                                                                      <input type="radio" name="color" value="RAL 1025"><span class="color-block" style="background-color: #731179"></span><span class="text-block">RAL 1025</span>
-                                                                    </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="select-check submit-check">
-                          <div class="number-cont">
-                            <div class="number-wrap">
-                              <div class="number js-number" data-max-number="10" data-type="м²" data-step="0.5">
-                                <button class="number__minus js-minus-number" type="button" tabindex="0"></button>
-                                <div class="number__input">
-                                  <div class="fake-bg">
-                                    <div class="fake-bg-text"> </div>
-                                    <div class="fake-bg-currency"></div>
-                                  </div>
-                                  <input class="number__input js-price-input" type="text" value="1" tabindex="0">
-                                </div>
-                                <button class="number__plus js-plus-number" type="button" tabindex="0"></button>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- тут бывает сбивается инит слайда, сбивается число слайдов, что мы делали. и не выравнивается высота контейнеров слайдер, полный набор крч-->
-                          <button class="btn t-blue js-modal-trigger" type="button" onclick="modals($(this)); incartSlider(); $('.modal-incart').find('.product-card-inner').matchHeight();" data-target=".modal-incart">В корзину</button>
-                        </div>
-                      </div>
-                      <div class="product-main-calcwrap">
-                        <!--.load для загрузки-->
-                        <div class="calc-container load">
-                          <div class="calc-load">
-                            <svg class="uil-ring-alt" width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" preserveaspectratio="xMidYMid">
-                              <rect class="bk" x="0" y="0" width="100" height="100" fill="none"></rect>
-                              <circle cx="50" cy="50" r="40" stroke="#ffffff" fill="none" stroke-width="6" stroke-linecap="round"></circle>
-                              <circle class="load-stroke" cx="50" cy="50" r="40" stroke="#999999" fill="none" stroke-width="10" stroke-linecap="round"></circle>
-                            </svg>
-                          </div>
-                          <div class="calc-pricewrap">
-                            <div class="product-card-price">
-                               107.50 р.                    <span class="u-graytext old">1000р.</span></div>
-                          </div>
-                          <div class="calc-text u-graytext">Срок исполнения заказа<br><span>7 </span>дней</div>
-                          <div class="calc-button"> 
-                            <button class="calc t-w js-modal-trigger" onclick="modals($(this))" data-target=".modal-roofs">Расчёт металлочерепицы</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="product-main-descr">
-                    <div class="features">
-                                            <div class="features_block">
-                                              <div class="features--img"><img src="img/features/icon_1.svg" alt=""></div>
-                                              <p class="u-text">Доставка на собственном автопарке в любой регион Беларуси или самовывоз со склада.</p>
-                                            </div>
-                                            <div class="features_block">
-                                              <div class="features--img"><img src="img/features/icon_2.svg" alt=""></div>
-                                              <p class="u-text">Оперативная доставка по всей территории Республики Беларусь</p>
-                                            </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div class="product-tabs-content b-bottom">
-                <!-- id для  скролла к элементу-->
-                <div class="tabs js-tabs-wrap" id="tabs">
-                  <div class="tabs-head w4">
-                    <div class="tabs-item js-tab-trigger"><span>Описание</span></div>
-                    <div class="tabs-item js-tab-trigger"><span>Cертификаты</span></div>
-                    <div class="tabs-item js-tab-trigger"><span>Монтаж</span></div>
-                    <!-- для одинаковой высоты карточек-->
-                    <div class="tabs-item js-tab-trigger" onclick="$(&quot;.tabs-cont&quot;).find(&quot;.product-card-inner&quot;).matchHeight();"><span>Комплектующие</span></div>
-                  </div>
-                  <div class="tabs-body">
-                    <div class="tabs-cont">
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Классика среди раз- личных видов металло- черепиц</div>
-                        </div>
-                        <div class="side-cont">
-                          <div class="u-black">Металлочерепица Монтеррей — листовой материал, имитирующий  черепичное покрытие классического образца, не уступающий натуральной кровле по показателям прочности и надежности в эксплуатации. </div>
-                          <p>Потребителю предоставляется возможность выбрать подходящий  цвет из более чем 40 различных  оттенков, что обеспечивает реализацию любых дизайнерских решений. Именно поэтому металло- черепицу Монтеррей покупают не только для строительства, но и для реконструкции исторических зданий. Долговечность  материала  определяется высоким качеством стали, используемой для производства листовых  заготовок.</p>
-                          <p>Лист металлочерепицы имеет многослойную структуру, при этом сталь покрыта защитным слоем с двух сторон (верхняя и нижняя часть листа). Цинковый или алюмоцинковый состав предохраняет металл от коррозийных процессов, лак  и полимерная краска — повышают устойчивость материала к погодным факторам, а также  предотвращают выцветание черепицы от ультрафиолетовых лучей.</p>
-                          <div class="specials-wrapper">
-                                                        <div class="specials-item">
-                                                          <div class="specials-name u-intro h3">Механическая стойкость</div>
-                                                          <p class="specials-text">Полимерное покрытие гаран- тирует стойкость к механическим повреждениям и большинству атмосферных влияний.</p>
-                                                        </div>
-                                                        <div class="specials-item">
-                                                          <div class="specials-name u-intro h3">Стойкость к УФ-излучению</div>
-                                                          <p class="specials-text">Хорошая сопротивляемость металла и грунтовки солнечным лучам.</p>
-                                                        </div>
-                                                        <div class="specials-item">
-                                                          <div class="specials-name u-intro h3">Удельный вес</div>
-                                                          <p class="specials-text">Профиль металлочерепицы может быть разным по габа- ритам, но средний вес соста- вляет всего 5 кг на 1 м².</p>
-                                                        </div>
-                                                        <div class="specials-item">
-                                                          <div class="specials-name u-intro h3">Ассортимент</div>
-                                                          <p class="specials-text">Предлагаем большой выбор профилей и расцветок, этот универсальный материал поможет воплотить в жизнь любые дизайнерские задумки.</p>
-                                                        </div>
-                                                        <div class="specials-item">
-                                                          <div class="specials-name u-intro h3">Экология</div>
-                                                          <p class="specials-text">Совершенно безопасно как для людей, так и для окружающей среды.</p>
-                                                        </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Технические Характеристики</div>
-                        </div>
-                        <div class="side-cont">
-                          <div class="char-table">
-                            <dl class="char-head">
-                              <dt class="char-name">Свойства</dt>
-                              <dd class="char-descr">Параметры</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Ширина листа габаритная</dt>
-                              <dd class="char-descr">1 180 мм </dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Ширина листа рабочая</dt>
-                              <dd class="char-descr">1 200 мм</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Высота профиля</dt>
-                              <dd class="char-descr">39 мм (39=25+14)</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Высота волны</dt>
-                              <dd class="char-descr">350 мм</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Шаг волны</dt>
-                              <dd class="char-descr">21 мм </dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Высота ступеньки</dt>
-                              <dd class="char-descr">21 мм </dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Толщина металла</dt>
-                              <dd class="char-descr">0,4-0,5 мм</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Область применения</dt>
-                              <dd class="char-descr">кровля</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Срок службы</dt>
-                              <dd class="char-descr">50 лет </dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Гарантия</dt>
-                              <dd class="char-descr">20 лет</dd>
-                            </dl>
-                            <dl>
-                              <dt class="char-name">Наличие обратной стороны в цвет лицевого покрытия</dt>
-                              <dd class="char-descr"><i class="yes"> </i></dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Цветовая гамма по каталогу RAL</div>
-                        </div>
-                        <div class="side-cont">
-                          <div class="colors-wrapper">
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #ffea98"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                                                        <div class="colors-item">
-                                                          <div class="colors-color" style="background-color: #25458d"></div>
-                                                          <div class="u-graytext"> 3005</div>
-                                                        </div>
-                          </div>
-                          <button class="link-dotted bold js-colors">Показать все цвета</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tabs-cont">
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Документация </div>
-                        </div>
-                        <div class="side-cont"><a class="tab-material" href="#" style="background-image:url(img/doc/zip.svg)">Сертификат о партнерстве металлопроизводства</a><a class="tab-material" href="#" style="background-image:url(img/doc/word.svg)">Сертификат о партнерстве металлопроизводства и металлопроката</a><a class="tab-material" href="#" style="background-image:url(img/doc/pdf.svg)">Сертификат о партнерстве металлопроизводства</a></div>
-                      </div>
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Сертификаты</div>
-                        </div>
-                        <div class="side-cont">
-                          <div class="sertivicat-wrap js-white" data-target=".modal-sertificat">
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия техническим требованиям</p>
-                                                        </div>
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия техническим требованиям безопасности</p>
-                                                        </div>
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия государственных норма- тивных актов</p>
-                                                        </div>
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия техническим требованиям</p>
-                                                        </div>
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия техническим требованиям</p>
-                                                        </div>
-                                                        <div class="sertivicat-item">
-                                                          <div class="sertivicat-img product-slider-item product-add-item" data-big="img/cards/1.png"><img src="img/sertif.jpg" alt=""></div>
-                                                          <p>Сертификат соответствия техническим требованиям</p>
-                                                        </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tabs-cont">
-                      <div class="side-wrap">
-                        <div class="side-title">
-                          <div class="u-intro h2">Монтаж металлоче- репицы</div>
-                        </div>
-                        <div class="side-cont">
-                          <div class="u-black">Укладывать  листы металлочерепицы можно и слева направо, и в обратном направлении. Вначале закрепляется первый лист, причем расстояние от выступа до карниза крыши должно составлять 50-55 мм (фиксация листа осуществляется в верхней части, при помощи одного самореза).</div>
-                          <p>Следующие листы соединяются между собой винтами (величина нахлеста — 150 мм).Сформированный из двух-трех листов блок, выравнивается по карнизу и уровню  торцевых досок, после чего осуществля- ется его прочное закрепление  на обрешетке, которое обеспечивается шурупами, оснащенными резиновыми уплотнительными шайбами.</p>
-                          <p>Саморезы ввинчиваются в  участки максимального прогиба гребня  (на 1 квадратный метр приходится  до 8 винтов). При укладке металлочерепицы Монтеррей необходимо освобождать листы от  защитной пленки. Обрезка листов осуществляется при помощи  ножовки. Участки срезов покрываются защитной краской.</p>
-                          <div class="video">
-                            <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/jZ46cL4_QeQ" frameborder="0" allowfullscreen=""></iframe>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tabs-cont">
-                      <div class="products-inner">
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item discount"> <span>-15%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                                      <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-55%</span></div>
-                                                      <div class="flag-item new"><span>New</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                                      <div class="categories-elem-name">Планка3 торцовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item new"><span>New</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-25%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-25%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item discount"> <span>-15%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                                      <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-55%</span></div>
-                                                      <div class="flag-item new"><span>New</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                                      <div class="categories-elem-name">Планка2 торцовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item new"><span>New</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-25%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item hit"> <span>Hit</span></div>
-                                                      <div class="flag-item discount"> <span>-25%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                <div class="product-card-wrapper">
-                                                  <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                                      <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                                      <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
-                                                      <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                                    <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                                    <div class="flags-wrap">
-                                                      <div class="flag-item discount"> <span>-15%</span></div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <section class="slider-section">
-                <h2 class="u-intro h2">Рекомендуемые товары </h2>
-                <div class="tabs-cont">         
-                  <div class="slider-section-inner">
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item discount"> <span>-15%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                              <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
-                                              <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-55%</span></div>
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                              <div class="categories-elem-name">Планка3 торцовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
-                                              <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
-                                              <div class="categories-elem-name">Саморез 3сверлоконеч- ный РОКС FBD</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">4,8х60 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">4,8х60 мм </span></span></div>
-                                              <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/5.png" alt=""></div>
-                                              <div class="categories-elem-name">Саморез сверлоконеч- ный РОКС FBD</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">4,8х60  ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">4,8х60  </span></span></div>
-                                              <div class="product-card-price"> 1.40р. / шт<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                            </div>
-                                          </div>
-                                        </div>
-                  </div>
-                  <div class="cards-slider-nav">
-                    <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
-                  </div>
-                </div>
-              </section>
-              <script>
-                function cards(){
-                  $( ".slider-section-inner").each( function() {
-                    var _this = $(this);
-                
-                    slidesCount(_this);
-                
-                    _this.slick({
-                      accessibility: true,
-                      arrows: true,
-                      draggable: true,
-                      touchMove: false,
-                      infinite: false,
-                      slidesToShow: 5,
-                      slidesToScroll: 5,
-                      appendArrows: _this.siblings('.cards-slider-nav'),
-                      nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
-                      prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
-                      responsive: [
-                        {
-                          breakpoint: 1280,
-                          settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 4
-                          }
-                        },
-                        {
-                          breakpoint: 1100,
-                          settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3
-                          }
-                        },
-                        {
-                          breakpoint: 991,
-                          settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 4
-                          }
-                        },
-                        {
-                          breakpoint: 800,
-                          settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3
-                          }
-                        },
-                        {
-                          breakpoint: 600,
-                          settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                          }
-                        }
-                        ]
-                    }); 
-                  });
-                
-                } cards();
-              </script>
               <footer class="footer">
                 <div class="footer_contacts-wrap">
                   <div class="footer_contacts-block">

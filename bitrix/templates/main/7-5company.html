@@ -347,176 +347,178 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Вакансии</a></div>
-                <h1 class="u-intro h1">Вакансии</h1>
-              </section>
-              <section class="filter-section b-bottom">
-                <div class="filter-container acc-filter">
-                  <div class="mobile-dropdowm-trigger"><span class="u-bold">Открыть меню</span><i class="arrow-icon"></i></div>
-                  <div class="filter-form">
-                    <div class="filter-form-inner"> 
-                                            <div class="acc-menu-item"><a href="#">О компании</a></div>
-                                            <div class="acc-menu-item"><a href="#">Новости и акции</a></div>
-                                            <div class="acc-menu-item active"><a href="#">Вакансии</a></div>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Вакансии</a></div>
+                  <h1 class="u-intro h1">Вакансии</h1>
+                </section>
+                <section class="filter-section b-bottom">
+                  <div class="filter-container acc-filter">
+                    <div class="mobile-dropdowm-trigger"><span class="u-bold">Открыть меню</span><i class="arrow-icon"></i></div>
+                    <div class="filter-form">
+                      <div class="filter-form-inner"> 
+                                                <div class="acc-menu-item"><a href="#">О компании</a></div>
+                                                <div class="acc-menu-item"><a href="#">Новости и акции</a></div>
+                                                <div class="acc-menu-item active"><a href="#">Вакансии</a></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
-              <section class="content-section">
-                <div class="side-wrap">
-                  <div class="side-title">
-                    <div class="u-intro h2">Открытые вакансии в нашей компании</div>
-                  </div>
-                  <div class="side-cont">
-                    <div class="u-black">Станьте частью первоклассной команды</div>
-                    <p>Если вы амбициозный, целеустремленный и ответственный специалист, то рады будем видеть вас среди нашей профессиональной команды. В нашей компании есть куда расти и развиваться, в чём мы очень заинтересованы и предлагаем отличные уловия профессионального, материального и карьерного роста.</p>
-                    <div class="vacancy-wrapper offerlist-section">
-                                            <div class="vacancy-head js-accordion-trigger">
-                                              <div class="vacancy-head-inner table-item">
-                                                <div class="u-intro h3">Менеджер по продажам
-                                                  <time class="u-graytext">18 июля, 2016</time>
-                                                </div>
-                                                <div class="table-arr"> <i class="select-img"></i></div>
-                                              </div>
-                                              <div class="vacancy-body js-accordion-body">
-                                                <div class="u-black">Должностные обязанности</div>
-                                                <ul>
-                                                  <li>Работа с рекламными площадками</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Заключение сделок</li>
-                                                </ul>
-                                                <div class="u-black">От вас мы ждем</div>
-                                                <ul>
-                                                  <li>Опыт в продажах от 1 года</li>
-                                                  <li>Умение вести переговоры с клиентом</li>
-                                                  <li>Презентабельный внешний вид</li>
-                                                  <li>Умение работать в многозадачности и в команде</li>
-                                                </ul>
-                                                <div class="u-black">Мы готовы вам предложить</div>
-                                                <ul>
-                                                  <li>Обучение продажам за счет компании.</li>
-                                                  <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
-                                                  <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
-                                                  <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
-                                                    <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
-                                                  </li>
-                                                </ul>
-                                                <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
-                                              </div>
-                                            </div>
-                                            <div class="vacancy-head js-accordion-trigger">
-                                              <div class="vacancy-head-inner table-item">
-                                                <div class="u-intro h3">Офис-менеджер
-                                                  <time class="u-graytext">18 июля, 2016</time>
-                                                </div>
-                                                <div class="table-arr"> <i class="select-img"></i></div>
-                                              </div>
-                                              <div class="vacancy-body js-accordion-body">
-                                                <div class="u-black">Должностные обязанности</div>
-                                                <ul>
-                                                  <li>Работа с рекламными площадками</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Заключение сделок</li>
-                                                </ul>
-                                                <div class="u-black">От вас мы ждем</div>
-                                                <ul>
-                                                  <li>Опыт в продажах от 1 года</li>
-                                                  <li>Умение вести переговоры с клиентом</li>
-                                                  <li>Презентабельный внешний вид</li>
-                                                  <li>Умение работать в многозадачности и в команде</li>
-                                                </ul>
-                                                <div class="u-black">Мы готовы вам предложить</div>
-                                                <ul>
-                                                  <li>Обучение продажам за счет компании.</li>
-                                                  <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
-                                                  <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
-                                                  <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
-                                                    <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
-                                                  </li>
-                                                </ul>
-                                                <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
-                                              </div>
-                                            </div>
-                                            <div class="vacancy-head js-accordion-trigger">
-                                              <div class="vacancy-head-inner table-item">
-                                                <div class="u-intro h3">Главный бухгалтер
-                                                  <time class="u-graytext">20 июля, 2016</time>
-                                                </div>
-                                                <div class="table-arr"> <i class="select-img"></i></div>
-                                              </div>
-                                              <div class="vacancy-body js-accordion-body">
-                                                <div class="u-black">Должностные обязанности</div>
-                                                <ul>
-                                                  <li>Работа с рекламными площадками</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Заключение сделок</li>
-                                                </ul>
-                                                <div class="u-black">От вас мы ждем</div>
-                                                <ul>
-                                                  <li>Опыт в продажах от 1 года</li>
-                                                  <li>Умение вести переговоры с клиентом</li>
-                                                  <li>Презентабельный внешний вид</li>
-                                                  <li>Умение работать в многозадачности и в команде</li>
-                                                </ul>
-                                                <div class="u-black">Мы готовы вам предложить</div>
-                                                <ul>
-                                                  <li>Обучение продажам за счет компании.</li>
-                                                  <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
-                                                  <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
-                                                  <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
-                                                    <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
-                                                  </li>
-                                                </ul>
-                                                <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
-                                              </div>
-                                            </div>
-                                            <div class="vacancy-head js-accordion-trigger">
-                                              <div class="vacancy-head-inner table-item">
-                                                <div class="u-intro h3">Специалист call-центра
-                                                  <time class="u-graytext">26 июля, 2016</time>
-                                                </div>
-                                                <div class="table-arr"> <i class="select-img"></i></div>
-                                              </div>
-                                              <div class="vacancy-body js-accordion-body">
-                                                <div class="u-black">Должностные обязанности</div>
-                                                <ul>
-                                                  <li>Работа с рекламными площадками</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Прием звонков и консультирование клиентов</li>
-                                                  <li>Заключение сделок</li>
-                                                </ul>
-                                                <div class="u-black">От вас мы ждем</div>
-                                                <ul>
-                                                  <li>Опыт в продажах от 1 года</li>
-                                                  <li>Умение вести переговоры с клиентом</li>
-                                                  <li>Презентабельный внешний вид</li>
-                                                  <li>Умение работать в многозадачности и в команде</li>
-                                                </ul>
-                                                <div class="u-black">Мы готовы вам предложить</div>
-                                                <ul>
-                                                  <li>Обучение продажам за счет компании.</li>
-                                                  <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
-                                                  <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
-                                                  <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
-                                                    <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
-                                                  </li>
-                                                </ul>
-                                                <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
-                                              </div>
-                                            </div>
+                </section>
+                <section class="content-section">
+                  <div class="side-wrap">
+                    <div class="side-title">
+                      <div class="u-intro h2">Открытые вакансии в нашей компании</div>
                     </div>
-                    <div class="info-cont">
-                      <p>Вы можете задать нам любой вопрос по телефону касательно работы в компании, и мы обещаем, что вы получите на него ответ. Или напишите нам на e-mail — и мы попробуем что-нибудь подыскать.</p>
-                      <div class="categories-elem-name">Надежда Ермолаева</div><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a>
+                    <div class="side-cont">
+                      <div class="u-black">Станьте частью первоклассной команды</div>
+                      <p>Если вы амбициозный, целеустремленный и ответственный специалист, то рады будем видеть вас среди нашей профессиональной команды. В нашей компании есть куда расти и развиваться, в чём мы очень заинтересованы и предлагаем отличные уловия профессионального, материального и карьерного роста.</p>
+                      <div class="vacancy-wrapper offerlist-section">
+                                                <div class="vacancy-head js-accordion-trigger">
+                                                  <div class="vacancy-head-inner table-item">
+                                                    <div class="u-intro h3">Менеджер по продажам
+                                                      <time class="u-graytext">18 июля, 2016</time>
+                                                    </div>
+                                                    <div class="table-arr"> <i class="select-img"></i></div>
+                                                  </div>
+                                                  <div class="vacancy-body js-accordion-body">
+                                                    <div class="u-black">Должностные обязанности</div>
+                                                    <ul>
+                                                      <li>Работа с рекламными площадками</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Заключение сделок</li>
+                                                    </ul>
+                                                    <div class="u-black">От вас мы ждем</div>
+                                                    <ul>
+                                                      <li>Опыт в продажах от 1 года</li>
+                                                      <li>Умение вести переговоры с клиентом</li>
+                                                      <li>Презентабельный внешний вид</li>
+                                                      <li>Умение работать в многозадачности и в команде</li>
+                                                    </ul>
+                                                    <div class="u-black">Мы готовы вам предложить</div>
+                                                    <ul>
+                                                      <li>Обучение продажам за счет компании.</li>
+                                                      <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
+                                                      <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
+                                                      <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
+                                                        <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
+                                                      </li>
+                                                    </ul>
+                                                    <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
+                                                  </div>
+                                                </div>
+                                                <div class="vacancy-head js-accordion-trigger">
+                                                  <div class="vacancy-head-inner table-item">
+                                                    <div class="u-intro h3">Офис-менеджер
+                                                      <time class="u-graytext">18 июля, 2016</time>
+                                                    </div>
+                                                    <div class="table-arr"> <i class="select-img"></i></div>
+                                                  </div>
+                                                  <div class="vacancy-body js-accordion-body">
+                                                    <div class="u-black">Должностные обязанности</div>
+                                                    <ul>
+                                                      <li>Работа с рекламными площадками</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Заключение сделок</li>
+                                                    </ul>
+                                                    <div class="u-black">От вас мы ждем</div>
+                                                    <ul>
+                                                      <li>Опыт в продажах от 1 года</li>
+                                                      <li>Умение вести переговоры с клиентом</li>
+                                                      <li>Презентабельный внешний вид</li>
+                                                      <li>Умение работать в многозадачности и в команде</li>
+                                                    </ul>
+                                                    <div class="u-black">Мы готовы вам предложить</div>
+                                                    <ul>
+                                                      <li>Обучение продажам за счет компании.</li>
+                                                      <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
+                                                      <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
+                                                      <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
+                                                        <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
+                                                      </li>
+                                                    </ul>
+                                                    <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
+                                                  </div>
+                                                </div>
+                                                <div class="vacancy-head js-accordion-trigger">
+                                                  <div class="vacancy-head-inner table-item">
+                                                    <div class="u-intro h3">Главный бухгалтер
+                                                      <time class="u-graytext">20 июля, 2016</time>
+                                                    </div>
+                                                    <div class="table-arr"> <i class="select-img"></i></div>
+                                                  </div>
+                                                  <div class="vacancy-body js-accordion-body">
+                                                    <div class="u-black">Должностные обязанности</div>
+                                                    <ul>
+                                                      <li>Работа с рекламными площадками</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Заключение сделок</li>
+                                                    </ul>
+                                                    <div class="u-black">От вас мы ждем</div>
+                                                    <ul>
+                                                      <li>Опыт в продажах от 1 года</li>
+                                                      <li>Умение вести переговоры с клиентом</li>
+                                                      <li>Презентабельный внешний вид</li>
+                                                      <li>Умение работать в многозадачности и в команде</li>
+                                                    </ul>
+                                                    <div class="u-black">Мы готовы вам предложить</div>
+                                                    <ul>
+                                                      <li>Обучение продажам за счет компании.</li>
+                                                      <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
+                                                      <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
+                                                      <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
+                                                        <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
+                                                      </li>
+                                                    </ul>
+                                                    <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
+                                                  </div>
+                                                </div>
+                                                <div class="vacancy-head js-accordion-trigger">
+                                                  <div class="vacancy-head-inner table-item">
+                                                    <div class="u-intro h3">Специалист call-центра
+                                                      <time class="u-graytext">26 июля, 2016</time>
+                                                    </div>
+                                                    <div class="table-arr"> <i class="select-img"></i></div>
+                                                  </div>
+                                                  <div class="vacancy-body js-accordion-body">
+                                                    <div class="u-black">Должностные обязанности</div>
+                                                    <ul>
+                                                      <li>Работа с рекламными площадками</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Прием звонков и консультирование клиентов</li>
+                                                      <li>Заключение сделок</li>
+                                                    </ul>
+                                                    <div class="u-black">От вас мы ждем</div>
+                                                    <ul>
+                                                      <li>Опыт в продажах от 1 года</li>
+                                                      <li>Умение вести переговоры с клиентом</li>
+                                                      <li>Презентабельный внешний вид</li>
+                                                      <li>Умение работать в многозадачности и в команде</li>
+                                                    </ul>
+                                                    <div class="u-black">Мы готовы вам предложить</div>
+                                                    <ul>
+                                                      <li>Обучение продажам за счет компании.</li>
+                                                      <li>Офис находится в центре города (3 минуты от станции метро Академия Наук).</li>
+                                                      <li>Самые лучшие менеджеры в конце месяца получают бонусы в виде различных гаджетов.</li>
+                                                      <li>У нас проходят яркие корпоративы, мы любим хорошо отдохнуть, работая у нас Вы можете купить себе квартиру на самых выгодных условиях в Минске.
+                                                        <li>И самое главное, у нас нет потолка заработной платы, все зависит только от Вас!</li>
+                                                      </li>
+                                                    </ul>
+                                                    <button class="btn t-blue" data-target=".modal-vacancy" onclick="modals($(this))">Откликнуться на вакансию</button>
+                                                  </div>
+                                                </div>
+                      </div>
+                      <div class="info-cont">
+                        <p>Вы можете задать нам любой вопрос по телефону касательно работы в компании, и мы обещаем, что вы получите на него ответ. Или напишите нам на e-mail — и мы попробуем что-нибудь подыскать.</p>
+                        <div class="categories-elem-name">Надежда Ермолаева</div><a class="u-text lt" href="tel:375296669172">+375 29 666-91-72</a><a class="mailto" href="mailto:arsenalmetall@mail.ru">arsenalmetall@mail.ru</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              </div>
               <footer class="footer">
                 <div class="footer_contacts-wrap">
                   <div class="footer_contacts-block">

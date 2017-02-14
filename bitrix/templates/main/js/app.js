@@ -422,7 +422,7 @@ function modals(val){
 			closer = $('.js-modal-closer'),
 			body = $('.out');
 		var data = val.data('target');
-		body.addClass('modal-opened').find(data).addClass('active');
+		body.addClass('modal-opened').find(data).addClass('active').siblings().removeClass('active');
 		$.fn.matchHeight._update();
 		compareHeight();
 		$(document).mousedown(function (e){
@@ -1266,7 +1266,6 @@ function number() {
 
 		input.on("change", function(){
 			var val = +$(this).val();
-				console.log(val);
 			if (val > max_number) {
 				console.log(val,'trig');
 				val = max_number;
@@ -1283,12 +1282,10 @@ function number() {
 		input.on('input', function(){
 			var t = $(this),
 				value = t.val();
-				console.log(value)
 			if(!value){
 				faketext.text('');
 			}else{
 				faketext.text(value);
-				console.log(value)
 			}
 			return false;
 		});
@@ -1299,11 +1296,28 @@ function number() {
 			if (e.ctrlKey || e.altKey || e.metaKey) return;
 			var chr = getChar(e);
 			if (chr == null) return;
-			faketext.text(chr);
 			//точка не работает
-			if (chr < '0' || chr > '9' || chr === '.') {
-				return false;
+			if(chr == '.'){
+				var pos = input[0].value.indexOf('.');
+				console.log(pos)
+				if(pos === -1){
+			   		return;	
+				}else{
+					return false;
+				}
+
 			}
+			if (chr < '0' || chr > '9' ) {
+				return false;
+			}else{
+				var pos = input[0].value.indexOf('.')
+				if(pos != -1){
+					if((input[0].value.length-pos)>1){
+						input[0].value = input[0].value.slice(0, -1);
+					}
+				}
+			}
+			faketext.text(chr);
 			// input.trigger('change');
 		}
 		input.trigger('change');

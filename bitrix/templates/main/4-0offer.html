@@ -347,616 +347,618 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Корзина</a><a class="bread-item" href="#">Оформление заказа</a></div>
-                <h1 class="u-intro h1">Оформление заказа</h1>
-              </section>
-              <div class="column-wrap">
-                <div class="column-content">
-                  <form class="js-validate" action="">
-                    <div class="bx-soa">
-                      <div class="card card-blue notify-card">
-                        <div class="u-text">Совершали ранее покупки в нашем интернет-магазине? Войдите в личный кабинет, чтобы процедура оформления прошла быстрее.</div>
-                        <div class="button-wrapp">
-                          <button class="btn t-blue btn-extrasmall">Войти</button>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Корзина</a><a class="bread-item" href="#">Оформление заказа</a></div>
+                  <h1 class="u-intro h1">Оформление заказа</h1>
+                </section>
+                <div class="column-wrap">
+                  <div class="column-content">
+                    <form class="js-validate" action="">
+                      <div class="bx-soa">
+                        <div class="card card-blue notify-card">
+                          <div class="u-text">Совершали ранее покупки в нашем интернет-магазине? Войдите в личный кабинет, чтобы процедура оформления прошла быстрее.</div>
+                          <div class="button-wrapp">
+                            <button class="btn t-blue btn-extrasmall">Войти</button>
+                          </div>
                         </div>
-                      </div>
-                      <!-- ORDER TYPE BLOCK-->
-                      <div class="bx-soa-section">
-                        <div class="bx-soa-section-title-container">
-                          <h3 class="u-intro h3">Покупатель</h3><a class="small-link change" href=""> <span>Изменить</span></a>
-                        </div>
-                        <div class="bx-soa-section-content">
-                          <div class="headcont-body">
-                            <div class="headcont-wrapp">
-                              <div class="headcont-title">
-                                <div class="u-title">Тип покупателя</div>
-                              </div>
-                              <div class="headcont-item select-radio">
-                                <div class="select-u-item">
-                                  <label class="input_label"><span class="input_main">
-                                      <input class="input-real" type="radio" name="offertype" value="fiz"><span class="input-checked"></span></span><span class="input-text">Физическое лицо</span></label>
+                        <!-- ORDER TYPE BLOCK-->
+                        <div class="bx-soa-section">
+                          <div class="bx-soa-section-title-container">
+                            <h3 class="u-intro h3">Покупатель</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                          </div>
+                          <div class="bx-soa-section-content">
+                            <div class="headcont-body">
+                              <div class="headcont-wrapp">
+                                <div class="headcont-title">
+                                  <div class="u-title">Тип покупателя</div>
                                 </div>
-                                <div class="select-u-item">
-                                  <label class="input_label"><span class="input_main">
-                                      <input class="input-real" type="radio" name="offertype" value="jur"><span class="input-checked"></span></span><span class="input-text">Юридическое лицо</span></label>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="headcont-wrapp">
-                              <div class="headcont-title">
-                                <div class="u-title">Контактная информация</div>
-                              </div>
-                              <div class="headcont-item">
-                                <div class="col-50">
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">Компания</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Название компании" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                <div class="headcont-item select-radio">
+                                  <div class="select-u-item">
+                                    <label class="input_label"><span class="input_main">
+                                        <input class="input-real" type="radio" name="offertype" value="fiz"><span class="input-checked"></span></span><span class="input-text">Физическое лицо</span></label>
                                   </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">УНП</span></label>
-                                    <input class="input-main" type="number" name="" placeholder="1475854" data-validation="number required" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">Телефон</span></label>
-                                    <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">E-mail</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                </div>
-                                <div class="col-50">                                     
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">Контактное лицо</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Иван Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span>Коментарий к заказу</span></label>
-                                    <textarea class="input-main" rows="8" type="text" name="" placeholder="Иванов Иван Иванович"></textarea>
+                                  <div class="select-u-item">
+                                    <label class="input_label"><span class="input_main">
+                                        <input class="input-real" type="radio" name="offertype" value="jur"><span class="input-checked"></span></span><span class="input-text">Юридическое лицо</span></label>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <!-- для физ лица-->
-                            <div class="headcont-wrapp" style="display:none">
-                              <div class="headcont-title">
-                                <div class="u-title">Контактная информация</div>
-                              </div>
-                              <div class="headcont-item">
-                                <!--тут черз кол-50 потому что поле сообщения по-другому не встанет как на макете, костылить его тоже не буду-->
-                                <div class="col-50">
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">Ваше имя</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Иван иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">Телефон</span></label>
-                                    <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span class="text">E-mail</span></label>
-                                    <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
-                                  </div>
+                              <div class="headcont-wrapp">
+                                <div class="headcont-title">
+                                  <div class="u-title">Контактная информация</div>
                                 </div>
-                                <div class="col-50">                                     
-                                  <div class="input-wrapper">
-                                    <label class="u-graytext"> <span>Коментарий к заказу</span></label>
-                                    <textarea class="input-main" rows="8" type="text" name="" placeholder="Иванов Иван Иванович"></textarea>
+                                <div class="headcont-item">
+                                  <div class="col-50">
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">Компания</span></label>
+                                      <input class="input-main" type="text" name="" placeholder="Название компании" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">УНП</span></label>
+                                      <input class="input-main" type="number" name="" placeholder="1475854" data-validation="number required" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">Телефон</span></label>
+                                      <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">E-mail</span></label>
+                                      <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="headcont-wrapp">
-                              <div class="headcont-title">
-                                <div class="u-title">Адрес доставки</div>
-                              </div>
-                              <div class="headcont-item">
-                                <div class="input-wrapper">
-                                  <label class="u-graytext"> <span class="text">Область</span></label>
-                                  <div class="select-check js-select-custom">
-                                    <button class="selects" data-placeholder="Выберите область" data-valuename=""><span class="btn-text">Выберите область</span><i class="select-img"></i></button>
-                                    <div class="dropdown-target">
-                                      <div class="dropdown-inner">
-                                        <div class="dropdown-content"></div>
-                                                                        <div class="select-u-body select-list">
-                                                                          <label class="option">
-                                                                            <input type="radio" name="group2" value="Минск, минская область" data-validation="required"><span>Минск, минская область</span>
-                                                                          </label>
-                                                                          <label class="option">
-                                                                            <input type="radio" name="group2" value="Брест, Брестская область"><span>Брест, Брестская область</span>
-                                                                          </label>
-                                                                          <label class="option">
-                                                                            <input type="radio" name="group2" value="Могилев, Могилевская область"><span>Могилев, Могилевская область</span>
-                                                                          </label>
-                                                                          <label class="option">
-                                                                            <input type="radio" name="group2" value="Гродно, Гродненская область"><span>Гродно, Гродненская область</span>
-                                                                          </label>
-                                                                          <label class="option">
-                                                                            <input type="radio" name="group2" value="Гомель, Гомельская область"><span>Гомель, Гомельская область</span>
-                                                                          </label>
-                                                                        </div>
-                                      </div>
+                                  <div class="col-50">                                     
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">Контактное лицо</span></label>
+                                      <input class="input-main" type="text" name="" placeholder="Иванов Иван Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span>Коментарий к заказу</span></label>
+                                      <textarea class="input-main" rows="8" type="text" name="" placeholder="Иванов Иван Иванович"></textarea>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="input-wrapper">
-                                  <label class="u-graytext"> <span class="text">Населённый пункт</span></label>
-                                  <input class="input-main" type="text" name="" placeholder="Например &quot;Витебск&quot;" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                              </div>
+                              <!-- для физ лица-->
+                              <div class="headcont-wrapp" style="display:none">
+                                <div class="headcont-title">
+                                  <div class="u-title">Контактная информация</div>
                                 </div>
-                                <div class="input-wrapper">
-                                  <label class="u-graytext"> <span class="text">Улица</span></label>
-                                  <input class="input-main" type="text" name="" placeholder="Улица" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                <div class="headcont-item">
+                                  <!--тут черз кол-50 потому что поле сообщения по-другому не встанет как на макете, костылить его тоже не буду-->
+                                  <div class="col-50">
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">Ваше имя</span></label>
+                                      <input class="input-main" type="text" name="" placeholder="Иванов Иван иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">Телефон</span></label>
+                                      <input class="input-main input-from" type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span class="text">E-mail</span></label>
+                                      <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="email required" data-validation-error-msg="Поле обязательно для заполнения">
+                                    </div>
+                                  </div>
+                                  <div class="col-50">                                     
+                                    <div class="input-wrapper">
+                                      <label class="u-graytext"> <span>Коментарий к заказу</span></label>
+                                      <textarea class="input-main" rows="8" type="text" name="" placeholder="Иванов Иван Иванович"></textarea>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="input-wrapper columns">
-                                  <label class="u-graytext"><span class="text">Дом</span></label>
-                                  <input class="input-main input-from" type="text" name="" placeholder="Дом" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                              </div>
+                              <div class="headcont-wrapp">
+                                <div class="headcont-title">
+                                  <div class="u-title">Адрес доставки</div>
                                 </div>
-                                <div class="input-wrapper columns">
-                                  <label class="u-graytext"><span>Корпус</span></label>
-                                  <input class="input-main input-from" type="text" name="" placeholder="Корпус" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
-                                </div>
-                                <div class="input-wrapper columns">
-                                  <label class="u-graytext"><span>Квартира</span></label>
-                                  <input class="input-main input-from" type="text" name="" placeholder="Квартира" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                <div class="headcont-item">
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">Область</span></label>
+                                    <div class="select-check js-select-custom">
+                                      <button class="selects" data-placeholder="Выберите область" data-valuename=""><span class="btn-text">Выберите область</span><i class="select-img"></i></button>
+                                      <div class="dropdown-target">
+                                        <div class="dropdown-inner">
+                                          <div class="dropdown-content"></div>
+                                                                            <div class="select-u-body select-list">
+                                                                              <label class="option">
+                                                                                <input type="radio" name="group2" value="Минск, минская область" data-validation="required"><span>Минск, минская область</span>
+                                                                              </label>
+                                                                              <label class="option">
+                                                                                <input type="radio" name="group2" value="Брест, Брестская область"><span>Брест, Брестская область</span>
+                                                                              </label>
+                                                                              <label class="option">
+                                                                                <input type="radio" name="group2" value="Могилев, Могилевская область"><span>Могилев, Могилевская область</span>
+                                                                              </label>
+                                                                              <label class="option">
+                                                                                <input type="radio" name="group2" value="Гродно, Гродненская область"><span>Гродно, Гродненская область</span>
+                                                                              </label>
+                                                                              <label class="option">
+                                                                                <input type="radio" name="group2" value="Гомель, Гомельская область"><span>Гомель, Гомельская область</span>
+                                                                              </label>
+                                                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">Населённый пункт</span></label>
+                                    <input class="input-main" type="text" name="" placeholder="Например &quot;Витебск&quot;" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper">
+                                    <label class="u-graytext"> <span class="text">Улица</span></label>
+                                    <input class="input-main" type="text" name="" placeholder="Улица" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper columns">
+                                    <label class="u-graytext"><span class="text">Дом</span></label>
+                                    <input class="input-main input-from" type="text" name="" placeholder="Дом" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper columns">
+                                    <label class="u-graytext"><span>Корпус</span></label>
+                                    <input class="input-main input-from" type="text" name="" placeholder="Корпус" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
+                                  <div class="input-wrapper columns">
+                                    <label class="u-graytext"><span>Квартира</span></label>
+                                    <input class="input-main input-from" type="text" name="" placeholder="Квартира" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Поле обязательно для заполнения">
+                                  </div>
                                 </div>
                               </div>
                             </div>
+                            <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее              </a></div>
                           </div>
-                          <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее              </a></div>
+                        </div>
+                        <!-- basket BLOCK-->
+                        <div class="bx-soa-section">
+                          <div class="bx-soa-section-title-container">
+                            <h3 class="u-intro h3">Товары в заказе</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                          </div>
+                          <div class="bx-soa-section-content">
+                            <div class="table-wrapper">
+                              <div class="table table-inner">
+                                <div class="table-head">
+                                  <div class="table-item table-img"></div>
+                                  <div class="table-item table-name">Наименование</div>
+                                  <div class="table-item table-price">Цена</div>
+                                  <div class="table-item table-count">Количество</div>
+                                  <div class="table-item table-total">Сумма</div>
+                                </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/1.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1027.50р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">212 500.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/2.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Уплотнитель прямоугольный самоклеющийся</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">24.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                              </div>
+                            </div>
+                            <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="small-link change" href=""> <span>Редактировать</span></a></div>
+                          </div>
+                          <div class="bx-soa-section-result">
+                            <div class="table-wrapper">
+                              <div class="table table-inner">
+                                <div class="table-head">
+                                  <div class="table-item table-img"></div>
+                                  <div class="table-item table-name">Наименование</div>
+                                  <div class="table-item table-price">Цена</div>
+                                  <div class="table-item table-count">Количество</div>
+                                  <div class="table-item table-total">Сумма</div>
+                                </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/1.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1027.50р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">212 500.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/2.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Уплотнитель прямоугольный самоклеющийся</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">24.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="table-row">
+                                                                    <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
+                                                                    <div class="table-item table-name">
+                                                                      <div class="categories-elem-name">Планка конька плоского</div>
+                                                                      <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
+                                                                    </div>
+                                                                    <div class="table-item table-price">
+                                                                      <div class="u-text">1.60р.</div>
+                                                                    </div>
+                                                                    <div class="table-item table-count">
+                                                                      <div class="u-text">200м2</div>
+                                                                    </div>
+                                                                    <div class="table-item table-total">
+                                                                      <div class="u-text bold">125624.00р.</div>
+                                                                    </div>
+                                                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--DELIVRY BLOCK-->
+                        <div class="bx-soa-section">
+                          <div class="bx-soa-section-title-container">
+                            <h3 class="u-intro h3">Доставка</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                          </div>
+                          <div class="bx-soa-section-content">
+                            <div class="block-inputs">
+                              <div class="bx-soa-pp-item-container">
+                                <div class="bx-soa-pp-company">
+                                  <!--.bx-selected для активного инпута-->
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="14">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/3.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">Курьер</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/1.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">Самовывоз</div>
+                                </div>
+                              </div>
+                              <div class="bx-soa-pp-desc-container">
+                                <div class="card card-blue">
+                                  <div class="u-black">Курьер</div>
+                                  <div class="u-text">При заказе от 300р. доставка по г. Минск и в другие регионы Респуб- лики Беларусь осущетсвляется бесплатно. </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="link-nav left" href="#">Назад</a></div>
+                          </div>
+                          <div class="bx-soa-section-result">
+                            <div class="bx-soa-pp-company">
+                              <div class="bx-soa-pp-company-graf-container">
+                                <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/1.png)"></div>
+                              </div>
+                              <div class="u-graytext">Самовывоз</div>
+                            </div>
+                            <div class="section-result-price">
+                              <div class="u-text"><span>0</span><span>р.</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--PAYMENT BLOCK-->
+                        <div class="bx-soa-section">
+                          <div class="bx-soa-section-title-container">
+                            <h3 class="u-intro h3">Способ оплаты</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                          </div>
+                          <div class="bx-soa-section-content">
+                            <div class="block-inputs">
+                              <div class="bx-soa-pp-item-container">
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="14">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/visa.svg)"></div>
+                                  </div>
+                                  <div class="u-graytext">Visa</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/master.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">Master Card</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">Maestro</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">Яндекс.Деньги</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">WebMoney</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">МТС              </div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">QIWI Кошелёк</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">American Express</div>
+                                </div>
+                                <div class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-graf-container">
+                                    <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                    <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                                  </div>
+                                  <div class="u-graytext">JCB International                                  </div>
+                                </div>
+                              </div>
+                              <div class="bx-soa-pp-desc-container">
+                                <div class="card card-blue">
+                                  <div class="u-black">Наличные</div>
+                                  <div class="discount-block"><span class="value">30%</span>предоплата</div>
+                                  <div class="u-text">Для начала выполнения заказа вам необходимо приехать в наш офис и внести предоплату (минимальный размер составляет 30% от суммы вашего заказа). </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="link-nav left" href="#">Назад</a></div>
+                          </div>
+                          <div class="bx-soa-section-result">
+                            <div class="bx-soa-pp-company">
+                              <div class="bx-soa-pp-company-graf-container">
+                                <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
+                                <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
+                              </div>
+                              <div class="u-graytext">JCB International  </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <!-- basket BLOCK-->
-                      <div class="bx-soa-section">
-                        <div class="bx-soa-section-title-container">
-                          <h3 class="u-intro h3">Товары в заказе</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                      <button class="btn t-blue btn-standart" type="submit">Оформить заказ</button>
+                    </form>
+                  </div>
+                  <div class="column-aside">
+                    <div class="card card-yell">
+                      <div class="price-wrap">
+                        <div class="price-row">
+                          <div class="u-graytext jel">Товаров на сумму</div>
+                          <div class="u-text">211 536.00р.</div>
                         </div>
-                        <div class="bx-soa-section-content">
-                          <div class="table-wrapper">
-                            <div class="table table-inner">
-                              <div class="table-head">
-                                <div class="table-item table-img"></div>
-                                <div class="table-item table-name">Наименование</div>
-                                <div class="table-item table-price">Цена</div>
-                                <div class="table-item table-count">Количество</div>
-                                <div class="table-item table-total">Сумма</div>
-                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/1.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1027.50р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">212 500.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/2.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Уплотнитель прямоугольный самоклеющийся</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">24.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                            </div>
-                          </div>
-                          <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="small-link change" href=""> <span>Редактировать</span></a></div>
+                        <div class="price-row">
+                          <div class="u-graytext jel">Доставка</div>
+                          <div class="u-text">20р.</div>
                         </div>
-                        <div class="bx-soa-section-result">
-                          <div class="table-wrapper">
-                            <div class="table table-inner">
-                              <div class="table-head">
-                                <div class="table-item table-img"></div>
-                                <div class="table-item table-name">Наименование</div>
-                                <div class="table-item table-price">Цена</div>
-                                <div class="table-item table-count">Количество</div>
-                                <div class="table-item table-total">Сумма</div>
-                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/1.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1027.50р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">212 500.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/2.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Уплотнитель прямоугольный самоклеющийся</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">24.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="table-row">
-                                                                <div class="table-item table-img"><img src="img/cards/3.png" alt=""></div>
-                                                                <div class="table-item table-name">
-                                                                  <div class="categories-elem-name">Планка конька плоского</div>
-                                                                  <div class="u-graytext"><span class="prop"><span>Высота:</span><span class="price">3.15</span></span></div>
-                                                                </div>
-                                                                <div class="table-item table-price">
-                                                                  <div class="u-text">1.60р.</div>
-                                                                </div>
-                                                                <div class="table-item table-count">
-                                                                  <div class="u-text">200м2</div>
-                                                                </div>
-                                                                <div class="table-item table-total">
-                                                                  <div class="u-text bold">125624.00р.</div>
-                                                                </div>
-                                                              </div>
-                            </div>
-                          </div>
+                        <div class="divider"></div>
+                        <div class="price-row">
+                          <div class="u-graytext jel">Итого</div>
+                          <div class="product-card-price">115450 p.</div>
                         </div>
-                      </div>
-                      <!--DELIVRY BLOCK-->
-                      <div class="bx-soa-section">
-                        <div class="bx-soa-section-title-container">
-                          <h3 class="u-intro h3">Доставка</h3><a class="small-link change" href=""> <span>Изменить</span></a>
+                        <div class="price-row">
+                          <div class="u-graytext jel">Размер<br>предоплаты</div>
+                          <div class="u-text bold bigger">3 563.00р.</div>
                         </div>
-                        <div class="bx-soa-section-content">
-                          <div class="block-inputs">
-                            <div class="bx-soa-pp-item-container">
-                              <div class="bx-soa-pp-company">
-                                <!--.bx-selected для активного инпута-->
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="14">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/3.png)"></div>
-                                </div>
-                                <div class="u-graytext">Курьер</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/1.png)"></div>
-                                </div>
-                                <div class="u-graytext">Самовывоз</div>
-                              </div>
-                            </div>
-                            <div class="bx-soa-pp-desc-container">
-                              <div class="card card-blue">
-                                <div class="u-black">Курьер</div>
-                                <div class="u-text">При заказе от 300р. доставка по г. Минск и в другие регионы Респуб- лики Беларусь осущетсвляется бесплатно. </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="link-nav left" href="#">Назад</a></div>
-                        </div>
-                        <div class="bx-soa-section-result">
-                          <div class="bx-soa-pp-company">
-                            <div class="bx-soa-pp-company-graf-container">
-                              <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                              <div class="bx-soa-pp-company-image" style="background-image: url(img/cards/1.png)"></div>
-                            </div>
-                            <div class="u-graytext">Самовывоз</div>
-                          </div>
-                          <div class="section-result-price">
-                            <div class="u-text"><span>0</span><span>р.</span></div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--PAYMENT BLOCK-->
-                      <div class="bx-soa-section">
-                        <div class="bx-soa-section-title-container">
-                          <h3 class="u-intro h3">Способ оплаты</h3><a class="small-link change" href=""> <span>Изменить</span></a>
-                        </div>
-                        <div class="bx-soa-section-content">
-                          <div class="block-inputs">
-                            <div class="bx-soa-pp-item-container">
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="14">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/visa.svg)"></div>
-                                </div>
-                                <div class="u-graytext">Visa</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/master.png)"></div>
-                                </div>
-                                <div class="u-graytext">Master Card</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">Maestro</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">Яндекс.Деньги</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">WebMoney</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">МТС              </div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">QIWI Кошелёк</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">American Express</div>
-                              </div>
-                              <div class="bx-soa-pp-company">
-                                <div class="bx-soa-pp-company-graf-container">
-                                  <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                                  <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                                </div>
-                                <div class="u-graytext">JCB International                                  </div>
-                              </div>
-                            </div>
-                            <div class="bx-soa-pp-desc-container">
-                              <div class="card card-blue">
-                                <div class="u-black">Наличные</div>
-                                <div class="discount-block"><span class="value">30%</span>предоплата</div>
-                                <div class="u-text">Для начала выполнения заказа вам необходимо приехать в наш офис и внести предоплату (минимальный размер составляет 30% от суммы вашего заказа). </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="bx-soa-more"><a class="btn t-blue btn-small" href="#">Далее</a><a class="link-nav left" href="#">Назад</a></div>
-                        </div>
-                        <div class="bx-soa-section-result">
-                          <div class="bx-soa-pp-company">
-                            <div class="bx-soa-pp-company-graf-container">
-                              <input class="bx-soa-pp-company-checkbox" name="DELIVERY_ID" type="checkbox" value="18">
-                              <div class="bx-soa-pp-company-image" style="background-image: url(img/payment/maestro.png)"></div>
-                            </div>
-                            <div class="u-graytext">JCB International  </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn t-blue btn-standart" type="submit">Оформить заказ</button>
-                  </form>
-                </div>
-                <div class="column-aside">
-                  <div class="card card-yell">
-                    <div class="price-wrap">
-                      <div class="price-row">
-                        <div class="u-graytext jel">Товаров на сумму</div>
-                        <div class="u-text">211 536.00р.</div>
-                      </div>
-                      <div class="price-row">
-                        <div class="u-graytext jel">Доставка</div>
-                        <div class="u-text">20р.</div>
-                      </div>
-                      <div class="divider"></div>
-                      <div class="price-row">
-                        <div class="u-graytext jel">Итого</div>
-                        <div class="product-card-price">115450 p.</div>
-                      </div>
-                      <div class="price-row">
-                        <div class="u-graytext jel">Размер<br>предоплаты</div>
-                        <div class="u-text bold bigger">3 563.00р.</div>
                       </div>
                     </div>
                   </div>

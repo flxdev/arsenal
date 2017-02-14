@@ -347,378 +347,380 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head content-image" style="background-image:url(img/content-head.jpg) ">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Поиск</a></div>
-                <h1 class="u-intro h1">результаты Поиска</h1>
-              </section>
-              <!-- а вот тут если результата нету, то удаляем .b-bottom и можно выплевывать пустой .products-outer-->
-              <section class="filter-section b-bottom">
-                <div class="search-wrapper">
-                  <form action="">
-                    <div class="o-menu-search">
-                      <div class="search__wrapper">
-                        <input class="search__input" type="text" placeholder="Поиск">
-                        <button class="search__btn" type="submit"><i class="search-icon">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 17 17" style="enable-background:new 0 0 17 17" xml:space="preserve">
-                              <style type="text/css">.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}</style>
-                              <g>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head content-image" style="background-image:url(img/content-head.jpg) ">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">Поиск</a></div>
+                  <h1 class="u-intro h1">результаты Поиска</h1>
+                </section>
+                <!-- а вот тут если результата нету, то удаляем .b-bottom и можно выплевывать пустой .products-outer-->
+                <section class="filter-section b-bottom">
+                  <div class="search-wrapper">
+                    <form action="">
+                      <div class="o-menu-search">
+                        <div class="search__wrapper">
+                          <input class="search__input" type="text" placeholder="Поиск">
+                          <button class="search__btn" type="submit"><i class="search-icon">
+                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 17 17" style="enable-background:new 0 0 17 17" xml:space="preserve">
+                                <style type="text/css">.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}</style>
                                 <g>
-                                  <path class="search-i" d="M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1                      c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8                      S13.1,11.3,10.5,11.3z"></path>
+                                  <g>
+                                    <path class="search-i" d="M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1                      c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8                      S13.1,11.3,10.5,11.3z"></path>
+                                  </g>
                                 </g>
-                              </g>
-                            </svg></i></button>
+                              </svg></i></button>
+                        </div>
                       </div>
+                      <div class="headcont-item select-radio">
+                        <div class="select-u-item">
+                          <label class="input_label"><span class="input_main">
+                              <input class="input-real" type="radio" name="offertype" value="fiz"><span class="input-checked"></span></span><span class="input-text">По каталогу</span></label>
+                        </div>
+                        <div class="select-u-item">
+                          <label class="input_label"><span class="input_main">
+                              <input class="input-real" type="radio" name="offertype" value="jur"><span class="input-checked"></span></span><span class="input-text">По тексту</span></label>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="search-result-text">
+                      <div class="categories-elem-name">По вашему запросу найдено <span>20 товаров</span></div>
+                      <div class="categories-elem-name">По вашему запросу  <span>«метабло» </span>к сожалению ничего не найдено. </div>
                     </div>
-                    <div class="headcont-item select-radio">
-                      <div class="select-u-item">
-                        <label class="input_label"><span class="input_main">
-                            <input class="input-real" type="radio" name="offertype" value="fiz"><span class="input-checked"></span></span><span class="input-text">По каталогу</span></label>
-                      </div>
-                      <div class="select-u-item">
-                        <label class="input_label"><span class="input_main">
-                            <input class="input-real" type="radio" name="offertype" value="jur"><span class="input-checked"></span></span><span class="input-text">По тексту</span></label>
-                      </div>
+                  </div>
+                </section>
+                <!--.products-outer c catalog 1-1-->
+                <div class="products-outer">
+                  <div class="products-sort-outer">
+                    <div class="products-sort-wrapper">
+                      <div class="u-bold">Сортировать по:</div>
+                      <div class="products-sort-inner"><a class="sort-item link-dotted" href="#">Сначала популярные</a><a class="sort-item link-dotted" href="#"> Новинки</a><a class="sort-item active link-dotted" href="#">  Дешёвые</a><a class="sort-item link-dotted" href="#">  Дорогие</a><a class="sort-item link-dotted" href="#">  От А до Я</a><a class="sort-item link-dotted" href="#">  От Я до А</a></div>
                     </div>
-                  </form>
-                  <div class="search-result-text">
-                    <div class="categories-elem-name">По вашему запросу найдено <span>20 товаров</span></div>
-                    <div class="categories-elem-name">По вашему запросу  <span>«метабло» </span>к сожалению ничего не найдено. </div>
-                  </div>
-                </div>
-              </section>
-              <!--.products-outer c catalog 1-1-->
-              <div class="products-outer">
-                <div class="products-sort-outer">
-                  <div class="products-sort-wrapper">
-                    <div class="u-bold">Сортировать по:</div>
-                    <div class="products-sort-inner"><a class="sort-item link-dotted" href="#">Сначала популярные</a><a class="sort-item link-dotted" href="#"> Новинки</a><a class="sort-item active link-dotted" href="#">  Дешёвые</a><a class="sort-item link-dotted" href="#">  Дорогие</a><a class="sort-item link-dotted" href="#">  От А до Я</a><a class="sort-item link-dotted" href="#">  От Я до А</a></div>
-                  </div>
-                  <div class="products-mobile-wrapper">
-                    <div class="sort_wrapper">
-                      <div class="sort-select js-select-item">
-                        <div class="sort-select-title"><span>Сначала популярные</span><i class="bread-arrow"></i></div>
-                        <div class="dropdown-target">
-                          <div class="dropdown-inner">
-                            <div class="dropdown-content">
-                              <div class="sort-select-item"><a href="#" data-text="От А до Я">От А до Я</a></div>
-                              <div class="sort-select-item"><a href="#" data-text="От Я до А">От Я до А</a></div>
-                              <div class="sort-select-item"><a href="#" data-text="Популярные">Популярные</a></div>
-                              <div class="sort-select-item active"><a href="#" data-text="Дешевые">Дешевые</a></div>
-                              <div class="sort-select-item"><a href="#" data-text="Дорогие">Дорогие</a></div>
-                              <div class="sort-select-item"><a href="#" data-text="Новинки">Новинки</a></div>
-                              <div class="sort-select-item"><a href="#" data-text="Хиты продаж">Хиты продаж</a></div>
+                    <div class="products-mobile-wrapper">
+                      <div class="sort_wrapper">
+                        <div class="sort-select js-select-item">
+                          <div class="sort-select-title"><span>Сначала популярные</span><i class="bread-arrow"></i></div>
+                          <div class="dropdown-target">
+                            <div class="dropdown-inner">
+                              <div class="dropdown-content">
+                                <div class="sort-select-item"><a href="#" data-text="От А до Я">От А до Я</a></div>
+                                <div class="sort-select-item"><a href="#" data-text="От Я до А">От Я до А</a></div>
+                                <div class="sort-select-item"><a href="#" data-text="Популярные">Популярные</a></div>
+                                <div class="sort-select-item active"><a href="#" data-text="Дешевые">Дешевые</a></div>
+                                <div class="sort-select-item"><a href="#" data-text="Дорогие">Дорогие</a></div>
+                                <div class="sort-select-item"><a href="#" data-text="Новинки">Новинки</a></div>
+                                <div class="sort-select-item"><a href="#" data-text="Хиты продаж">Хиты продаж</a></div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="products-wiew">
-                    <!-- .active для текущего вида--><a class="products-wiew-item active" href="#">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 15" width="15px" height="15px" style="enable-background:new 0 0 15 15" xml:space="preserve">
-                        <style type="text/css">.stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
-                        <g>
-                          <g>
-                            <path class="stwiew" d="M0,4h4V0H0V4z M5.5,4h4V0h-4V4z M11,0v4h4V0H11z M0,9.5h4v-4H0V9.5z M5.5,9.5h4v-4h-4V9.5z M11,9.5h4v-4h-4                V9.5z M0,15h4v-4H0V15z M5.5,15h4v-4h-4V15z M11,15h4v-4h-4V15z"></path>
-                          </g>
-                        </g>
-                      </svg></a><a class="products-wiew-item" href="#">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 15" width="15px" height="15px" style="enable-background:new 0 0 15 15" xml:space="preserve">
-                        <style type="text/css">.stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
-                        <g>
-                          <g>
-                            <path class="stwiew" d="M0,4h4V0H0V4z M5.5,0v4H15V0H5.5z M0,9.5h4v-4H0V9.5z M5.5,9.5H15v-4H5.5V9.5z M0,15h4v-4H0V15z M5.5,15H15                v-4H5.5V15z"></path>
-                          </g>
-                        </g>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="products-row">
-                  <div class="products-inner">
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item discount"> <span>-15%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                              <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
-                                              <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-55%</span></div>
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                              <div class="categories-elem-name">Планка3 торцовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
-                                              <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item discount"> <span>-15%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                              <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
-                                              <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-55%</span></div>
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                              <div class="categories-elem-name">Планка2 торцовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
-                                              <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item discount"> <span>-15%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                              <div class="categories-elem-name">Профилированный лист С8</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
-                                              <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-55%</span></div>
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                              <div class="categories-elem-name">Планка торцовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
-                                              <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепицаa  Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item discount"> <span>-15%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
-                                              <div class="categories-elem-name">Профилированный2 лист С8</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
-                                              <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-55%</span></div>
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
-                                              <div class="categories-elem-name">Планка2 торцовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
-                                              <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item new"><span>New</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="product-card-wrapper">
-                                          <div class="product-card-outer"><a class="product-card-inner" href="#">
-                                              <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
-                                              <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
-                                              <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
-                                              <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
-                                            <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
-                                            <div class="flags-wrap">
-                                              <div class="flag-item hit"> <span>Hit</span></div>
-                                              <div class="flag-item discount"> <span>-25%</span></div>
-                                            </div>
-                                          </div>
-                                        </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pagination-wrapper">
-                <div class="pagination-inner">
-                  <div class="cards-slider-nav"><a class="carousel-prev slick-arrow arr-l" href="#">
-                      <div class="icon">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14" xml:space="preserve">
-                          <style type="text/css">.slider-arr{fill:#353535;}</style>
+                    <div class="products-wiew">
+                      <!-- .active для текущего вида--><a class="products-wiew-item active" href="#">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 15" width="15px" height="15px" style="enable-background:new 0 0 15 15" xml:space="preserve">
+                          <style type="text/css">.stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
                           <g>
                             <g>
-                              <polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8"></polygon>
+                              <path class="stwiew" d="M0,4h4V0H0V4z M5.5,4h4V0h-4V4z M11,0v4h4V0H11z M0,9.5h4v-4H0V9.5z M5.5,9.5h4v-4h-4V9.5z M11,9.5h4v-4h-4                V9.5z M0,15h4v-4H0V15z M5.5,15h4v-4h-4V15z M11,15h4v-4h-4V15z"></path>
                             </g>
                           </g>
-                        </svg>
-                      </div></a>
-                    <div class="pagin-counter"><a class="pagin-counter-item" href="#">1</a><a class="pagin-counter-item" href="#">2</a><a class="pagin-counter-item active" href="#">3</a><a class="pagin-counter-item" href="#">4</a><a class="pagin-counter-item" href="#">5</a><span class="dots">...</span><a class="pagin-counter-item" href="#">27</a><a class="pagin-counter-item" href="#">28</a></div><a class="carousel-next slick-arrow arr-r" href="#">
-                      <div class="icon">
-                        <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14" xml:space="preserve">
-                          <style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
+                        </svg></a><a class="products-wiew-item" href="#">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 15" width="15px" height="15px" style="enable-background:new 0 0 15 15" xml:space="preserve">
+                          <style type="text/css">.stwiew{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
                           <g>
                             <g>
-                              <polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7"></polygon>
+                              <path class="stwiew" d="M0,4h4V0H0V4z M5.5,0v4H15V0H5.5z M0,9.5h4v-4H0V9.5z M5.5,9.5H15v-4H5.5V9.5z M0,15h4v-4H0V15z M5.5,15H15                v-4H5.5V15z"></path>
                             </g>
                           </g>
-                        </svg>
-                      </div></a>
+                        </svg></a>
+                    </div>
+                  </div>
+                  <div class="products-row">
+                    <div class="products-inner">
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица3 МОНТЕРРЕЙ</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item discount"> <span>-15%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                  <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
+                                                  <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-55%</span></div>
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                  <div class="categories-elem-name">Планка3 торцовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
+                                                  <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item discount"> <span>-15%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                  <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
+                                                  <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-55%</span></div>
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                  <div class="categories-elem-name">Планка2 торцовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
+                                                  <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица МОНТЕРРЕЙ</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item discount"> <span>-15%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                  <div class="categories-elem-name">Профилированный лист С8</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
+                                                  <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-55%</span></div>
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                  <div class="categories-elem-name">Планка торцовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
+                                                  <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепицаa  Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/1.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 МОНТЕРРЕЙ</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 107.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item discount"> <span>-15%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/2.png" alt=""></div>
+                                                  <div class="categories-elem-name">Профилированный2 лист С8</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">8 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">8 мм </span></span></div>
+                                                  <div class="product-card-price"> 80.00р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-55%</span></div>
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/3.png" alt=""></div>
+                                                  <div class="categories-elem-name">Планка2 торцовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">1250 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">1250 мм </span></span></div>
+                                                  <div class="product-card-price"> 134.04р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item new"><span>New</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепица2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-card-wrapper">
+                                              <div class="product-card-outer"><a class="product-card-inner" href="#">
+                                                  <div class="product-card-img"><img src="img/cards/4.png" alt=""></div>
+                                                  <div class="categories-elem-name">Металлочерепицаa2 Альтер матовая</div>
+                                                  <div class="u-text"> <span class="prop"><span>Высота:</span><span class="price">39 мм ,</span></span><span class="prop"><span>шаг волны:</span><span class="price">39 мм </span></span></div>
+                                                  <div class="product-card-price"> 41.50р. / м2<span class="u-graytext old">1000р.</span></div></a>
+                                                <div class="product-card-more"><a class="btn t-blue" href="#">Подробнее</a></div>
+                                                <div class="flags-wrap">
+                                                  <div class="flag-item hit"> <span>Hit</span></div>
+                                                  <div class="flag-item discount"> <span>-25%</span></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination-wrapper">
+                  <div class="pagination-inner">
+                    <div class="cards-slider-nav"><a class="carousel-prev slick-arrow arr-l" href="#">
+                        <div class="icon">
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14" xml:space="preserve">
+                            <style type="text/css">.slider-arr{fill:#353535;}</style>
+                            <g>
+                              <g>
+                                <polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8"></polygon>
+                              </g>
+                            </g>
+                          </svg>
+                        </div></a>
+                      <div class="pagin-counter"><a class="pagin-counter-item" href="#">1</a><a class="pagin-counter-item" href="#">2</a><a class="pagin-counter-item active" href="#">3</a><a class="pagin-counter-item" href="#">4</a><a class="pagin-counter-item" href="#">5</a><span class="dots">...</span><a class="pagin-counter-item" href="#">27</a><a class="pagin-counter-item" href="#">28</a></div><a class="carousel-next slick-arrow arr-r" href="#">
+                        <div class="icon">
+                          <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14" xml:space="preserve">
+                            <style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style>
+                            <g>
+                              <g>
+                                <polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7"></polygon>
+                              </g>
+                            </g>
+                          </svg>
+                        </div></a>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -347,131 +347,133 @@
             </aside>
             <section class="page__content">
               <div class="page__accii"><a class="accii-item" href="#" style="background-image:url(img/accii1.jpg)"></a><a class="accii-item" href="#" style="background-image:url(img/accii2.jpg)"></a></div>
-              <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
-              <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
-                <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">О компании</a></div>
-                <h1 class="u-intro h1">О компании</h1>
-              </section>
-              <section class="filter-section b-bottom">
-                <div class="filter-container acc-filter">
-                  <div class="mobile-dropdowm-trigger"><span class="u-bold">Открыть меню</span><i class="arrow-icon"></i></div>
-                  <div class="filter-form">
-                    <div class="filter-form-inner"> 
-                                            <div class="acc-menu-item active"><a href="#">О компании</a></div>
-                                            <div class="acc-menu-item"><a href="#">Новости и акции</a></div>
-                                            <div class="acc-menu-item"><a href="#">Вакансии</a></div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="content-section">
-                <div class="side-wrap">
-                  <div class="side-title">
-                    <h3 class="u-intro h2">«АрсеналМеталл» является торгово- производственным предприятием</h3>
-                  </div>
-                  <div class="side-cont">
-                    <div class="u-black">Наши специалисты постараются, как можно наиболее оптимально подобрать нужное количество товара, как для частных лиц, так и для организаций, что при покупке повлечет за собой неизбежное удешевление общей стоимости заказа. </div>
-                    <div class="col-50">
-                      <p>На фирме действует гибкая система скидок, проводятся различные акции по скидкам, можем оказать помощь по доставке товара.</p>
-                      <p>При размещении заказа на нашем предприятии стараемся выполнять их качественно и в крат- чайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором, а также с государственными и частными предприятиями.</p>
-                      <p>Возможности нашей компании по организации поставок кровельных материалов и металло- проката в необходимом объеме и ассортименте обеспечат высокую эффективность работы наших клиентов. И мы гордимся тем, что сможем помочь им достичь успехов! Мы надеемся на плодотворное сов-местное сотрудничество с новыми и с существующими клиентами! </p>
-                    </div>
-                    <div class="slider-wrapper">
-                      <div class="slider-inner slider-big">
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                                                <div class="slider-container">
-                                                  <div class="slider-item" style="background-image: url(img/content.png)"></div>
-                                                </div>
-                      </div>
-                      <div class="cards-slider-nav">
-                        <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+              <div class="page__content-mainwrap">
+                <!--тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта-->
+                <section class="content-head content-image" style="background-image:url(img/content-head.jpg)">
+                  <div class="bread-container"><a class="bread-item" href="#">Главная</a><a class="bread-item" href="#">О компании</a></div>
+                  <h1 class="u-intro h1">О компании</h1>
+                </section>
+                <section class="filter-section b-bottom">
+                  <div class="filter-container acc-filter">
+                    <div class="mobile-dropdowm-trigger"><span class="u-bold">Открыть меню</span><i class="arrow-icon"></i></div>
+                    <div class="filter-form">
+                      <div class="filter-form-inner"> 
+                                                <div class="acc-menu-item active"><a href="#">О компании</a></div>
+                                                <div class="acc-menu-item"><a href="#">Новости и акции</a></div>
+                                                <div class="acc-menu-item"><a href="#">Вакансии</a></div>
                       </div>
                     </div>
-                    <script>
-                      function cards(){
-                        $( ".slider-big").each( function() {
-                          var _this = $(this);
-                      
-                          slidesCount(_this);
-                          _this.slick({
-                            accessibility: true,
-                            arrows: true,
-                            draggable: false,
-                            touchMove: false,
-                            infinite: false,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            appendArrows: _this.siblings('.cards-slider-nav'),
-                            nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
-                            prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
-                          }); 
-                        });
-                      } cards();
-                    </script>
-                    <p>При размещении заказа на нашем предприятии стараемся выполнять их качественно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором, а также с госуда-рственными и частными предприятиями. Мы надеемся и в будущем на плодо- творное совместное сотрудничество с новыми и с существующими клиентами!</p>
                   </div>
-                </div>
-                <div class="side-wrap">
-                  <div class="side-title">
-                    <div class="u-intro h2">Преимущества нашей компании</div>
-                  </div>
-                  <div class="side-cont">
-                    <ul>
-                      <li>Высококвалифицированные специалисты, постоянно отслеживают современные тенденции развития индустрии и формируют самые привлекательные и актуальные предложения. </li>
-                      <li>Предлагая потенциальным заказчикам различные формы сотрудничества, мы ориентируемся, прежде всего, на предоставлении взаимовыгодных условий, гарантируя точное соблюдение графика поставок, объективные цены и возможность пользования гибкой системой скидок. </li>
-                      <li>Это помогает нам постоянно увеличивать клиентскую базу, привлекая новых и поддерживая заинтересованность существующих заказчиков различными акциями и специальными предложениями. </li>
-                      <li>Мы работаем как с юридическими лицами, компаниями-застройщиками и владельцами магазинов строительных материалов, так и с частными заказчиками, желающими приобрести сайдинг или кровельный материал для дома по доступным ценам.</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="side-wrap">
-                  <div class="side-title">
-                    <div class="u-intro h2">Мы предлагаем невероятные условия</div>
-                  </div>
-                  <div class="side-cont">
-                    <div class="specials-wrapper">
-                                            <div class="specials-item">
-                                              <div class="specials-name u-intro h3">Качество</div>
-                                              <p class="specials-text">При размещении заказа на нашем предприятии стара- емся выполнять их качественно и в кратчайшие сроки. Благо- даря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором.</p>
-                                            </div>
-                                            <div class="specials-item">
-                                              <div class="specials-name u-intro h3">Возможности</div>
-                                              <p class="specials-text">Возможности нашей компа- нии по организации поставок кровельных материалов и металлопроката в необхо- димом объеме и ассортименте обеспечат высокую эффекти- вность работы наших клиентов.</p>
-                                            </div>
-                                            <div class="specials-item">
-                                              <div class="specials-name u-intro h3">Эффективность</div>
-                                              <p class="specials-text">При размещении заказа на нашем предприятии стараемся выполнять их каче- ственно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудни- чает с частным сектором.</p>
-                                            </div>
-                                            <div class="specials-item">
-                                              <div class="specials-name u-intro h3">Сертификаты</div>
-                                              <p class="specials-text">При размещении заказа на нашем предприятии стара- емся выполнять их качественно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша органи- зация сотрудничает с частным сектором.</p>
-                                            </div>
-                                            <div class="specials-item">
-                                              <div class="specials-name u-intro h3">Исполнительность</div>
-                                              <p class="specials-text">Возможности нашей компании по организации поставок кровельных материалов и металлопроката в необхо- димом объеме и ассортименте обеспечат высокую эффекти- вность работы наших клиентов.</p>
-                                            </div>
+                </section>
+                <section class="content-section">
+                  <div class="side-wrap">
+                    <div class="side-title">
+                      <h3 class="u-intro h2">«АрсеналМеталл» является торгово- производственным предприятием</h3>
                     </div>
-                    <blockquote>Портфолио Арсеналметалл насчитывает 1 110 000 м2 реализованных площадей и включает уникальные проекты, от самых современных бизнес-центров до элитных жилых комплексов и школ мирового уровня.</blockquote>
+                    <div class="side-cont">
+                      <div class="u-black">Наши специалисты постараются, как можно наиболее оптимально подобрать нужное количество товара, как для частных лиц, так и для организаций, что при покупке повлечет за собой неизбежное удешевление общей стоимости заказа. </div>
+                      <div class="col-50">
+                        <p>На фирме действует гибкая система скидок, проводятся различные акции по скидкам, можем оказать помощь по доставке товара.</p>
+                        <p>При размещении заказа на нашем предприятии стараемся выполнять их качественно и в крат- чайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором, а также с государственными и частными предприятиями.</p>
+                        <p>Возможности нашей компании по организации поставок кровельных материалов и металло- проката в необходимом объеме и ассортименте обеспечат высокую эффективность работы наших клиентов. И мы гордимся тем, что сможем помочь им достичь успехов! Мы надеемся на плодотворное сов-местное сотрудничество с новыми и с существующими клиентами! </p>
+                      </div>
+                      <div class="slider-wrapper">
+                        <div class="slider-inner slider-big">
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                                                    <div class="slider-container">
+                                                      <div class="slider-item" style="background-image: url(img/content.png)"></div>
+                                                    </div>
+                        </div>
+                        <div class="cards-slider-nav">
+                          <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                        </div>
+                      </div>
+                      <script>
+                        function cards(){
+                          $( ".slider-big").each( function() {
+                            var _this = $(this);
+                        
+                            slidesCount(_this);
+                            _this.slick({
+                              accessibility: true,
+                              arrows: true,
+                              draggable: false,
+                              touchMove: false,
+                              infinite: false,
+                              slidesToShow: 1,
+                              slidesToScroll: 1,
+                              appendArrows: _this.siblings('.cards-slider-nav'),
+                              nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+                              prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+                            }); 
+                          });
+                        } cards();
+                      </script>
+                      <p>При размещении заказа на нашем предприятии стараемся выполнять их качественно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором, а также с госуда-рственными и частными предприятиями. Мы надеемся и в будущем на плодо- творное совместное сотрудничество с новыми и с существующими клиентами!</p>
+                    </div>
                   </div>
-                </div>
-              </section>
+                  <div class="side-wrap">
+                    <div class="side-title">
+                      <div class="u-intro h2">Преимущества нашей компании</div>
+                    </div>
+                    <div class="side-cont">
+                      <ul>
+                        <li>Высококвалифицированные специалисты, постоянно отслеживают современные тенденции развития индустрии и формируют самые привлекательные и актуальные предложения. </li>
+                        <li>Предлагая потенциальным заказчикам различные формы сотрудничества, мы ориентируемся, прежде всего, на предоставлении взаимовыгодных условий, гарантируя точное соблюдение графика поставок, объективные цены и возможность пользования гибкой системой скидок. </li>
+                        <li>Это помогает нам постоянно увеличивать клиентскую базу, привлекая новых и поддерживая заинтересованность существующих заказчиков различными акциями и специальными предложениями. </li>
+                        <li>Мы работаем как с юридическими лицами, компаниями-застройщиками и владельцами магазинов строительных материалов, так и с частными заказчиками, желающими приобрести сайдинг или кровельный материал для дома по доступным ценам.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="side-wrap">
+                    <div class="side-title">
+                      <div class="u-intro h2">Мы предлагаем невероятные условия</div>
+                    </div>
+                    <div class="side-cont">
+                      <div class="specials-wrapper">
+                                                <div class="specials-item">
+                                                  <div class="specials-name u-intro h3">Качество</div>
+                                                  <p class="specials-text">При размещении заказа на нашем предприятии стара- емся выполнять их качественно и в кратчайшие сроки. Благо- даря индивидуальному подходу к каждому клиенту наша организация сотрудничает с частным сектором.</p>
+                                                </div>
+                                                <div class="specials-item">
+                                                  <div class="specials-name u-intro h3">Возможности</div>
+                                                  <p class="specials-text">Возможности нашей компа- нии по организации поставок кровельных материалов и металлопроката в необхо- димом объеме и ассортименте обеспечат высокую эффекти- вность работы наших клиентов.</p>
+                                                </div>
+                                                <div class="specials-item">
+                                                  <div class="specials-name u-intro h3">Эффективность</div>
+                                                  <p class="specials-text">При размещении заказа на нашем предприятии стараемся выполнять их каче- ственно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша организация сотрудни- чает с частным сектором.</p>
+                                                </div>
+                                                <div class="specials-item">
+                                                  <div class="specials-name u-intro h3">Сертификаты</div>
+                                                  <p class="specials-text">При размещении заказа на нашем предприятии стара- емся выполнять их качественно и в кратчайшие сроки. Благодаря индивидуальному подходу к каждому клиенту наша органи- зация сотрудничает с частным сектором.</p>
+                                                </div>
+                                                <div class="specials-item">
+                                                  <div class="specials-name u-intro h3">Исполнительность</div>
+                                                  <p class="specials-text">Возможности нашей компании по организации поставок кровельных материалов и металлопроката в необхо- димом объеме и ассортименте обеспечат высокую эффекти- вность работы наших клиентов.</p>
+                                                </div>
+                      </div>
+                      <blockquote>Портфолио Арсеналметалл насчитывает 1 110 000 м2 реализованных площадей и включает уникальные проекты, от самых современных бизнес-центров до элитных жилых комплексов и школ мирового уровня.</blockquote>
+                    </div>
+                  </div>
+                </section>
+              </div>
               <footer class="footer">
                 <div class="footer_contacts-wrap">
                   <div class="footer_contacts-block">
