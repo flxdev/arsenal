@@ -110,7 +110,7 @@ body, .out,html
         visibility: hidden
       .header_logo_wrap
         visibility: visible
-        box-shadow: $shadow-left
+        box-shadow: 2px 0px 20px -3px rgba(0, 0, 0, .17)
       +r(991)
         transform: translateY(-5.425rem)
       .header_content
@@ -423,24 +423,24 @@ body, .out,html
       // +rem(padding-top,10px)
       transition-delay: 0.1s
       +rem(max-height,1000px)
-      +rem(padding-bottom,9px)
+      +rem(padding-bottom,17px)
 .dropdown-target.active
   // overflow: visible
   transition-delay: 0.1s
   +rem(max-height,1000px)
-  +rem(padding-bottom,9px)
+  +rem(padding-bottom,17px)
 .js-select-trigger.active,.js-select-item.active,.js-select-custom.active
   .dropdown-target
     transition-delay: 0.1s
     +rem(max-height,1000px)
-    +rem(padding-bottom,9px)
+    +rem(padding-bottom,17px)
 .dropdown-target
   position: absolute
   overflow: hidden
   z-index: 2
   // width: 100%
-  +padlr(9px)
-  +rem(margin-right,-9px)
+  +padlr(17px)
+  +rem(margin-right,-17px)
   max-height: 0
   padding-top: 0
   transition-property: max-height,padding
@@ -756,7 +756,7 @@ body, .out,html
   &:hover
     .telephone-main
       color: $maind
-      border-image: 0
+      border-image: url(../img/hide.svg) 0 0 100 repeat stretch;
       border-color: transparent
       &:before
         opacity: 0
@@ -833,12 +833,14 @@ body, .out,html
 
     .dropdown-target
       right: 0
+      +rem(margin-top,-6px)
       +r(991)
         display: none
       .btn-standart
         +padlr(30px)
       .dropdown-inner
         +rem(width,320px)
+        +rem(margin-top,16px)
         &.not-empty
           +rem(width,350px)
           .dropdown-content
@@ -1718,7 +1720,7 @@ body, .out,html
     background: $graybg
     position: relative
     +rem(padding-bottom,35px)
-    transition: background .3s .1s, box-shadow .3s .1s
+    transition: background .23s .1s, box-shadow .3s .1s
     +r(544)
       +rem(padding-bottom,15px)
     &:hover
@@ -1734,9 +1736,9 @@ body, .out,html
         .product-card-more 
           opacity: 1
           visibility: visible
-          transition: opacity .15s .1s, visibility .15s .1s
+          transition: opacity .25s .1s, visibility .25s .1s
           background: $white
-          box-shadow: 3px 5px 10px 0px rgba(0,0,0,0.1);
+          box-shadow: 3px 6px 9px 0px rgba(0,0,0,0.1);
   &-img
     +rem(height,180px) 
     +rem(margin-bottom,20px) 
@@ -1768,7 +1770,7 @@ body, .out,html
     opacity: 0
     z-index: 4
     visibility: hidden
-    transition: opacity .12s , visibility .12s , background .25s, box-shadow .3s
+    transition: opacity .25s , visibility .25s , background .25s, box-shadow .25s
     +rem(padding,20px 20px 28px 20px)
     background: $graybg
     .btn
@@ -1969,7 +1971,7 @@ body, .out,html
     vertical-align: middle
   .cards-slider-counter
     +padlr(12px)
-    +rem(font-size,16px)
+    font-size: 0
     font-family: intro
     font-weight: 700
     color: $text
@@ -1979,12 +1981,18 @@ body, .out,html
       vertical-align: middle
     .cards-slider-divider
       display: inline-block
-      +rem(padding-right,8px)
-      +rem(padding-left,10px)
+      +padlr(8px)
+      // +rem(padding-right,8px)
+      // +rem(padding-left,10px)
       +rem(font-size,35px)
       font-weight: 300
       transform: rotate(-4deg)
+      font-family: 'Open Sans'
+      font-weight: 100
+      color: $text
       // font-family: 'Open Sans'
+    .cards-slider-current,.cards-slider-total
+      +rem(font-size,16px)
     .cards-slider-total
       +rem(margin-top,2px)
       color: #c1c1c1
@@ -2355,7 +2363,7 @@ body, .out,html
   background: 0 0
   border-image: url(../img/bdot.svg) 0 0 100 repeat stretch;
   &:hover
-    border-image: 0
+    border-image: url(../img/hide.svg) 0 0 100 repeat stretch;
     border-color: transparent
   &.bold
     +rem(font-size,14px)
@@ -2438,6 +2446,7 @@ body, .out,html
         .slick-list
           background: $graybg
       .product-slider-item 
+        max-height: 100%
         img
           max-height: 100%
     .modal-container-header
@@ -2778,11 +2787,11 @@ body, .out,html
         &:hover
           color: $maind
           border-color: transparent
-          border-image: none
+          border-image: url(../img/hide.svg) 0 1 150 repeat stretch;
         &.active
           color: $mainl
           border-color: transparent
-          border-image: none
+          border-image: url(../img/hide.svg) 0 1 150 repeat stretch;
         &:not(:last-child)
           +rem(margin-right, 17px)
     //контейнер товаров
@@ -2973,8 +2982,10 @@ body, .out,html
 .select-check 
   position: relative
   .dropdown-target
-    +rem(margin-left,-8px)
-    +rem(margin-right,-8px)
+    +rem(margin-left,-17px)
+    +rem(margin-right,-17px)
+    left: 0
+    right: 0
   .dropdown-target,.dropdown-inner  
     min-width: 100%
   .dropdown-inner 
@@ -3208,7 +3219,10 @@ body, .out,html
         .dots
           display: inline-block
           +rem(font-size,17px)
-
+.bx-mac,.bx-ios,.bx-touch
+  .pagination-inner
+    .pagin-counter-item
+      +rem(line-height,28px)
 // 2-0 product-inner         
 .product
   &-content-wrapper
@@ -3284,17 +3298,17 @@ body, .out,html
       float: none
   &-much-slider
     cursor: pointer
-    +rem(padding-bottom,50px);
     +rem(min-height,400px);
     +vertical
     overflow: hidden
     white-space: nowrap
+    +rem(margin, 0 -25px 50px)
     .slick-track, .slick-list
       overflow: hidden
       white-space: nowrap
     +r(991)
-      +rem(min-height,350px);
-      +rem(padding-bottom,80px);
+      +rem(min-height,380px);
+      +rem(margin, 0 -25px 80px)
     & > img
       display: inline-block
       max-width: 100% 
@@ -3302,23 +3316,24 @@ body, .out,html
       +rem(margin-top, 25px)
       vertical-align: middle
   &-slider-item
-    +rem(padding, 40px 40px 0 40px) 
+    +rem(padding, 40px 0 0 0) 
     text-align: center
-    +rem(height,400px)
+    +rem(max-height,450px)
     display: inline-block
     +vertical
     +r(1150)
-      +rem(padding, 15px 15px 0 15px) 
-      +rem(height,300px)
+      +rem(padding, 25px 0px 0 0px) 
+      +rem(max-height,390px)
     +r(375)
-      +rem(padding, 15px 0px 0 0px) 
+      +rem(padding, 20px 0px 0 0px) 
+      // +rem(height,320px)
     img
       display: inline-block
       vertical-align: middle
       max-width: 100%;
-      +rem(max-height,320px);
+      +rem(max-height,390px);
       +r(1150)
-        +rem(max-height,280px);
+        +rem(max-height,350px);
   &-add-slider
     +rem(height,84px);
     +rem(margin-top,-700px);
@@ -3596,9 +3611,9 @@ body, .out,html
 .number
   font-size: 0;
   position: relative;
-  display: table
+  // display: table
   width: 100%
-  border-collapse: collapse
+  // border-collapse: collapse
   +clr
   &.disabled
     position: relative
@@ -3637,7 +3652,7 @@ body, .out,html
       opacity: 0.5
       pointer-events: none
   &__minus,&__plus,&__input
-    display: table-cell !important
+    display: inline-block !important
     vertical-align: top;
     +rem(font-size,11px)
     +rem(height,28px)
@@ -3648,12 +3663,12 @@ body, .out,html
     text-align: center;
     color: #000000;
     border: 0;
-    -webkit-appearance: textfield !important
     width: 100%
     margin: 0
     position: relative
     .number__input
       width: 100%
+      +rem(padding-right,10px)
     .fake
       &-bg
         display: inline-block
@@ -3669,9 +3684,10 @@ body, .out,html
           display: inline-block
           text-align: center;
         &-currency
-          +rem(padding-left,10px)
+          
         &-text
           color: transparent
+          +rem(min-width,12px)
           // +rem(padding,5px 9px)
   &__minus
     background-image: url(../img/icons/minus.svg)
@@ -5127,6 +5143,26 @@ body, .out,html
         min-width: 100%
       .side-title
         +rem(margin-bottom,20px)
+.tabs-cont
+  ul
+    +rem(margin, 30px 0 0)
+    li 
+      +rem(padding-left,35px)
+      position: relative
+      +rem(font-size,13px)
+      color: $text
+      line-height: 1.85
+      +rem(letter-spacing,0.5px)
+      +rem(margin-bottom,11px)
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        +rem(top,11px)
+        display: inline-block
+        +rem(width,21px)
+        +rem(height,3px)
+        background: $mainl
 .content-section
   +rem(padding,36px 25px 0 55px)
   +r(991)

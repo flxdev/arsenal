@@ -475,7 +475,7 @@ function Tabs(){
 							themer = _d.parent(),
 							contact = _d.parent().parent().parent();
 					if(contact.hasClass('contact-section')){
-							if(tabcont.eq(_d.index()).find('#map').length && themer.hasClass('t-white')){
+							if(tabcont.eq(_d.index()).find('#map_custom').length && themer.hasClass('t-white')){
 									themer.removeClass('t-white');
 							}
 							else{
