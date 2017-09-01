@@ -150,10 +150,12 @@ body, .out,html
   &__content
     +rem(padding-left, 275px)
     position: relative 
+    display: inline-block
+    width: 100%
     +r(991)
       padding-left: 0
     &-mainwrap
-      min-height: 44vh
+      min-height: 52.1vh;
   &__accii
     position: absolute
     +rem(top,-84px)
@@ -312,12 +314,45 @@ body, .out,html
     +rem(margin-left,-11px)
     font-weight: 300
     +rem(margin-bottom,15px)
+@keyframes down 
+  0% 
+    transform: translateY(0)
+  40%
+    transform: translateY(15%)
+  100%
+    transform: translateY(0)
 .c-menu-block
   +padlr(25px)
   &.main
     +rem(padding-top,25px)
     +rem(padding-bottom,26px)
     +rem(font-size,14px)
+    +rem(max-height,350px)
+    overflow-y: auto
+    &+.c-menu-block.add
+      position: relative
+      &:before
+        content: ''
+        display: inline-block
+        +rem(width,17px)
+        +rem(height,17px)
+        position: absolute
+        +rem(top,-30px)
+        +rem(right,20px)
+        background-repeat: no-repeat
+        background-position: center
+        +tr(opacity .3s)
+        opacity: .5
+        z-index: 2
+        background-size: contain
+        background-image: url(../img/icons/arr-down.svg)
+        animation: down 1.2s infinite
+    +scrollbar
+      background-color: $main
+      +rem(width,5px)
+    +scrollbar-thumb
+      background-color: #fff
+      border-radius: 0
     .menu-item
       +rem(margin-left,-25px)
       +rem(margin-right,-25px)
@@ -327,10 +362,13 @@ body, .out,html
         +rem(padding,14px 0 15px)
         color: $white
         font-weight: 600
-      &:hover, &.active
+      &:hover, &.active,&.current
         background: $maind 
   &.add
     +rem(padding-top, 33px) 
+    &.arr-h
+      &:before
+        opacity: 0 !important
     .menu-list
       +rem(margin-top, 16px) 
       +rem(font-size, 13px)
@@ -354,7 +392,7 @@ body, .out,html
   &.menu-footer
     +rem(width, 320px) 
     position: absolute
-    +rem(height,80px)
+    +rem(height,45px)
     bottom: 0
     left: 0
     z-index: 20
@@ -491,6 +529,11 @@ body, .out,html
   &.t-blue
     font-weight: 300
     +rem(letter-spacing,0.8px)
+  &.t-gray
+    background-color: #ddd
+    color: #000
+    &:active
+      background-color: darken(#ddd, 20%)
   &.t-blue,&.t-trans
     &:hover
       background: $maind
@@ -639,7 +682,7 @@ body, .out,html
   //for each list his own container
   &-cont
       height: 100%
-      +rem(padding, 84px 65px 0 37px )
+      +rem(padding, 84px 35px 0 37px )
       background: $white
       overflow: hidden
       position: absolute  
@@ -653,9 +696,11 @@ body, .out,html
           opacity: 1
           transition-delay: .15s
   &-list
-    +rem(width,208px)
+    +rem(width,238px)
     +rem(padding-top,30px)
     +rem(letter-spacing,0.3px)
+    +rem(max-height,535px)
+    overflow-y: auto
   &-item
     +rem(font-size,14px)
     color: $main
@@ -1056,6 +1101,9 @@ body, .out,html
     .mobile_l1-item
       +rem(font-size,20px)
       +tr(background 0.3s)
+      &.empty
+        .arrow-icon
+          display: none
       &> a
         +rem(padding-top,15px)
         +rem(padding-bottom,15px)
@@ -1413,7 +1461,14 @@ body, .out,html
       background: $main
 .slick-dots li.slick-active button
   background: #1785ff
-
+.features 
+  &:not(.slick-initialized)
+    overflow: hidden
+    white-space: nowrap
+    .features_block
+      display: inline-block
+      width: 33%
+      white-space: normal
 .section-feature
   position: relative;
   +padlr(28px)
@@ -1543,6 +1598,11 @@ body, .out,html
       font-weight: 700
       line-height: 1.43
       +rem(letter-spacing,0.4px)
+      a 
+        color: #000
+      &:hover
+        a
+          color: $main
     &-descr
       +rem(padding-right,55px)
       +rem(min-height,80px)
@@ -1578,7 +1638,7 @@ body, .out,html
         +rem(font-size,13px)
         +rem(line-height,51px)
       &:after
-        +rem(bottom,-9px)
+        +rem(bottom,-8.5px)
         +rem(border-width, 9px 40px 9px 0)
     +r(544)
       +rem(width,35px)
@@ -1587,7 +1647,7 @@ body, .out,html
         +rem(font-size,11px)
         +rem(line-height,46px)
       &:after
-        +rem(bottom,-7px)
+        +rem(bottom,-6.5px)
         +rem(border-width, 7px 35px 7px 0)
     span
       +rem(font-size,14px)
@@ -1631,9 +1691,11 @@ body, .out,html
     +rem(margin-bottom, 30px)
     position: relative
     .feachres-brand
-      top: 34%
+      top: 25%
       .slick-arrow
         margin: 0
+        +rm(991)
+          display: none !important
       .carousel-next
         +rem(margin-right, -15px);
         +r(991)
@@ -1662,6 +1724,7 @@ body, .out,html
       +rem(max-height, 40px)
       display: block
       max-width: 100%
+      filter: grayscale(50%);
       +r(1280)
         +rem(max-height, 45px)
 
@@ -1670,6 +1733,9 @@ body, .out,html
 .slider-section  
   +rem(padding, 0 20px 50px 52px)
   +rem(margin-top,43px)
+  &>.u-intro.h2 
+    +r(544)
+      +rem(margin-bottom,15px)
   +r(991)
     +rem(padding, 0 30px 0 30px)
   +r(544)
@@ -1704,8 +1770,9 @@ body, .out,html
   &-inner
     display: block
     +rem(padding,15px 15px 44px 16px)
-    +rem(min-height,330px)
+    // +rem(min-height,325px)
     position: relative
+    +tr(min-height .3s)
     +r(375)
       +rem(min-height,260px)
       +rem(padding,15px 12px 44px 12px)
@@ -1713,14 +1780,16 @@ body, .out,html
       +clr
       +rem(max-height, 76px)
       overflow: hidden
-      .price
-        display: inline-block
-        +rem(padding-left, 5px) 
+      +rem(margin-left,-5px)
+      .prop
+        span
+          display: inline-block
+          +rem(padding-left, 5px)
   &-outer
     background: $graybg
     position: relative
     +rem(padding-bottom,35px)
-    transition: background .23s .1s, box-shadow .3s .1s
+    transition: background .23s .1s, box-shadow .3s .1s, height .3s
     +r(544)
       +rem(padding-bottom,15px)
     &:hover
@@ -2040,6 +2109,8 @@ body, .out,html
     +r(768)
       width: 100% 
       +rem(margin-bottom,10px)
+    .u-intro
+      hyphens: manual
     &.big,&.half,&.card
       +rem(height,346px)
       .u-intro
@@ -2108,6 +2179,7 @@ body, .out,html
         +rem(font-size,14px)
         font-weight: 700
 
+
           
   &-inner
     display: block
@@ -2166,7 +2238,7 @@ body, .out,html
   background-repeat: no-repeat
   +r(800)
     +rem(height,390px)
-  .map
+  #map,.map
     height: 100%
     &* 
       overflow: visible
@@ -2227,6 +2299,10 @@ body, .out,html
     p 
       +rem(margin-bottom,20px)
       line-height: 1.85;
+      font-size: .8125rem;
+      color: #2e2e2e;
+      font-weight: 400;
+      letter-spacing: .025rem;
     .categories-elem-name
       +rem(margin-bottom,11px)
   &-footer
@@ -2325,6 +2401,10 @@ body, .out,html
         background-image: url(../img/icons/download_map.svg) 
       &:before
         background-image: url(../img/icons/download_maph.svg)
+  &.print
+    span
+      &:after,&:before
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAAQlBMVEVHcEwEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtoEMtpOZPhoAAAAFXRSTlMA4HDwwKCAkGDQD1DNuvvEHwa0lgp3uydwAAAAgklEQVR4Ac3T3QrCMAyG4c80c13t/tf7v1WxCCYpxeCRz+kLgWYLKi4W44PXqK2qDtCGf6jHCe084EB56smEZR575gUloieW73XPt1be3xV0b5Fv8q+1vhc0WoTXe+uuwGHSAqPuyvUFtyBtpiaSkqnXQ7rs5CLZyUiS979y3ELnjp7TzA31H83z+wAAAABJRU5ErkJggg==);
   &.close
     span
       +rem(padding-left,12px)
@@ -2488,6 +2568,9 @@ body, .out,html
       .u-text
         +rem(font-size,11px)
         line-height: 1.85
+      .table-count
+        .u-text
+          +rem(padding-top,5px)
       .u-intro
         +rem(margin-bottom,10px)
       .t-blue
@@ -2553,6 +2636,10 @@ body, .out,html
 .modal-incart
   .elemcount
     text-decoration: underline
+    +tr(color .3s)
+    cursor: pointer
+    &:hover
+      color: $main
   .modal-container
     margin-top: 0
     .modal-container-content
@@ -2607,6 +2694,11 @@ body, .out,html
         +rem(line-height,48px)
     .categories-elem-name
       +rem(font-size,11px)
+    .u-text
+      line-height: 1.2
+    .prop
+      span
+        line-height: 1
     .slick-track
       +rem(padding-bottom,40px)
       +rem(margin-bottom,-20px)
@@ -2623,6 +2715,7 @@ body, .out,html
       +rem(margin, 0 auto 0)
     .product-card-price
       +rem(font-size,13px)
+      +rem(left,8px)
     .product-card-outer
       +rem(padding-bottom,10px)
 .modal-pass-forgot-succes
@@ -2699,6 +2792,7 @@ body, .out,html
   background-size: cover
   background-repeat: no-repeat 
   position: relative 
+
   +r(991)
     +rem(padding, 25px 30px 25px 30px)
   +r(544)
@@ -2718,6 +2812,7 @@ body, .out,html
       height: 100%
       background: rgba(0,0,0, 0.5)
       z-index: 0
+      backface-visibility: hidden
     .bread-item
       color: $white
       &:not(:first-child)
@@ -2781,6 +2876,7 @@ body, .out,html
         +rem(margin-top,-11px)
     &-inner
       // min-height: 23vh
+
       .sort-item
         color: $text
         border-image: url(../img/bdot.svg) 0 1 150 repeat stretch;
@@ -2798,10 +2894,20 @@ body, .out,html
   &-inner
     font-size: 0
     +rem(padding,36px 0 45px)
+    .content-section
+      p  
+        color: $text
+        +rem(font-size,14px)
+        line-height: 1.35
+        a 
+          color: $main
+          text-decoration: none
     .product-card-wrapper 
       +rem(width, 219.8px)
       display: inline-block
       vertical-align: top
+      +rm(1200)
+        width: 20%
       +r(925)
         width: 25%
       +r(800)
@@ -2948,7 +3054,7 @@ body, .out,html
   background: url(../img/icons/select_down.svg) no-repeat center;
 .select-clear
   position: absolute
-  +rem(right, 0)
+  +rem(right, 1px)
   top: 0
   +rem(width, 27px)
   +rem(height, 28px)
@@ -2959,12 +3065,13 @@ body, .out,html
   z-index: 0
   +vertical
   float: left
-  +r(1280)
-    +rem(height, 29px)
-  +r(991)
-    +rem(height, 28px)
-  +r(768)
-    +rem(height, 31px)
+  height: 99%
+  // +r(1280)
+  //   +rem(height, 29px)
+  // +r(991)
+  //   +rem(height, 28px)
+  // +r(768)
+  //   +rem(height, 31px)
   &:hover
     .i-close
       transform: rotate(90deg)
@@ -3142,8 +3249,9 @@ body, .out,html
     .dropdown-target
       z-index: 5
     .dropdown-target,.dropdown-inner
-      width: 100%
-      +rem(min-width, 150px);
+      +rem(min-width, 170px);
+    .dropdown-inner
+      +rem(margin-left,-15px)
     .dropdown-content
       +rem(padding, 10px 10px 15px 10px)
       .sort-select-item
@@ -3166,8 +3274,8 @@ body, .out,html
   +r(768)
     display: block
     cursor: pointer
-    +rem(padding,5px 0)
-    +rem(margin-bottom,5px)
+    +rem(padding,5px 0 6px)
+    +rem(margin-bottom,10px)
     &.active
       .u-bold
         color: $maind
@@ -3399,15 +3507,17 @@ body, .out,html
         line-height: 1.8
       .features
         font-size: 0
+        white-space: normal
+        
         &_block
           display: inline-block
-          width: 50%
+          min-width: 50%
           vertical-align: top
           border-left: none 
           padding: 0
           +rem(padding-right, 22px)
           +r(544)
-            width: 100%
+            min-width: 100%
             +rem(padding,2px 0 18px)
           .u-text
             display: block
@@ -3607,6 +3717,8 @@ body, .out,html
   &-text
     +rem(margin,10px 0 22px)
     color: $text
+    &:last-child
+      +rem(padding-bottom,50px)
       
 .number
   font-size: 0;
@@ -3678,13 +3790,16 @@ body, .out,html
         left: 0
         right: 0
         bottom: 0
+        +nosel
         &-text,&-currency
           // +rem(font-size,11px)
           // +rem(letter-spacing,0.4px)
           display: inline-block
           text-align: center;
         &-currency
-          
+          +rem(padding-left,1px)
+          +rem(max-width,13px)
+          white-space: nowrap
         &-text
           color: transparent
           +rem(min-width,12px)
@@ -4048,9 +4163,9 @@ body, .out,html
             +rem(left,10px)
             top: 0
             +rem(font-size, 11px)
-            +rem(line-height, 30px)
+            +rem(line-height, 32px)
           .input-main
-            +rem(padding-left,23px)
+            +rem(padding-left,30px)
       &-total
         background: $yel
         +rem(border-radius,3px)
@@ -4063,14 +4178,30 @@ body, .out,html
         &-cont
           +rem(padding, 7px 10px)
           +clr
+          width: 100%
+          font-size: 0
+          display: table
+          
           .u-graytext
-            display: inline-block
+            display: table-cell
+            
+            // display: inline-block
             color: #857e60
+            // width: 65%
+          .u-graytext
+            // display: inline-block
+            // vertical-align: top
         &-result
           +rem(font-size,14px)
           color: #000
           font-weight: 600
-          float: right
+          // width: 35%
+          +rem(line-height,18px)
+          text-align: right
+          // display: inline-block
+          // vertical-align: top     
+          +rem(padding-left,5px)    
+          display: table-cell
 
 .column
   &-wrap
@@ -4153,6 +4284,7 @@ body, .out,html
   &-total
     +r(544)
       text-align: right
+      +rem(padding-right,5px)
   &-item
     display: table-cell
     vertical-align: top
@@ -4161,7 +4293,15 @@ body, .out,html
     .prop
       display: block
     +r(544)
-      border-bottom: 0 
+      border-bottom: 0
+  &-name
+     .categories-elem-name
+      +rem(padding-top,5px)
+      +r(1280)
+        +rem(padding-top,1px)   
+  &-price,&-total
+    .u-text
+      +rem(padding-top,5px)
   &-row
     display: table-row
     +rem(padding, 15px 0)
@@ -4198,6 +4338,11 @@ body, .out,html
     +r(544)
       min-width: 10%
       width: 10% 
+    .small-link
+      +rem(margin-top,8px)
+      +rem(margin-left,8px)
+      +r(1280)
+        +rem(margin-top,5px)
   &-count
     padding-left: 3%
     padding-right: 3%
@@ -4468,8 +4613,6 @@ body, .out,html
       +rm(768)
         span
           color: $maind
-    +r(768)
-      float: none
     span
       color: $graytext
     &:hover
@@ -4485,6 +4628,8 @@ body, .out,html
       +rem(padding, 30px 15px 0 15px)
     +r(544)
       +rem(padding, 20px 5px 0 5px)
+    &+ .pagination-wrapper
+      +rem(margin-top,30px)
     &>.table
       font-size: 0
       .table-inline
@@ -4663,18 +4808,35 @@ body, .out,html
       .table-head
         background: #fff
       .table-name
-        width: 40%
+        width: 35%
+        padding-right: 2%
       .table-count
-        +rem(padding-left,45px)
+        +rem(padding-left,15px)
+        +rem(max-width,90px)
+        .u-text
+          +rem(padding-top,5px)
+      .table-status
+         +rem(width,110px)
+         .u-text
+          +rem(padding-top,5px)
+      .table-price
+        padding-right: 2%
+        +rem(min-width,60px)
+      .table-total
+        +rem(min-width,60px)
       .table-price,.table-count,.table-total
         +r(544)
           padding: 0
           .u-text
             +rem(font-size, 16px)
       .table-count
+        padding-right: 4%
         +r(544)
           margin-top: 0
       .table-img
+        +rem(max-width,120px)
+        img
+          max-width: 100%
         +r(544)
           width: 30%
       .table-item
@@ -4702,8 +4864,6 @@ body, .out,html
             color: $text
             &:before,&:after
               +rem(top,1.5px)
-
-        
     .cards-wrapper
       width: 30%
       +rem(padding-left,25px)
@@ -4906,6 +5066,8 @@ body, .out,html
             width: 30%
         &-count
           padding-left: 10%
+          .u-text
+            +rem(padding-top,5px)
           +r(544)
             margin: 0
   &-more
@@ -5146,6 +5308,8 @@ body, .out,html
 .tabs-cont
   ul
     +rem(margin, 30px 0 0)
+    &:first-child
+      margin-top: 0
     li 
       +rem(padding-left,35px)
       position: relative
@@ -5220,6 +5384,8 @@ body, .out,html
     bottom: 0
   .slider-big
     padding-bottom: 47%
+    +r(735)
+      padding-bottom: 56.25%
   .slider-news
     padding-bottom: 55%
     .slider-text
@@ -5432,6 +5598,8 @@ blockquote
             +rem(margin, 0 0 8px)
 .contacts-wrap
   +rem(margin-top,-8px)
+  position: relative
+  
   .col-50
     +rem(margin-top,-5px)
     .categories-elem-name
@@ -5456,6 +5624,14 @@ blockquote
       +rem(margin-top,-7px)
       +r(800)
         max-width: 100%
+    .info-footer
+      position: absolute
+      left: 0
+      bottom: 0
+      +rem(margin-bottom,40px)
+      +r(800)
+        position: static
+        
   .footer_contacts-wrap
     width: 98%
     +rem(margin-top,25px)
@@ -5468,6 +5644,16 @@ blockquote
 .content-section +  .contact-section
   .tabs-cont
     padding-top: 0
+  .tabs-head
+    width: 11.375rem;
+    top: 3rem;
+  .info-footer 
+    margin-top: -3.375rem;
+    +rem(padding-bottom,20px)
+    +r(800)
+      margin-top: -3rem;
+    +r(600)
+      margin-top: 0
 .search
   &-wrapper
     +rem(max-width,541px)
@@ -5636,5 +5822,60 @@ blockquote
 		width: 100%
 		padding-right: 0
 		+rem(max-width,290px)
-		
+.input-errors
+  p 
+   color: $red !important
+   font-family: intro
 
+.headcont
+  .input-errors
+    +rem(margin-bottom,-10px)
+.modal-container-content
+  .input-errors
+    +rem(margin,0px 0 10px)
+    font-family: intro
+.labels
+    position: absolute;
+    visibility: visible;
+    z-index: 1030;
+    overflow: visible!important;
+    margin: -145px 0 0 -110px!important;
+    pointer-events: none;
+    opacity: 0;
+    +rem(width,265px)
+    // +rem(left,-50px)
+    // +rem(top,-100px)
+    transform: translateY(-20px);
+    transition: opacity .2s cubic-bezier(.47,0,.745,.715),transform .2s cubic-bezier(.47,0,.745,.715);
+    &.place_open
+      pointer-events: all;
+      opacity: 1;
+      transform: translateY(0)
+#content
+  background: $main
+  border-radius: 5px
+  +rem(padding,10px)
+  .siteNotice
+    +rem(margin-bottom,10px)
+  .u-text,.maindesc-elem
+    color: $white !important
+    font-family: 'Open Sans'
+  .maindesc
+    font-size: 0
+    .contact-block
+      display: inline-block
+      vertical-align: top
+      width: 50%
+      a 
+        +rem(padding-right,10px)
+        margin-bottom: 5px !important
+    .u-graytext
+      color: $white
+      opacity: .8
+      font-weight: 400
+      font-family: 'Open Sans'
+      +rem(font-size,12px)
+      margin-bottom: 5px
+
+
+  

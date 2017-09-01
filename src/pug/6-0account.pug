@@ -73,8 +73,9 @@ block content
                 .table-item.table-name Наименование
                 .table-item.table-price Цена
                 .table-item.table-count Количество
+                .table-item.table-status Статус
                 .table-item.table-total Сумма
-                mixin cartTable(img,name, price, total,val)
+                mixin cartTable(img,name, price, total,val,status)
                   .table-row
                     .table-item.table-img
                       img(src=img, alt="")
@@ -89,12 +90,14 @@ block content
                         | #{price}
                     .table-item.table-count
                       .u-text #{val}
+                    .table-item.table-status
+                      .u-text #{status}
                     .table-item.table-total
                       .u-text.bold
                         |#{total}
-              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','107.50р.','21 500.00р.','200м2')
-              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2')
-              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','107.50р.','21 500.00р.','200м2','В обработке')
+              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2','В обработке')
+              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2','В обработке')
             .table-footer
               .buttons-wrap
                 button.small-link.close
@@ -160,6 +163,7 @@ block content
                 .table-item.table-name Наименование
                 .table-item.table-price Цена
                 .table-item.table-count Количество
+                .table-item.table-status Статус
                 .table-item.table-total Сумма
                 mixin cartTable(img,name, price, total,val)
                   .table-row
@@ -179,9 +183,9 @@ block content
                     .table-item.table-total
                       .u-text.bold
                         |#{total}
-              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','107.50р.','21 500.00р.','200м2')
-              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2')
-              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','107.50р.','21 500.00р.','200м2','В обработке')
+              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2','В обработке')
+              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2','В обработке')
             .table-footer
               .buttons-wrap
                 button.small-link.close
@@ -246,6 +250,7 @@ block content
                 .table-item.table-name Наименование
                 .table-item.table-price Цена
                 .table-item.table-count Количество
+                .table-item.table-status Статус
                 .table-item.table-total Сумма
                 mixin cartTable(img,name, price, total,val)
                   .table-row
@@ -265,10 +270,10 @@ block content
                     .table-item.table-total
                       .u-text.bold
                         |#{total}
-              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','1027.50р.','212 500.00р.','200м2')
-              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','1027.50р.','212 500.00р.','200м2')
-              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2')
-              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2')
+              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','1027.50р.','212 500.00р.','200м2','В обработке')
+              +cartTable('img/cards/1.png','Металлочерепица МОНТЕРРЕЙ','1027.50р.','212 500.00р.','200м2','В обработке')
+              +cartTable('img/cards/2.png','Уплотнитель прямоугольный самоклеющийся','1.60р.','24.00р.','200м2','В обработке')
+              +cartTable('img/cards/3.png','Планка конька плоского','1.60р.','125624.00р.','200м2','В обработке')
             .table-footer
               .buttons-wrap
                 button.small-link.close
@@ -333,6 +338,7 @@ block content
                 .table-item.table-name Наименование
                 .table-item.table-price Цена
                 .table-item.table-count Количество
+                .table-item.table-status Статус
                 .table-item.table-total Сумма
                 mixin cartTable(img,name, price, total,val)
                   .table-row

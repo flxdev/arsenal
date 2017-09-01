@@ -13,11 +13,14 @@ block content
   section.content-section
     .side-wrap.contacts-wrap
       .side-title
-        .u-intro.h2 свяжитесь с нами или приезжайте в наш в офис 
+        .u-intro.h2 свяжитесь с нами или приезжайте в наш в офис 
+        .info-footer
+          a(href="/img/roadmap.jpg").small-link.blue.marker 
+            span Скачать схему проезда
       .side-cont
         .col-50
           .categories-elem-name ООО «АрсеналМеталл»
-          .u-text.lt 220056, Республика Беларусь, г. Минск, пр. Независимости, 199
+          .u-text.lt 220056, Республика Беларусь, г. Минск, пр. Независимости, 199
         .col-50
           button.btn.t-blue.btn-small.btn-extrasmall.js-modal-trigger(type='button',data-target='.modal-callback',onclick='modals($(this))') Обратный звонок
         .footer_contacts-wrap
@@ -42,8 +45,43 @@ block content
               a.mailto(href="skype:arsenalmetall?chat") arsenalmetall
   section.contact-section
     .tabs-cont
-      .contact-cont 
-        #map
+      .tabs-head.w2
+        .tabs-item.js-map-trigger.active
+          span Офис/склад
+        .tabs-item.js-map-trigger
+          span Производство
+      .contact-cont
+        script.
+         var elems = {'points':
+           [
+              {
+                'id':'6',
+                'name':'Офис/склад',
+                'type': 'img/marker.png',
+                'title':'г Минск, ул.Независимости. 199',
+                'lat':'53.958914725',
+                'lng':'27.7217456865',
+                'mob1': '+375 29 666 91 72',
+                'mob2': '+375 29 111 75 24',
+                'gor1': '+375 17 369 78 98',
+                'gor2': '+375 29 380 48 67',
+              },
+              {
+              'id':'1',
+              'name':'Производство',
+              'type': 'img/marker.png',
+              'title':'г Минск, ул.Независимости. 200',
+              'lat':'54.017158',
+              'lng':'27.458616',
+              'mob1': '+375 29 666 91 72',
+              'mob2': '+375 29 111 75 24',
+              'gor1': '+375 17 369 78 98',
+              'gor2': '+375 29 380 48 67',
+              },
+           ]
+         }
+        //- #map.map.map-elem-near(data-icon='img/marker.png')
+        #map.map.map-elem-near(data-icon='img/marker.png',data-lat='53.955',data-lon='27.715360')
       .info-cont
         .info-title 
           span.u-intro.h2 реквизиты компании
@@ -54,6 +92,9 @@ block content
               p Юридический адрес: 220090, г. Минск, Логойский тракт, 22А, пом. 190 
               p Р/с 3012048490017 в ОАО «Банк Москва-Минск», г. Минск, ул. Коммунистическая, 49, МФО 153001272
               p УНП 190664004, ОКПО 37678731
+        .info-footer
+          a(href="#").small-link.blue.print 
+            span Распечатеть реквизиты
 
 
 
