@@ -491,4 +491,170 @@
         .cards-slider-counter
           span.cards-slider-current
           span.cards-slider-divider /
-          span.cards-slider-total            
+          span.cards-slider-total
+.modal-layout.modal-medium.modal-calculator
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Расчет стоимости ворот
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="").js-validate.form-calculator
+        .u-intro.h3 Предварительный расчёт ворот
+        .u-text.lt Расчёт стоимости носит оценочный характер. Для получения точного расчёта, оставте заявку и наш менеджер свяжется с вами, в течении рабочего дня!
+        .u-intro.h3.form-calculator-step Укажите размер проёма ворот (м)
+        .form-calculator-col
+         .form-calculator-col-30
+          .form-calculator-img
+            img(src="img/vorota.svg", alt="")
+         .form-calculator-col-60
+            .input-wrapper
+              input.input-main(type='number',name="", data-type='м')
+              span.input-title a:
+            .input-wrapper
+              input.input-main(type='number',name="", data-type='м')
+              span.input-title b:
+        .u-intro.h3.form-calculator-step Тип заполнения материалов
+        .select-dropdown
+          .select-u-item.dropdown-trigger.select-radio
+            label.input_label
+              span.input_main
+                input.input-real(type="radio",name='materialType',value= '1',checked='checked')
+                span.input-checked
+              span.input-text Профнастил С-8
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  .u-text.lt Профиллированный лист металла предназначен для заборов, кровли крыш, стен промышленных или общественных зданий.
+        .select-dropdown
+          .select-u-item.dropdown-trigger.select-radio
+            label.input_label
+              span.input_main
+                input.input-real(type="radio",name='materialType',value= '2')
+                span.input-checked
+              span.input-text Профнастил МП-20
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  .u-text.lt Профиллированный лист металла предназначен для заборов, кровли крыш, стен промышленных или общественных зданий.
+        .select-dropdown
+          .select-u-item.dropdown-trigger.select-radio
+            label.input_label
+              span.input_main
+                input.input-real(type="radio",name='materialType',value = '3')
+                span.input-checked
+              span.input-text Металлический штакетник
+            .dropdown-target
+              .dropdown-inner
+                .dropdown-content
+                  .u-text.lt Профиллированный лист металла предназначен для заборов, кровли крыш, стен промышленных или общественных зданий.
+        .u-intro.h3.form-calculator-step Цвет рамы
+        .select-check.js-select-custom
+          button.selects(data-placeholder = 'Цвет',data-valuename = "Цвет")
+            span.btn-text Цвет
+            i.select-img
+          .dropdown-target
+            .dropdown-inner
+              .dropdown-content
+                .u-graytext Выберите параметры
+                .select-u-body.select-list.color-select-wrapper
+                  mixin colorpick(color,val)
+                    label.option.color-option
+                      input(type="radio",name='color',value =val) 
+                      span.color-block(style='background-color: #'+color+'')
+                      span.text-block #{val}
+                  +colorpick('fff4ce','RAL 1014')
+                  +colorpick('e5cc77','RAL 1015')
+                  +colorpick('8f7415','RAL 1016')
+                  +colorpick('d06f20','RAL 1017')
+                  +colorpick('c2ea74','RAL 1018')
+                  +colorpick('78ad12','RAL 1019')
+                  +colorpick('24ad12','RAL 1020')
+                  +colorpick('115908','RAL 1021')
+                  +colorpick('cee4ff','RAL 1022')
+                  +colorpick('1f61b2','RAL 1023')
+                  +colorpick('144887','RAL 1024')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+                  +colorpick('731179','RAL 1025')
+        .u-intro.h3.form-calculator-step Дополнительное оборудование
+        .u-intro.h3.form-calculator-step Монтажные работы
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Фундамент для ворот
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Столбы опорные
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Установка и настройка автоматики
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Установка и настройка фотоэлементов и лампы
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Калитка
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='montaj',value = '1')
+              span.input-checked
+            span.input-text Металлический штакетник
+        .u-text.lt Фурнитура для установки ворот включена в предварительный расчёт!
+
+
+

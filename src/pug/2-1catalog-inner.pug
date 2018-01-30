@@ -1,0 +1,479 @@
+extends _layout
+
+block title
+  title Карточка товара
+
+block content
+  //МОЖИФИКАТОР .has-btn
+  section.content-head.has-btn
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Каталог
+      a(href="#").bread-item Ворота
+      a(href="#").bread-item Откатные ворота
+    h1.u-intro.h1 откатные Ворота
+    a(href="#").btn.t-trans.btn-small Смотреть портфолио работ
+  .product-content-wrapper
+    .product-galery-wrap
+      .product-much-cont
+        .flags-wrap
+          .flag-item.discount 
+            span -15%
+          .flag-item.hit 
+            span Hit
+        .cards-slider-nav.product-nav
+        //Если картинка одна, просто пихай ее в .product-much-slider 
+        .product-much-slider.js-white(data-target='.modal-product')
+          .product-slider-item(data-big="img/cards/1.png")
+            img(src="img/cards/1.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/2.png")
+            img(src="img/cards/2.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/3.png")
+            img(src="img/cards/3.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/4.png")
+            img(src="img/cards/4.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/5.png")
+            img(src="img/cards/5.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/6.png")
+            img(src="img/cards/1.png", alt="velasaped")
+          .product-slider-item(data-big="img/cards/7.png")
+            img(src="img/cards/2.png", alt="velasaped")
+        .product-add-slider
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/1.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/2.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/3.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/4.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/5.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/1.png)')
+          .product-add-item
+            .product-add-img(style='background-image:url(../img/cards/2.png)')
+        button.btn.t-blue.js-scroll(data-target='#buy') Купить
+    script.
+      function ProductSlider(){
+        setTimeout(function(){
+          $('.product-much-slider').slick({
+            arrows: true,
+            slidesToShow: 1,
+            asNavFor: $('.product-add-slider'),
+            infinite: false,
+            focusOnSelect: true,
+            appendArrows: $('.product-nav'),
+            nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+            prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+              responsive: [
+              {
+                breakpoint: 800,
+                settings: {
+                  dots: true,
+                }
+              }
+            ]
+          });
+          $('.product-add-slider').slick({
+            asNavFor: $('.product-much-slider'),
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: false,
+            draggable: false,
+            arrows:false,
+            focusOnSelect: true,
+            responsive: [
+              {
+                breakpoint: 1150,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                }
+              }
+            ]
+          });
+        }, 10);
+      }ProductSlider();
+    .product-main-wrap
+      .product-main-descr
+        h2.u-intro.h1 Металлочерепица Монтерей
+        .u-text.lt Ширина листа полезная: 1120 мм, высота профиля: 39 мм (39=25+14), 
+          br
+          |шаг волны: 350 мм, толщина металла 0,4-0,5 мм, область применения: кровля, гарантия: 20 лет
+        button.link-dotted.bold.js-scroll(data-target='#tabs') Все характеристики
+      .product-main-descr
+        // модификатор .product-bigcalc
+        .product-main-form.product-bigcalc
+          .product-main-selects
+            h3.u-intro.h3#buy Калькулятор стоимости
+            .u-text.lt Расчёт стоимости носит оценочный характер. Для получения точного расчёта с вами свяжутся наши менеджеры.
+            button.btn.t-blue.calc.t-w.js-modal-trigger(type= "button",data-target=".modal-calculator",onclick="modals($(this))") Расчитать ворота
+
+          .product-main-calcwrap
+            //.load для загрузки
+            .calc-container
+              .calc-load
+                svg.uil-ring-alt(width='35px', height='35px', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid')
+                  rect.bk(x='0', y='0', width='100', height='100', fill='none')
+                  circle(cx='50', cy='50', r='40', stroke='#ffffff', fill='none', stroke-width='6', stroke-linecap='round')
+                  circle.load-stroke(cx='50', cy='50', r='40', stroke='#999999', fill='none', stroke-width='10', stroke-linecap='round')
+                    //- animate(attributename='stroke-dashoffset', dur='2s', repeatcount='indefinite', from='0', to='502')
+                    //- animate(attributename='stroke-dasharray', dur='2s', repeatcount='indefinite', values='150.6 100.4;1 250;150.6 100.4')
+              .calc-pricewrap
+                .product-card-price 
+                  |от 107.50 р.                    
+                  span.u-graytext.old 1000р.
+              .calc-text.u-graytext Срок исполнения заказа
+                br
+                span 7 
+                |дней
+      .product-main-descr
+        .features
+          mixin Futureslides(img, text)
+            .features_block
+              .features--img
+                img(src=img, alt="")
+              p.u-text #{text}
+          +Futureslides('img/features/icon_1.svg','Доставка на собственном автопарке в любой регион Беларуси или самовывоз со склада.') 
+          +Futureslides('img/features/icon_2.svg','Оперативная доставка по всей территории Республики Беларусь') 
+          +Futureslides('img/features/icon_2.svg','Оперативная доставка по всей территории Республики Беларусь') 
+          +Futureslides('img/features/icon_4.png','Собственное производство') 
+  .product-tabs-content.b-bottom
+    // id для  скролла к элементу
+    #tabs.tabs.js-tabs-wrap
+      .tabs-head.w4
+        .tabs-item.js-tab-trigger
+          span Описание
+        .tabs-item.js-tab-trigger
+          span Cертификаты
+        .tabs-item.js-tab-trigger
+          span Монтаж
+        // для одинаковой высоты карточек
+        .tabs-item.js-tab-trigger(onclick='$(".tabs-cont").find(".product-card-inner").matchHeight();')
+          span Комплектующие
+      .tabs-body
+        .tabs-cont
+          .side-wrap
+            .side-title
+              .u-intro.h2 Классика среди раз- личных видов металло- черепиц
+            .side-cont
+              .u-black Металлочерепица Монтеррей — листовой материал, имитирующий  черепичное покрытие классического образца, не уступающий натуральной кровле по показателям прочности и надежности в эксплуатации. 
+              p Потребителю предоставляется возможность выбрать подходящий  цвет из более чем 40 различных  оттенков, что обеспечивает реализацию любых дизайнерских решений. Именно поэтому металло- черепицу Монтеррей покупают не только для строительства, но и для реконструкции исторических зданий. Долговечность  материала  определяется высоким качеством стали, используемой для производства листовых  заготовок.
+              p Лист металлочерепицы имеет многослойную структуру, при этом сталь покрыта защитным слоем с двух сторон (верхняя и нижняя часть листа). Цинковый или алюмоцинковый состав предохраняет металл от коррозийных процессов, лак  и полимерная краска — повышают устойчивость материала к погодным факторам, а также  предотвращают выцветание черепицы от ультрафиолетовых лучей.
+              .specials-wrapper
+                mixin specials(name,text)
+                  .specials-item
+                    .specials-name.u-intro.h3
+                      |#{name}
+                    p.specials-text #{text}
+                +specials('Механическая стойкость','Полимерное покрытие гаран- тирует стойкость к механическим повреждениям и большинству атмосферных влияний.')
+                +specials('Стойкость к УФ-излучению','Хорошая сопротивляемость металла и грунтовки солнечным лучам.')
+                +specials('Удельный вес','Профиль металлочерепицы может быть разным по габа- ритам, но средний вес соста- вляет всего 5 кг на 1 м².')
+                +specials('Ассортимент','Предлагаем большой выбор профилей и расцветок, этот универсальный материал поможет воплотить в жизнь любые дизайнерские задумки.')
+                +specials('Экология','Совершенно безопасно как для людей, так и для окружающей среды.')
+          .side-wrap
+            .side-title
+              .u-intro.h2 Технические Характеристики
+            .side-cont
+              .char-table
+                dl.char-head
+                  dt.char-name Свойства
+                  dd.char-descr Параметры
+                dl
+                  dt.char-name Ширина листа габаритная
+                  dd.char-descr 1 180 мм 
+                dl
+                  dt.char-name Ширина листа рабочая
+                  dd.char-descr 1 200 мм
+                dl
+                  dt.char-name Высота профиля
+                  dd.char-descr 39 мм (39=25+14)
+                dl
+                  dt.char-name Высота волны
+                  dd.char-descr 350 мм
+                dl
+                  dt.char-name Шаг волны
+                  dd.char-descr 21 мм 
+                dl
+                  dt.char-name Высота ступеньки
+                  dd.char-descr 21 мм 
+                dl
+                  dt.char-name Толщина металла
+                  dd.char-descr 0,4-0,5 мм
+                dl
+                  dt.char-name Область применения
+                  dd.char-descr кровля
+                dl
+                  dt.char-name Срок службы
+                  dd.char-descr 50 лет 
+                dl
+                  dt.char-name Гарантия
+                  dd.char-descr 20 лет
+                dl
+                  dt.char-name Наличие обратной стороны в цвет лицевого покрытия
+                  dd.char-descr
+                    i.yes 
+          .side-wrap
+            .side-title
+              .u-intro.h2 Цветовая гамма по каталогу RAL
+            .side-cont
+              .colors-wrapper
+                mixin Colors(val,text)
+                  .colors-item
+                    .colors-color(style='background-color: #'+val+'')
+                    .u-graytext  #{text}
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('ffea98','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+                +Colors('25458d','3005')
+              button.link-dotted.bold.js-colors Показать все цвета
+          
+        .tabs-cont
+          .side-wrap
+            .side-title
+              .u-intro.h2 Документация 
+            .side-cont
+              a(href="#", style='background-image:url(img/doc/zip.svg)').tab-material Сертификат о партнерстве металлопроизводства
+
+              a(href="#", style='background-image:url(img/doc/word.svg)' ).tab-material Сертификат о партнерстве металлопроизводства и металлопроката
+
+              a(href="#", style='background-image:url(img/doc/pdf.svg)').tab-material Сертификат о партнерстве металлопроизводства
+          .side-wrap
+            .side-title
+              .u-intro.h2 Сертификаты
+            .side-cont
+              .sertivicat-wrap.js-white(data-target='.modal-sertificat')
+                mixin Serf(img, name)
+                  .sertivicat-item
+                    .sertivicat-img.product-slider-item.product-add-item(data-big="img/cards/1.png")
+                      img(src=img, alt="")
+                    p #{name}
+                +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')
+                +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям безопасности')
+                +Serf('img/sertif.jpg','Сертификат соответствия государственных норма- тивных актов')
+                +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')
+                +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')
+                +Serf('img/sertif.jpg','Сертификат соответствия техническим требованиям')
+
+
+        .tabs-cont
+          .side-wrap
+            .side-title
+              .u-intro.h2 Монтаж металлоче- репицы
+            .side-cont
+              .u-black Укладывать  листы металлочерепицы можно и слева направо, и в обратном направлении. Вначале закрепляется первый лист, причем расстояние от выступа до карниза крыши должно составлять 50-55 мм (фиксация листа осуществляется в верхней части, при помощи одного самореза).
+              p Следующие листы соединяются между собой винтами (величина нахлеста — 150 мм).Сформированный из двух-трех листов блок, выравнивается по карнизу и уровню  торцевых досок, после чего осуществля- ется его прочное закрепление  на обрешетке, которое обеспечивается шурупами, оснащенными резиновыми уплотнительными шайбами.
+              p Саморезы ввинчиваются в  участки максимального прогиба гребня  (на 1 квадратный метр приходится  до 8 винтов). При укладке металлочерепицы Монтеррей необходимо освобождать листы от  защитной пленки. Обрезка листов осуществляется при помощи  ножовки. Участки срезов покрываются защитной краской.
+              //- .video
+              //-   iframe#ytplayer(type='text/html', src='https://www.youtube.com/embed/jZ46cL4_QeQ', frameborder='0', allowfullscreen='')
+        .tabs-cont
+          .products-inner
+            mixin Productcart(name, img, price, type)
+              .product-card-wrapper
+                .product-card-outer
+                  a(href="#").product-card-inner
+                    .product-card-img
+                      img(src=img, alt="")
+                    .categories-elem-name #{name}
+                    .product-card-price 
+                      |#{price}
+                      span.u-graytext.old 1000р.
+                  .product-card-more
+                    a(href="#").btn.t-blue Подробнее
+                  .flags-wrap
+                    - var val = type
+                    if val == '1'
+                      .flag-item.discount 
+                        span -15%
+                    else if val == '2'
+                      .flag-item.hit 
+                        span Hit
+                      .flag-item.discount 
+                        span -25%
+                    else if val == '3'
+                      .flag-item.new
+                        span New
+                    else if val == '4'
+                      .flag-item.hit 
+                        span Hit
+                      .flag-item.discount 
+                        span -55%
+                      .flag-item.new
+                        span New
+                    else if val == '0'
+            +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','134.04р. / м2','1')
+            +Productcart('Профилированный2 лист С8','img/cards/2.png','134.04р. / м2','4')
+            +Productcart('Планка3 торцовая','img/cards/3.png','134.04р. / м2','3')
+            +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','134.04р. / м2','2')
+            +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','134.04р. / м2','2')
+            +Productcart('Металлочерепица2 МОНТЕРРЕЙ','img/cards/1.png','134.04р. / м2','1')
+            +Productcart('Профилированный2 лист С8','img/cards/2.png','134.04р. / м2','4')
+            +Productcart('Планка2 торцовая','img/cards/3.png','134.04р. / м2','3')
+            +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','134.04р. / м2','2')
+            +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','134.04р. / м2','2')
+            +Productcart('Металлочерепица МОНТЕРРЕЙ','img/cards/1.png','134.04р. / м2','1')
+
+  section.slider-section
+    h2.u-intro.h2 Рекомендуемые товары 
+    .tabs-cont          
+      .slider-section-inner
+        mixin Productcart(name, img, prop1, prop2, price, type)
+          .product-card-wrapper
+            .product-card-outer
+              a(href="#").product-card-inner
+                .product-card-img
+                  img(src=img, alt="")
+                .categories-elem-name #{name}
+                .u-text 
+                  span.prop
+                    span Высота:
+                    span.price #{prop1} ,
+                  span.prop
+                    span шаг волны:
+                    span.price #{prop1} 
+                .product-card-price 
+                  |#{price}
+                  span.u-graytext.old 1000р.
+              .product-card-more
+                a(href="#").btn.t-blue Подробнее
+              .flags-wrap
+                - var val = type
+                if val == '1'
+                  .flag-item.discount 
+                    span -15%
+                else if val == '2'
+                  .flag-item.hit 
+                    span Hit
+                  .flag-item.discount 
+                    span -25%
+                else if val == '3'
+                  .flag-item.new
+                    span New
+                else if val == '4'
+                  .flag-item.hit 
+                    span Hit
+                  .flag-item.discount 
+                    span -55%
+                  .flag-item.new
+                    span New
+                else if val == '0'
+        +Productcart('Металлочерепица3 МОНТЕРРЕЙ','img/cards/1.png','39 мм','350 мм','107.50р. / м2','1')
+        +Productcart('Профилированный2 лист С8','img/cards/2.png','8 мм','1 150 мм мм','80.00р. / м2','4')
+        +Productcart('Планка3 торцовая','img/cards/3.png','1250 мм','95/120 мм','134.04р. / м2','3')
+        +Productcart('Металлочерепица2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+        +Productcart('Металлочерепицаa2 Альтер матовая','img/cards/4.png','39 мм','350 мм','41.50р. / м2','2')
+        +Productcart('Саморез 3сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 мм','1 000 шт.','1.40р. / шт','0')
+        +Productcart('Саморез сверлоконеч- ный РОКС FBD','img/cards/5.png','4,8х60 ','1 000 шт.','1.40р. / шт','0')
+      .cards-slider-nav
+        .cards-slider-counter
+          span.cards-slider-current
+          span.cards-slider-divider /
+          span.cards-slider-total
+  script.
+    function cards(){
+      $( ".slider-section-inner").each( function() {
+        var _this = $(this);
+
+        slidesCount(_this);
+
+        _this.slick({
+          accessibility: true,
+          arrows: true,
+          draggable: true,
+          touchMove: false,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          appendArrows: _this.siblings('.cards-slider-nav'),
+          nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}</style><g><g><polygon class="slider-arr" points="45.9,6.8 38.9,0 37.9,1 42.9,6 0,6 0,7.5 43,7.5 37.6,12.9 38.7,14 45.7,7 "/></g></g></svg></div></button>',
+          prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.9 14" style="enable-background:new 0 0 45.9 14;" xml:space="preserve"><style type="text/css">.slider-arr{fill:#353535;}</style><g><g><polygon class="slider-arr" points="0.2,7 7.2,14 8.3,12.9 2.9,7.5 45.9,7.5 45.9,6 3,6 8,1 7,0 0,6.8     "/></g></g></svg></div></button>',
+          responsive: [
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+            {
+              breakpoint: 800,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            }
+            ]
+        }); 
+      });
+
+    } cards();
+  
+
+
+
+
+
+
+
+
+
+  

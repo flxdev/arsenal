@@ -27,7 +27,7 @@ ul
     width: 100%
 html
   font-size: 16px
-  overflow-x: hidden
+  // overflow-x: hidden
   +r(1366)
     font-size: 15px
   +r(1280)
@@ -54,7 +54,7 @@ body
     color:#fff
 body
   font-family: 'Open Sans'
-  overflow: hidden
+  // overflow: hidden
   // overflow-y: auto
   position: relative
 body, .out,html
@@ -63,8 +63,8 @@ body, .out,html
   &.modal-opened
     overflow: hidden
 .out
-  overflow-y: auto
-  overflow-x: hidden
+  // overflow-y: auto
+  // overflow-x: hidden
   position: relative
   // -webkit-overflow-scrolling: touch;
   // div
@@ -3522,6 +3522,8 @@ body, .out,html
           border-left: none 
           padding: 0
           +rem(padding-right, 22px)
+          &:nth-child(n+3)
+            margin-top: 10px
           +r(544)
             min-width: 100%
             +rem(padding,2px 0 18px)
@@ -3533,6 +3535,8 @@ body, .out,html
           +rem(margin,2px 10px 0 0)
           +rem(width,28px)
           +rem(height,28px)
+          img 
+              max-width: 100%
     &-form
       +clr 
       +rem(margin-top,20px)
@@ -3862,6 +3866,11 @@ body, .out,html
       line-height: 1.85
       +rem(margin-bottom, 9px)
       +rem(letter-spacing, 0.4px)
+    h3 
+      +rem(margin-bottom, 8px)
+      +rem(margin-top, 14px)
+      display: block
+        
     .u-intro.h1
       +rem(margin-bottom,25px)
 .specials
@@ -5885,3 +5894,134 @@ blockquote
 
 .section-describe
   +rem(margin-top,10px)
+  .side-wrap 
+    .side-cont,.side-title
+      width: 100%
+      max-width: 100%
+    .side-title
+        margin-bottom: 15px
+    .side-cont
+      li 
+        +rem(margin-bottom,5px)
+      ul 
+        +rem(padding-bottom,2px)
+.product-bigcalc
+  margin-top: 0
+  .product-main-selects
+    +r(544)
+      padding-bottom: 16.5625rem;
+      // margin-top: 0
+    .btn.calc
+      +rem(background-size,15px 20px)
+      float: none
+      +rem(padding-left,40px)
+      +rem(padding-right,30px)
+      width: auto
+      background-position: 18px center
+      margin-left: 0
+      +rem(font-size,11px)
+      &:hover 
+        background-image: url(../img/calculatorw.svg)
+        background-position: 18px center
+        background-repeat: no-repeat;
+.content-head
+  &.has-btn
+    display: flex 
+    flex-flow: row wrap 
+    justify-content: space-between
+    align-items: flex-start
+    .bread-container
+      width: 100%
+    .u-intro
+      +rm(545)
+        width: 60%
+    .btn 
+      +rem(padding-left,35px)
+      +rem(padding-right,35px)   
+      +rem(margin-top,16px)   
+      &:not(:hover)
+        background-color: $main2
+.form-calculator
+  counter-reset: calc 
+  &-step 
+    counter-increment: calc 
+    margin-top: 30px
+    margin-bottom: 30px
+    &:before
+      content: counter(calc)'.'
+      display: inline-block
+      padding-right: 3px
+  &-col 
+    font-size: 0
+    &>div 
+      display: inline-block
+      vertical-align: middle
+      +r(544)
+        width: 100% !important
+        img 
+          max-width: 70%
+          margin: 20px auto
+          display: block
+    &-30
+      width: 40%
+    &-60 
+      width: 60%
+      padding-bottom: 20px
+      text-align: right
+      .input-wrapper
+        width: calc(50% - 30px)
+        display: inline-block
+        vertical-align: top
+        margin-left: 20px
+        +r(544)
+          width: 100%
+          margin-left: 0
+        .input-title
+          position: absolute;
+          display: inline-block;
+          left: 10px;
+          left: .625rem;
+          top: 0;
+          font-size: 11px;
+          font-size: .6875rem;
+          line-height: 32px;
+          line-height: 2rem;
+        .input-main
+          padding-left: 1.875rem;
+  .select-u-item
+      position: relative
+      &.select-radio
+        .input-text
+          display: inline-block
+          position: relative
+          &:after 
+            display: block
+            content: ''
+            width: 100%
+            border-bottom: 1px dotted $text
+      &:hover
+        .input-text
+          &:after
+            opacity: 0
+      .dropdown-target
+        bottom: 100%
+        padding-left: 0
+        pointer-events: none
+      .dropdown-inner
+        max-width: 300px
+        position: relative
+        box-shadow: none
+        filter: drop-shadow(2px 3.464px 9px rgba(0,0,0,.1))
+        margin-bottom: -4px
+        &:after
+          content: ''
+          display: inline-block
+          +arr(20,7,#fff,b)
+          position: absolute
+          top: 100%
+          left: 20px
+        .dropdown-content
+          padding: 12.5px
+      
+      
+        
