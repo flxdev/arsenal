@@ -1,0 +1,34 @@
+extends _layout
+
+block title
+  title Портфолио 
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head.content-image(style= 'background-image:url(img/content-head.jpg)')
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Портфолио
+    h1.u-intro.h1 Портфолио
+  section.content-section
+    .side-wrap
+      .portfolio-wrapper
+        mixin portfolioCard(name,city)
+          .portfolio-item
+              a(href=" #").portfolio-item-inner(style= 'background-image:url(img/content-head.jpg)')
+                .portfolio-item-text
+                  .portfolio-item-text-inner
+                    .portfolio-item-text-content
+                      .categories-elem-name #{name}
+                      .u-text.lt #{city}
+        +portfolioCard('Металлочерепица','д. Озерцо')
+        +portfolioCard('Металлочерепица','д. Хатежево')
+        +portfolioCard('Водосточная система','д. Боровляны')
+        +portfolioCard('Кровля','д. Колодищи')
+        +portfolioCard('Доборные материалы','г. Минск')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        +portfolioCard('Гипсокартонные профили','д. Боровляны')

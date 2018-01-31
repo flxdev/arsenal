@@ -4013,6 +4013,7 @@ body, .out,html
 .sertivicat
   &-wrap
     +rem(margin-right,-25px)
+    font-size: 0  
     .sertivicat-item
       p 
         color: $main 
@@ -5941,6 +5942,11 @@ blockquote
       +rem(margin-top,16px)   
       &:not(:hover)
         background-color: $main2
+.modal-calculator
+  .modal-container
+    margin-top: 0
+    &-content 
+      padding-bottom: 0 !important
 .form-calculator
   counter-reset: calc 
   &-step 
@@ -5973,6 +5979,30 @@ blockquote
         display: inline-block
         vertical-align: top
         margin-left: 20px
+        .number__input
+          padding-right: 0  
+          max-width: 100% 
+          .fake-bg-currency
+            display: none
+          .number__input 
+            +rem(padding-left,24px)
+            text-align: left
+        .number__minus, .number__plus
+          position: absolute
+          right: 0  
+          height: 50% 
+          background-image: url(../img/icons/select_down.svg)
+          background-size: 8px 4px;
+          background-position: 50% 30%
+          border: none !important 
+
+          z-index: 1
+
+        .number__minus
+          bottom: 0 
+        .number__plus
+          top: 0  
+          transform: scale(1,-1)
         +r(544)
           width: 100%
           margin-left: 0
@@ -5982,10 +6012,8 @@ blockquote
           left: 10px;
           left: .625rem;
           top: 0;
-          font-size: 11px;
           font-size: .6875rem;
-          line-height: 32px;
-          line-height: 2rem;
+          +rem(line-height,30px)
         .input-main
           padding-left: 1.875rem;
   .select-u-item
@@ -6022,6 +6050,187 @@ blockquote
           left: 20px
         .dropdown-content
           padding: 12.5px
+  &-notify
+    +rem(margin-top,10px)
+  &-color 
+    +rem(max-width,240px)
+    .selects
+      padding-top: 2px
+      padding-bottom: 2px
+      padding-left: 2px
+    .btn-color
+      +tr(background-color .25s)
+      display: inline-block
+      float: left
+      height: 20px
+      border: 2px solid transparent 
+      width: 45%
+    .btn-text
+      width: 49%
+      padding-left: 5px
+    .select-img, .btn-text
+      float: none
+      vertical-align: middle
       
+
+  &-footer 
+    background-color: #ffea98
+    position: sticky
+    bottom: 0
+    left: 0
+    margin: 0 -1.875rem 
+    +rem(padding , 20px 28px)
+    z-index: 5
+    margin-top: 20px
+    &-content 
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+  &-price 
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+    .u-text
+        font-size: 14px !important
+        +rem(padding-right,30px)
+  &-cards 
+    .btn-text 
+      +rem(max-width,250px)
+    .card-option
+      display: block
+      &:hover 
+        .u-text.bold
+          color: #2e2e2e
+      &:not(:first-child)
+        border-top: 1px solid #e3e8eb
+      &-wrapper 
+        display: block
+        font-size: 0
+        & > span 
+          display: inline-block
+          vertical-align: top   
+      &-img 
+        width: 25%
+        &-inner 
+          width: 100%
+          padding-bottom: 100%
+          overflow: hidden
+          position: relative
+          background-color: #f4f4f4
+          img 
+            position: absolute
+            top: 50%
+            left: 0
+            width: 100%
+            transform: translateY(-50%)
+      &-content 
+        width: 50%
+        padding-left: 20px  
+        &>span 
+          display: block
+        .prop
+          display: block
+          span
+            display: inline
+            color: #898d9a !important 
+      &-price 
+        width: 25%
+        text-align: right 
+        padding-right: 5% 
+          
+.portfolio
+  &-wrapper
+    font-size: 0  
+    +rem(margin-right,-6px)
+  &-item 
+    display: inline-block 
+    vertical-align: top
+    width: 25%
+    +rem(padding-right,6px)
+    +rem(padding-bottom,6px)
+    +r(1200)
+      width: 33.33% 
+    +r(800)
+      width: 50% 
+    +r(360)
+      width: 100% 
+    &-inner 
+      display: inline-block 
+      width: 100% 
+      padding-bottom: 100% 
+      position: relative
+      +cover
+      overflow: hidden
+      +rm(801)
+        &:hover 
+          &:before,&:after
+            transform: none
+          &:before
+            transition-delay: .2s
+          &:after
+            transform: translateY(-70%)
+            transition-delay: 0s
+          .portfolio-item-text-content
+            bottom: 100%
+            transform: translateY(100%)
+            transition-delay: .1s
+      &:before,&:after
+        content: ''
+        display: inline-block
+        +coverdiv
+
+            
+        
+      &:after
+        transform: translateY(100%)
+        transition: transform .5s ease-in-out
+        background-color: $main
+      &:before
+        opacity: .3 
+        @supports (mix-blend-mode: soft-light)
+            opacity: 1  
+            mix-blend-mode: soft-light 
+        background-color: #000
+        transform: translateY(100%)
+        transition: transform .25s ease-in-out
+        transition-delay: .2s
+        +r(800)
+           mix-blend-mode: initial 
+           transform: none
+           opacity: .4  
+    &-text 
+      +coverdiv
+      +rem(padding-top,20px)
+      +rem(padding-bottom,20px)
+      padding-left: 8% 
+      padding-right:  7%
+      // mix-blend-mode: difference;
+      &-inner
+        width: 100% 
+        height: 100%  
+        position: relative
+      &-content 
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: transform .5s,bottom .5s;
+        transition-timing-function: cubic-bezier(0,0,.1,.96);
+        will-change: transform, bottom
+        z-index: 1
+        *
+            color: $white
+            text-shadow: 0 1px 4px rgba(0,0,0,.5);
+            line-height: 1.3  
+        // color: #000
+        
+.feedback-img
+  display: block 
+  +rem(max-width,180px)
+  +rem(margin-bottom,20px)
+  img 
+    width: 100% 
+
       
         

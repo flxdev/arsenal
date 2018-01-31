@@ -492,6 +492,45 @@
           span.cards-slider-current
           span.cards-slider-divider /
           span.cards-slider-total
+// новые модалки идут отсюда
+.modal-layout.white.modal-feedback
+  .modal-container-header
+    .categories-elem-name Все отзывы
+    i.small-link.close.js-modal-closer
+      span
+  .white-thumbs
+  .white-content
+    .product-modal-slider
+    .white-nav
+      .cards-slider-nav
+        .cards-slider-counter
+          span.cards-slider-current
+          span.cards-slider-divider /
+          span.cards-slider-total
+.modal-layout.modal-medium.modal-calculator-sendform
+  //контейнер модалки
+  .modal-container
+    .modal-container-header
+      .u-intro.h1 Предварительный расчёт
+      .u-text.lt Заполните форму ниже, для того что бы наш менеджер смог связаться с вами!
+      i.small-link.close.js-modal-closer
+        span
+    .modal-container-content
+      form(action="/").form.js-form-validate
+        .input-wrapper
+          label.u-graytext 
+            span.text Ваше имя
+          input.input-main(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length",data-validation-length="min1")
+        .input-wrapper
+          label.u-graytext 
+            span.text E-mail
+          input.input-main(type='email',name="",data-validation="email")
+        .input-wrapper
+          label.u-graytext 
+            span.text Телефон
+          input.input-main(type='tel',name="",data-validation-regexp="^[-0-9()+ ]+$",data-validation="custom")
+        .modal-container-footer
+          button.btn.t-blue.btn-extrasmall(type="submit") Отправить      
 .modal-layout.modal-medium.modal-calculator
   //контейнер модалки
   .modal-container
@@ -510,10 +549,26 @@
             img(src="img/vorota.svg", alt="")
          .form-calculator-col-60
             .input-wrapper
-              input.input-main(type='number',name="", data-type='м')
+              .number-wrap
+                .number.js-number(data-min-number='1.5',data-max-number='2.3', data-type='', data-step='0.1')
+                  button.number__minus.js-minus-number(type='button', tabindex='0')
+                  .number__input
+                    .fake-bg
+                      .fake-bg-text 1.5
+                      .fake-bg-currency
+                    input.number__input.js-price-input.js-basket-count(type='text', value='1.5', tabindex='0')
+                  button.number__plus.js-plus-number(type='button', tabindex='0')
               span.input-title a:
             .input-wrapper
-              input.input-main(type='number',name="", data-type='м')
+              .number-wrap
+                .number.js-number(data-min-number='3',data-max-number='6.7', data-type='', data-step='0.1')
+                  button.number__minus.js-minus-number(type='button', tabindex='0')
+                  .number__input
+                    .fake-bg
+                      .fake-bg-text 3
+                      .fake-bg-currency
+                    input.number__input.js-price-input.js-basket-count(type='text', value='3', tabindex='0')
+                  button.number__plus.js-plus-number(type='button', tabindex='0')
               span.input-title b:
         .u-intro.h3.form-calculator-step Тип заполнения материалов
         .select-dropdown
@@ -550,8 +605,9 @@
                 .dropdown-content
                   .u-text.lt Профиллированный лист металла предназначен для заборов, кровли крыш, стен промышленных или общественных зданий.
         .u-intro.h3.form-calculator-step Цвет рамы
-        .select-check.js-select-custom
+        .select-check.js-select-custom.form-calculator-color
           button.selects(data-placeholder = 'Цвет',data-valuename = "Цвет")
+            span.btn-color(style='background-color:#fff4ce')
             span.btn-text Цвет
             i.select-img
           .dropdown-target
@@ -564,6 +620,10 @@
                       input(type="radio",name='color',value =val) 
                       span.color-block(style='background-color: #'+color+'')
                       span.text-block #{val}
+                  label.option.color-option
+                    input(type="radio",name='color',checked='true',value ='RAL 1014') 
+                    span.color-block(style='background-color: #fff4ce')
+                    span.text-block RAL 1014
                   +colorpick('fff4ce','RAL 1014')
                   +colorpick('e5cc77','RAL 1015')
                   +colorpick('8f7415','RAL 1016')
@@ -617,6 +677,45 @@
                   +colorpick('731179','RAL 1025')
                   +colorpick('731179','RAL 1025')
         .u-intro.h3.form-calculator-step Дополнительное оборудование
+        .select-u-item
+          label.input_label
+            span.input_main
+              input.input-real(type="checkbox",name='dop',value = '1')
+              span.input-checked
+            span.input-text Автоматика
+        .select-check.js-select-custom.form-calculator-cards
+          button.selects(data-placeholder = 'ALUTECH ROTO (RTO-2000KIT)',data-valuename = "Автоматика")
+            span.btn-text 
+            i.select-img
+          .dropdown-target
+            .dropdown-inner
+              .dropdown-content
+                .select-u-body.select-list
+                  mixin cardpick(val,name,price)
+                    label.option.card-option
+                      input(type="radio",name='color',value =val) 
+                      span.card-option-wrapper
+                        span.card-option-img
+                          span.card-option-img-inner
+                            img(src="img/cards/2.png", alt="")
+                        span.card-option-content
+                          span.categories-elem-name #{name}
+                          span.u-graytext
+                            span.prop
+                              span Максимальный вес:
+                              span.price 2000 кг
+                            span.prop
+                              span Степень защиты IP:
+                              span.price 44
+                            span.prop
+                              span Мощность:
+                              span.price 500 Вт
+                        span.card-option-price
+                          span.u-text.bold #{price}
+                  +cardpick(1,'ALUTECH ROTO (RTO-2000KIT)','670.50р.')
+                  +cardpick(2,'ALUTECH ROTO (RTO-2000KIT)','470.60р.')
+                  +cardpick(3,'ALUTECH ROTO (RTO-2000KIT)','1070.50р.')
+                  +cardpick(4,'ALUTECH ROTO (RTO-2000KIT)','670.50р.')
         .u-intro.h3.form-calculator-step Монтажные работы
         .select-u-item
           label.input_label
@@ -654,7 +753,13 @@
               input.input-real(type="checkbox",name='montaj',value = '1')
               span.input-checked
             span.input-text Металлический штакетник
-        .u-text.lt Фурнитура для установки ворот включена в предварительный расчёт!
+        .u-text.lt.form-calculator-notify Фурнитура для установки ворот включена в предварительный расчёт!
+        .form-calculator-footer
+          .form-calculator-footer-content
+            .u-text.lt Предварительная стоимость
+            .form-calculator-price
+              .u-text.bold 490.90р.
+              button(type='submit').btn.t-blue Отправить заявку
 
-
+// новые модалки закончились =(
 

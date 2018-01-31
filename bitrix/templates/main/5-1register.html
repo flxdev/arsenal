@@ -1154,6 +1154,49 @@
                 </div>
               </div>
             </div>
+            <!-- новые модалки идут отсюда-->
+            <div class="modal-layout white modal-feedback">
+              <div class="modal-container-header">
+                <div class="categories-elem-name">Все отзывы</div><i class="small-link close js-modal-closer"><span></span></i>
+              </div>
+              <div class="white-thumbs"></div>
+              <div class="white-content">
+                <div class="product-modal-slider"></div>
+                <div class="white-nav">
+                  <div class="cards-slider-nav">
+                    <div class="cards-slider-counter"><span class="cards-slider-current"></span><span class="cards-slider-divider">/</span><span class="cards-slider-total"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-layout modal-medium modal-calculator-sendform">
+              <!--контейнер модалки-->
+              <div class="modal-container">
+                <div class="modal-container-header">
+                  <div class="u-intro h1">Предварительный расчёт</div>
+                  <div class="u-text lt">Заполните форму ниже, для того что бы наш менеджер смог связаться с вами!</div><i class="small-link close js-modal-closer"><span></span></i>
+                </div>
+                <div class="modal-container-content">
+                  <form class="form js-form-validate" action="/">
+                    <div class="input-wrapper">
+                      <label class="u-graytext"> <span class="text">Ваше имя</span></label>
+                      <input class="input-main" type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length" data-validation-length="min1">
+                    </div>
+                    <div class="input-wrapper">
+                      <label class="u-graytext"> <span class="text">E-mail</span></label>
+                      <input class="input-main" type="email" name="" data-validation="email">
+                    </div>
+                    <div class="input-wrapper">
+                      <label class="u-graytext"> <span class="text">Телефон</span></label>
+                      <input class="input-main" type="tel" name="" data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom">
+                    </div>
+                    <div class="modal-container-footer">
+                      <button class="btn t-blue btn-extrasmall" type="submit">Отправить      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
             <div class="modal-layout modal-medium modal-calculator">
               <!--контейнер модалки-->
               <div class="modal-container">
@@ -1171,10 +1214,34 @@
                       </div>
                       <div class="form-calculator-col-60">
                         <div class="input-wrapper">
-                          <input class="input-main" type="number" name="" data-type="м"><span class="input-title">a:</span>
+                          <div class="number-wrap">
+                            <div class="number js-number" data-min-number="1.5" data-max-number="2.3" data-type="" data-step="0.1">
+                              <button class="number__minus js-minus-number" type="button" tabindex="0"></button>
+                              <div class="number__input">
+                                <div class="fake-bg">
+                                  <div class="fake-bg-text">1.5</div>
+                                  <div class="fake-bg-currency"></div>
+                                </div>
+                                <input class="number__input js-price-input js-basket-count" type="text" value="1.5" tabindex="0">
+                              </div>
+                              <button class="number__plus js-plus-number" type="button" tabindex="0"></button>
+                            </div>
+                          </div><span class="input-title">a:</span>
                         </div>
                         <div class="input-wrapper">
-                          <input class="input-main" type="number" name="" data-type="м"><span class="input-title">b:</span>
+                          <div class="number-wrap">
+                            <div class="number js-number" data-min-number="3" data-max-number="6.7" data-type="" data-step="0.1">
+                              <button class="number__minus js-minus-number" type="button" tabindex="0"></button>
+                              <div class="number__input">
+                                <div class="fake-bg">
+                                  <div class="fake-bg-text">3</div>
+                                  <div class="fake-bg-currency"></div>
+                                </div>
+                                <input class="number__input js-price-input js-basket-count" type="text" value="3" tabindex="0">
+                              </div>
+                              <button class="number__plus js-plus-number" type="button" tabindex="0"></button>
+                            </div>
+                          </div><span class="input-title">b:</span>
                         </div>
                       </div>
                     </div>
@@ -1219,13 +1286,16 @@
                       </div>
                     </div>
                     <div class="u-intro h3 form-calculator-step">Цвет рамы</div>
-                    <div class="select-check js-select-custom">
-                      <button class="selects" data-placeholder="Цвет" data-valuename="Цвет"><span class="btn-text">Цвет</span><i class="select-img"></i></button>
+                    <div class="select-check js-select-custom form-calculator-color">
+                      <button class="selects" data-placeholder="Цвет" data-valuename="Цвет"><span class="btn-color" style="background-color:#fff4ce;"></span><span class="btn-text">Цвет</span><i class="select-img"></i></button>
                       <div class="dropdown-target">
                         <div class="dropdown-inner">
                           <div class="dropdown-content">
                             <div class="u-graytext">Выберите параметры</div>
                             <div class="select-u-body select-list color-select-wrapper">
+                              <label class="option color-option">
+                                <input type="radio" name="color" checked="true" value="RAL 1014"><span class="color-block" style="background-color: #fff4ce;"></span><span class="text-block">RAL 1014</span>
+                              </label>
                                                             <label class="option color-option">
                                                               <input type="radio" name="color" value="RAL 1014"><span class="color-block" style="background-color: #fff4ce;"></span><span class="text-block">RAL 1014</span>
                                                             </label>
@@ -1388,6 +1458,33 @@
                       </div>
                     </div>
                     <div class="u-intro h3 form-calculator-step">Дополнительное оборудование</div>
+                    <div class="select-u-item">
+                      <label class="input_label"><span class="input_main">
+                          <input class="input-real" type="checkbox" name="dop" value="1"><span class="input-checked"></span></span><span class="input-text">Автоматика</span></label>
+                    </div>
+                    <div class="select-check js-select-custom form-calculator-cards">
+                      <button class="selects" data-placeholder="ALUTECH ROTO (RTO-2000KIT)" data-valuename="Автоматика"><span class="btn-text"> </span><i class="select-img"></i></button>
+                      <div class="dropdown-target">
+                        <div class="dropdown-inner">
+                          <div class="dropdown-content">
+                            <div class="select-u-body select-list">
+                                                            <label class="option card-option">
+                                                              <input type="radio" name="color" value="1"><span class="card-option-wrapper"><span class="card-option-img"><span class="card-option-img-inner"><img src="img/cards/2.png" alt=""></span></span><span class="card-option-content"><span class="categories-elem-name">ALUTECH ROTO (RTO-2000KIT)</span><span class="u-graytext"><span class="prop"><span>Максимальный вес:</span><span class="price">2000 кг</span></span><span class="prop"><span>Степень защиты IP:</span><span class="price">44</span></span><span class="prop"><span>Мощность:</span><span class="price">500 Вт</span></span></span></span><span class="card-option-price"><span class="u-text bold">670.50р.</span></span></span>
+                                                            </label>
+                                                            <label class="option card-option">
+                                                              <input type="radio" name="color" value="2"><span class="card-option-wrapper"><span class="card-option-img"><span class="card-option-img-inner"><img src="img/cards/2.png" alt=""></span></span><span class="card-option-content"><span class="categories-elem-name">ALUTECH ROTO (RTO-2000KIT)</span><span class="u-graytext"><span class="prop"><span>Максимальный вес:</span><span class="price">2000 кг</span></span><span class="prop"><span>Степень защиты IP:</span><span class="price">44</span></span><span class="prop"><span>Мощность:</span><span class="price">500 Вт</span></span></span></span><span class="card-option-price"><span class="u-text bold">470.60р.</span></span></span>
+                                                            </label>
+                                                            <label class="option card-option">
+                                                              <input type="radio" name="color" value="3"><span class="card-option-wrapper"><span class="card-option-img"><span class="card-option-img-inner"><img src="img/cards/2.png" alt=""></span></span><span class="card-option-content"><span class="categories-elem-name">ALUTECH ROTO (RTO-2000KIT)</span><span class="u-graytext"><span class="prop"><span>Максимальный вес:</span><span class="price">2000 кг</span></span><span class="prop"><span>Степень защиты IP:</span><span class="price">44</span></span><span class="prop"><span>Мощность:</span><span class="price">500 Вт</span></span></span></span><span class="card-option-price"><span class="u-text bold">1070.50р.</span></span></span>
+                                                            </label>
+                                                            <label class="option card-option">
+                                                              <input type="radio" name="color" value="4"><span class="card-option-wrapper"><span class="card-option-img"><span class="card-option-img-inner"><img src="img/cards/2.png" alt=""></span></span><span class="card-option-content"><span class="categories-elem-name">ALUTECH ROTO (RTO-2000KIT)</span><span class="u-graytext"><span class="prop"><span>Максимальный вес:</span><span class="price">2000 кг</span></span><span class="prop"><span>Степень защиты IP:</span><span class="price">44</span></span><span class="prop"><span>Мощность:</span><span class="price">500 Вт</span></span></span></span><span class="card-option-price"><span class="u-text bold">670.50р.</span></span></span>
+                                                            </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div class="u-intro h3 form-calculator-step">Монтажные работы</div>
                     <div class="select-u-item">
                       <label class="input_label"><span class="input_main">
@@ -1413,11 +1510,21 @@
                       <label class="input_label"><span class="input_main">
                           <input class="input-real" type="checkbox" name="montaj" value="1"><span class="input-checked"></span></span><span class="input-text">Металлический штакетник</span></label>
                     </div>
-                    <div class="u-text lt">Фурнитура для установки ворот включена в предварительный расчёт!</div>
+                    <div class="u-text lt form-calculator-notify">Фурнитура для установки ворот включена в предварительный расчёт!</div>
+                    <div class="form-calculator-footer">
+                      <div class="form-calculator-footer-content">
+                        <div class="u-text lt">Предварительная стоимость</div>
+                        <div class="form-calculator-price">
+                          <div class="u-text bold">490.90р.</div>
+                          <button class="btn t-blue" type="submit">Отправить заявку</button>
+                        </div>
+                      </div>
+                    </div>
                   </form>
                 </div>
               </div>
             </div>
+            <!-- новые модалки закончились =(-->
           </div>
         </div>
       </div>

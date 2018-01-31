@@ -1,0 +1,40 @@
+extends _layout
+
+block title
+  title Отзывы 
+
+block content
+  //тут есть 2 типа, с картинкой на бэкграунде + белый текст и монотонный бэкграунд без картинки + черный текст. .content-image для 1го варианта
+  section.content-head
+    .bread-container
+      a(href="#").bread-item Главная
+      a(href="#").bread-item Отзывы
+    h1.u-intro.h1 Отзывы
+  section.content-section
+    .side-wrap
+      .side-title
+        .u-intro.h2 Ваши отзывы помогают нам стать лучше
+      .side-cont
+        // добавил в .modals отдельную модалку .modal-feedback
+        .sertivicat-wrap.js-white(data-target='.modal-feedback')
+          mixin Serf(img, name)
+            .sertivicat-item
+              .sertivicat-img.product-slider-item.product-add-item(data-big="img/cards/1.png")
+                img(src=img, alt="")
+              p #{name}
+          +Serf('img/sertif.jpg','Академическая Книга РУП')
+          +Serf('img/sertif.jpg','ООО «НПО Мостовик»')
+          +Serf('img/sertif.jpg','Департамент дорожного хозяйства Приморского края')
+          +Serf('img/sertif.jpg','ООО «Свердловскмостострой»')
+          +Serf('img/sertif.jpg','ООО «РГСП Автобан»')
+          +Serf('img/sertif.jpg','ЗАО "Институт "Стройпроект"')
+
+
+
+
+
+
+
+
+
+  

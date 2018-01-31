@@ -248,7 +248,7 @@ function modalOff(){
 			var closer = ftarget.find('.js-modal-closer');
 			var mainSlides = _.parent().find('.product-slider-item');
 			var addSlides = _.parent().find('.product-add-item');
-			var currslide = _.find('.slick-active').data('slick-index');
+			var currslide = _.find('.slick-active').data('slick-index') || $(e.target).data('slick-index') || $(e.target).closest('.product-add-item').data('slick-index');
 			if(mainSlides.length > 1){
 
 				ftarget.addClass('active')
@@ -429,7 +429,97 @@ DropzoneDile();
 //end of document ready
 });
 //end of document ready
+function number() {
+    var _numbers = {
+        containers: {
+            main: $('.js-number')
+        }
+    };
 
+    _numbers.init = function () {
+        $.each(_numbers.containers.main, function () {
+            _numbers.setAction($(this));
+        })
+    };
+
+    _numbers.setAction = function (_c) {
+        var _input = _c.find('.js-price-input'),
+            _b = _c.find('button'),
+            _m = _c.find('.fake-bg-currency'),
+            _t = _c.find('.fake-bg-text');
+
+        _m.html(_c.data('type'));
+        _t.html(_input.val());
+
+       // _input.val(_c.data('step'));
+
+        _input.off('change.numbers').on('change.numbers', function () {
+            var new_val = _numbers.format(_input.val(), _c.data('step'), _c.data('max-number'));
+            _input.val(new_val);
+            _t.text(new_val);
+        });
+
+        _input.off('keypress.numbers').on('keypress.numbers', function () {
+            var val = $(this).val();
+            _t.text(val);
+        });
+
+        _b.off('click.numbers').on('click.numbers', function () {
+            var cur_val = +_input.val(),
+                step = +_c.data('step'),
+                more_val = parseFloat(cur_val + step).toFixed(1),
+                less_val = parseFloat(cur_val - step).toFixed(1);
+
+            more_val = _numbers.format(more_val, _c.data('step'), _c.data('max-number'),_c.data('min-number'));
+            less_val = _numbers.format(less_val, _c.data('step'), _c.data('max-number'),_c.data('min-number'));
+
+            if ($(this).hasClass('number__plus')) {
+                _input.val(more_val).trigger('change');
+            }
+            else {
+                _input.val(less_val).trigger('change');
+            }
+        });
+
+        //_input.trigger('change');
+
+    };
+
+    _numbers.format = function (val, step, max,min) {
+        var format_val = val.replace(/.*?(([0-9]*\.)?[0-9]+).*/g, '$1');
+        // max = 999999;
+        step = +step;
+        // console.log(format_val,max,min,step)
+        if(step === 0) step = 1;
+
+        format_val = +format_val;
+        step = +step;
+        max = +max;
+		// console.log(format_val,max,min,step)
+        if (format_val > step) {
+            var left_over = ((format_val * 1000) % (step * 1000)) / 1000;
+            format_val = format_val - left_over;
+        }
+        else {
+            format_val = step;
+        }
+
+        if (max && format_val > max) {
+            format_val = max;
+        }
+        if (min && format_val < min) {
+            format_val = min;
+        }
+        format_val = isNaN(format_val) ? 0 : format_val;
+
+        return step < 1 ? format_val.toFixed(1) : format_val.toFixed(0);
+
+    };
+
+    _numbers.init();
+
+};
+$(number);
 function slidesCount(elem){
 	var container = elem.parent().find('.cards-slider-counter'),
 			curSlideCont = container.find('.cards-slider-current'),
@@ -1099,12 +1189,23 @@ function initCustomSelectList() {
 					placeholder = _button.data('placeholder'),
 					valuename = _button.data('valuename'),
 					_list = _select.find('.select-list');
+					if(_select.hasClass('form-calculator-color')){
+						var colorPlace =_button.find('.btn-color');
+					}
 
 			_select.on('reinit', function() {
 				var _active = _list.find('input:checked');
 				CheckForSelect($(this).parents('form'));
 					if(_active.length) {
-						_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked');	
+						_select.parent().hasClass('input-wrapper') ?_button.children('.btn-text').text('' + valuename  + _active.siblings('span').text()+ '').parent().addClass('is-checked') : _button.children('.btn-text').text('' + valuename + ': ' + _active.siblings('span').text()+ '').parent().addClass('is-checked');
+						if(_select.hasClass('form-calculator-color')){
+							var clr =_active.parent().find('.color-block').css('background-color');
+							colorPlace.css('background-color',clr)
+						}
+						if(_select.hasClass('form-calculator-cards')){
+							_button.children('.btn-text').text('' + valuename + ': ' + _active.siblings().find('.categories-elem-name').text()+ '').parent().addClass('is-checked');
+						}
+					
 					}
 					else {
 							_button.children('.btn-text').text(_button.data('placeholder')).parent().removeClass('is-checked');
