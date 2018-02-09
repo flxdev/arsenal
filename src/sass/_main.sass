@@ -3120,7 +3120,7 @@ body, .out,html
     .selects
       border: 1px solid $maind
   &.error
-  	.selects
+    .selects
       border: 1px solid $red
   &.is-checked
     .selects
@@ -5290,7 +5290,7 @@ body, .out,html
           content: ''
           width: 100%
         .select-u-item
-        	+rem(min-width,100px)
+            +rem(min-width,100px)
       .headcont-title
         text-align: left
       .headcont-item
@@ -5831,13 +5831,13 @@ blockquote
 #js-main_catalog-container
   min-height: 26vh
 .js-subscribe-container
-	font-size: 0
-	text-align: left
-	.subscribe-wrapper
-		display: block
-		width: 100%
-		padding-right: 0
-		+rem(max-width,290px)
+    font-size: 0
+    text-align: left
+    .subscribe-wrapper
+        display: block
+        width: 100%
+        padding-right: 0
+        +rem(max-width,290px)
 .input-errors
   p 
    color: $red !important
@@ -6082,11 +6082,17 @@ blockquote
     +rem(padding , 20px 28px)
     z-index: 5
     margin-top: 20px
+    +r(544)
+        margin: 0 -1.0625rem 0 -.9375rem
     &-content 
       display: flex
       flex-flow: row nowrap
       justify-content: space-between
       align-items: center
+      +r(544)
+        .u-text.lt
+            +rem(margin-bottom, 20px)
+        flex-flow: column nowrap
   &-price 
     display: flex
     flex-flow: row nowrap
@@ -6096,6 +6102,9 @@ blockquote
         font-size: 14px !important
         +rem(padding-right,30px)
   &-cards 
+    &.disabled 
+        opacity: .5
+        pointer-events: none
     .btn-text 
       +rem(max-width,250px)
     .card-option
@@ -6141,6 +6150,13 @@ blockquote
         padding-right: 5% 
           
 .portfolio
+  &-head
+    text-align: right
+    +rem(margin-bottom,30px)
+    +rem(padding-right,6px)
+    +rem(padding-left,6px)
+    .tabs-item
+        +padlr(20px)
   &-wrapper
     font-size: 0  
     +rem(margin-right,-6px)

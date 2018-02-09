@@ -13,22 +13,32 @@ block content
   section.content-section
     .side-wrap
       .portfolio-wrapper
-        mixin portfolioCard(name,city)
-          .portfolio-item
-              a(href=" #").portfolio-item-inner(style= 'background-image:url(img/content-head.jpg)')
-                .portfolio-item-text
-                  .portfolio-item-text-inner
-                    .portfolio-item-text-content
-                      .categories-elem-name #{name}
-                      .u-text.lt #{city}
-        +portfolioCard('Металлочерепица','д. Озерцо')
-        +portfolioCard('Металлочерепица','д. Хатежево')
-        +portfolioCard('Водосточная система','д. Боровляны')
-        +portfolioCard('Кровля','д. Колодищи')
-        +portfolioCard('Доборные материалы','г. Минск')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
-        +portfolioCard('Гипсокартонные профили','д. Боровляны')
+        .portfolio-head.align-right
+          .tabs-head
+
+            .tabs-item.active
+              span Крыши
+            .tabs-item
+              span Заборы
+            .tabs-item
+              span Все
+        .portfolio-container
+          mixin portfolioCard(name,city)
+            .portfolio-item
+                a(href=" #").portfolio-item-inner(style= 'background-image:url(img/content-head.jpg)')
+                  .portfolio-item-text
+                    .portfolio-item-text-inner
+                      .portfolio-item-text-content
+                        .categories-elem-name #{name}
+                        .u-text.lt #{city}
+          +portfolioCard('Металлочерепица','д. Озерцо')
+          +portfolioCard('Металлочерепица','д. Хатежево')
+          +portfolioCard('Водосточная система','д. Боровляны')
+          +portfolioCard('Кровля','д. Колодищи')
+          +portfolioCard('Доборные материалы','г. Минск')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')
+          +portfolioCard('Гипсокартонные профили','д. Боровляны')

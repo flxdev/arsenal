@@ -147,7 +147,8 @@ function FocusInput(){
 		scrollDelta = 10,
 		scrollOffset = 250;
 
-	$('.out').on('scroll', function(){
+	$(window).on('scroll', function(){
+
 		if( !scrolling ) {
 			scrolling = true;
 			(!window.requestAnimationFrame)
@@ -161,13 +162,10 @@ function FocusInput(){
 	});
 
 	function autoHideHeader() {
-		var currentTop = $('.out').scrollTop();
+		var currentTop = $(window).scrollTop();
+		checkSimpleNavigation(currentTop);
 
-		( belowNavHeroContent.length > 0 ) 
-			? checkStickyNavigation(currentTop)
-			: checkSimpleNavigation(currentTop);
-
-			previousTop = currentTop;
+		previousTop = currentTop;
 		scrolling = false;
 	}
 
@@ -478,6 +476,7 @@ compareHeight();
 Tabs();
 // number();
 DropzoneDile();
+Depend();
 //end of document ready
 });
 //end of document ready
@@ -1674,7 +1673,26 @@ function compareHeight(){
 	// 	 property: 'min-height'
 	// });
 }
+function Depend() {
+  var triggers = $('[data-depends-trigger]');
+  triggers.each(function() {
 
+    const _ = $(this);
+    const trgval = _.data('depends-trigger');
+    const trget = $(`[data-depends-target="${trgval}"]`);
+    // const prnt = trget.parent();
+    const name = _.attr('name');
+    $(`[name="${name}"]`).on('change',function() {
+    	let chk = $(this).prop('checked');
+    	if (chk === true && $(this).data('depends-trigger') !== undefined) {
+    		trget.removeClass('disabled');
+    	}else{
+    		trget.addClass('disabled').find('input:checked').prop('checked', false)
+    		trget.trigger('reinit');
+    	}
+    });
+  });
+}
 //инит фильрров товаров 1-2 1-4
 $(window).on('load',function(){
 	setTimeout(OnLoadFilterInit, 501);

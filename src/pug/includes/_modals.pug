@@ -680,11 +680,11 @@
         .select-u-item
           label.input_label
             span.input_main
-              input.input-real(type="checkbox",name='dop',value = '1')
+              input.input-real(type="checkbox",name='dop',value = '1',data-depends-trigger='bigcolor')
               span.input-checked
             span.input-text Автоматика
-        .select-check.js-select-custom.form-calculator-cards
-          button.selects(data-placeholder = 'ALUTECH ROTO (RTO-2000KIT)',data-valuename = "Автоматика")
+        .select-check.js-select-custom.form-calculator-cards.disabled(data-depends-target='bigcolor')
+          button.selects(data-placeholder = 'Выберите',data-valuename = "Автоматика")
             span.btn-text 
             i.select-img
           .dropdown-target
@@ -713,9 +713,9 @@
                         span.card-option-price
                           span.u-text.bold #{price}
                   +cardpick(1,'ALUTECH ROTO (RTO-2000KIT)','670.50р.')
-                  +cardpick(2,'ALUTECH ROTO (RTO-2000KIT)','470.60р.')
-                  +cardpick(3,'ALUTECH ROTO (RTO-2000KIT)','1070.50р.')
-                  +cardpick(4,'ALUTECH ROTO (RTO-2000KIT)','670.50р.')
+                  +cardpick(2,'ALUTECH ROTO (RTO-4000KIT)','470.60р.')
+                  +cardpick(3,'ALUTECH ROTO (RTO-6000KIT)','1070.50р.')
+                  +cardpick(4,'ALUTECH ROTO (RTO-8000KIT)','670.50р.')
         .u-intro.h3.form-calculator-step Монтажные работы
         .select-u-item
           label.input_label
