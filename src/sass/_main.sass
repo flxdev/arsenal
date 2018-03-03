@@ -3481,8 +3481,8 @@ body, .out,html
     +rem(padding,0 5px)
     +rem(margin-right,1px)
     display: inline-block
-    &:only-child
-      display: none
+    // &:only-child
+    //   display: none
     &:hover:not(.slick-current)
       .product-add-img
         cursor: pointer;
@@ -3866,13 +3866,32 @@ body, .out,html
       line-height: 1.85
       +rem(margin-bottom, 9px)
       +rem(letter-spacing, 0.4px)
-    h3 
+    h3,h2,h4
       +rem(margin-bottom, 8px)
       +rem(margin-top, 14px)
       display: block
-        
     .u-intro.h1
       +rem(margin-bottom,25px)
+    table 
+      border: 1px solid $border
+      // max-width: 800px
+      // margin-left: auto
+      // margin-right: auto
+      margin-top: 20px
+      margin-bottom: 20px
+      th 
+        background: $border
+        +rem(font-size,11px)
+        color: #898d9a
+        font-weight: 400
+      tr
+        &:not(:last-child)
+          border: 1px solid $border
+        td,th 
+          +rem(padding, 15px 10px)
+          text-align: left
+        td 
+          color: #000
 .specials
   &-wrapper
     font-size: 0
@@ -5322,6 +5341,8 @@ body, .out,html
       .side-title
         +rem(margin-bottom,20px)
 .tabs-cont
+  h2,h3,h4,.h2,.h3,.h4
+    margin-bottom: 10px
   ul
     +rem(margin, 30px 0 0)
     &:first-child
