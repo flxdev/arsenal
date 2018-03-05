@@ -3890,8 +3890,12 @@ body, .out,html
         td,th 
           +rem(padding, 15px 10px)
           text-align: left
+          &:not(:first-child)
+            text-align: center
         td 
           color: #000
+
+            
 .specials
   &-wrapper
     font-size: 0
